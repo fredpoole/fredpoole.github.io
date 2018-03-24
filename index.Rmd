@@ -1,4 +1,4 @@
 ---
-title: "My Website"
+title: "Home Page"
 ---
 Hello, Website
