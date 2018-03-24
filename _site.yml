@@ -7,9 +7,6 @@ navbar:
     - text: "Home"
       icon: fa-home
       href: index.html
-    - text: "About"
-      icon: fa-info
-      href: about.html
     - text: "CV"
       icon: ion-ios-paper
       href: cv.html
