@@ -1,5 +1,5 @@
 ---
-title: "CV"
+title: ""
 ---
 #Frederick J Poole
 ##Curriculum Vitae
@@ -11,9 +11,9 @@ title: "CV"
 	
 ###Advisor: Assistant Professor Jody Clarke-Midura, Instructional Technology and Learning Sciences Department
 
-*2015	Master of Second Language Teaching, Utah State University
++2015	Master of Second Language Teaching, Utah State University
 	
-*2007	B.A. Double Major Spanish Literature and Psychology, University of Colorado at Boulder
++2007	B.A. Double Major Spanish Literature and Psychology, University of Colorado at Boulder
 
 #PUBLICATIONS
 ###Second Language Acquisition: Journal Articles (refereed)
