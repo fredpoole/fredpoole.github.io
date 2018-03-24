@@ -1,4 +1,8 @@
 ---
 title: "Home Page"
 ---
-Hello, Website
+Frederick J Poole
+
+```{r, fig.align='center',out.width = "200px",out.height="400px", echo=FALSE}
+knitr::include_graphics("images/fred.JPG")
+```
