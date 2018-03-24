@@ -9,7 +9,7 @@ navbar:
       href: index.html
     - text: "About"
       icon: fa-info
-      href: About.html
+      href: about.html
     - text: "CV"
       icon: ion-ios-paper
       href: cv.html
