@@ -1,7 +1,7 @@
 name: "Fred Poole"
 output_dir: "."
 navbar:
-  title: "Fred Poole"
+  title: "Fred Pooles"
   type: inverse
   theme: cosmo
   left:
