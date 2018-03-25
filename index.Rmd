@@ -1,8 +1,11 @@
 ---
-title: "Home Page"
+title: ""
 ---
-Frederick J Poole
+
+<center  style="font-size:40px">Frederick J Poole </center>
 
 ```{r, fig.align='center',out.width = "200px",out.height="400px", echo=FALSE}
 knitr::include_graphics("images/fred.JPG")
 ```
+
+
