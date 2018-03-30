@@ -18,3 +18,12 @@ knitr::include_graphics("images/iconFred.png")
 <hr>
 <hr>
 </br>
+</br>
+</br>
+</br>
+</br>
+</br>
+</br>
+<script language="Javascript">
+document.write("This page was last modified on: " + document.lastModified +"");
+</SCRIPT>
