@@ -3,9 +3,18 @@ title: ""
 ---
 
 <center  style="font-size:40px">Frederick J Poole </center>
-
-```{r, fig.align='center',out.width = "200px",out.height="400px", echo=FALSE}
-knitr::include_graphics("images/fred.JPG")
+</br>
+</br>
+</br>
+```{r, fig.align='center',out.width = "800px",out.height="600px", echo=FALSE}
+knitr::include_graphics("images/iconFred.png")
 ```
+</br>
+</br>
+<center  style="font-size:40px">About Me </center>
 
+####I am a doctoral student in the Instructional Technology and Learning Sciences department at Utah State University specializing in second language teaching and learning. My research interests include digital game-based language learning, technology-based collaboration, and dual language immersion. 
 
+<hr>
+<hr>
+</br>

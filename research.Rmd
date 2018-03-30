@@ -1,4 +1,53 @@
 ---
-title: "Research"
+title: ""
 ---
-More about this website
+#Second Language Acquistion Research
+
+</br>
+```{r, fig.align='center',out.width = "100px",out.height="50px", echo=FALSE}
+knitr::include_graphics("images/researchIcon.png")
+```
+
+###Developing Literacy Skills in Chinese Dual Language Immersion Classroom with Digital Games
+*Coming Soon*
+</br>
+</br>
+
+###Reading in Digital, Collaborative Environments
+*Coming Soon*
+</br>
+</br>
+
+###Using We Chat in the Chinese L2 Classroom
+*Coming Soon*
+</br>
+</br>
+
+###Using E-Gloss Tools to Faciliate Reading in Chinese
+*Coming Soon*
+</br>
+</br>
+
+###Graded Readers for Chinese as a Foreign Language Learners
+*Coming Soon*
+</br>
+</br>
+
+###Teaching Characters with Pinyin
+*Coming Soon*
+</br>
+</br>
+
+#Computer Science Education Research
+
+</br>
+
+###Broadening Participation in Computer Science Fields
+*Coming Soon*
+</br>
+</br>
+
+###Student perceptions of Computer Scientists
+*Coming Soon*
+</br>
+</br>

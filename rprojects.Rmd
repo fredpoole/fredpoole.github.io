@@ -1,4 +1,13 @@
 ---
-title: "R Projects"
+title: ""
 ---
-More about this website
+<center  style="font-size:40px">R Projects</center>
+
+```{r, fig.align='center',out.width = "100px",out.height="50px", echo=FALSE}
+knitr::include_graphics("images/Ricon.png")
+```
+
+#### On this page I will provide a guide for conducting data analysis in R. 
+
+*More Coming Soon*
+</br>
