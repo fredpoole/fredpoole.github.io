@@ -9,7 +9,7 @@ knitr::include_graphics("images/researchIcon.png")
 ```
 
 ###Digital Games in the Chinese Dual Language Immersion Classroom 
-*Coming Soon*
+*Coming Soon* this section will talk about my research
 </br>
 </br>
 
