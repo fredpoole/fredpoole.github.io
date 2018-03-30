@@ -1,14 +1,14 @@
 ---
 title: ""
 ---
-#Second Language Acquistion Research
-
+<center style="font-size:35px">Second Language Teaching and Learning Research
+</center>
 </br>
 ```{r, fig.align='center',out.width = "100px",out.height="50px", echo=FALSE}
 knitr::include_graphics("images/researchIcon.png")
 ```
 
-###Developing Literacy Skills in Chinese Dual Language Immersion Classroom with Digital Games
+###Digital Games in the Chinese Dual Language Immersion Classroom 
 *Coming Soon*
 </br>
 </br>
@@ -38,16 +38,21 @@ knitr::include_graphics("images/researchIcon.png")
 </br>
 </br>
 
-#Computer Science Education Research
+<center style="font-size:35px">Computer Science Education Research</center>
 
 </br>
+```{r, fig.align='center',out.width = "400px",out.height="20px", echo=FALSE}
+knitr::include_graphics("images/Appcamp.png")
+```
 
 ###Broadening Participation in Computer Science Fields
+
 *Coming Soon*
 </br>
 </br>
 
 ###Student perceptions of Computer Scientists
+
 *Coming Soon*
 </br>
 </br>

@@ -15,7 +15,7 @@ knitr::include_graphics("images/fred.JPG")
 <ul>
 <li>Expected (2019) -- Ph.D. Student Instructional Technology and Learning Sciences, Utah State University </li><enter>
 	
-<ul><li>*Advisor*: Assistant Professor Jody Clarke-Midura, Instructional Technology and Learning Sciences Department</li></ul> <enter>
+<ul><li>*Advisor*: Assistant Professor Jody Clarke-Midura</li></ul> <enter>
 
 <li>2015 -- Master of Second Language Teaching, Utah State University</li><enter>
 	
