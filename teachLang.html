@@ -15,13 +15,13 @@
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<link href="site_libs/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<link href="site_libs/highlightjs-1.1/default.css" rel="stylesheet" />
-<script src="site_libs/highlightjs-1.1/highlight.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
 <link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
@@ -32,10 +32,12 @@
   }
 </style>
 <script type="text/javascript">
-if (window.hljs && document.readyState && document.readyState === "complete") {
-   window.setTimeout(function() {
-      hljs.initHighlighting();
-   }, 0);
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
 }
 </script>
 
@@ -99,34 +101,34 @@ button.code-folding-btn:focus {
 <style type="text/css">
 /* padding for bootstrap navbar */
 body {
-  padding-top: 51px;
+  padding-top: 60px;
   padding-bottom: 40px;
 }
 /* offset scroll position for anchor links (for fixed navbar)  */
 .section h1 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 
 .section h2 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h3 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h4 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h5 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 .section h6 {
-  padding-top: 56px;
-  margin-top: -56px;
+  padding-top: 65px;
+  margin-top: -65px;
 }
 </style>
 
@@ -165,7 +167,7 @@ $(document).ready(function () {
 
 
 
-<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -269,6 +271,9 @@ Teaching Philosophy
 <p>Learning is not simply a result of transferring knowledge from teacher to student, it occurs when learners are actively engaged in tasks that require cognitive effort, allow for iterative self-reflections, and promote distributed cognition via collaboration. This perspective of learning views knowledge and skills as ever-evolving and, as such, learners must also be prepared to evolve. A pedagogical approach with such views strives to create an environment in which students are not only given opportunities to develop skills and knowledge that are useful today, but are also equipped with the resources and tools to become continuous learners. This teaching philosophy outlines the principles and strategies I employ to realize this vision. After eleven years of teaching students from a wide range of social, economic, and ethnic backgrounds in four different countries, I not only feel comfortable interacting with students in the classroom, but I have also developed an appreciation for the complex and dynamic nature of education. My beliefs about learning and pedagogy are the result of an eclectic mix of experiences as a second language learner, educator, and researcher. While this teaching statement embodies my current beliefs on teaching foreign language and applied linguistics courses, I have been in the second language acquisition (SLA) field long enough to know that my ideas and methods will surely change, as they have already changed drastically over the last few years. With that being said, my teaching philosophy can be characterized by a few guiding principles. First, the classroom should be student-centered. Second, motivation is the strongest determinant of success in the classroom. Third, it is the teacher’s responsibility to continuously challenge the students cognitively, for it is when they are pushed cognitively that they are able to make advances in their learning. Finally, to develop diversity of thought and an environment conducive to learning, a teacher should strive to create a classroom culture and community in which questions, active participation, and collaboration are encouraged. </br></br> Learning any second language is a complex process. Learners must develop an understanding of a new phonetic system, grammar rules, vocabulary, pragmatics, and much more. In addition, they are expected to integrate these new skills and knowledge to produce language that is both culturally and situationally appropriate. To successfully acquire such skills, students must have ample opportunities to practice the language. To achieve this goal, I use a student-centered approach by implementing task-based activities in which students must rely on communication with their classmates to carry out tasks. Task-based activities are a series of tasks that lead to the completion of a communicative goal. As the teacher, I take on the role of an architect and design activities that my students will carry out. They are able to use me as a resource, but a majority of in-class work falls on the students’ shoulders. These same principles can also be applied to applied linguistics courses by replacing the communicative goal with an SLA concept. By providing future teachers with hands-on activities to facilitate their understanding of a concept, learners not only develop a better understanding of the targeted concept, but they are also provided with a model for designing activities for future language classes that they teach. </br></br> It can be difficult to make language lessons novel if you are teaching four or five times a week for a semester. To keep my students interested and motivated, I integrate culture and technology into the classroom. When learning Chinese as a foreign language, learners are often exposed to many cultural differences and learning to communicate in Chinese requires that these differences are understood. Also, by introducing these differences, students often become intrinsically interested in the language and are thus more motivated to learn. When teaching Chinese as a foreign language, I introduce culture through storytelling, in which we read and interact with mythological and historical stories as well as folk tales. These stories create a unique window into the Chinese society and allow for dynamic discussions on the role of culture, society, and identity in language development. Another motivational strategy I implement is the use of technology in the classroom. Through the use of online collaborative reading tools, character recognition software, and digital games, I am able to present a larger variety of texts in a format that is unique yet familiar to the students, who are often referred to as digital natives. Furthermore, such digital tools have been shown to provide learners with real-time support which promotes self-efficacy beliefs and, subsequently, motivation to persist and learn the target language. Similarly, when teaching applied linguistics courses, I use a variety of motivational strategies that include discussions on cultural differences and factors that impact the second language learning process, using technology to increase interaction and collaboration amongst classmates, and providing learners with opportunities to apply what they have learned to real-world situations. </br></br> Challenging students cognitively can be accomplished by being acutely aware of teacher-student interactions, carefully selecting learning material, and designing activities and tasks that allow for critical thinking. Too often teachers are content with asking display questions; the assumption is that if students are speaking, then their goal has been accomplished. However, if students are not constantly being pushed to go beyond their comfort zone, then they will not be pushed to improve their linguistic skills. Teachers often rely on questions of this nature because their teaching material does not allow for more cognitively demanding questions. In my Chinese language classes, I introduce authentic materials as early as possible. Placing an emphasis on authentic materials at an early stage in the learning process allows the teacher to enter into cognitively stimulating discussions about the target language’s culture with the learners, which will ultimately increase the linguistic competence of the students. This principle is also readily applied to my applied linguistic courses. Future teachers must understand both the basic principles of language teaching concepts, and also how such concepts are applied to multiple contexts with a diverse set of students. To accomplish this goal, I use my classroom time to expand on, rather than simply review, previous reading assignments and explore the pedagogical implications of the SLA theories and concepts covered in the reading. Finally, activities and tasks that ask students to do more than simply reproduce language and concepts can also effectively challenge learners cognitively. When designing activities and tasks, I refer to Bloom’s Taxonomy to ensure that learners will be pushed to apply, analyze, evaluate, and create knowledge. </br></br> For learners to succeed in either a foreign language or applied linguistics classroom setting, they must be active and willing participants. This, subsequently, requires that learners feel comfortable asking questions, challenging ideas, and offering opinions. To cultivate a positive classroom community, I not only frequently implement collaborative activities into my lessons but, more importantly, I conduct regular discussions on the value of group work and how to make collaborations more effective. I believe that through group work, students are not only given more opportunities to practice their language skills or explore an SLA concept, but they are also exposed to individuals with diverse thoughts, learning strategies, world views, and academic abilities. This diversity can both facilitate strong communication skills as well as understanding of concepts and skills being taught.</br></br> In sum, it is through careful task designs, the cultivation of collaborative learning environments, and the integration of culture and technology that I strive to foster a classroom in which students can become perpetual learners.</p>
 </div>
 
+<script language="Javascript">
+document.write("This page was last modified on: " + document.lastModified +"");
+</SCRIPT>
 
 
 

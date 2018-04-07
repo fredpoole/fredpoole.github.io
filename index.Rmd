@@ -33,6 +33,3 @@ knitr::include_graphics("images/iconFred.png")
 </br>
 </br>
 </br>
-<script language="Javascript">
-document.write("This page was last modified on: " + document.lastModified +"");
-</SCRIPT>

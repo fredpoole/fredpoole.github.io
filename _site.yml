@@ -1,9 +1,12 @@
 name: "Fred Poole"
 output_dir: "."
+output:
+  html_document:
+    theme: flatly
+    include:
+      after_body: footer.html
 navbar:
   title: ""
-  type: inverse
-  theme: cosmo
   left:
     - text: "Home"
       icon: fa-home

@@ -68,17 +68,21 @@ knitr::include_graphics("images/fred.JPG")
 <ol>
 <li>Under Review -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom, *Chinese as a Second Language Research*. </li><enter>
 
-<li>Under Review -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL. *TESL-EJ*.</li><enter>
+<li>Under Review -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*.</li><enter>
+
+<li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
 <li>In Preparation -- **Poole, F.** A systematic review of digital games used in second language studies.</li><enter>
 
 ####Educational Technology: Journal Articles (refereed)<enter>
 <ol>
-<li>In Preparation -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
+<li>Under Review -- Clarke-Midura, J., **Poole, F.**, Pantic, K., Sun, C., & Allan, V. How mother and father support affect youths’ interest in computer science. </li><enter>
 
-<li>In Preparation -- Clarke-Midura, J., **Poole, F.**, Pantic, K., & Allan, V. How mother and father support affect youths’ interest in computer science. </li><enter>
+<li>Under Review -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness?</li><enter>
 
-<li>In Preparation 	Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness?</li></ol><enter>
+<li>Under Review -- Clarke-Midura, J.,Pantic, K., **Poole, F.**, Sun, C., Hamilton, M., & Allan, V. Increasing interest in computer science: designs for informal learning environments</li><enter>
+
+<li>In Preparation -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li></ol><enter>
 
 <center  style="font-size:20px">PROFESSIONAL AND ACADEMIC POSITIONS</center><enter>
 <ul>
