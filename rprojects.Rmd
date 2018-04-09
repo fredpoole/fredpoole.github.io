@@ -21,6 +21,7 @@ output:
 </script>
 <center  style="font-size:40px">R Projects</center>
 
+
 ```{r, fig.align='center',out.width = "100px",out.height="50px", echo=FALSE}
 knitr::include_graphics("images/Ricon.png")
 ```
@@ -31,7 +32,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Loading CSV Files
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -47,7 +48,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Loading Excel Files
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -55,7 +56,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Renaming your Files
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -70,6 +71,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Creating New Varibles
+*Coming Soon*
 ```{r}
 
 ```
@@ -77,7 +79,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Combining Variables to Make a new Variable
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -85,7 +87,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Renaming your Variables
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -93,14 +95,15 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Complete Cases
+*Coming Soon*
 ```{r}
 
 ```
 </br>
 </br>
 
-##Subsetting DAta
-
+##Subsetting Data
+*Coming Soon*
 ```{r}
 
 ```
@@ -108,7 +111,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Transform Wide to Long
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -118,11 +121,12 @@ knitr::include_graphics("images/Ricon.png")
 <hr>
 
 #Running Descriptives
+*Coming Soon*
 </br>
 </br>
 
 ##Base Descriptive Packages
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -130,7 +134,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Using Tapply and Sapply to get specific descriptives
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -138,7 +142,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Displaying Descriptives
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -146,7 +150,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Printing Descriptives and Saving Files
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -164,7 +168,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##T-Tests
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -172,7 +176,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##ANOVA
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -180,7 +184,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Chi-Square Tests
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -188,7 +192,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Regressions
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -196,7 +200,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Effect Size
-
+*Coming Soon*
 </br>
 </br>
 <hr>
@@ -208,6 +212,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Wilcoxon-Signed Rank Test
+*Coming Soon*
 ```{r}
 
 ```
@@ -222,6 +227,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Bar Graphs
+*Coming Soon*
 ```{r}
 
 ```
@@ -230,6 +236,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Box Plots
+*Coming Soon*
 ```{r}
 
 ```
@@ -238,6 +245,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Linear Plots
+*Coming Soon*
 ```{r}
 
 ```
@@ -246,7 +254,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Customizing Basic Plots
-
+*Coming Soon*
 ```{r}
 
 ```
@@ -270,6 +278,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Path Models
+*Coming Soon*
 ```{r}
 
 ```
@@ -277,6 +286,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##Cluster Analysis
+*Coming Soon*
 ```{r}
 
 ```
@@ -284,6 +294,7 @@ knitr::include_graphics("images/Ricon.png")
 </br>
 
 ##CART Analysis
+*Coming Soon*
 ```{r}
 
 ```

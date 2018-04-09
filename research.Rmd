@@ -57,7 +57,9 @@ knitr::include_graphics("images/baddies.png")
 
 
 ###Interactive Fiction Game -- *Adventure Chinese*
+*Coming Soon*
 
+<br>
 
 <a href="http://itlstest.usu.edu/">Interactive Fiction Game</a>
 
