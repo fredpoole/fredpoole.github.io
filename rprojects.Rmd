@@ -291,6 +291,3 @@ knitr::include_graphics("images/Ricon.png")
 <hr>
 <hr>
 
-```{r, echo=FALSE}
-htmltools::includeHTML("contact.html")
-```
