@@ -1,5 +1,14 @@
 ---
 title: ""
+output:
+  html_document:
+    toc: true
+    theme: flatly
+    number_sections: true
+    toc_depth: 2
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 ---
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116712862-1"></script>
@@ -16,7 +25,271 @@ title: ""
 knitr::include_graphics("images/Ricon.png")
 ```
 
-#### On this page I will provide a guide for conducting data analysis in R. 
+#Loading Data
 
-*More Coming Soon*
 </br>
+</br>
+
+##Loading CSV Files
+
+```{r}
+
+```
+</br>
+</br>
+
+##Loading SPSS Files
+
+```{r}
+
+```
+</br>
+</br>
+
+##Loading Excel Files
+
+```{r}
+
+```
+</br>
+</br>
+
+##Renaming your Files
+
+```{r}
+
+```
+
+</br>
+<hr>
+<hr>
+
+#Transorming Data
+</br>
+</br>
+
+##Creating New Varibles
+```{r}
+
+```
+</br>
+</br>
+
+##Combining Variables to Make a new Variable
+
+```{r}
+
+```
+</br>
+</br>
+
+##Renaming your Variables
+
+```{r}
+
+```
+</br>
+</br>
+
+##Complete Cases
+```{r}
+
+```
+</br>
+</br>
+
+##Subsetting DAta
+
+```{r}
+
+```
+</br>
+</br>
+
+##Transform Wide to Long
+
+```{r}
+
+```
+
+</br>
+<hr>
+<hr>
+
+#Running Descriptives
+</br>
+</br>
+
+##Base Descriptive Packages
+
+```{r}
+
+```
+</br>
+</br>
+
+##Using Tapply and Sapply to get specific descriptives
+
+```{r}
+
+```
+</br>
+</br>
+
+##Displaying Descriptives
+
+```{r}
+
+```
+</br>
+</br>
+
+##Printing Descriptives and Saving Files
+
+```{r}
+
+```
+
+</br>
+<hr>
+<hr>
+
+#Simple Parametric Tests
+
+```{r}
+
+```
+</br>
+</br>
+
+##T-Tests
+
+```{r}
+
+```
+</br>
+</br>
+
+##ANOVA
+
+```{r}
+
+```
+</br>
+</br>
+
+##Chi-Square Tests
+
+```{r}
+
+```
+</br>
+</br>
+
+##Regressions
+
+```{r}
+
+```
+</br>
+</br>
+
+##Effect Size
+
+</br>
+</br>
+<hr>
+<hr>
+
+#Simple Non-Parametric Tests
+
+</br>
+</br>
+
+##Wilcoxon-Signed Rank Test
+```{r}
+
+```
+</br>
+</br>
+<hr>
+<hr>
+
+#Basic Graphs
+
+</br>
+</br>
+
+##Bar Graphs
+```{r}
+
+```
+
+</br>
+</br>
+
+##Box Plots
+```{r}
+
+```
+
+</br>
+</br>
+
+##Linear Plots
+```{r}
+
+```
+
+</br>
+</br>
+
+##Customizing Basic Plots
+
+```{r}
+
+```
+
+</br>
+<hr>
+<hr>
+
+#GGPLOT Graphs
+
+```{r}
+
+```
+
+</br>
+<hr>
+<hr>
+
+#Multivariate Analysis
+</br>
+</br>
+
+##Path Models
+```{r}
+
+```
+</br>
+</br>
+
+##Cluster Analysis
+```{r}
+
+```
+</br>
+</br>
+
+##CART Analysis
+```{r}
+
+```
+</br>
+<hr>
+<hr>
+
+```{r, echo=FALSE}
+htmltools::includeHTML("contact.html")
+```

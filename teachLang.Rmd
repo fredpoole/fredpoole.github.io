@@ -1,5 +1,14 @@
 ---
 title: ""
+output:
+  html_document:
+    toc: true
+    theme: flatly
+    number_sections: true
+    toc_depth: 2
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
 ---
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116712862-1"></script>
@@ -16,7 +25,7 @@ title: ""
 knitr::include_graphics("images/ideaIcon.png")
 ```
 
-#### On this page you will find the following 
+On this page you will find the following 
 
 <ul>
   <li>Language Teaching Activities</li>
@@ -25,16 +34,16 @@ knitr::include_graphics("images/ideaIcon.png")
 </ul>
 </br>
 
-##Language Teaching Activities
+#Language Teaching Activities
 *Coming Soon*
 </br>
 
-## Sample Lesson Plans
+# Sample Lesson Plans
 *Coming Soon*
 </br>
 
 
-##Teaching Philosohpy
+#Teaching Philosohpy
 Learning is not simply a result of transferring knowledge from teacher to student, it occurs when learners are actively engaged in tasks that require cognitive effort, allow for iterative self-reflections, and promote distributed cognition via collaboration. This perspective of learning views knowledge and skills as ever-evolving and, as such, learners must also be prepared to evolve. A pedagogical approach with such views strives to create an environment in which students are not only given opportunities to develop skills and knowledge that are useful today, but are also equipped with the resources and tools to become continuous learners. This teaching philosophy outlines the principles and strategies I employ to realize this vision. 
 After eleven years of teaching students from a wide range of social, economic, and ethnic backgrounds in four different countries, I not only feel comfortable interacting with students in the classroom, but I have also developed an appreciation for the complex and dynamic nature of education. My beliefs about learning and pedagogy are the result of an eclectic mix of experiences as a second language learner, educator, and researcher. While this teaching statement embodies my current beliefs on teaching foreign language and applied linguistics courses, I have been in the second language acquisition (SLA) field long enough to know that my ideas and methods will surely change, as they have already changed drastically over the last few years. With that being said, my teaching philosophy can be characterized by a few guiding principles. First, the classroom should be student-centered. Second, motivation is the strongest determinant of success in the classroom. Third, it is the teacher’s responsibility to continuously challenge the students cognitively, for it is when they are pushed cognitively that they are able to make advances in their learning. Finally, to develop diversity of thought and an environment conducive to learning, a teacher should strive to create a classroom culture and community in which questions, active participation, and collaboration are encouraged. </br></br>
 Learning any second language is a complex process. Learners must develop an understanding of a new phonetic system, grammar rules, vocabulary, pragmatics, and much more. In addition, they are expected to integrate these new skills and knowledge to produce language that is both culturally and situationally appropriate. To successfully acquire such skills, students must have ample opportunities to practice the language. To achieve this goal, I use a student-centered approach by implementing task-based activities in which students must rely on communication with their classmates to carry out tasks. Task-based activities are a series of tasks that lead to the completion of a communicative goal. As the teacher, I take on the role of an architect and design activities that my students will carry out. They are able to use me as a resource, but a majority of in-class work falls on the students’ shoulders. These same principles can also be applied to applied linguistics courses by replacing the communicative goal with an SLA concept. By providing future teachers with hands-on activities to facilitate their understanding of a concept, learners not only develop a better understanding of the targeted concept, but they are also provided with a model for designing activities for future language classes that they teach. </br></br>
@@ -42,3 +51,6 @@ It can be difficult to make language lessons novel if you are teaching four or f
 Challenging students cognitively can be accomplished by being acutely aware of teacher-student interactions, carefully selecting learning material, and designing activities and tasks that allow for critical thinking. Too often teachers are content with asking display questions; the assumption is that if students are speaking, then their goal has been accomplished. However, if students are not constantly being pushed to go beyond their comfort zone, then they will not be pushed to improve their linguistic skills. Teachers often rely on questions of this nature because their teaching material does not allow for more cognitively demanding questions. In my Chinese language classes, I introduce authentic materials as early as possible. Placing an emphasis on authentic materials at an early stage in the learning process allows the teacher to enter into cognitively stimulating discussions about the target language’s culture with the learners, which will ultimately increase the linguistic competence of the students. This principle is also readily applied to my applied linguistic courses. Future teachers must understand both the basic principles of language teaching concepts, and also how such concepts are applied to multiple contexts with a diverse set of students. To accomplish this goal, I use my classroom time to expand on, rather than simply review, previous reading assignments and explore the pedagogical implications of the SLA theories and concepts covered in the reading. Finally, activities and tasks that ask students to do more than simply reproduce language and concepts can also effectively challenge learners cognitively. When designing activities and tasks, I refer to Bloom’s Taxonomy to ensure that learners will be pushed to apply, analyze, evaluate, and create knowledge. </br></br>
 For learners to succeed in either a foreign language or applied linguistics classroom setting, they must be active and willing participants. This, subsequently, requires that learners feel comfortable asking questions, challenging ideas, and offering opinions. To cultivate a positive classroom community, I not only frequently implement collaborative activities into my lessons but, more importantly, I conduct regular discussions on the value of group work and how to make collaborations more effective. I believe that through group work, students are not only given more opportunities to practice their language skills or explore an SLA concept, but they are also exposed to individuals with diverse thoughts, learning strategies, world views, and academic abilities. This diversity can both facilitate strong communication skills as well as understanding of concepts and skills being taught.</br></br>
 	In sum, it is through careful task designs, the cultivation of collaborative learning environments, and the integration of culture and technology that I strive to foster a classroom in which students can become perpetual learners.
+
+<hr>
+<hr>
