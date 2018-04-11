@@ -49,21 +49,45 @@ This board game was designed for second grade Chinese dual language immersion st
 ```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Board", echo=FALSE}
 knitr::include_graphics("images/board.png")
 ```
-Spread throughout the outer circle of the game, on the tiles, are randomly placed black markers. Each of the black markers represent a baddie (see below). Each of the baddies have a power score (represented by the lightning bolt) and a health score (represented by the heart symbol). Players can choose to fight the baddies by moving their pieces on to a tile with a black marker. 
+Spread throughout the outer circle of the game, on the tiles, are randomly placed black markers. Each of the black markers represent a baddie (see below). Each of the baddies have a power score (represented by a lightning bolt) and a health score (represented by a heart symbol). Players can choose to fight the baddies by moving their pieces on to a tile with a black marker. Battles completed by rolling dice. The power score dictates the number of dice to use and the total number rolled on the dice is the amount subtracted from the health score. After a player attacks the baddie attacks. The game is designed so that players will struggle to bring down a baddie on their own. Players must use Chinese and Math skills to discuss strategies for taking on baddies. 
 </br></br>
 ```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Baddies", echo=FALSE}
 knitr::include_graphics("images/baddies.png")
 ```
+Once a baddie is defeated, players are able to draw a set number of items (depending on the baddie) from the Items deck. Items (see below) can be added to a player's character to increase their own health score and power score.
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Items", echo=FALSE}
+knitr::include_graphics("images/items.png")
+```
+To keep track of items and player scores, players can use the character sheet (see below).
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Items", echo=FALSE}
+knitr::include_graphics("images/charactersheet.png")
+```
+The game ends once players have defeated all baddies on the board. However, the game can continue on by adding more baddies each during each subsequent session. 
 
+####Findings 
+This study was not published as I am currently working on revising the game. In the initial round some groups played the game successfully and engaged in meaningful addition/subtraction in the target language, however other groups struggled with using the character sheet and the many pieces on the board ended up being a distraction. At the moment I am working on turning it into a card game which will eliminate many of the distractions and allow learners to spend more time on the collaborative and educational aspects of the game. 
 
 ###Interactive Fiction Game -- *Adventure Chinese*
-*Coming Soon*
 
-<br>
+Following the board game I developed an HTML based interactive fiction game using <a href="twinery.org">Twine</a>. In the game players are sent on an adventure to stop a villian from world domination by collecting three keys in the wilderness and opening a chest to retreive a magic seed.
+</br></br>
+In the game players start in their home where they can collect items that may or may not be useful on their adventure. One of the items they can collect is a notebook which allows them to look up vocabulary words as they read their stories. However, they can only have ten words in their notebook at one time, so they will be constantly pushed to evauluate their current understanding of the vocabulary in their notebook.
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Items", echo=FALSE}
+knitr::include_graphics("images/sdgHome.png")
+```
+As players travel into the wilderness they come upon animals, people and other things in nature. Depending on the choices they make in each scenario their chances of finding one of the keys increasess or decreases.
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Items", echo=FALSE}
+knitr::include_graphics("images/sdgMount.png")
+```
+Once all three keys have been found the game is complete. The article below has more details concerning the findings in this project. 
 
-<a href="http://itlstest.usu.edu/">Interactive Fiction Game</a>
-
-
+**Poole, F.**, Franco, J., & Clarke-Midura, J. Developing a personalized, educational gaming experience for young Chinese DLI learners: A design-based approach. In R. Zheng (Ed.), *Digital Technologies and Instructional Design for Personalized Learning* (pp. 253-274). IGI Global
+</br>
+</br>
+Click the link below to try the game. 
+</br>
+</br>
+<a href="http://itlstest.usu.edu/">Adventure Chinese Game Game</a>
 </br>
 </br>
 
