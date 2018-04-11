@@ -87,7 +87,7 @@ Once all three keys have been found the game is complete. The article below has 
 Click the link below to try the game. 
 </br>
 </br>
-<a href="http://itlstest.usu.edu/">Adventure Chinese Game Game</a>
+<a href="http://itlstest.usu.edu/">Adventure Chinese Game</a>
 </br>
 </br>
 
