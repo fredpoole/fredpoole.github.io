@@ -347,25 +347,74 @@ div.tocify {
 R Projects
 </center>
 <p><img src="images/Ricon.png" width="100px" height="50px" style="display: block; margin: auto;" /></p>
-<div id="loading-data" class="section level1">
-<h1><span class="header-section-number">1</span> Loading Data</h1>
-<p></br> </br></p>
-<div id="loading-csv-files" class="section level2">
-<h2><span class="header-section-number">1.1</span> Loading CSV Files</h2>
-<p><em>Coming Soon</em></p>
-<p></br> </br></p>
+For the Analysis below I will be using the EGloss data set. This data was collected in 2014 and compares vocabulary learning by second language learners of Chinese when reading via traditional format and a gloss (<a href="http://www.mandarintools.com/dimsum.html" class="uri">http://www.mandarintools.com/dimsum.html</a>). Below is a list of the variables in the data set. </br> </br>
+<ul>
+<li>
+<strong>ID</strong> – This is the unique ID for each student in the data set
+</li>
+<li>
+<strong>Week</strong> – This is the week in which the student did the reading. Students read one reading per week for ten weeks. The first two weeks were used a trial run and thus were not included in this data set.
+</li>
+<li>
+<strong>VocabWords</strong> – Each week the length of reading varied slightly, so this variable counts the number of words in the text read to control for text lenght.
+</li>
+<li>
+<strong>Course</strong> – There were two courses, year one (1020) and year two (2020) Chinese.
+</li>
+<li>
+<strong>Pre_Sum</strong> – This is the total correct score on the pre-vocabuly test. All words have two possible points, one for pinyin and one for the English.
+</li>
+<li>
+<strong>Post_Sum</strong> – This is the total correct score on the post-vocabuly test. All words have two possible points, one for pinyin and one for the English.
+</li>
+<li>
+<strong>RawGain</strong> – This is the gain score that was calculated by subtracting the pre-test scores from the post-test scores.
+</li>
+<li>
+<strong>Per_Pre</strong> – Because each week had a different number of vocabulary words, this is the percentage of correct vocabulary on the pre-test.
+</li>
+<li>
+<strong>Per_Post</strong> –Because each week had a different number of vocabulary words, this is the percentage of correct vocabulary on the post-test.
+</li>
+<li>
+<strong>Per_Gain</strong> – This is the percentage of vocabulary gained after each reading each week.
+</li>
+</ul>
+<p>For more information about this data set please see the following article: 2016 – <strong>Poole, F.</strong>, &amp; Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. <em>Journal of Chinese Language Teachers Association</em>. 51(3), 266–285.</p>
+<pre><code>## # A tibble: 15 x 11
+##       ID  Week Format VocabWords Course Pre_Sum Post_Sum RawGain   Per_Pre
+##    &lt;chr&gt; &lt;dbl&gt;  &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+##  1 10203     3      G         44   1020    46.0     58.5    12.5 0.5227273
+##  2 10203     5      G         38   1020    41.5     51.5    10.0 0.5460526
+##  3 10203     7      G         38   1020    39.5     46.0     6.5 0.5197368
+##  4 10203     9      G         38   1020    33.0     39.5     6.5 0.4342105
+##  5 10203     4      T         37   1020    52.0     53.0     1.0 0.7027027
+##  6 10203     6      T         38   1020    28.0     42.0    14.0 0.3684211
+##  7 10203     8      T         38   1020    31.5     41.0     9.5 0.4144737
+##  8 10203    10      T         26   1020    18.0     35.5    17.5 0.3461538
+##  9 10202     4      G         37   1020    52.5     65.0    12.5 0.7094595
+## 10 10202     6      G         38   1020    29.0     45.5    16.5 0.3815789
+## 11 10202     8      G         38   1020    27.5     41.5    14.0 0.3618421
+## 12 10202    10      G         26   1020    22.0     29.0     7.0 0.4230769
+## 13 10202     3      T         44   1020    30.0     59.5    29.5 0.3409091
+## 14 10202     5      T         38   1020    40.0     51.0    11.0 0.5263158
+## 15 10202     7      T         38   1020    37.5     50.0    12.5 0.4934211
+## # ... with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
+<div id="download-r-and-rstudio" class="section level1">
+<h1><span class="header-section-number">1</span> Download R and Rstudio</h1>
+<ol style="list-style-type: decimal">
+<li><a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></li>
+<li><a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a></li>
+</ol>
 </div>
-<div id="loading-spss-files" class="section level2">
-<h2><span class="header-section-number">1.2</span> Loading SPSS Files</h2>
+<div id="create-a-project" class="section level1">
+<h1><span class="header-section-number">2</span> Create a Project</h1>
+<p><em>coming soon</em> <img src="images/newProject.png" width="300px" height="300px" style="display: block; margin: auto;" /> #Loading Data <em>coming soon</em> install.packages(“readxl”)</p>
+<pre class="r"><code>library(readxl)
+gloss &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code></pre>
 <p></br> </br></p>
-</div>
-<div id="loading-excel-files" class="section level2">
-<h2><span class="header-section-number">1.3</span> Loading Excel Files</h2>
-<p><em>Coming Soon</em></p>
-<p></br> </br></p>
-</div>
 <div id="renaming-your-files" class="section level2">
-<h2><span class="header-section-number">1.4</span> Renaming your Files</h2>
+<h2><span class="header-section-number">2.1</span> Renaming your Files</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>
@@ -373,35 +422,35 @@ R Projects
 </div>
 </div>
 <div id="transorming-data" class="section level1">
-<h1><span class="header-section-number">2</span> Transorming Data</h1>
+<h1><span class="header-section-number">3</span> Transorming Data</h1>
 <p></br> </br></p>
 <div id="creating-new-varibles" class="section level2">
-<h2><span class="header-section-number">2.1</span> Creating New Varibles</h2>
+<h2><span class="header-section-number">3.1</span> Creating New Varibles</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="combining-variables-to-make-a-new-variable" class="section level2">
-<h2><span class="header-section-number">2.2</span> Combining Variables to Make a new Variable</h2>
+<h2><span class="header-section-number">3.2</span> Combining Variables to Make a new Variable</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="renaming-your-variables" class="section level2">
-<h2><span class="header-section-number">2.3</span> Renaming your Variables</h2>
+<h2><span class="header-section-number">3.3</span> Renaming your Variables</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="complete-cases" class="section level2">
-<h2><span class="header-section-number">2.4</span> Complete Cases</h2>
+<h2><span class="header-section-number">3.4</span> Complete Cases</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="subsetting-data" class="section level2">
-<h2><span class="header-section-number">2.5</span> Subsetting Data</h2>
+<h2><span class="header-section-number">3.5</span> Subsetting Data</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="transform-wide-to-long" class="section level2">
-<h2><span class="header-section-number">2.6</span> Transform Wide to Long</h2>
+<h2><span class="header-section-number">3.6</span> Transform Wide to Long</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>
@@ -409,25 +458,25 @@ R Projects
 </div>
 </div>
 <div id="running-descriptives" class="section level1">
-<h1><span class="header-section-number">3</span> Running Descriptives</h1>
+<h1><span class="header-section-number">4</span> Running Descriptives</h1>
 <p><em>Coming Soon</em> </br> </br></p>
 <div id="base-descriptive-packages" class="section level2">
-<h2><span class="header-section-number">3.1</span> Base Descriptive Packages</h2>
+<h2><span class="header-section-number">4.1</span> Base Descriptive Packages</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="using-tapply-and-sapply-to-get-specific-descriptives" class="section level2">
-<h2><span class="header-section-number">3.2</span> Using Tapply and Sapply to get specific descriptives</h2>
+<h2><span class="header-section-number">4.2</span> Using Tapply and Sapply to get specific descriptives</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="displaying-descriptives" class="section level2">
-<h2><span class="header-section-number">3.3</span> Displaying Descriptives</h2>
+<h2><span class="header-section-number">4.3</span> Displaying Descriptives</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="printing-descriptives-and-saving-files" class="section level2">
-<h2><span class="header-section-number">3.4</span> Printing Descriptives and Saving Files</h2>
+<h2><span class="header-section-number">4.4</span> Printing Descriptives and Saving Files</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>
@@ -435,40 +484,40 @@ R Projects
 </div>
 </div>
 <div id="simple-parametric-tests" class="section level1">
-<h1><span class="header-section-number">4</span> Simple Parametric Tests</h1>
+<h1><span class="header-section-number">5</span> Simple Parametric Tests</h1>
 <p></br> </br></p>
 <div id="t-tests" class="section level2">
-<h2><span class="header-section-number">4.1</span> T-Tests</h2>
+<h2><span class="header-section-number">5.1</span> T-Tests</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="anova" class="section level2">
-<h2><span class="header-section-number">4.2</span> ANOVA</h2>
+<h2><span class="header-section-number">5.2</span> ANOVA</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="chi-square-tests" class="section level2">
-<h2><span class="header-section-number">4.3</span> Chi-Square Tests</h2>
+<h2><span class="header-section-number">5.3</span> Chi-Square Tests</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="regressions" class="section level2">
-<h2><span class="header-section-number">4.4</span> Regressions</h2>
+<h2><span class="header-section-number">5.4</span> Regressions</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="effect-size" class="section level2">
-<h2><span class="header-section-number">4.5</span> Effect Size</h2>
+<h2><span class="header-section-number">5.5</span> Effect Size</h2>
 <em>Coming Soon</em> </br> </br>
 <hr>
 <hr>
 </div>
 </div>
 <div id="simple-non-parametric-tests" class="section level1">
-<h1><span class="header-section-number">5</span> Simple Non-Parametric Tests</h1>
+<h1><span class="header-section-number">6</span> Simple Non-Parametric Tests</h1>
 <p></br> </br></p>
 <div id="wilcoxon-signed-rank-test" class="section level2">
-<h2><span class="header-section-number">5.1</span> Wilcoxon-Signed Rank Test</h2>
+<h2><span class="header-section-number">6.1</span> Wilcoxon-Signed Rank Test</h2>
 <p><em>Coming Soon</em></p>
 </br> </br>
 <hr>
@@ -476,25 +525,25 @@ R Projects
 </div>
 </div>
 <div id="basic-graphs" class="section level1">
-<h1><span class="header-section-number">6</span> Basic Graphs</h1>
+<h1><span class="header-section-number">7</span> Basic Graphs</h1>
 <p></br> </br></p>
 <div id="bar-graphs" class="section level2">
-<h2><span class="header-section-number">6.1</span> Bar Graphs</h2>
+<h2><span class="header-section-number">7.1</span> Bar Graphs</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="box-plots" class="section level2">
-<h2><span class="header-section-number">6.2</span> Box Plots</h2>
+<h2><span class="header-section-number">7.2</span> Box Plots</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="linear-plots" class="section level2">
-<h2><span class="header-section-number">6.3</span> Linear Plots</h2>
+<h2><span class="header-section-number">7.3</span> Linear Plots</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="customizing-basic-plots" class="section level2">
-<h2><span class="header-section-number">6.4</span> Customizing Basic Plots</h2>
+<h2><span class="header-section-number">7.4</span> Customizing Basic Plots</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>
@@ -502,26 +551,26 @@ R Projects
 </div>
 </div>
 <div id="ggplot-graphs" class="section level1">
-<h1><span class="header-section-number">7</span> GGPLOT Graphs</h1>
+<h1><span class="header-section-number">8</span> GGPLOT Graphs</h1>
 </br>
 <hr>
 <hr>
 </div>
 <div id="multivariate-analysis" class="section level1">
-<h1><span class="header-section-number">8</span> Multivariate Analysis</h1>
+<h1><span class="header-section-number">9</span> Multivariate Analysis</h1>
 <p></br> </br></p>
 <div id="path-models" class="section level2">
-<h2><span class="header-section-number">8.1</span> Path Models</h2>
+<h2><span class="header-section-number">9.1</span> Path Models</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="cluster-analysis" class="section level2">
-<h2><span class="header-section-number">8.2</span> Cluster Analysis</h2>
+<h2><span class="header-section-number">9.2</span> Cluster Analysis</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="cart-analysis" class="section level2">
-<h2><span class="header-section-number">8.3</span> CART Analysis</h2>
+<h2><span class="header-section-number">9.3</span> CART Analysis</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>

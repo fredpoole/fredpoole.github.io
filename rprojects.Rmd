@@ -26,30 +26,51 @@ output:
 knitr::include_graphics("images/Ricon.png")
 ```
 
+For the Analysis below I will be using the EGloss data set. This data was collected in 2014 and compares vocabulary learning by second language learners of Chinese when reading via traditional format and a gloss (http://www.mandarintools.com/dimsum.html). Below is a list of the variables in the data set. 
+</br>
+</br>
+<ul>
+<li>**ID** -- This is the unique ID for each student in the data set </li>
+<li>**Week** -- This is the week in which the student did the reading. Students read one reading per week for ten weeks. The first two weeks were used a trial run and thus were not included in this data set. </li>
+<li>**VocabWords** -- Each week the length of reading varied slightly, so this variable counts the number of words in the text read to control for text lenght.</li>
+<li> **Course** -- There were two courses, year one (1020) and year two (2020) Chinese. </li>
+<li> **Pre_Sum** -- This is the total correct score on the pre-vocabuly test. All words have two possible points, one for pinyin and one for the English. </li>
+<li> **Post_Sum** -- This is the total correct score on the post-vocabuly test. All words have two possible points, one for pinyin and one for the English.</li>
+<li> **RawGain** -- This is the gain score that was calculated by subtracting the pre-test scores from the post-test scores.</li>
+<li> **Per_Pre** -- Because each week had a different number of vocabulary words, this is the percentage of correct vocabulary on the pre-test.</li>
+<li> **Per_Post** --Because each week had a different number of vocabulary words, this is the percentage of correct vocabulary on the post-test.</li>
+<li> **Per_Gain** -- This is the percentage of vocabulary gained after each reading each week. </li>
+</ul>
+
+For more information about this data set please see the following article:
+2016 --	**Poole, F.**, & Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. *Journal of Chinese Language Teachers Association*. 51(3), 266–285.
+
+```{r echo=FALSE, warning=FALSE}
+library(readxl)
+gloss <- read_excel("eGlossData.xlsx", 
+    col_types = c("text", "numeric", "text", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric"))
+head(gloss,n=15)
+```
+
+#Download R and Rstudio
+1.   https://www.r-project.org/
+2.   https://www.rstudio.com/ 
+
+#Create a Project
+*coming soon*
+```{r, fig.align='center',out.width = "300px",out.height="300px", echo=FALSE}
+knitr::include_graphics("images/newProject.png")
+```
 #Loading Data
-
-</br>
-</br>
-
-##Loading CSV Files
-*Coming Soon*
-```{r}
-
-```
-</br>
-</br>
-
-##Loading SPSS Files
+*coming soon*
+install.packages("readxl")
 
 ```{r}
-
-```
-</br>
-</br>
-
-##Loading Excel Files
-*Coming Soon*
-```{r}
+library(readxl)
+gloss <- read_excel("eGlossData.xlsx")
 
 ```
 </br>
