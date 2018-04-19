@@ -9,7 +9,6 @@ output:
     toc_float:
       collapsed: false
       smooth_scroll: false
-      
 ---
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116712862-1"></script>

@@ -347,6 +347,7 @@ div.tocify {
 R Projects
 </center>
 <p><img src="images/Ricon.png" width="100px" height="50px" style="display: block; margin: auto;" /></p>
+<p>On this page you’ll find a brief introduction to R as well as some examples of the analysis that I have run using R in the last few years.</p>
 For the Analysis below I will be using the EGloss data set. This data was collected in 2014 and compares vocabulary learning by second language learners of Chinese when reading via traditional format and a gloss (<a href="http://www.mandarintools.com/dimsum.html" class="uri">http://www.mandarintools.com/dimsum.html</a>). Below is a list of the variables in the data set. </br> </br>
 <ul>
 <li>
@@ -409,48 +410,59 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 </div>
 <div id="create-a-project" class="section level1">
 <h1><span class="header-section-number">2</span> Create a Project</h1>
-<p><em>coming soon</em> <img src="images/newProject.png" width="300px" height="300px" style="display: block; margin: auto;" /> #Loading Data <em>coming soon</em> install.packages(“readxl”)</p>
+<p>Once you have downloaded R and Rstudio. You should begin by creating a new project in RStudio. You could just simply open R studio and start coding in the console, or create a new script and start coding in the script, but creating a new Project for each data analysis project that you do will save trouble further down the road.</p>
+<p>To start a new project open Rstudio, click File, New Project. The image below should pop up and prompt you to create a new directory or to use an existing directory. I usually just create an empty folder somewhere on my computer and then use select an existing directory.</p>
+<p><img src="images/newProject.png" width="300px" height="300px" style="display: block; margin: auto;" /></p>
+<p>Once you have created a new project you should see a .Rproj file in the folder that you created. In this same folder you will want to drag in whatever data file you are currently using (.csv, .spss, .xsls are all suitable among others). By creating a project and adding your data file to the folder you will a) save yourself time when importing the file into your project because you won’t have to add a long path file to your code, and b) you will make your life easier when you have to return to your analysis five months after you already completed it. More on this later.</p>
+</div>
+<div id="loading-data" class="section level1">
+<h1><span class="header-section-number">3</span> Loading Data</h1>
+<p>When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you’ll need to run the following code in the console: <code>install.packages(&quot;readxl&quot;)</code> <strong>(Don’t forget to add the parentheses when installing a package…loading a library does not use parentheses)</strong>. After you have installed it once, you can simply recall the package by running <code>library(readxl)</code>. Below are list of the packages that are needed for each file type.</p>
+<p><strong>.csv files</strong> – <code>No Package Needed</code> – <code>df &lt;- read.table(&quot;eGloss.csv&quot;, header=TRUE, sep=&quot;,&quot;)</code> </br> <strong>.xlsx files</strong> – <code>library(readxl)</code> – <code>df &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code> </br> <strong>.spss files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sav(eGlossData.spss)</code> </br> <strong>.sas files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sas(eGlossData.sas)</code> </br></p>
+<p>For this project I’ll be uploading the following excel file. <em>Remember if you create a project and add the file to the same folder as your project, you don’t need to worry about specifying the path ofthe file.</em></p>
 <pre class="r"><code>library(readxl)
-gloss &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code></pre>
+eGlossData &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code></pre>
 <p></br> </br></p>
-<div id="renaming-your-files" class="section level2">
-<h2><span class="header-section-number">2.1</span> Renaming your Files</h2>
-<p><em>Coming Soon</em></p>
-</br>
+<div id="renaming-your-data" class="section level2">
+<h2><span class="header-section-number">3.1</span> Renaming your Data</h2>
+<p>Now that I have my data uploaded, I need to rename it. Renamining your data to something simple and generic can be very useful in R. First, if you keep the name <code>eGlossData</code>, then everytime you want to run an analysis or use a variable from this data set you’ll need to either use <code>attach()</code> and <code>detach()</code> functions, or you’ll need to type out the entire name. It doesn’t seem like a long name now, but after you type it out 100 times, you’ll wish you had a smaller name. Secondly, if you use a generic name like <code>df</code> (data frame) and if you save your code into a script within your project, then the next time you want to run your script with say another data set, you’ll just need to rename your new data set to <code>df</code> and then all of your code should run smoothly… provided that the data is in a similar format.</p>
+<p>Renaming data sets in R is pretty simple. See code below.</p>
+<pre class="r"><code>df &lt;- eGlossData</code></pre>
+Voilà, my data set is now called <code>df</code>. </br>
 <hr>
 <hr>
 </div>
 </div>
 <div id="transorming-data" class="section level1">
-<h1><span class="header-section-number">3</span> Transorming Data</h1>
+<h1><span class="header-section-number">4</span> Transorming Data</h1>
 <p></br> </br></p>
 <div id="creating-new-varibles" class="section level2">
-<h2><span class="header-section-number">3.1</span> Creating New Varibles</h2>
+<h2><span class="header-section-number">4.1</span> Creating New Varibles</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="combining-variables-to-make-a-new-variable" class="section level2">
-<h2><span class="header-section-number">3.2</span> Combining Variables to Make a new Variable</h2>
+<h2><span class="header-section-number">4.2</span> Combining Variables to Make a new Variable</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="renaming-your-variables" class="section level2">
-<h2><span class="header-section-number">3.3</span> Renaming your Variables</h2>
+<h2><span class="header-section-number">4.3</span> Renaming your Variables</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="complete-cases" class="section level2">
-<h2><span class="header-section-number">3.4</span> Complete Cases</h2>
+<h2><span class="header-section-number">4.4</span> Complete Cases</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="subsetting-data" class="section level2">
-<h2><span class="header-section-number">3.5</span> Subsetting Data</h2>
+<h2><span class="header-section-number">4.5</span> Subsetting Data</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="transform-wide-to-long" class="section level2">
-<h2><span class="header-section-number">3.6</span> Transform Wide to Long</h2>
+<h2><span class="header-section-number">4.6</span> Transform Wide to Long</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>
@@ -458,25 +470,25 @@ gloss &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code></pre>
 </div>
 </div>
 <div id="running-descriptives" class="section level1">
-<h1><span class="header-section-number">4</span> Running Descriptives</h1>
+<h1><span class="header-section-number">5</span> Running Descriptives</h1>
 <p><em>Coming Soon</em> </br> </br></p>
 <div id="base-descriptive-packages" class="section level2">
-<h2><span class="header-section-number">4.1</span> Base Descriptive Packages</h2>
+<h2><span class="header-section-number">5.1</span> Base Descriptive Packages</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="using-tapply-and-sapply-to-get-specific-descriptives" class="section level2">
-<h2><span class="header-section-number">4.2</span> Using Tapply and Sapply to get specific descriptives</h2>
+<h2><span class="header-section-number">5.2</span> Using Tapply and Sapply to get specific descriptives</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="displaying-descriptives" class="section level2">
-<h2><span class="header-section-number">4.3</span> Displaying Descriptives</h2>
+<h2><span class="header-section-number">5.3</span> Displaying Descriptives</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="printing-descriptives-and-saving-files" class="section level2">
-<h2><span class="header-section-number">4.4</span> Printing Descriptives and Saving Files</h2>
+<h2><span class="header-section-number">5.4</span> Printing Descriptives and Saving Files</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>
@@ -484,40 +496,40 @@ gloss &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code></pre>
 </div>
 </div>
 <div id="simple-parametric-tests" class="section level1">
-<h1><span class="header-section-number">5</span> Simple Parametric Tests</h1>
+<h1><span class="header-section-number">6</span> Simple Parametric Tests</h1>
 <p></br> </br></p>
 <div id="t-tests" class="section level2">
-<h2><span class="header-section-number">5.1</span> T-Tests</h2>
+<h2><span class="header-section-number">6.1</span> T-Tests</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="anova" class="section level2">
-<h2><span class="header-section-number">5.2</span> ANOVA</h2>
+<h2><span class="header-section-number">6.2</span> ANOVA</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="chi-square-tests" class="section level2">
-<h2><span class="header-section-number">5.3</span> Chi-Square Tests</h2>
+<h2><span class="header-section-number">6.3</span> Chi-Square Tests</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="regressions" class="section level2">
-<h2><span class="header-section-number">5.4</span> Regressions</h2>
+<h2><span class="header-section-number">6.4</span> Regressions</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="effect-size" class="section level2">
-<h2><span class="header-section-number">5.5</span> Effect Size</h2>
+<h2><span class="header-section-number">6.5</span> Effect Size</h2>
 <em>Coming Soon</em> </br> </br>
 <hr>
 <hr>
 </div>
 </div>
 <div id="simple-non-parametric-tests" class="section level1">
-<h1><span class="header-section-number">6</span> Simple Non-Parametric Tests</h1>
+<h1><span class="header-section-number">7</span> Simple Non-Parametric Tests</h1>
 <p></br> </br></p>
 <div id="wilcoxon-signed-rank-test" class="section level2">
-<h2><span class="header-section-number">6.1</span> Wilcoxon-Signed Rank Test</h2>
+<h2><span class="header-section-number">7.1</span> Wilcoxon-Signed Rank Test</h2>
 <p><em>Coming Soon</em></p>
 </br> </br>
 <hr>
@@ -525,25 +537,25 @@ gloss &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code></pre>
 </div>
 </div>
 <div id="basic-graphs" class="section level1">
-<h1><span class="header-section-number">7</span> Basic Graphs</h1>
+<h1><span class="header-section-number">8</span> Basic Graphs</h1>
 <p></br> </br></p>
 <div id="bar-graphs" class="section level2">
-<h2><span class="header-section-number">7.1</span> Bar Graphs</h2>
+<h2><span class="header-section-number">8.1</span> Bar Graphs</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="box-plots" class="section level2">
-<h2><span class="header-section-number">7.2</span> Box Plots</h2>
+<h2><span class="header-section-number">8.2</span> Box Plots</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="linear-plots" class="section level2">
-<h2><span class="header-section-number">7.3</span> Linear Plots</h2>
+<h2><span class="header-section-number">8.3</span> Linear Plots</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="customizing-basic-plots" class="section level2">
-<h2><span class="header-section-number">7.4</span> Customizing Basic Plots</h2>
+<h2><span class="header-section-number">8.4</span> Customizing Basic Plots</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>
@@ -551,26 +563,26 @@ gloss &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code></pre>
 </div>
 </div>
 <div id="ggplot-graphs" class="section level1">
-<h1><span class="header-section-number">8</span> GGPLOT Graphs</h1>
+<h1><span class="header-section-number">9</span> GGPLOT Graphs</h1>
 </br>
 <hr>
 <hr>
 </div>
 <div id="multivariate-analysis" class="section level1">
-<h1><span class="header-section-number">9</span> Multivariate Analysis</h1>
+<h1><span class="header-section-number">10</span> Multivariate Analysis</h1>
 <p></br> </br></p>
 <div id="path-models" class="section level2">
-<h2><span class="header-section-number">9.1</span> Path Models</h2>
+<h2><span class="header-section-number">10.1</span> Path Models</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="cluster-analysis" class="section level2">
-<h2><span class="header-section-number">9.2</span> Cluster Analysis</h2>
+<h2><span class="header-section-number">10.2</span> Cluster Analysis</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="cart-analysis" class="section level2">
-<h2><span class="header-section-number">9.3</span> CART Analysis</h2>
+<h2><span class="header-section-number">10.3</span> CART Analysis</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>

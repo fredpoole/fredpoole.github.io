@@ -26,6 +26,8 @@ output:
 knitr::include_graphics("images/Ricon.png")
 ```
 
+On this page you'll find a brief introduction to R as well as some examples of the analysis that I have run using R in the last few years. 
+
 For the Analysis below I will be using the EGloss data set. This data was collected in 2014 and compares vocabulary learning by second language learners of Chinese when reading via traditional format and a gloss (http://www.mandarintools.com/dimsum.html). Below is a list of the variables in the data set. 
 </br>
 </br>
@@ -60,28 +62,45 @@ head(gloss,n=15)
 2.   https://www.rstudio.com/ 
 
 #Create a Project
-*coming soon*
+Once you have downloaded R and Rstudio. You should begin by creating a new project in RStudio. You could just simply open R studio and start coding in the console, or create a new script and start coding in the script, but creating a new Project for each data analysis project that you do will save trouble further down the road. 
+
+To start a new project open Rstudio, click File, New Project. The image below should pop up and prompt you to create a new directory or to use an existing directory. I usually just create an empty folder somewhere on my computer and then use select an existing directory. 
+
 ```{r, fig.align='center',out.width = "300px",out.height="300px", echo=FALSE}
 knitr::include_graphics("images/newProject.png")
 ```
-#Loading Data
-*coming soon*
-install.packages("readxl")
 
+Once you have created a new project you should see a .Rproj file in the folder that you created. In this same folder you will want to drag in whatever data file you are currently using (.csv, .spss, .xsls are all suitable among others). By creating a project and adding your data file to the folder you will a) save yourself time when importing the file into your project because you won't have to add a long path file to your code, and b) you will make your life easier when you have to return to your analysis five months after you already completed it. More on this later. 
+
+#Loading Data
+When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you'll need to run the following code in the console: `install.packages("readxl")` **(Don't forget to add the parentheses when installing a package...loading a library does not use parentheses)**. After you have installed it once, you can simply recall the package by running `library(readxl)`. Below are list of the packages that are needed for each file type. 
+
+**.csv files** -- `No Package Needed` -- `df <- read.table("eGloss.csv", header=TRUE, sep=",")`
+</br>
+**.xlsx files** -- `library(readxl)` -- `df <- read_excel("eGlossData.xlsx")`
+</br>
+**.spss files** -- `library(haven)` -- `df <- read_sav(eGlossData.spss)`
+</br>
+**.sas files** -- `library(haven)` -- `df <- read_sas(eGlossData.sas)`
+</br>
+
+For this project I'll be uploading the following excel file. *Remember if you create a project and add the file to the same folder as your project, you don't need to worry about specifying the path ofthe file.*
 ```{r}
 library(readxl)
-gloss <- read_excel("eGlossData.xlsx")
-
+eGlossData <- read_excel("eGlossData.xlsx")
 ```
 </br>
 </br>
 
-##Renaming your Files
-*Coming Soon*
+##Renaming your Data
+Now that I have my data uploaded, I need to rename it. Renamining your data to something simple and generic can be very useful in R. First, if you keep the name `eGlossData`, then everytime you want to run an analysis or use a variable from this data set you'll need to either use `attach()` and `detach()` functions, or you'll need to type out the entire name. It doesn't seem like a long name now, but after you type it out 100 times, you'll wish you had a smaller name. Secondly, if you use a generic name like `df` (data frame) and if you save your code into a script within your project, then the next time you want to run your script with say another data set, you'll just need to rename your new data set to `df` and then all of your code should run smoothly... provided that the data is in a similar format. 
+
+Renaming data sets in R is pretty simple. See code below. 
+
 ```{r}
-
+df <- eGlossData
 ```
-
+Voilà, my data set is now called `df`. 
 </br>
 <hr>
 <hr>
