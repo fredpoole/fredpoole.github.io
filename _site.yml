@@ -1,25 +1,29 @@
-name: "Fred Poole"
-output_dir: "."
+name: Fred Poole
+output_dir: '.'
 output:
   html_document:
     theme: flatly
+    css: custom.css
     include:
       after_body: footer.html
+    lib_dir: site_libs
+    self_contained: no
 navbar:
-  title: ""
+  title: ''
   left:
-    - text: "Home"
-      icon: fa-home
-      href: index.html
-    - text: "CV"
-      icon: ion-ios-paper
-      href: cv.html
-    - text: "Research"
-      icon: ion-ios-search
-      href: research.html
-    - text: "Teaching Languages"
-      icon: fa-language
-      href: teachLang.html
-    - text: "R Projects"
-      icon: ion-stats-bars
-      href: rprojects.html
+  - text: Home
+    icon: fa-home
+    href: index.html
+  - text: CV
+    icon: ion-ios-paper
+    href: cv.html
+  - text: Research
+    icon: ion-ios-search
+    href: research.html
+  - text: Teaching Languages
+    icon: fa-language
+    href: teachLang.html
+  - text: R Projects
+    icon: ion-stats-bars
+    href: rprojects.html
+

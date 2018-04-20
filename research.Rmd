@@ -91,12 +91,37 @@ Click the link below to try the game. *For best results open the game using Fire
 </br>
 
 ##Reading in Digital, Collaborative Environments
-*Coming Soon*
+In the last few years I have collaborated with <a href="https://lpcs.usu.edu/directory/faculty/thoms-joshua">Dr. Joshua Thoms</a> and <a href="https://lpcs.usu.edu/directory/faculty/sung-ko-yin">Dr. Ko-Yin Sung</a>, to explore the affordances and pedagogical implications of reading in a digital, collaborative environment. 
+
+In our first project we used eComma in a first-year Chinese course. See the article below for more information. 
+</br>
+2017 --	Thoms, J., Sung, K. Y., & **Poole, F.** Investigating the linguistic and pedagogical affordances of an L2 open reading environment via eComma: An exploratory study in a Chinese language course.
+</br>
+</br>
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="eComma Environment", echo=FALSE}
+knitr::include_graphics("images/eComma.png")
+```
+</br>
+</br>
+Dr. Joshua Thoms and I have conducted some additional studies using the Hylighter Environment with an Advanced Spanish Poetry class. See the articles below for more information. 
+</br>
+</br>
+Forthcoming -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue).
+</br>
+</br>
+Thoms, J., & **Poole, F.** Investigating linguistic, literary, and social affordances of L2 collaborative reading. *Language Learning & Technology*, 21(2), 139–156.
+</br>
+</br>
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Hylighter Environment", echo=FALSE}
+knitr::include_graphics("images/hylighter.png")
+```
+
 </br>
 </br>
 
 ##Using We Chat in the Chinese L2 Classroom
-*Coming Soon*
+
+
 </br>
 </br>
 
