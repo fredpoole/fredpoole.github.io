@@ -1,5 +1,5 @@
 ---
-title: ""
+title: "Research"
 output:
   html_document:
     toc: true
@@ -20,16 +20,16 @@ output:
   gtag('config', 'UA-116712862-1');
 </script>
 
-#Second Language Teaching and Learning Research
+
 
 </br>
-```{r, fig.align='center',out.width = "100px",out.height="50px", echo=FALSE}
-knitr::include_graphics("images/researchIcon.png")
+```{r, fig.align='center',out.width = "600px",out.height="400px", echo=FALSE}
+knitr::include_graphics("images/iconFred2.png")
 ```
 
 <hr>
 <hr>
-
+#Second Language Teaching and Learning Research
 ##Gaming in the Chinese Dual Language Immersion Classroom
 
 </br>
