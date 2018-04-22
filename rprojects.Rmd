@@ -58,8 +58,10 @@ head(gloss,n=15)
 ```
 
 #Download R and Rstudio
-1.   https://www.r-project.org/
-2.   https://www.rstudio.com/ 
+1.<a href="https://www.r-project.org/" class="button">Download R</a>
+</br>
+</br>
+2.<a href="https://www.rstudio.com/ " class="button">Download R Studio</a>
 
 #Create a Project
 Once you have downloaded R and Rstudio. You should begin by creating a new project in RStudio. You could just simply open R studio and start coding in the console, or create a new script and start coding in the script, but creating a new Project for each data analysis project that you do will save trouble further down the road. 
@@ -73,7 +75,7 @@ knitr::include_graphics("images/newProject.png")
 Once you have created a new project you should see a .Rproj file in the folder that you created. In this same folder you will want to drag in whatever data file you are currently using (.csv, .spss, .xsls are all suitable among others). By creating a project and adding your data file to the folder you will a) save yourself time when importing the file into your project because you won't have to add a long path file to your code, and b) you will make your life easier when you have to return to your analysis five months after you already completed it. More on this later. 
 
 #Loading Data
-When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you'll need to run the following code in the console: `install.packages("readxl")` **(Don't forget to add the parentheses when installing a package...loading a library does not use parentheses)**. After you have installed it once, you can simply recall the package by running `library(readxl)`. Below are list of the packages that are needed for each file type. 
+When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you'll need to run the following code in the console: `install.packages("PackageName")` **(Don't forget to add the parentheses when installing a package...loading a library does not use parentheses)**. After you have installed it once, you can simply recall the package by running `library(PackageName)`. Below are list of the packages that are needed for each file type. 
 
 **.csv files** -- `No Package Needed` -- `df <- read.table("eGloss.csv", header=TRUE, sep=",")`
 </br>

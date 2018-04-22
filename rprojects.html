@@ -404,10 +404,7 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 ## # ... with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <div id="download-r-and-rstudio" class="section level1">
 <h1><span class="header-section-number">1</span> Download R and Rstudio</h1>
-<ol style="list-style-type: decimal">
-<li><a href="https://www.r-project.org/" class="uri">https://www.r-project.org/</a></li>
-<li><a href="https://www.rstudio.com/" class="uri">https://www.rstudio.com/</a></li>
-</ol>
+<p>1.<a href="https://www.r-project.org/" class="button">Download R</a> </br> </br> 2.<a href="https://www.rstudio.com/ " class="button">Download R Studio</a></p>
 </div>
 <div id="create-a-project" class="section level1">
 <h1><span class="header-section-number">2</span> Create a Project</h1>
@@ -418,7 +415,7 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 </div>
 <div id="loading-data" class="section level1">
 <h1><span class="header-section-number">3</span> Loading Data</h1>
-<p>When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you’ll need to run the following code in the console: <code>install.packages(&quot;readxl&quot;)</code> <strong>(Don’t forget to add the parentheses when installing a package…loading a library does not use parentheses)</strong>. After you have installed it once, you can simply recall the package by running <code>library(readxl)</code>. Below are list of the packages that are needed for each file type.</p>
+<p>When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you’ll need to run the following code in the console: <code>install.packages(&quot;PackageName&quot;)</code> <strong>(Don’t forget to add the parentheses when installing a package…loading a library does not use parentheses)</strong>. After you have installed it once, you can simply recall the package by running <code>library(PackageName)</code>. Below are list of the packages that are needed for each file type.</p>
 <p><strong>.csv files</strong> – <code>No Package Needed</code> – <code>df &lt;- read.table(&quot;eGloss.csv&quot;, header=TRUE, sep=&quot;,&quot;)</code> </br> <strong>.xlsx files</strong> – <code>library(readxl)</code> – <code>df &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code> </br> <strong>.spss files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sav(eGlossData.spss)</code> </br> <strong>.sas files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sas(eGlossData.sas)</code> </br></p>
 <p>For this project I’ll be uploading the following excel file. <em>Remember if you create a project and add the file to the same folder as your project, you don’t need to worry about specifying the path ofthe file.</em></p>
 <pre class="r"><code>library(readxl)
