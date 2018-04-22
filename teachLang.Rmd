@@ -21,8 +21,8 @@ output:
 </script>
 <center  style="font-size:40px">Second language Teaching </center>
 
-```{r, fig.align='center',out.width = "400px",out.height="200px", echo=FALSE}
-knitr::include_graphics("images/ideaIcon.png")
+```{r, fig.align='center',out.width = "600px",out.height="400px", echo=FALSE}
+knitr::include_graphics("images/iconFred3.png")
 ```
 
 #Language Teaching Activities
