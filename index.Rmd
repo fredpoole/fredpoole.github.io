@@ -14,6 +14,8 @@ title: ""
 <center  style="font-size:40px">Frederick J Poole </center>
 </br>
 </br>
+
+
 ```{r, fig.align='center',out.width = "600px",out.height="400px", echo=FALSE}
 knitr::include_graphics("images/iconFred.png")
 ```
@@ -25,6 +27,8 @@ knitr::include_graphics("images/iconFred.png")
 ####I am a doctoral student in the Instructional Technology and Learning Sciences department at Utah State University specializing in second language teaching and learning. My research interests include digital game-based language learning, online collaborative reading environments, and developing L2 literacy in dual language immersion programs. 
 <hr>
 <hr>
-<a class="twitter-timeline" href="https://twitter.com/frdbrick?ref_src=twsrc%5Etfw">Tweets by frdbrick</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" href="https://twitter.com/frdbrick?ref_src=twsrc%5Etfw" data-chrome="nofooter noborders" 
+data-tweet-limit="2" 
+data-height="250">Tweets by frdbrick</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 <hr>
 <hr>
