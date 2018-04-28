@@ -63,7 +63,7 @@ knitr::include_graphics("images/fred.JPG")
 <li>2018 --	Clarke-Midura, J., **Poole, F.**, Pantic, K., Hamilton, M., Sun, C., & Allan, V. How Near Peer Mentoring Affects Middle School Mentees. *In Proceedings of the 49th ACM Technical Symposium on Computer Science Education* (SIGCSE '18). ACM, New York, NY, USA, 664-669. (Second Best Paper CS Education Research)</li><enter>
 </ol>
 
-<center  style="font-size:20px">WORK IN PROGRESS</center>
+<center  style="font-size:20px">WORKS IN PROGRESS</center>
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol>
 <li>Under Review -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom, *Chinese as a Second Language Research*. </li><enter>
