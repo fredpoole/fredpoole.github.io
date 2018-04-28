@@ -70,9 +70,11 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>Under Review -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*.</li><enter>
 
-<li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
+<li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies.</li><enter>
 
-<li>In Preparation -- **Poole, F.** A systematic review of digital games used in second language studies.</li><enter>
+<li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
+</ol>
+
 
 ####Educational Technology: Journal Articles (refereed)<enter>
 <ol>
@@ -98,7 +100,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>2008 – 2013	English as a Foreign Language (EFL) Teacher, Mercan English School, Taiyuan, China</li><enter>
 
-<li>2007 – 2008	Assistant Dual Language Immersion Teacher (English Teacher), Government of Andalucia, Lora del Río, Seville, Spain</li><enter>
+<li>2007 – 2008	Assistant Dual Language Immersion Teacher (English Teacher), Government of Andalucía, Lora del Río, Seville, Spain</li><enter>
 
 <li>2006	English Teaching Assistant, English Opens Doors Program, Santiago, Chile</li>
 </ul><enter>
