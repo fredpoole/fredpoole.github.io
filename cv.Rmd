@@ -34,7 +34,7 @@ knitr::include_graphics("images/fred.JPG")
 <center  style="font-size:20px">PUBLICATIONS</center>
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol>
-<li>Forthcoming -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue).</li><enter>
+<li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2),Retrieved from https://escholarship.org/uc/item/0fk329vn.</li><enter>
 
 <li>2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .17)</li><enter>
 
