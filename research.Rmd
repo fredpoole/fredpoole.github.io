@@ -1,5 +1,5 @@
 ---
-title: "Research"
+title: "Design"
 output:
   html_document:
     toc: true
@@ -29,7 +29,7 @@ knitr::include_graphics("images/iconFred2.png")
 
 <hr>
 <hr>
-#Second Language Teaching and Learning Research
+#Design Projects
 ##Gaming in the Chinese Dual Language Immersion Classroom
 
 </br>
@@ -68,7 +68,7 @@ This study was not published as I am currently working on revising the game. In 
 
 ###Interactive Fiction Game -- *Adventure Chinese*
 
-Following the board game I developed an HTML based interactive fiction game using <a href="twinery.org">Twine</a>. In the game players are sent on an adventure to stop a villian from world domination by collecting three keys in the wilderness and opening a chest to retreive a magic seed.
+Following the board game I developed an HTML based interactive fiction game using the open source tool <a href="twinery.org">Twine</a>. In the game players are sent on an adventure to stop a villian from world domination by collecting three keys in the wilderness and opening a chest to retreive a magic seed.
 </br></br>
 In the game players start in their home where they can collect items that may or may not be useful on their adventure. One of the items they can collect is a notebook which allows them to look up vocabulary words as they read their stories. However, they can only have ten words in their notebook at one time, so they will be constantly pushed to evauluate their current understanding of the vocabulary in their notebook.
 ```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Items", echo=FALSE}
@@ -81,6 +81,7 @@ knitr::include_graphics("images/sdgMount.png")
 Once all three keys have been found the game is complete. The article below has more details concerning the findings in this project. 
 
 **Poole, F.**, Franco, J., & Clarke-Midura, J. Developing a personalized, educational gaming experience for young Chinese DLI learners: A design-based approach. In R. Zheng (Ed.), *Digital Technologies and Instructional Design for Personalized Learning* (pp. 253-274). IGI Global
+
 </br>
 </br>
 Click the link below to try the game. *For best results open the game using FireFox Web Browser*
