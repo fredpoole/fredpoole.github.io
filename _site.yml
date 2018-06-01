@@ -12,7 +12,7 @@ navbar:
   title: ''
   left:
   - text: Home
-    icon: fa-home
+    icon: fa-gamepad 
     href: index.html
   - text: CV
     icon: ion-ios-paper
@@ -26,4 +26,5 @@ navbar:
   - text: R Projects
     icon: ion-stats-bars
     href: rprojects.html
+
 
