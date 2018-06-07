@@ -75,7 +75,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
-<li>Under Review -- **Poole, F.,**Clarke-Midura, J., & Sun, C. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom.</li><enter>
+<li>In Preparation -- **Poole, F.,**Clarke-Midura, J., & Sun, C. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom.</li><enter>
 </ol>
 
 
