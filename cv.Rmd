@@ -33,7 +33,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">PUBLICATIONS</center>
 ####Second Language Acquisition: Journal Articles (refereed)
-<ol>
+<ol reversed>
 
 <li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2),Retrieved from https://escholarship.org/uc/item/0fk329vn.</li><enter>
 
@@ -52,13 +52,13 @@ knitr::include_graphics("images/fred.JPG")
 <li>2015 -- **Poole, F.**, & Sung, K. Three approaches to beginning Chinese instruction and their effects on oral development and character recognition. *Eurasian Journal of Applied Linguistics*, 1(1), 59–75. </li></ol><enter>
 
 ####Second Language Acquisition: Book Chapters (refereed)<enter>
-<ol>
+<ol reversed>
 <li>2018 -- **Poole, F.**, Franco, J., & Clarke-Midura, J. Developing a personalized, educational gaming experience for young Chinese DLI learners: A design-based approach. In R. Zheng (Ed.), *Digital Technologies and Instructional Design for Personalized Learning* (pp. 253-274). IGI Global</li><enter>
 
 <li>2016 --	Sung, K. Y., & **Poole, F.** Differences between native and non-native Chinese speaking teachers: Voices from overseas students who study Chinese in China. In C. P. Chou & J. Spangler (Eds.) *Chinese Education Models in a Global Age* (pp. 133–147). Springer, Singapore.</li></ol><enter>
 
 ####Educational Technology: Journal Articles (refereed)
-<ol>
+<ol reversed>
 <li>2018 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., & Allan, V. Playing mentor: A new strategy for recruiting young women into computer science. *Journal of Women and Minorities in Science and Engineering*, 23(3). (CiteScore= 1.15)</li><enter>
 
 <li>2018 --	Clarke-Midura, J., **Poole, F.**, Pantic, K., Hamilton, M., Sun, C., & Allan, V. How Near Peer Mentoring Affects Middle School Mentees. *In Proceedings of the 49th ACM Technical Symposium on Computer Science Education* (SIGCSE '18). ACM, New York, NY, USA, 664-669. (Second Best Paper CS Education Research)</li><enter>
@@ -66,7 +66,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
 ####Second Language Acquisition: Journal Articles (refereed)
-<ol>
+<ol reversed>
 <li>Under Review -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom, *Chinese as a Second Language Research*. </li><enter>
 
 <li>Under Review -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*.</li><enter>
@@ -74,11 +74,13 @@ knitr::include_graphics("images/fred.JPG")
 <li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies.</li><enter>
 
 <li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
+
+<li>Under Review -- **Poole, F.,**Clarke-Midura, J., & Sun, C. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom.</li><enter>
 </ol>
 
 
 ####Educational Technology: Journal Articles (refereed)<enter>
-<ol>
+<ol reversed>
 <li>Under Review -- Clarke-Midura, J., **Poole, F.**, Pantic, K., Sun, C., & Allan, V. How mother and father support affect youths’ interest in computer science. </li><enter>
 
 <li>Under Review -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness?</li><enter>
@@ -128,7 +130,7 @@ knitr::include_graphics("images/fred.JPG")
 </ul>
 
 <center  style="font-size:20px">CONFERENCE PRESENTATIONS</center><enter>
-<ol>
+<ol reversed>
 <li>2018 -- Interactive Stories with Twine. *Computer Assisted Language Instruction Consortium (CALICO) Conference*, Urbana-Champaign, IL. </li><enter>
 
 <li>2018 -- Using digital games in the language classroom. *Utah Foreign Language Teaching	Association (UFLA) Conference*, Ogden, UT.</li><enter>
@@ -171,7 +173,7 @@ knitr::include_graphics("images/fred.JPG")
 </ul>
 
 <center  style="font-size:20px">AWARDS & GRANTS</center><enter>
-<ol>
+<ol reversed>
 <li>2018 -- Doctoral Student Researcher of the Year, Department of Instructional Technology and Learning Sciences, Utah State University</li><enter>
 
 <li>2017 -- Graduate Enhancement Award (Awarded $4,000), Utah State University</li><enter>
