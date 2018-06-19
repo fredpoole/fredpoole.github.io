@@ -69,13 +69,13 @@ knitr::include_graphics("images/fred.JPG")
 <ol reversed>
 <li>Under Review -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom, *Chinese as a Second Language Research*. </li><enter>
 
-<li>Under Review -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*.</li><enter>
+<li>Forthcoming -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*.</li><enter>
 
 <li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies.</li><enter>
 
 <li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
-<li>In Preparation -- **Poole, F.,**Clarke-Midura, J., & Sun, C. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom.</li><enter>
+<li>In Preparation -- **Poole, F.,** Clarke-Midura, J., & Sun, C. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom.</li><enter>
 </ol>
 
 
