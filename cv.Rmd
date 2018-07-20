@@ -71,7 +71,7 @@ knitr::include_graphics("images/fred.JPG")
 <ol reversed>
 <li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies.</li><enter>
 
-<li>In Preparation -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom, *Chinese as a Second Language Research*. </li><enter>
+<li>In Preparation -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. </li><enter>
 
 <li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
