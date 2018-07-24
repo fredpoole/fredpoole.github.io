@@ -211,7 +211,7 @@ knitr::include_graphics("images/fred.JPG")
 <center  style="font-size:20px">LANGUAGES</center><enter>
 <ul>
 <li>English – Native </li><enter>
-<li>Chinese (Mandarin) – Near native </li><enter>
+<li>Chinese (Mandarin) – Near-native </li><enter>
 <li>Spanish – Advanced </li><enter>
 </ul>
 <hr>
