@@ -87,9 +87,16 @@ When loading data into R you will often need to use a package for files other th
 </br>
 
 For this project I'll be uploading the following excel file. *Remember if you create a project and add the file to the same folder as your project, you don't need to worry about specifying the path ofthe file.*
-```{r}
+
+The code `col_types` identifies the type of variable that each column is. So column one is a text variable, two is a numeric and so on.
+```{r echo=FALSE, warning=FALSE}
 library(readxl)
-eGlossData <- read_excel("eGlossData.xlsx")
+gloss <- read_excel("eGlossData.xlsx", 
+    col_types = c("text", "numeric", "text", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric", "numeric", 
+        "numeric", "numeric"))
+head(gloss,n=15)
 ```
 </br>
 </br>
@@ -100,7 +107,7 @@ Now that I have my data uploaded, I need to rename it. Renamining your data to s
 Renaming data sets in R is pretty simple. See code below. 
 
 ```{r}
-df <- eGlossData
+df <- gloss
 ```
 Voilà, my data set is now called `df`. 
 </br>
@@ -113,16 +120,29 @@ Voilà, my data set is now called `df`.
 </br>
 
 ##Creating New Varibles
-*Coming Soon*
-```{r}
+In the this data set we already have a variable called "RawGain." But to practice we are going to create another variable simply called gain to show a) how to create new variables and b) how to do simple arithmetic in R. 
 
+To create a new variable simple use the `$` after your data set, and then type in a variable that is not currently in your data set. Then use the arror `<-` to define what will be stored in the variable. See example below.
+```{r}
+df$gain <- df$Post_Sum - df$Pre_Sum
+```
+To check our answer we will look at the first 15 cases of each variable using the `head` command.
+
+```{r}
+head(df$RawGain, n=15)
+```
+
+```{r}
+head(df$gain, n=15)
 ```
 </br>
 </br>
 
-##Combining Variables to Make a new Variable
-*Coming Soon*
+##Impute Missing Data
+
 ```{r}
+library(mice)
+md.pattern(df)
 
 ```
 </br>
