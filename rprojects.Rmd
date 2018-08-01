@@ -141,8 +141,7 @@ head(df$gain, n=15)
 ##Impute Missing Data
 
 ```{r}
-library(mice)
-md.pattern(df)
+#Coming soon
 
 ```
 </br>

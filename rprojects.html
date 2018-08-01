@@ -418,14 +418,32 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 <p>When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you’ll need to run the following code in the console: <code>install.packages(&quot;PackageName&quot;)</code> <strong>(Don’t forget to add the parentheses when installing a package…loading a library does not use parentheses)</strong>. After you have installed it once, you can simply recall the package by running <code>library(PackageName)</code>. Below are list of the packages that are needed for each file type.</p>
 <p><strong>.csv files</strong> – <code>No Package Needed</code> – <code>df &lt;- read.table(&quot;eGloss.csv&quot;, header=TRUE, sep=&quot;,&quot;)</code> </br> <strong>.xlsx files</strong> – <code>library(readxl)</code> – <code>df &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code> </br> <strong>.spss files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sav(eGlossData.spss)</code> </br> <strong>.sas files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sas(eGlossData.sas)</code> </br></p>
 <p>For this project I’ll be uploading the following excel file. <em>Remember if you create a project and add the file to the same folder as your project, you don’t need to worry about specifying the path ofthe file.</em></p>
-<pre class="r"><code>library(readxl)
-eGlossData &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code></pre>
+<p>The code <code>col_types</code> identifies the type of variable that each column is. So column one is a text variable, two is a numeric and so on.</p>
+<pre><code>## # A tibble: 15 x 11
+##       ID  Week Format VocabWords Course Pre_Sum Post_Sum RawGain   Per_Pre
+##    &lt;chr&gt; &lt;dbl&gt;  &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+##  1 10203     3      G         44   1020    46.0     58.5    12.5 0.5227273
+##  2 10203     5      G         38   1020    41.5     51.5    10.0 0.5460526
+##  3 10203     7      G         38   1020    39.5     46.0     6.5 0.5197368
+##  4 10203     9      G         38   1020    33.0     39.5     6.5 0.4342105
+##  5 10203     4      T         37   1020    52.0     53.0     1.0 0.7027027
+##  6 10203     6      T         38   1020    28.0     42.0    14.0 0.3684211
+##  7 10203     8      T         38   1020    31.5     41.0     9.5 0.4144737
+##  8 10203    10      T         26   1020    18.0     35.5    17.5 0.3461538
+##  9 10202     4      G         37   1020    52.5     65.0    12.5 0.7094595
+## 10 10202     6      G         38   1020    29.0     45.5    16.5 0.3815789
+## 11 10202     8      G         38   1020    27.5     41.5    14.0 0.3618421
+## 12 10202    10      G         26   1020    22.0     29.0     7.0 0.4230769
+## 13 10202     3      T         44   1020    30.0     59.5    29.5 0.3409091
+## 14 10202     5      T         38   1020    40.0     51.0    11.0 0.5263158
+## 15 10202     7      T         38   1020    37.5     50.0    12.5 0.4934211
+## # ... with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <p></br> </br></p>
 <div id="renaming-your-data" class="section level2">
 <h2><span class="header-section-number">3.1</span> Renaming your Data</h2>
 <p>Now that I have my data uploaded, I need to rename it. Renamining your data to something simple and generic can be very useful in R. First, if you keep the name <code>eGlossData</code>, then everytime you want to run an analysis or use a variable from this data set you’ll need to either use <code>attach()</code> and <code>detach()</code> functions, or you’ll need to type out the entire name. It doesn’t seem like a long name now, but after you type it out 100 times, you’ll wish you had a smaller name. Secondly, if you use a generic name like <code>df</code> (data frame) and if you save your code into a script within your project, then the next time you want to run your script with say another data set, you’ll just need to rename your new data set to <code>df</code> and then all of your code should run smoothly… provided that the data is in a similar format.</p>
 <p>Renaming data sets in R is pretty simple. See code below.</p>
-<pre class="r"><code>df &lt;- eGlossData</code></pre>
+<pre class="r"><code>df &lt;- gloss</code></pre>
 Voilà, my data set is now called <code>df</code>. </br>
 <hr>
 <hr>
@@ -436,12 +454,21 @@ Voilà, my data set is now called <code>df</code>. </br>
 <p></br> </br></p>
 <div id="creating-new-varibles" class="section level2">
 <h2><span class="header-section-number">4.1</span> Creating New Varibles</h2>
-<p><em>Coming Soon</em></p>
+<p>In the this data set we already have a variable called “RawGain.” But to practice we are going to create another variable simply called gain to show a) how to create new variables and b) how to do simple arithmetic in R.</p>
+<p>To create a new variable simple use the <code>$</code> after your data set, and then type in a variable that is not currently in your data set. Then use the arror <code>&lt;-</code> to define what will be stored in the variable. See example below.</p>
+<pre class="r"><code>df$gain &lt;- df$Post_Sum - df$Pre_Sum</code></pre>
+<p>To check our answer we will look at the first 15 cases of each variable using the <code>head</code> command.</p>
+<pre class="r"><code>head(df$RawGain, n=15)</code></pre>
+<pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0
+## [15] 12.5</code></pre>
+<pre class="r"><code>head(df$gain, n=15)</code></pre>
+<pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0
+## [15] 12.5</code></pre>
 <p></br> </br></p>
 </div>
-<div id="combining-variables-to-make-a-new-variable" class="section level2">
-<h2><span class="header-section-number">4.2</span> Combining Variables to Make a new Variable</h2>
-<p><em>Coming Soon</em></p>
+<div id="impute-missing-data" class="section level2">
+<h2><span class="header-section-number">4.2</span> Impute Missing Data</h2>
+<pre class="r"><code>#Coming soon</code></pre>
 <p></br> </br></p>
 </div>
 <div id="renaming-your-variables" class="section level2">
