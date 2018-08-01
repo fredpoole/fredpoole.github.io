@@ -37,7 +37,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>2018 -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*, 22(2), Retrieved from http://www.tesl-ej.org/wordpress/issues/volume22/ej86/ej86a2/ </li><enter>
 
-<li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2),Retrieved from https://escholarship.org/uc/item/0fk329vn.</li><enter>
+<li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2), Retrieved from https://escholarship.org/uc/item/0fk329vn.</li><enter>
 
 <li>2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .17)</li><enter>
 
