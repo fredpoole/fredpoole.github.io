@@ -119,7 +119,7 @@ Voilà, my data set is now called `df`.
 </br>
 </br>
 
-##Creating New Varibles
+##Creating New Variables
 In the this data set we already have a variable called "RawGain." But to practice we are going to create another variable simply called gain to show a) how to create new variables and b) how to do simple arithmetic in R. 
 
 To create a new variable simple use the `$` after your data set, and then type in a variable that is not currently in your data set. Then use the arror `<-` to define what will be stored in the variable. See example below.
