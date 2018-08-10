@@ -29,7 +29,7 @@ knitr::include_graphics("images/iconFred2.png")
 
 <hr>
 <hr>
-#Design Projects
+#L2 Research Projects
 ##Gaming in the Chinese Dual Language Immersion Classroom
 
 </br>
@@ -122,6 +122,13 @@ knitr::include_graphics("images/hylighter.png")
 
 ##Using We Chat in the Chinese L2 Classroom
 
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="微信", echo=FALSE}
+knitr::include_graphics("images/wechat.png")
+```
+
+In 2016 I worked with a Chinese professor to implement We Chat into the classroom.  Students were partnered up with native-speaking Chinese students on campus who wanted to learn English. Each dyad was then asked to complete a series of tasks using each others language throughout the week. The dyads were further encouraged to continue commnicating/cahtting after their tasks were completed. In the study we examined student perspectives of the tool looked at different ways that students chose to utilize We Chat as a learning tool.The research questions included (1) How do Chinese-English dyads utilize the WeChat app for weekly language learning?, and (2) What are the perceptions of the Chinese-English dyads on the use of the WeChat app for language learning? In this exploratory study, the participants’ conversations were recorded and excerpts were used to illustrate how the dyads utilized WeChat. In addition, an online survey was distributed to participants after the tandem language learning program ended, which asked questions about how the dyads used WeChat for language learning. The survey results suggested that the participants’ experiences with WeChat were mostly positive with only a few drawbacks. Suggestions for improvements in future WeChat tandem language learning and for future smartphone studies were discussed.
+
+More information can be found in our publication: 2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .17)
 
 </br>
 </br>
