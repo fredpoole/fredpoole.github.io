@@ -550,32 +550,65 @@ df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 </div>
 <div id="transform-wide-to-long" class="section level2">
 <h2><span class="header-section-number">4.7</span> Transform Wide to Long</h2>
-<p><em>Coming Soon</em></p>
-</br>
+<p>For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds <em>Per_Pre</em>, <em>Per_Post</em>, and <em>Per_Gain</em>, and then another column that holds the value for each of those constructs. We will need the <code>library(tidyr)</code> to run this code.</p>
+<pre class="r"><code>head(df)</code></pre>
+<pre><code>## # A tibble: 6 x 12
+##       ID  Week Format VocabWords Course Pre_Sum Post_Sum RawGain   Per_Pre
+##   &lt;fctr&gt; &lt;dbl&gt; &lt;fctr&gt;      &lt;dbl&gt; &lt;fctr&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+## 1  10203     3      G         44   1020    46.0     58.5    12.5 0.5227273
+## 2  10203     5      G         38   1020    41.5     51.5    10.0 0.5460526
+## 3  10203     7      G         38   1020    39.5     46.0     6.5 0.5197368
+## 4  10203     9      G         38   1020    33.0     39.5     6.5 0.4342105
+## 5  10203     4      T         37   1020    52.0     53.0     1.0 0.7027027
+## 6  10203     6      T         38   1020    28.0     42.0    14.0 0.3684211
+## # ... with 3 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;,
+## #   gain_test &lt;dbl&gt;</code></pre>
+<p>To do this I will first create a subset of my data set so that I remove the variables that I don’t want in my long data set.</p>
+<pre class="r"><code>#Here I&#39;m preparing my data set to remove the unneeded variables. The variables below are the ones I want to keep.
+df_temp &lt;- subset(df, select= c(&quot;ID&quot;,&quot;Week&quot;,&quot;Format&quot;,&quot;VocabWords&quot;,&quot;Course&quot;,&quot;Per_Pre&quot;,&quot;Per_Post&quot;,&quot;Per_Gain&quot;))
+#Before transforming the data set it is useful to use the colnames() function. This will allow you to see the column numbers. 
+colnames(df_temp)</code></pre>
+<pre><code>## [1] &quot;ID&quot;         &quot;Week&quot;       &quot;Format&quot;     &quot;VocabWords&quot; &quot;Course&quot;    
+## [6] &quot;Per_Pre&quot;    &quot;Per_Post&quot;   &quot;Per_Gain&quot;</code></pre>
+<pre class="r"><code>#So to do this we&#39;ll use the gather function and I&#39;ll create a variable called Score to hold my Per_Pre, Per_Post, Per_Gain labels, and the variable Value to hold the actual numbers. The last part c(6:8) identifies which columns to collapse. 
+library(tidyr)
+df_long &lt;- gather(df_temp, Score, Value, c(6:8))
+#Now let&#39;s look at our data structure again. 
+head(df_long,n=10)</code></pre>
+<pre><code>## # A tibble: 10 x 7
+##        ID  Week Format VocabWords Course   Score     Value
+##    &lt;fctr&gt; &lt;dbl&gt; &lt;fctr&gt;      &lt;dbl&gt; &lt;fctr&gt;   &lt;chr&gt;     &lt;dbl&gt;
+##  1  10203     3      G         44   1020 Per_Pre 0.5227273
+##  2  10203     5      G         38   1020 Per_Pre 0.5460526
+##  3  10203     7      G         38   1020 Per_Pre 0.5197368
+##  4  10203     9      G         38   1020 Per_Pre 0.4342105
+##  5  10203     4      T         37   1020 Per_Pre 0.7027027
+##  6  10203     6      T         38   1020 Per_Pre 0.3684211
+##  7  10203     8      T         38   1020 Per_Pre 0.4144737
+##  8  10203    10      T         26   1020 Per_Pre 0.3461538
+##  9  10202     4      G         37   1020 Per_Pre 0.7094595
+## 10  10202     6      G         38   1020 Per_Pre 0.3815789</code></pre>
+We will use this data set later on when doing more advance visualization techniques. </br>
 <hr>
 <hr>
 </div>
 </div>
 <div id="running-descriptives" class="section level1">
 <h1><span class="header-section-number">5</span> Running Descriptives</h1>
-<p><em>Coming Soon</em> </br> </br></p>
-<div id="base-descriptive-packages" class="section level2">
-<h2><span class="header-section-number">5.1</span> Base Descriptive Packages</h2>
-<p><em>Coming Soon</em></p>
+<p>In this section we will go over how to run descriptives on a data set. We will look at some base packages that allow you to automatically run descriptives on all of your variables and then we’ll look at some other quick tools that allow you to explore your data with more precision. </br> </br> ##Base Descriptive Packages <em>Coming Soon</em></p>
 <p></br> </br></p>
-</div>
 <div id="using-tapply-and-sapply-to-get-specific-descriptives" class="section level2">
-<h2><span class="header-section-number">5.2</span> Using Tapply and Sapply to get specific descriptives</h2>
+<h2><span class="header-section-number">5.1</span> Using Tapply and Sapply to get specific descriptives</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="displaying-descriptives" class="section level2">
-<h2><span class="header-section-number">5.3</span> Displaying Descriptives</h2>
+<h2><span class="header-section-number">5.2</span> Displaying Descriptives</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="printing-descriptives-and-saving-files" class="section level2">
-<h2><span class="header-section-number">5.4</span> Printing Descriptives and Saving Files</h2>
+<h2><span class="header-section-number">5.3</span> Printing Descriptives and Saving Files</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>

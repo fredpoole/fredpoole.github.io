@@ -205,20 +205,31 @@ df_2020 <- subset(df, Course=="2020")
 </br>
 
 ##Transform Wide to Long
-*Coming Soon*
+For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds *Per_Pre*, *Per_Post*, and *Per_Gain*, and then another column that holds the value for each of those constructs. We will need the `library(tidyr)` to run this code. 
 ```{r}
-
+head(df)
 ```
-
+To do this I will first create a subset of my data set so that I remove the variables that I don't want in my long data set. 
+```{r}
+#Here I'm preparing my data set to remove the unneeded variables. The variables below are the ones I want to keep.
+df_temp <- subset(df, select= c("ID","Week","Format","VocabWords","Course","Per_Pre","Per_Post","Per_Gain"))
+#Before transforming the data set it is useful to use the colnames() function. This will allow you to see the column numbers. 
+colnames(df_temp)
+#So to do this we'll use the gather function and I'll create a variable called Score to hold my Per_Pre, Per_Post, Per_Gain labels, and the variable Value to hold the actual numbers. The last part c(6:8) identifies which columns to collapse. 
+library(tidyr)
+df_long <- gather(df_temp, Score, Value, c(6:8))
+#Now let's look at our data structure again. 
+head(df_long,n=10)
+```
+We will use this data set later on when doing more advance visualization techniques. 
 </br>
 <hr>
 <hr>
 
 #Running Descriptives
-*Coming Soon*
+In this section we will go over how to run descriptives on a data set. We will look at some base packages that allow you to automatically run descriptives on all of your variables and then we'll look at some other quick tools that allow you to explore your data with more precision. 
 </br>
 </br>
-
 ##Base Descriptive Packages
 *Coming Soon*
 ```{r}
