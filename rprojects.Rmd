@@ -148,24 +148,57 @@ head(df$gain, n=15)
 </br>
 
 ##Renaming your Variables
-*Coming Soon*
+You may want to rename your variables for a variety of reasons. You could simply change the name in your excel file, but if you'd like to do it in R you can use the following code. For this example, I will use the *gain* variable that we made a copy of earlier. I want to make sure that it is known that this variable is just a test variable, so I will change the name to *gain_test*
+
 ```{r}
+colnames(df)[colnames(df)=="gain"] <- "gain_test"
 
 ```
 </br>
 </br>
 
 ##Complete Cases
-*Coming Soon*
-```{r}
+For some analysis you'll need to remove any missing variables. The easiest way to do this is to use the filter function in the `library(dplyr)`. 
 
+For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run `nrow(df_c)` to get the number of cases in my new data set.
+
+```{r}
+library(dplyr)
+df_c <-  df %>% filter(complete.cases(.)) 
+nrow(df) #this is quick way to see how many cases you have in each data set
+nrow(df_c) #notice they are the same, that's because we don't have any missing data sets. 
+```
+</br>
+</br>
+
+##Changing Variable Types (e.g. numeric, factor)
+Often times when you import your data set into R using excel or csv your variables will be loaded as incorrect data types. For exmample if you coded Gender as 1=Female, and 2=Male, your gender variable will be saved as a numeric variable, when it should probably be a factor. That being said, if you want to use gender in a correlation matrix you'll need to convert it back to a numeric variable. The easiest way to see how your variables are being stored is to use `str(df)`. Currently, my variables *ID* and *Format* are being stored as characters. For most analyses this is ok. But for this tutorial I will change them into Factors. My *Course* variable is also being stored as a numeric, when this should really be a factor. There are two ways to do this, first I will demonstrate how to do each individual variable, then I'll show a way to do multiple variables. 
+
+```{r}
+str(df)
+
+df$ID <-as.factor(df$ID) #In this example, I am saving ID as a factor back into the ID variable. I can change factor to numeric to change it into a different type. 
+
+#Instead of doing each variable one by one, I can save all of the variables I want to change into a cols object, and then change all of them at once using the lapply function.
+cols <- c("ID", "Format", "Course")
+df[cols] <- lapply(df[cols], factor) #Change factor to numeric if you want numeric variables. 
+
+#Run str() function once more to check that my variables have changed.
+str(df)
 ```
 </br>
 </br>
 
 ##Subsetting Data
-*Coming Soon*
+There are many reasons to subset your data. Subsetting your data simply means that you create a separate data set with only a subset of your variables. You may want to do this to create a correlation matrix with a specific set of variables. You may also want to do this to create a data set of only females or males. In this case of this data set, I will create two subsetted (I don't think that's a word... but let's run with it) datasets one for a correlation matrix using only *Per_Pre*, *Per_Post* and *Week* to see if pre and post scores correlate with time in the study. I will also create a separate data set for each *Course* in the data set to do separate analyses. 
+
 ```{r}
+#Note for each new subset I create a new object that identifies my new dataset. 
+
+df_cor <- subset(df, select= c("Per_Pre","Per_Post","Week")) #Here I am telling R to create a new data set with the three variables selected. 
+
+df_1020 <- subset(df, Course=="1020") #Here I am saying to create a new data set of all cases in which Course = 1020
+df_2020 <- subset(df, Course=="2020")
 
 ```
 </br>

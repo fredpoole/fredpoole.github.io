@@ -473,21 +473,83 @@ Voilà, my data set is now called <code>df</code>. </br>
 </div>
 <div id="renaming-your-variables" class="section level2">
 <h2><span class="header-section-number">4.3</span> Renaming your Variables</h2>
-<p><em>Coming Soon</em></p>
+<p>You may want to rename your variables for a variety of reasons. You could simply change the name in your excel file, but if you’d like to do it in R you can use the following code. For this example, I will use the <em>gain</em> variable that we made a copy of earlier. I want to make sure that it is known that this variable is just a test variable, so I will change the name to <em>gain_test</em></p>
+<pre class="r"><code>colnames(df)[colnames(df)==&quot;gain&quot;] &lt;- &quot;gain_test&quot;</code></pre>
 <p></br> </br></p>
 </div>
 <div id="complete-cases" class="section level2">
 <h2><span class="header-section-number">4.4</span> Complete Cases</h2>
-<p><em>Coming Soon</em></p>
+<p>For some analysis you’ll need to remove any missing variables. The easiest way to do this is to use the filter function in the <code>library(dplyr)</code>.</p>
+<p>For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run <code>nrow(df_c)</code> to get the number of cases in my new data set.</p>
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: &#39;dplyr&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:stats&#39;:
+## 
+##     filter, lag</code></pre>
+<pre><code>## The following objects are masked from &#39;package:base&#39;:
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>df_c &lt;-  df %&gt;% filter(complete.cases(.)) 
+nrow(df) #this is quick way to see how many cases you have in each data set</code></pre>
+<pre><code>## [1] 152</code></pre>
+<pre class="r"><code>nrow(df_c) #notice they are the same, that&#39;s because we don&#39;t have any missing data sets. </code></pre>
+<pre><code>## [1] 152</code></pre>
+<p></br> </br></p>
+</div>
+<div id="changing-variable-types-e.g.numeric-factor" class="section level2">
+<h2><span class="header-section-number">4.5</span> Changing Variable Types (e.g. numeric, factor)</h2>
+<p>Often times when you import your data set into R using excel or csv your variables will be loaded as incorrect data types. For exmample if you coded Gender as 1=Female, and 2=Male, your gender variable will be saved as a numeric variable, when it should probably be a factor. That being said, if you want to use gender in a correlation matrix you’ll need to convert it back to a numeric variable. The easiest way to see how your variables are being stored is to use <code>str(df)</code>. Currently, my variables <em>ID</em> and <em>Format</em> are being stored as characters. For most analyses this is ok. But for this tutorial I will change them into Factors. My <em>Course</em> variable is also being stored as a numeric, when this should really be a factor. There are two ways to do this, first I will demonstrate how to do each individual variable, then I’ll show a way to do multiple variables.</p>
+<pre class="r"><code>str(df)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    152 obs. of  12 variables:
+##  $ ID        : chr  &quot;10203&quot; &quot;10203&quot; &quot;10203&quot; &quot;10203&quot; ...
+##  $ Week      : num  3 5 7 9 4 6 8 10 4 6 ...
+##  $ Format    : chr  &quot;G&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot; ...
+##  $ VocabWords: num  44 38 38 38 37 38 38 26 37 38 ...
+##  $ Course    : num  1020 1020 1020 1020 1020 1020 1020 1020 1020 1020 ...
+##  $ Pre_Sum   : num  46 41.5 39.5 33 52 28 31.5 18 52.5 29 ...
+##  $ Post_Sum  : num  58.5 51.5 46 39.5 53 42 41 35.5 65 45.5 ...
+##  $ RawGain   : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...
+##  $ Per_Pre   : num  0.523 0.546 0.52 0.434 0.703 ...
+##  $ Per_Post  : num  0.665 0.678 0.605 0.52 0.716 ...
+##  $ Per_Gain  : num  0.142 0.1316 0.0855 0.0855 0.0135 ...
+##  $ gain_test : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...</code></pre>
+<pre class="r"><code>df$ID &lt;-as.factor(df$ID) #In this example, I am saving ID as a factor back into the ID variable. I can change factor to numeric to change it into a different type. 
+
+#Instead of doing each variable one by one, I can save all of the variables I want to change into a cols object, and then change all of them at once using the lapply function.
+cols &lt;- c(&quot;ID&quot;, &quot;Format&quot;, &quot;Course&quot;)
+df[cols] &lt;- lapply(df[cols], factor) #Change factor to numeric if you want numeric variables. 
+
+#Run str() function once more to check that my variables have changed.
+str(df)</code></pre>
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    152 obs. of  12 variables:
+##  $ ID        : Factor w/ 19 levels &quot;10201&quot;,&quot;102010&quot;,..: 4 4 4 4 4 4 4 4 3 3 ...
+##  $ Week      : num  3 5 7 9 4 6 8 10 4 6 ...
+##  $ Format    : Factor w/ 2 levels &quot;G&quot;,&quot;T&quot;: 1 1 1 1 2 2 2 2 1 1 ...
+##  $ VocabWords: num  44 38 38 38 37 38 38 26 37 38 ...
+##  $ Course    : Factor w/ 2 levels &quot;1020&quot;,&quot;2020&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ Pre_Sum   : num  46 41.5 39.5 33 52 28 31.5 18 52.5 29 ...
+##  $ Post_Sum  : num  58.5 51.5 46 39.5 53 42 41 35.5 65 45.5 ...
+##  $ RawGain   : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...
+##  $ Per_Pre   : num  0.523 0.546 0.52 0.434 0.703 ...
+##  $ Per_Post  : num  0.665 0.678 0.605 0.52 0.716 ...
+##  $ Per_Gain  : num  0.142 0.1316 0.0855 0.0855 0.0135 ...
+##  $ gain_test : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...</code></pre>
 <p></br> </br></p>
 </div>
 <div id="subsetting-data" class="section level2">
-<h2><span class="header-section-number">4.5</span> Subsetting Data</h2>
-<p><em>Coming Soon</em></p>
+<h2><span class="header-section-number">4.6</span> Subsetting Data</h2>
+<p>There are many reasons to subset your data. Subsetting your data simply means that you create a separate data set with only a subset of your variables. You may want to do this to create a correlation matrix with a specific set of variables. You may also want to do this to create a data set of only females or males. In this case of this data set, I will create two subsetted (I don’t think that’s a word… but let’s run with it) datasets one for a correlation matrix using only <em>Per_Pre</em>, <em>Per_Post</em> and <em>Week</em> to see if pre and post scores correlate with time in the study. I will also create a separate data set for each <em>Course</em> in the data set to do separate analyses.</p>
+<pre class="r"><code>#Note for each new subset I create a new object that identifies my new dataset. 
+
+df_cor &lt;- subset(df, select= c(&quot;Per_Pre&quot;,&quot;Per_Post&quot;,&quot;Week&quot;)) #Here I am telling R to create a new data set with the three variables selected. 
+
+df_1020 &lt;- subset(df, Course==&quot;1020&quot;) #Here I am saying to create a new data set of all cases in which Course = 1020
+df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 <p></br> </br></p>
 </div>
 <div id="transform-wide-to-long" class="section level2">
-<h2><span class="header-section-number">4.6</span> Transform Wide to Long</h2>
+<h2><span class="header-section-number">4.7</span> Transform Wide to Long</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>

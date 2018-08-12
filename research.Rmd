@@ -126,7 +126,7 @@ knitr::include_graphics("images/hylighter.png")
 knitr::include_graphics("images/wechat.png")
 ```
 
-In 2016 I worked with a Chinese professor to implement We Chat into the classroom.  Students were partnered up with native-speaking Chinese students on campus who wanted to learn English. Each dyad was then asked to complete a series of tasks using each others language throughout the week. The dyads were further encouraged to continue commnicating/cahtting after their tasks were completed. In the study we examined student perspectives of the tool looked at different ways that students chose to utilize We Chat as a learning tool.The research questions included (1) How do Chinese-English dyads utilize the WeChat app for weekly language learning?, and (2) What are the perceptions of the Chinese-English dyads on the use of the WeChat app for language learning? In this exploratory study, the participants’ conversations were recorded and excerpts were used to illustrate how the dyads utilized WeChat. In addition, an online survey was distributed to participants after the tandem language learning program ended, which asked questions about how the dyads used WeChat for language learning. The survey results suggested that the participants’ experiences with WeChat were mostly positive with only a few drawbacks. Suggestions for improvements in future WeChat tandem language learning and for future smartphone studies were discussed.
+In 2016 I worked with Dr. Sung to use *We Chat* in the classroom.  Students were partnered up with native-speaking Chinese students on campus who wanted to learn English. Each dyad was then asked to complete a series of tasks using each others language throughout the week. The dyads were further encouraged to continue commnicating/cahtting after their tasks were completed. In the study we examined student perspectives of the tool looked at different ways that students chose to utilize We Chat as a learning tool.The research questions included (1) How do Chinese-English dyads utilize the WeChat app for weekly language learning?, and (2) What are the perceptions of the Chinese-English dyads on the use of the WeChat app for language learning? In this exploratory study, the participants’ conversations were recorded and excerpts were used to illustrate how the dyads utilized WeChat. In addition, an online survey was distributed to participants after the tandem language learning program ended, which asked questions about how the dyads used WeChat for language learning. The survey results suggested that the participants’ experiences with WeChat were mostly positive with only a few drawbacks. Suggestions for improvements in future WeChat tandem language learning and for future smartphone studies were discussed.
 
 More information can be found in our publication: 2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .17)
 
@@ -134,17 +134,28 @@ More information can be found in our publication: 2017 -- Sung, K. Y., & **Poole
 </br>
 
 ##Using E-Gloss Tools to Faciliate Reading in Chinese
-*Coming Soon*
+In 2015 I conducted a research project investigating the effect of using E-gloss tools on Chinese vocabulary development. E-gloss tools are tools that allow learners to immediately look up vocabulary in a text by simply hovering their mouse over the word. The image below shows the tool Dim Sum (http://www.mandarintools.com/dimsum.html) that was used in this research project. 
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="E-Gloss Tool: Dim Sum", echo=FALSE}
+knitr::include_graphics("images/eglossPic.png")
+```
+In this project, participants from a first-year and second-year Chinese language learning class at the university level read 10 chinese articles over the course of 10 weeks. Each week they alternated between reading via E-gloss tool or reading in a traditional, paper-based format. Week's 1 and 2 were used as training weeks and data was collected between weeks 3 and 10. The two images below show the results for each individual participant. 
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="First-Year Learners", echo=FALSE}
+knitr::include_graphics("images/eglossPic2.png")
+```
+
+```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Second-Year Learners", echo=FALSE}
+knitr::include_graphics("images/eglossPic3.png")
+```
+Although this study did not show a difference between the two groups. Initial findings did seem to suggest that students who performed better on the pre-test tended to do better in a traditional format, whereas those who did worse on the pre-test tended to do better in an E-gloss format. In other words, higher performing students were more likely to make use of a traditional, paper-based format and take notes, anotate the document, and read more carefully. Lower performing students, struggled more on traditional paper-based formats, but took advantage of the ease of looking up words in an e-gloss format. 
+
+More information can be found in our publication: 2016 --	**Poole, F.**, & Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. *Journal of Chinese Language Teachers Association*. 51(3), 266–285.
 </br>
 </br>
 
 ##Graded Readers for Chinese as a Foreign Language Learners
-*Coming Soon*
-</br>
-</br>
+In 2013 I designed a graded reading series for true beginners of Chinese. The entire series can be found in the *Teaching Languages* tab above. The graded reading series was designed to both expose learners to new Chinese words in context, while also providing explicit information about new characters to learners before they saw them in a story. 
 
-##Teaching Characters with Pinyin
-*Coming Soon*
+More information can be found in our publication: 2015 -- Sung, K. Y., & **Poole, F.** Evaluating the impact of graded readings on the recognition of Chinese characters and reading comprehension by learners of Chinese as a foreign language. *Konin Language Studies*, 3(3), 271–294.
 </br>
 </br>
 
@@ -152,25 +163,13 @@ More information can be found in our publication: 2017 -- Sung, K. Y., & **Poole
 <hr>
 
 #Computer Science Education Research
-
 </br>
 ```{r, fig.align='center',out.width = "400px",out.height="20px", echo=FALSE}
 knitr::include_graphics("images/Appcamp.png")
 ```
+In addition to my research on Second Language Acquisition, I have also worked on several projects investigating computer science pedagogical and recruitment strategies your middle school learners. In particular helped design and a series of summer app camps aimed at teaching programming and broadening participation in computer science. Specifically, my responsibilties included designing curriculum and subsequently building a Canvas site which hosted the curriculum for the app camps. I participated in student recruitment by travelling to local middle schools and giving presentations about computer science. Before the app camps began I was also involved in several pre-camp set up procedures including: survey and interview protocol development, data collection procedures (e.g. setting up computers to record both student interactions and screen activity), and app camp log data retrieval protocols. During the camps I collected observational data, served as technical support, and occasionally took on a teaching role to support campers when camp mentors could were not available. Finally, following the camp I cleaned data and conducted preliminary analysis. I have also co-written several manuscripts related to this subject (See my CV for more information).
 
-<hr>
-<hr>
+https://appcamp.usu.edu/ 
 
-##Broadening Participation in Computer Science Fields
-
-*Coming Soon*
-</br>
-</br>
-
-##Student perceptions of Computer Scientists
-
-*Coming Soon*
-</br>
-</br>
 <hr>
 <hr>
