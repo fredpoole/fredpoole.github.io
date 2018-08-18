@@ -347,6 +347,10 @@ div.tocify {
 <center style="font-size:40px">
 R Projects
 </center>
+<pre><code>## 
+## Please cite as:</code></pre>
+<pre><code>##  Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2. http://CRAN.R-project.org/package=stargazer</code></pre>
 <p><img src="images/Ricon.png" width="100px" height="50px" style="display: block; margin: auto;" /></p>
 <p>On this page you’ll find a brief introduction to R as well as some examples of the analysis that I have run using R in the last few years.</p>
 For the Analysis below I will be using the EGloss data set. This data was collected in 2014 and compares vocabulary learning by second language learners of Chinese when reading via traditional format and a gloss (<a href="http://www.mandarintools.com/dimsum.html" class="uri">http://www.mandarintools.com/dimsum.html</a>). Below is a list of the variables in the data set. </br> </br>
@@ -455,7 +459,7 @@ Voilà, my data set is now called <code>df</code>. </br>
 <div id="creating-new-variables" class="section level2">
 <h2><span class="header-section-number">4.1</span> Creating New Variables</h2>
 <p>In the this data set we already have a variable called “RawGain.” But to practice we are going to create another variable simply called gain to show a) how to create new variables and b) how to do simple arithmetic in R.</p>
-<p>To create a new variable simple use the <code>$</code> after your data set, and then type in a variable that is not currently in your data set. Then use the arror <code>&lt;-</code> to define what will be stored in the variable. See example below.</p>
+<p>To create a new variable simple use the <code>$</code> after your data set, and then type in a variable that is not currently in your data set. Then use the arror <code>&lt;-</code> to define what will be stored in the variable. See examples below.</p>
 <pre class="r"><code>df$gain &lt;- df$Post_Sum - df$Pre_Sum</code></pre>
 <p>To check our answer we will look at the first 15 cases of each variable using the <code>head</code> command.</p>
 <pre class="r"><code>head(df$RawGain, n=15)</code></pre>
@@ -464,7 +468,9 @@ Voilà, my data set is now called <code>df</code>. </br>
 <pre class="r"><code>head(df$gain, n=15)</code></pre>
 <pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0
 ## [15] 12.5</code></pre>
-<p></br> </br></p>
+<p>In another example, I’m going to create a categorical variable with two levels. This variable will be used to distinguish low and high level learners by their pre scores. Those who got <code>50%</code> or higher correct on their pre-tests will be labeled <em>high</em> and those who got below <code>50%</code> will be labeled <em>low</em>. We will call this variable Pre_cat (cat for category). To do this we will need an <code>ifelse</code> statement.</p>
+<pre class="r"><code>df$Pre_cat &lt;- ifelse(df$Per_Pre &gt;= .78, &quot;High&quot;,&quot;Low&quot;)</code></pre>
+<p>Simply put, if the Per_Pre is greater than .5, then label it as high, if not then label it as low. And save everything into the variable. Pre_cat. </br> </br></p>
 </div>
 <div id="impute-missing-data" class="section level2">
 <h2><span class="header-section-number">4.2</span> Impute Missing Data</h2>
@@ -501,7 +507,7 @@ nrow(df) #this is quick way to see how many cases you have in each data set</cod
 <h2><span class="header-section-number">4.5</span> Changing Variable Types (e.g. numeric, factor)</h2>
 <p>Often times when you import your data set into R using excel or csv your variables will be loaded as incorrect data types. For exmample if you coded Gender as 1=Female, and 2=Male, your gender variable will be saved as a numeric variable, when it should probably be a factor. That being said, if you want to use gender in a correlation matrix you’ll need to convert it back to a numeric variable. The easiest way to see how your variables are being stored is to use <code>str(df)</code>. Currently, my variables <em>ID</em> and <em>Format</em> are being stored as characters. For most analyses this is ok. But for this tutorial I will change them into Factors. My <em>Course</em> variable is also being stored as a numeric, when this should really be a factor. There are two ways to do this, first I will demonstrate how to do each individual variable, then I’ll show a way to do multiple variables.</p>
 <pre class="r"><code>str(df)</code></pre>
-<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    152 obs. of  12 variables:
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    152 obs. of  13 variables:
 ##  $ ID        : chr  &quot;10203&quot; &quot;10203&quot; &quot;10203&quot; &quot;10203&quot; ...
 ##  $ Week      : num  3 5 7 9 4 6 8 10 4 6 ...
 ##  $ Format    : chr  &quot;G&quot; &quot;G&quot; &quot;G&quot; &quot;G&quot; ...
@@ -513,7 +519,8 @@ nrow(df) #this is quick way to see how many cases you have in each data set</cod
 ##  $ Per_Pre   : num  0.523 0.546 0.52 0.434 0.703 ...
 ##  $ Per_Post  : num  0.665 0.678 0.605 0.52 0.716 ...
 ##  $ Per_Gain  : num  0.142 0.1316 0.0855 0.0855 0.0135 ...
-##  $ gain_test : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...</code></pre>
+##  $ gain_test : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...
+##  $ Pre_cat   : chr  &quot;Low&quot; &quot;Low&quot; &quot;Low&quot; &quot;Low&quot; ...</code></pre>
 <pre class="r"><code>df$ID &lt;-as.factor(df$ID) #In this example, I am saving ID as a factor back into the ID variable. I can change factor to numeric to change it into a different type. 
 
 #Instead of doing each variable one by one, I can save all of the variables I want to change into a cols object, and then change all of them at once using the lapply function.
@@ -522,7 +529,7 @@ df[cols] &lt;- lapply(df[cols], factor) #Change factor to numeric if you want nu
 
 #Run str() function once more to check that my variables have changed.
 str(df)</code></pre>
-<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    152 obs. of  12 variables:
+<pre><code>## Classes &#39;tbl_df&#39;, &#39;tbl&#39; and &#39;data.frame&#39;:    152 obs. of  13 variables:
 ##  $ ID        : Factor w/ 19 levels &quot;10201&quot;,&quot;102010&quot;,..: 4 4 4 4 4 4 4 4 3 3 ...
 ##  $ Week      : num  3 5 7 9 4 6 8 10 4 6 ...
 ##  $ Format    : Factor w/ 2 levels &quot;G&quot;,&quot;T&quot;: 1 1 1 1 2 2 2 2 1 1 ...
@@ -534,7 +541,8 @@ str(df)</code></pre>
 ##  $ Per_Pre   : num  0.523 0.546 0.52 0.434 0.703 ...
 ##  $ Per_Post  : num  0.665 0.678 0.605 0.52 0.716 ...
 ##  $ Per_Gain  : num  0.142 0.1316 0.0855 0.0855 0.0135 ...
-##  $ gain_test : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...</code></pre>
+##  $ gain_test : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...
+##  $ Pre_cat   : chr  &quot;Low&quot; &quot;Low&quot; &quot;Low&quot; &quot;Low&quot; ...</code></pre>
 <p></br> </br></p>
 </div>
 <div id="subsetting-data" class="section level2">
@@ -552,7 +560,7 @@ df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 <h2><span class="header-section-number">4.7</span> Transform Wide to Long</h2>
 <p>For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds <em>Per_Pre</em>, <em>Per_Post</em>, and <em>Per_Gain</em>, and then another column that holds the value for each of those constructs. We will need the <code>library(tidyr)</code> to run this code.</p>
 <pre class="r"><code>head(df)</code></pre>
-<pre><code>## # A tibble: 6 x 12
+<pre><code>## # A tibble: 6 x 13
 ##       ID  Week Format VocabWords Course Pre_Sum Post_Sum RawGain   Per_Pre
 ##   &lt;fctr&gt; &lt;dbl&gt; &lt;fctr&gt;      &lt;dbl&gt; &lt;fctr&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
 ## 1  10203     3      G         44   1020    46.0     58.5    12.5 0.5227273
@@ -561,8 +569,8 @@ df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 ## 4  10203     9      G         38   1020    33.0     39.5     6.5 0.4342105
 ## 5  10203     4      T         37   1020    52.0     53.0     1.0 0.7027027
 ## 6  10203     6      T         38   1020    28.0     42.0    14.0 0.3684211
-## # ... with 3 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;,
-## #   gain_test &lt;dbl&gt;</code></pre>
+## # ... with 4 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;,
+## #   gain_test &lt;dbl&gt;, Pre_cat &lt;chr&gt;</code></pre>
 <p>To do this I will first create a subset of my data set so that I remove the variables that I don’t want in my long data set.</p>
 <pre class="r"><code>#Here I&#39;m preparing my data set to remove the unneeded variables. The variables below are the ones I want to keep.
 df_temp &lt;- subset(df, select= c(&quot;ID&quot;,&quot;Week&quot;,&quot;Format&quot;,&quot;VocabWords&quot;,&quot;Course&quot;,&quot;Per_Pre&quot;,&quot;Per_Post&quot;,&quot;Per_Gain&quot;))
@@ -588,31 +596,310 @@ head(df_long,n=10)</code></pre>
 ##  8  10203    10      T         26   1020 Per_Pre 0.3461538
 ##  9  10202     4      G         37   1020 Per_Pre 0.7094595
 ## 10  10202     6      G         38   1020 Per_Pre 0.3815789</code></pre>
-We will use this data set later on when doing more advance visualization techniques. </br>
+Remember: We will use this data set later on when doing more advance visualization techniques. </br>
 <hr>
 <hr>
 </div>
 </div>
-<div id="running-descriptives" class="section level1">
-<h1><span class="header-section-number">5</span> Running Descriptives</h1>
-<p>In this section we will go over how to run descriptives on a data set. We will look at some base packages that allow you to automatically run descriptives on all of your variables and then we’ll look at some other quick tools that allow you to explore your data with more precision. </br> </br> ##Base Descriptive Packages <em>Coming Soon</em></p>
+<div id="descriptives" class="section level1">
+<h1><span class="header-section-number">5</span> Descriptives</h1>
+<p>In this section we will go over how to run descriptives on a data set. We will look at some of the base packages that allow you to automatically run descriptives on all of your variables and then we’ll look at some other quick functions that allow you to explore your data with more precision. </br> </br></p>
+<div id="base-descriptive-packages" class="section level2">
+<h2><span class="header-section-number">5.1</span> Base Descriptive Packages</h2>
+<p>There are several packages that will automatically printout a set of descriptives for your entire data set. Which one you use will depend on preference and need.</p>
+<p>I like using <code>stargazer</code> because it prints out a formatted table. In the example below I have set <code>type</code> to text so that it will print out below the code, but you could change this to html or latex.</p>
+<pre class="r"><code>stargazer(df,type=&quot;text&quot;,digits=2) #I used the digits code to limit how long the numbers are. </code></pre>
+<pre><code>## 
+## =================================
+## Statistic N Mean St. Dev. Min Max
+## =================================</code></pre>
+<p>The summary function also provides a lot of quick and useuful information but it requires some formatting if you want to use it in paper.</p>
+<pre class="r"><code>summary(df)</code></pre>
+<pre><code>##        ID           Week       Format   VocabWords     Course  
+##  10201  :  8   Min.   : 3.00   G:76   Min.   :26.00   1020:72  
+##  102010 :  8   1st Qu.: 4.75   T:76   1st Qu.:37.75   2020:80  
+##  10202  :  8   Median : 6.50          Median :38.00            
+##  10203  :  8   Mean   : 6.50          Mean   :40.09            
+##  10204  :  8   3rd Qu.: 8.25          3rd Qu.:46.00            
+##  10205  :  8   Max.   :10.00          Max.   :52.00            
+##  (Other):104                                                   
+##     Pre_Sum         Post_Sum        RawGain         Per_Pre       
+##  Min.   : 4.50   Min.   :20.50   Min.   : 1.00   Min.   :0.04688  
+##  1st Qu.:25.25   1st Qu.:38.38   1st Qu.:11.00   1st Qu.:0.33458  
+##  Median :35.75   Median :52.25   Median :16.00   Median :0.45596  
+##  Mean   :35.78   Mean   :53.15   Mean   :17.38   Mean   :0.45246  
+##  3rd Qu.:44.62   3rd Qu.:68.00   3rd Qu.:21.12   3rd Qu.:0.57964  
+##  Max.   :70.00   Max.   :95.50   Max.   :51.50   Max.   :0.83108  
+##                                                                   
+##     Per_Post         Per_Gain         gain_test       Pre_cat         
+##  Min.   :0.2135   Min.   :0.01316   Min.   : 1.00   Length:152        
+##  1st Qu.:0.5312   1st Qu.:0.14189   1st Qu.:11.00   Class :character  
+##  Median :0.6863   Median :0.20119   Median :16.00   Mode  :character  
+##  Mean   :0.6698   Mean   :0.21736   Mean   :17.38                     
+##  3rd Qu.:0.8290   3rd Qu.:0.27461   3rd Qu.:21.12                     
+##  Max.   :1.0952   Max.   :0.58333   Max.   :51.50                     
+## </code></pre>
+<p>The <code>psych</code> package has a <code>describe</code> function similar to summary and a <code>describeBy</code> function that allows you to see descriptives by a certain group.</p>
+<pre class="r"><code>library(psych)
+describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as my group. So the first set is gloss format (G), and the second is traditional format (T). </code></pre>
+<pre><code>## Warning: NAs introduced by coercion</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
+## Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
+## -Inf</code></pre>
+<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
+## Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
+## -Inf</code></pre>
+<pre><code>## 
+##  Descriptive statistics by group 
+## Format: G
+##            vars  n  mean    sd median trimmed   mad   min   max range
+## ID*           1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00
+## Week          2 76  6.58  2.31   6.50    6.60  2.97  3.00 10.00  7.00
+## Format*       3 76  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
+## VocabWords    4 76 38.91  7.01  38.00   38.98  8.90 26.00 52.00 26.00
+## Course*       5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00
+## Pre_Sum       6 76 35.71 14.93  33.75   35.16 15.20 10.50 68.50 58.00
+## Post_Sum      7 76 52.78 17.14  53.00   52.28 21.50 23.00 89.00 66.00
+## RawGain       8 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50
+## Per_Pre       9 76  0.47  0.19   0.45    0.47  0.23  0.11  0.83  0.72
+## Per_Post     10 76  0.69  0.20   0.72    0.70  0.25  0.24  1.00  0.76
+## Per_Gain     11 76  0.22  0.10   0.21    0.21  0.10  0.06  0.58  0.52
+## gain_test    12 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50
+## Pre_cat*     13 76   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
+##             skew kurtosis   se
+## ID*         0.00    -1.25 0.63
+## Week        0.00    -1.29 0.26
+## Format*      NaN      NaN 0.00
+## VocabWords  0.03    -0.58 0.80
+## Course*    -0.10    -2.02 0.06
+## Pre_Sum     0.31    -0.72 1.71
+## Post_Sum    0.20    -1.05 1.97
+## RawGain     1.65     3.55 1.02
+## Per_Pre    -0.11    -0.99 0.02
+## Per_Post   -0.33    -0.84 0.02
+## Per_Gain    1.07     1.60 0.01
+## gain_test   1.65     3.55 1.02
+## Pre_cat*      NA       NA   NA
+## -------------------------------------------------------- 
+## Format: T
+##            vars  n  mean    sd median trimmed   mad   min   max range
+## ID*           1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00
+## Week          2 76  6.42  2.31   6.50    6.40  2.97  3.00 10.00  7.00
+## Format*       3 76  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
+## VocabWords    4 76 41.26  6.35  40.00   41.32  5.93 26.00 52.00 26.00
+## Course*       5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00
+## Pre_Sum       6 76 35.85 13.66  36.50   35.66 13.71  4.50 70.00 65.50
+## Post_Sum      7 76 53.53 18.59  51.50   53.31 22.24 20.50 95.50 75.00
+## RawGain       8 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00
+## Per_Pre       9 76  0.44  0.15   0.46    0.44  0.16  0.05  0.73  0.68
+## Per_Post     10 76  0.65  0.21   0.68    0.66  0.20  0.21  1.10  0.88
+## Per_Gain     11 76  0.22  0.12   0.20    0.21  0.11  0.01  0.56  0.55
+## gain_test    12 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00
+## Pre_cat*     13 76   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
+##             skew kurtosis   se
+## ID*         0.00    -1.25 0.63
+## Week        0.00    -1.29 0.26
+## Format*      NaN      NaN 0.00
+## VocabWords -0.03    -0.58 0.73
+## Course*    -0.10    -2.02 0.06
+## Pre_Sum     0.16    -0.04 1.57
+## Post_Sum    0.13    -0.86 2.13
+## RawGain     0.42    -0.44 1.14
+## Per_Pre    -0.41    -0.09 0.02
+## Per_Post   -0.19    -0.70 0.02
+## Per_Gain    0.60     0.15 0.01
+## gain_test   0.42    -0.44 1.14
+## Pre_cat*      NA       NA   NA</code></pre>
+<p>You can also use the describeBy function to look at two groups.</p>
+<pre class="r"><code>library(psych)
+describeBy(df, group=c(&quot;Format&quot;,&quot;Course&quot;)) </code></pre>
+<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
+## Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
+## -Inf</code></pre>
+<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
+## Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
+## -Inf</code></pre>
+<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
+## Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
+## -Inf</code></pre>
+<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
+## Inf</code></pre>
+<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
+## -Inf</code></pre>
+<pre><code>## 
+##  Descriptive statistics by group 
+## Format: G
+## Course: 1020
+##            vars  n  mean    sd median trimmed   mad   min   max range
+## ID*           1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00
+## Week          2 36  6.78  2.31   6.50    6.80  2.97  3.00 10.00  7.00
+## Format*       3 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
+## VocabWords    4 36 35.81  5.11  38.00   36.17  0.00 26.00 44.00 18.00
+## Course*       5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
+## Pre_Sum       6 36 34.68 10.69  33.00   34.08 10.75 17.50 61.50 44.00
+## Post_Sum      7 36 47.72 12.02  44.25   47.28 11.86 29.00 72.00 43.00
+## RawGain       8 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00
+## Per_Pre       9 36  0.49  0.14   0.45    0.48  0.12  0.23  0.83  0.60
+## Per_Post     10 36  0.67  0.16   0.65    0.67  0.16  0.41  0.98  0.57
+## Per_Gain     11 36  0.19  0.08   0.17    0.18  0.08  0.07  0.43  0.37
+## gain_test    12 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00
+## Pre_cat*     13 36   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
+##             skew kurtosis   se
+## ID*         0.00    -1.33 0.44
+## Week       -0.01    -1.37 0.38
+## Format*      NaN      NaN 0.00
+## VocabWords -1.10     0.03 0.85
+## Course*      NaN      NaN 0.00
+## Pre_Sum     0.53    -0.51 1.78
+## Post_Sum    0.43    -1.07 2.00
+## RawGain     1.27     1.97 0.97
+## Per_Pre     0.40    -0.55 0.02
+## Per_Post    0.27    -1.20 0.03
+## Per_Gain    0.87     0.54 0.01
+## gain_test   1.27     1.97 0.97
+## Pre_cat*      NA       NA   NA
+## -------------------------------------------------------- 
+## Format: T
+## Course: 1020
+##            vars  n  mean    sd median trimmed   mad   min   max range
+## ID*           1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00
+## Week          2 36  6.22  2.31   6.50    6.20  2.97  3.00 10.00  7.00
+## Format*       3 36  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
+## VocabWords    4 36 38.44  3.91  38.00   38.77  0.00 26.00 44.00 18.00
+## Course*       5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
+## Pre_Sum       6 36 34.07  9.18  34.50   33.73  8.90 18.00 53.50 35.50
+## Post_Sum      7 36 46.74 11.52  48.00   46.67 11.12 22.50 70.00 47.50
+## RawGain       8 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00
+## Per_Pre       9 36  0.45  0.13   0.44    0.44  0.14  0.22  0.70  0.49
+## Per_Post     10 36  0.61  0.16   0.64    0.62  0.14  0.26  0.94  0.69
+## Per_Gain     11 36  0.17  0.10   0.16    0.16  0.06  0.01  0.39  0.38
+## gain_test    12 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00
+## Pre_cat*     13 36   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
+##             skew kurtosis   se
+## ID*         0.00    -1.33 0.44
+## Week        0.01    -1.37 0.38
+## Format*      NaN      NaN 0.00
+## VocabWords -1.24     3.50 0.65
+## Course*      NaN      NaN 0.00
+## Pre_Sum     0.31    -0.59 1.53
+## Post_Sum    0.01    -0.36 1.92
+## RawGain     0.47     0.29 1.20
+## Per_Pre     0.27    -0.76 0.02
+## Per_Post   -0.13    -0.05 0.03
+## Per_Gain    0.28    -0.32 0.02
+## gain_test   0.47     0.29 1.20
+## Pre_cat*      NA       NA   NA
+## -------------------------------------------------------- 
+## Format: G
+## Course: 2020
+##            vars  n  mean    sd median trimmed   mad   min   max range
+## ID*           1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00
+## Week          2 40  6.40  2.32   6.50    6.38  2.97  3.00 10.00  7.00
+## Format*       3 40  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
+## VocabWords    4 40 41.70  7.37  42.00   41.62 10.38 32.00 52.00 20.00
+## Course*       5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
+## Pre_Sum       6 40 36.64 18.00  38.00   36.05 25.95 10.50 68.50 58.00
+## Post_Sum      7 40 57.34 19.76  60.75   57.73 21.50 23.00 89.00 66.00
+## RawGain       8 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50
+## Per_Pre       9 40  0.45  0.22   0.46    0.45  0.30  0.11  0.79  0.68
+## Per_Post     10 40  0.70  0.23   0.75    0.72  0.25  0.24  1.00  0.76
+## Per_Gain     11 40  0.25  0.10   0.23    0.24  0.07  0.06  0.58  0.52
+## gain_test    12 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50
+## Pre_cat*     13 40   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
+##             skew kurtosis   se
+## ID*         0.00    -1.31 0.46
+## Week        0.00    -1.33 0.37
+## Format*      NaN      NaN 0.00
+## VocabWords -0.18    -1.48 1.16
+## Course*      NaN      NaN 0.00
+## Pre_Sum     0.13    -1.26 2.85
+## Post_Sum   -0.26    -1.25 3.12
+## RawGain     1.52     2.32 1.52
+## Per_Pre    -0.08    -1.52 0.03
+## Per_Post   -0.57    -0.94 0.04
+## Per_Gain    1.07     1.41 0.02
+## gain_test   1.52     2.32 1.52
+## Pre_cat*      NA       NA   NA
+## -------------------------------------------------------- 
+## Format: T
+## Course: 2020
+##            vars  n  mean    sd median trimmed   mad   min   max range
+## ID*           1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00
+## Week          2 40  6.60  2.32   6.50    6.62  2.97  3.00 10.00  7.00
+## Format*       3 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
+## VocabWords    4 40 43.80  7.07  46.00   44.25  5.93 32.00 52.00 20.00
+## Course*       5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
+## Pre_Sum       6 40 37.45 16.67  39.75   37.48 15.20  4.50 70.00 65.50
+## Post_Sum      7 40 59.64 21.56  65.25   60.52 18.16 20.50 95.50 75.00
+## RawGain       8 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00
+## Per_Pre       9 40  0.43  0.17   0.46    0.44  0.17  0.05  0.73  0.68
+## Per_Post     10 40  0.69  0.24   0.73    0.70  0.27  0.21  1.10  0.88
+## Per_Gain     11 40  0.26  0.13   0.25    0.25  0.12  0.02  0.56  0.55
+## gain_test    12 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00
+## Pre_cat*     13 40   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
+##             skew kurtosis   se
+## ID*         0.00    -1.31 0.46
+## Week        0.00    -1.33 0.37
+## Format*      NaN      NaN 0.00
+## VocabWords -0.58    -1.06 1.12
+## Course*      NaN      NaN 0.00
+## Pre_Sum    -0.08    -0.68 2.64
+## Post_Sum   -0.43    -1.09 3.41
+## RawGain     0.01    -0.69 1.58
+## Per_Pre    -0.57    -0.42 0.03
+## Per_Post   -0.43    -1.02 0.04
+## Per_Gain    0.45    -0.38 0.02
+## gain_test   0.01    -0.69 1.58
+## Pre_cat*      NA       NA   NA</code></pre>
 <p></br> </br></p>
+</div>
 <div id="using-tapply-and-sapply-to-get-specific-descriptives" class="section level2">
-<h2><span class="header-section-number">5.1</span> Using Tapply and Sapply to get specific descriptives</h2>
-<p><em>Coming Soon</em></p>
+<h2><span class="header-section-number">5.2</span> Using Tapply and Sapply to get specific descriptives</h2>
+<p>While the descriptives above are nice, they can sometimes be overbearing. There is just too much information. Sometimes we want to be able to just look at the mean or maybe pinpoint a variable or possibly look at variable and compare it across two groups.</p>
+<p>To just look at the means we can use sapply on our data set.</p>
+<pre class="r"><code>t &lt;- sapply(df, mean, na.rm=TRUE) #Note we can change mean to sd or whatever statistic we want. Use ?sapply to get more information.
+t</code></pre>
+<pre><code>##         ID       Week     Format VocabWords     Course    Pre_Sum 
+##         NA  6.5000000         NA 40.0855263         NA 35.7796053 
+##   Post_Sum    RawGain    Per_Pre   Per_Post   Per_Gain  gain_test 
+## 53.1546053 17.3750000  0.4524636  0.6698279  0.2173643 17.3750000 
+##    Pre_cat 
+##         NA</code></pre>
+<p><em>Note above I saved my output into the object <code>t</code> and then printed the object <code>t</code> for formatting puproses.</em></p>
+<p>If I want to compare means between two groups on one variable. I can use <code>tapply</code>. Below I’m comparing the Glossing group (G) with the traditional group (T). There does not seem to be much of a difference.</p>
+<pre class="r"><code>tapply(df$Per_Gain,df$Format, mean, na.rm=TRUE)</code></pre>
+<pre><code>##         G         T 
+## 0.2195082 0.2152205</code></pre>
+<p>This does not seem too interesting as the mean scores are about the same. I am also interested to see if there is any change in gloss and traditional fomrat by week. It may have been that the reading was too difficult on some weeks.</p>
+<pre class="r"><code>tab2 &lt;- tapply(df$Per_Gain, df[,c(&quot;Format&quot;,&quot;Week&quot;)],mean,na.rm=T)
+tab2</code></pre>
+<pre><code>##       Week
+## Format         3        4         5         6         7         8
+##      G 0.2116477 0.208987 0.1982265 0.2127273 0.2323705 0.1953748
+##      T 0.2271178 0.175497 0.1731329 0.2405592 0.1909016 0.2266310
+##       Week
+## Format         9        10
+##      G 0.2396176 0.2581585
+##      T 0.2257028 0.2787317</code></pre>
+<p><em>Here I’m saving my outpout as tab2 because further down I will use tab2 to make a visualization of this table</em></p>
+<p>The final thing we want to look at is how high and low learners performed in each of the formats. Here we can see that Low-level learners (&lt;50% correct on the pre-test) performed slightly better in a gloss format than a traditional format. And that high-level learners (&gt;50% correct on the pre-test) performed slightly better in a traditional format. We will need to test if this is statistically signficiant later.</p>
+<pre class="r"><code>tab3 &lt;- tapply(df$Per_Gain, df[,c(&quot;Format&quot;,&quot;Pre_cat&quot;)],mean,na.rm=T)
+tab3</code></pre>
+<pre><code>##       Pre_cat
+## Format      High       Low
+##      G 0.1709459 0.2208207
+##      T        NA 0.2152205</code></pre>
 <p></br> </br></p>
-</div>
-<div id="displaying-descriptives" class="section level2">
-<h2><span class="header-section-number">5.2</span> Displaying Descriptives</h2>
-<p><em>Coming Soon</em></p>
-<p></br> </br></p>
-</div>
-<div id="printing-descriptives-and-saving-files" class="section level2">
-<h2><span class="header-section-number">5.3</span> Printing Descriptives and Saving Files</h2>
-<p><em>Coming Soon</em></p>
-</br>
-<hr>
-<hr>
 </div>
 </div>
 <div id="simple-parametric-tests" class="section level1">

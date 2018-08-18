@@ -23,6 +23,8 @@ output:
 
 
 ```{r, fig.align='center',out.width = "100px",out.height="50px", echo=FALSE}
+library(stargazer)
+library (tidyr)
 knitr::include_graphics("images/Ricon.png")
 ```
 
@@ -122,7 +124,7 @@ Voilà, my data set is now called `df`.
 ##Creating New Variables
 In the this data set we already have a variable called "RawGain." But to practice we are going to create another variable simply called gain to show a) how to create new variables and b) how to do simple arithmetic in R. 
 
-To create a new variable simple use the `$` after your data set, and then type in a variable that is not currently in your data set. Then use the arror `<-` to define what will be stored in the variable. See example below.
+To create a new variable simple use the `$` after your data set, and then type in a variable that is not currently in your data set. Then use the arror `<-` to define what will be stored in the variable. See examples below.
 ```{r}
 df$gain <- df$Post_Sum - df$Pre_Sum
 ```
@@ -135,6 +137,12 @@ head(df$RawGain, n=15)
 ```{r}
 head(df$gain, n=15)
 ```
+In another example, I'm going to create a categorical variable with two levels. This variable will be used to distinguish low and high level learners by their pre scores. Those who got `50%` or higher correct on their pre-tests will be labeled *high* and those who got below `50%` will be labeled *low*.  We will call this variable Pre_cat (cat for category). To do this we will need an `ifelse` statement. 
+
+```{r}
+df$Pre_cat <- ifelse(df$Per_Pre >= .78, "High","Low")
+```
+Simply put, if the Per_Pre is greater than .5, then label it as high, if not then label it as low. And save everything into the variable. Pre_cat.
 </br>
 </br>
 
@@ -206,6 +214,7 @@ df_2020 <- subset(df, Course=="2020")
 
 ##Transform Wide to Long
 For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds *Per_Pre*, *Per_Post*, and *Per_Gain*, and then another column that holds the value for each of those constructs. We will need the `library(tidyr)` to run this code. 
+
 ```{r}
 head(df)
 ```
@@ -221,54 +230,78 @@ df_long <- gather(df_temp, Score, Value, c(6:8))
 #Now let's look at our data structure again. 
 head(df_long,n=10)
 ```
-We will use this data set later on when doing more advance visualization techniques. 
+Remember: We will use this data set later on when doing more advance visualization techniques. 
 </br>
 <hr>
 <hr>
 
-#Running Descriptives
-In this section we will go over how to run descriptives on a data set. We will look at some base packages that allow you to automatically run descriptives on all of your variables and then we'll look at some other quick tools that allow you to explore your data with more precision. 
+#Descriptives
+In this section we will go over how to run descriptives on a data set. We will look at some of the base packages that allow you to automatically run descriptives on all of your variables and then we'll look at some other quick functions that allow you to explore your data with more precision. 
 </br>
 </br>
+
 ##Base Descriptive Packages
-*Coming Soon*
-```{r}
+There are several packages that will automatically printout a set of descriptives for your entire data set. Which one you use will depend on preference and need.
 
+I like using `stargazer` because it prints out a formatted table. In the example below I have set `type` to text so that it will print out below the code, but you could change this to html or latex. 
+```{r warning=FALSE}
+
+stargazer(df,type="text",digits=2) #I used the digits code to limit how long the numbers are. 
 ```
+
+
+The summary function also provides a lot of quick and useuful information but it requires some formatting if you want to use it in paper. 
+```{r}
+summary(df)
+```
+The `psych` package has a `describe` function similar to summary and a `describeBy` function that allows you to see descriptives by a certain group. 
+
+```{r}
+library(psych)
+describeBy(df, group="Format") #In this example I have used Format as my group. So the first set is gloss format (G), and the second is traditional format (T). 
+```
+You can also use the describeBy function to look at two groups. 
+```{r}
+library(psych)
+describeBy(df, group=c("Format","Course")) 
+```
+
 </br>
 </br>
 
 ##Using Tapply and Sapply to get specific descriptives
-*Coming Soon*
-```{r}
+While the descriptives above are nice, they can sometimes be overbearing. There is just too much information. Sometimes we want to be able to just look at the mean or maybe pinpoint a variable or possibly look at variable and compare it across two groups. 
 
+To just look at the means we can use sapply on our data set. 
+```{r,warning=F}
+t <- sapply(df, mean, na.rm=TRUE) #Note we can change mean to sd or whatever statistic we want. Use ?sapply to get more information.
+t
 ```
-</br>
-</br>
+*Note above I saved my output into the object `t` and then printed the object `t` for formatting puproses.*
 
-##Displaying Descriptives
-*Coming Soon*
+If I want to compare means between two groups on one variable. I can use `tapply`. Below I'm comparing the Glossing group (G) with the traditional group (T). There does not seem to be much of a difference. 
 ```{r}
-
+tapply(df$Per_Gain,df$Format, mean, na.rm=TRUE)
 ```
-</br>
-</br>
+This does not seem too interesting as the mean scores are about the same. I am also interested to see if there is any change in gloss and traditional fomrat by week. It may have been that the reading was too difficult on some weeks. 
 
-##Printing Descriptives and Saving Files
-*Coming Soon*
 ```{r}
+tab2 <- tapply(df$Per_Gain, df[,c("Format","Week")],mean,na.rm=T)
+tab2
+```
+*Here I'm saving my outpout as tab2 because further down I will use tab2 to make a visualization of this table*
 
+The final thing we want to look at is how high and low learners performed in each of the formats. Here we can see that Low-level learners (<50% correct on the pre-test) performed slightly better in a gloss format than a traditional format. And that high-level learners (>50% correct on the pre-test) performed slightly better in a traditional format. We will need to test if this is statistically signficiant later. 
+```{r}
+tab3 <- tapply(df$Per_Gain, df[,c("Format","Pre_cat")],mean,na.rm=T)
+tab3
 ```
 
 </br>
-<hr>
-<hr>
+</br>
 
 #Simple Parametric Tests
 
-```{r}
-
-```
 </br>
 </br>
 
