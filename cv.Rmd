@@ -92,6 +92,7 @@ knitr::include_graphics("images/fred.JPG")
 <li>Under Review -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model</li></ol><enter>
 
 <li>Under Review -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
+</ol>
 
 <center  style="font-size:20px">PROFESSIONAL AND ACADEMIC POSITIONS</center><enter>
 <ul>
