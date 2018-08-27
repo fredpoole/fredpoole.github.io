@@ -85,11 +85,11 @@ knitr::include_graphics("images/fred.JPG")
 ####Educational Technology: Journal Articles (refereed)<enter>
 <ol reversed>
 
-<li>Under Review -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness?</li><enter>
+<li>Under Review -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness? **Computer Science Education Journal**</li><enter>
 
-<li>Under Review -- Clarke-Midura, J.,Pantic, K., **Poole, F.**, Sun, C., Hamilton, M., & Allan, V. Increasing interest in computer science: designs for informal learning environments</li><enter>
+<li>Under Review -- Clarke-Midura, J.,Pantic, K., **Poole, F.**, Sun, C., Hamilton, M., & Allan, V. Increasing interest in computer science: designs for informal learning environments, **ACM Transactions on Computing Education (TOCE)**</li><enter>
 
-<li>Under Review -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model</li><enter>
+<li>Under Review -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, **Mentoring & Tutoring: Partnership in Learning**</li><enter>
 
 <li>Under Review -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
 </ol>
