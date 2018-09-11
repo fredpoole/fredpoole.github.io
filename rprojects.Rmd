@@ -403,7 +403,7 @@ median(df$Per_Pre)
 </br>
 
 ##Bar Graphs
-*Coming Soon*
+This is a bar chart. 
 ```{r,echo=FALSE}
 library(ggplot2)
 g <- ggplot(df, aes(Format, Per_Gain, fill=Format))
