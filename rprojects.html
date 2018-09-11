@@ -25,7 +25,9 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
+<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
+<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -95,6 +97,9 @@ img {
 }
 .tabbed-pane {
   padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
 }
 button.code-folding-btn:focus {
   outline: none;
@@ -347,10 +352,6 @@ div.tocify {
 <center style="font-size:40px">
 R Projects
 </center>
-<pre><code>## 
-## Please cite as:</code></pre>
-<pre><code>##  Hlavac, Marek (2015). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
-<pre><code>##  R package version 5.2. http://CRAN.R-project.org/package=stargazer</code></pre>
 <p><img src="images/Ricon.png" width="100px" height="50px" style="display: block; margin: auto;" /></p>
 <p>On this page you’ll find a brief introduction to R as well as some examples of the analysis that I have run using R in the last few years.</p>
 For the Analysis below I will be using the EGloss data set. This data was collected in 2014 and compares vocabulary learning by second language learners of Chinese when reading via traditional format and a gloss (<a href="http://www.mandarintools.com/dimsum.html" class="uri">http://www.mandarintools.com/dimsum.html</a>). Below is a list of the variables in the data set. </br> </br>
@@ -388,23 +389,23 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 </ul>
 <p>For more information about this data set please see the following article: 2016 – <strong>Poole, F.</strong>, &amp; Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. <em>Journal of Chinese Language Teachers Association</em>. 51(3), 266–285.</p>
 <pre><code>## # A tibble: 15 x 11
-##       ID  Week Format VocabWords Course Pre_Sum Post_Sum RawGain   Per_Pre
-##    &lt;chr&gt; &lt;dbl&gt;  &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
-##  1 10203     3      G         44   1020    46.0     58.5    12.5 0.5227273
-##  2 10203     5      G         38   1020    41.5     51.5    10.0 0.5460526
-##  3 10203     7      G         38   1020    39.5     46.0     6.5 0.5197368
-##  4 10203     9      G         38   1020    33.0     39.5     6.5 0.4342105
-##  5 10203     4      T         37   1020    52.0     53.0     1.0 0.7027027
-##  6 10203     6      T         38   1020    28.0     42.0    14.0 0.3684211
-##  7 10203     8      T         38   1020    31.5     41.0     9.5 0.4144737
-##  8 10203    10      T         26   1020    18.0     35.5    17.5 0.3461538
-##  9 10202     4      G         37   1020    52.5     65.0    12.5 0.7094595
-## 10 10202     6      G         38   1020    29.0     45.5    16.5 0.3815789
-## 11 10202     8      G         38   1020    27.5     41.5    14.0 0.3618421
-## 12 10202    10      G         26   1020    22.0     29.0     7.0 0.4230769
-## 13 10202     3      T         44   1020    30.0     59.5    29.5 0.3409091
-## 14 10202     5      T         38   1020    40.0     51.0    11.0 0.5263158
-## 15 10202     7      T         38   1020    37.5     50.0    12.5 0.4934211
+##    ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre
+##    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 10203     3 G              44   1020    46       58.5    12.5   0.523
+##  2 10203     5 G              38   1020    41.5     51.5    10     0.546
+##  3 10203     7 G              38   1020    39.5     46       6.5   0.520
+##  4 10203     9 G              38   1020    33       39.5     6.5   0.434
+##  5 10203     4 T              37   1020    52       53       1     0.703
+##  6 10203     6 T              38   1020    28       42      14     0.368
+##  7 10203     8 T              38   1020    31.5     41       9.5   0.414
+##  8 10203    10 T              26   1020    18       35.5    17.5   0.346
+##  9 10202     4 G              37   1020    52.5     65      12.5   0.709
+## 10 10202     6 G              38   1020    29       45.5    16.5   0.382
+## 11 10202     8 G              38   1020    27.5     41.5    14     0.362
+## 12 10202    10 G              26   1020    22       29       7     0.423
+## 13 10202     3 T              44   1020    30       59.5    29.5   0.341
+## 14 10202     5 T              38   1020    40       51      11     0.526
+## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
 ## # ... with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <div id="download-r-and-rstudio" class="section level1">
 <h1><span class="header-section-number">1</span> Download R and Rstudio</h1>
@@ -424,23 +425,23 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 <p>For this project I’ll be uploading the following excel file. <em>Remember if you create a project and add the file to the same folder as your project, you don’t need to worry about specifying the path ofthe file.</em></p>
 <p>The code <code>col_types</code> identifies the type of variable that each column is. So column one is a text variable, two is a numeric and so on.</p>
 <pre><code>## # A tibble: 15 x 11
-##       ID  Week Format VocabWords Course Pre_Sum Post_Sum RawGain   Per_Pre
-##    &lt;chr&gt; &lt;dbl&gt;  &lt;chr&gt;      &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
-##  1 10203     3      G         44   1020    46.0     58.5    12.5 0.5227273
-##  2 10203     5      G         38   1020    41.5     51.5    10.0 0.5460526
-##  3 10203     7      G         38   1020    39.5     46.0     6.5 0.5197368
-##  4 10203     9      G         38   1020    33.0     39.5     6.5 0.4342105
-##  5 10203     4      T         37   1020    52.0     53.0     1.0 0.7027027
-##  6 10203     6      T         38   1020    28.0     42.0    14.0 0.3684211
-##  7 10203     8      T         38   1020    31.5     41.0     9.5 0.4144737
-##  8 10203    10      T         26   1020    18.0     35.5    17.5 0.3461538
-##  9 10202     4      G         37   1020    52.5     65.0    12.5 0.7094595
-## 10 10202     6      G         38   1020    29.0     45.5    16.5 0.3815789
-## 11 10202     8      G         38   1020    27.5     41.5    14.0 0.3618421
-## 12 10202    10      G         26   1020    22.0     29.0     7.0 0.4230769
-## 13 10202     3      T         44   1020    30.0     59.5    29.5 0.3409091
-## 14 10202     5      T         38   1020    40.0     51.0    11.0 0.5263158
-## 15 10202     7      T         38   1020    37.5     50.0    12.5 0.4934211
+##    ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre
+##    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+##  1 10203     3 G              44   1020    46       58.5    12.5   0.523
+##  2 10203     5 G              38   1020    41.5     51.5    10     0.546
+##  3 10203     7 G              38   1020    39.5     46       6.5   0.520
+##  4 10203     9 G              38   1020    33       39.5     6.5   0.434
+##  5 10203     4 T              37   1020    52       53       1     0.703
+##  6 10203     6 T              38   1020    28       42      14     0.368
+##  7 10203     8 T              38   1020    31.5     41       9.5   0.414
+##  8 10203    10 T              26   1020    18       35.5    17.5   0.346
+##  9 10202     4 G              37   1020    52.5     65      12.5   0.709
+## 10 10202     6 G              38   1020    29       45.5    16.5   0.382
+## 11 10202     8 G              38   1020    27.5     41.5    14     0.362
+## 12 10202    10 G              26   1020    22       29       7     0.423
+## 13 10202     3 T              44   1020    30       59.5    29.5   0.341
+## 14 10202     5 T              38   1020    40       51      11     0.526
+## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
 ## # ... with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <p></br> </br></p>
 <div id="renaming-your-data" class="section level2">
@@ -469,12 +470,16 @@ Voilà, my data set is now called <code>df</code>. </br>
 <pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0
 ## [15] 12.5</code></pre>
 <p>In another example, I’m going to create a categorical variable with two levels. This variable will be used to distinguish low and high level learners by their pre scores. Those who got <code>50%</code> or higher correct on their pre-tests will be labeled <em>high</em> and those who got below <code>50%</code> will be labeled <em>low</em>. We will call this variable Pre_cat (cat for category). To do this we will need an <code>ifelse</code> statement.</p>
-<pre class="r"><code>df$Pre_cat &lt;- ifelse(df$Per_Pre &gt;= .78, &quot;High&quot;,&quot;Low&quot;)</code></pre>
+<pre class="r"><code>df$Pre_cat &lt;- ifelse(df$Per_Pre &gt;= .45, &quot;High&quot;,&quot;Low&quot;)</code></pre>
 <p>Simply put, if the Per_Pre is greater than .5, then label it as high, if not then label it as low. And save everything into the variable. Pre_cat. </br> </br></p>
 </div>
 <div id="impute-missing-data" class="section level2">
 <h2><span class="header-section-number">4.2</span> Impute Missing Data</h2>
-<pre class="r"><code>#Coming soon</code></pre>
+<pre class="r"><code>#Coming soon
+#Fix this ... 
+#library(VIM)
+#dat1 &lt;- kNN(dat, variable= c(&quot;FS_pre&quot;,&quot;FS_post&quot;,&quot;FS_gains&quot;),k=6)
+#dat2 &lt;- kNN(dat)</code></pre>
 <p></br> </br></p>
 </div>
 <div id="renaming-your-variables" class="section level2">
@@ -488,6 +493,7 @@ Voilà, my data set is now called <code>df</code>. </br>
 <p>For some analysis you’ll need to remove any missing variables. The easiest way to do this is to use the filter function in the <code>library(dplyr)</code>.</p>
 <p>For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run <code>nrow(df_c)</code> to get the number of cases in my new data set.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.4.4</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
@@ -496,8 +502,9 @@ Voilà, my data set is now called <code>df</code>. </br>
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>df_c &lt;-  df %&gt;% filter(complete.cases(.)) 
-nrow(df) #this is quick way to see how many cases you have in each data set</code></pre>
+<pre class="r"><code>df_c &lt;-  df %&gt;% filter(complete.cases(.)) </code></pre>
+<pre><code>## Warning: package &#39;bindrcpp&#39; was built under R version 3.4.4</code></pre>
+<pre class="r"><code>nrow(df) #this is quick way to see how many cases you have in each data set</code></pre>
 <pre><code>## [1] 152</code></pre>
 <pre class="r"><code>nrow(df_c) #notice they are the same, that&#39;s because we don&#39;t have any missing data sets. </code></pre>
 <pre><code>## [1] 152</code></pre>
@@ -520,7 +527,7 @@ nrow(df) #this is quick way to see how many cases you have in each data set</cod
 ##  $ Per_Post  : num  0.665 0.678 0.605 0.52 0.716 ...
 ##  $ Per_Gain  : num  0.142 0.1316 0.0855 0.0855 0.0135 ...
 ##  $ gain_test : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...
-##  $ Pre_cat   : chr  &quot;Low&quot; &quot;Low&quot; &quot;Low&quot; &quot;Low&quot; ...</code></pre>
+##  $ Pre_cat   : chr  &quot;High&quot; &quot;High&quot; &quot;High&quot; &quot;Low&quot; ...</code></pre>
 <pre class="r"><code>df$ID &lt;-as.factor(df$ID) #In this example, I am saving ID as a factor back into the ID variable. I can change factor to numeric to change it into a different type. 
 
 #Instead of doing each variable one by one, I can save all of the variables I want to change into a cols object, and then change all of them at once using the lapply function.
@@ -542,7 +549,7 @@ str(df)</code></pre>
 ##  $ Per_Post  : num  0.665 0.678 0.605 0.52 0.716 ...
 ##  $ Per_Gain  : num  0.142 0.1316 0.0855 0.0855 0.0135 ...
 ##  $ gain_test : num  12.5 10 6.5 6.5 1 14 9.5 17.5 12.5 16.5 ...
-##  $ Pre_cat   : chr  &quot;Low&quot; &quot;Low&quot; &quot;Low&quot; &quot;Low&quot; ...</code></pre>
+##  $ Pre_cat   : chr  &quot;High&quot; &quot;High&quot; &quot;High&quot; &quot;Low&quot; ...</code></pre>
 <p></br> </br></p>
 </div>
 <div id="subsetting-data" class="section level2">
@@ -561,14 +568,14 @@ df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 <p>For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds <em>Per_Pre</em>, <em>Per_Post</em>, and <em>Per_Gain</em>, and then another column that holds the value for each of those constructs. We will need the <code>library(tidyr)</code> to run this code.</p>
 <pre class="r"><code>head(df)</code></pre>
 <pre><code>## # A tibble: 6 x 13
-##       ID  Week Format VocabWords Course Pre_Sum Post_Sum RawGain   Per_Pre
-##   &lt;fctr&gt; &lt;dbl&gt; &lt;fctr&gt;      &lt;dbl&gt; &lt;fctr&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
-## 1  10203     3      G         44   1020    46.0     58.5    12.5 0.5227273
-## 2  10203     5      G         38   1020    41.5     51.5    10.0 0.5460526
-## 3  10203     7      G         38   1020    39.5     46.0     6.5 0.5197368
-## 4  10203     9      G         38   1020    33.0     39.5     6.5 0.4342105
-## 5  10203     4      T         37   1020    52.0     53.0     1.0 0.7027027
-## 6  10203     6      T         38   1020    28.0     42.0    14.0 0.3684211
+##   ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre
+##   &lt;fct&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1 10203     3 G              44 1020      46       58.5    12.5   0.523
+## 2 10203     5 G              38 1020      41.5     51.5    10     0.546
+## 3 10203     7 G              38 1020      39.5     46       6.5   0.520
+## 4 10203     9 G              38 1020      33       39.5     6.5   0.434
+## 5 10203     4 T              37 1020      52       53       1     0.703
+## 6 10203     6 T              38 1020      28       42      14     0.368
 ## # ... with 4 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;,
 ## #   gain_test &lt;dbl&gt;, Pre_cat &lt;chr&gt;</code></pre>
 <p>To do this I will first create a subset of my data set so that I remove the variables that I don’t want in my long data set.</p>
@@ -584,18 +591,18 @@ df_long &lt;- gather(df_temp, Score, Value, c(6:8))
 #Now let&#39;s look at our data structure again. 
 head(df_long,n=10)</code></pre>
 <pre><code>## # A tibble: 10 x 7
-##        ID  Week Format VocabWords Course   Score     Value
-##    &lt;fctr&gt; &lt;dbl&gt; &lt;fctr&gt;      &lt;dbl&gt; &lt;fctr&gt;   &lt;chr&gt;     &lt;dbl&gt;
-##  1  10203     3      G         44   1020 Per_Pre 0.5227273
-##  2  10203     5      G         38   1020 Per_Pre 0.5460526
-##  3  10203     7      G         38   1020 Per_Pre 0.5197368
-##  4  10203     9      G         38   1020 Per_Pre 0.4342105
-##  5  10203     4      T         37   1020 Per_Pre 0.7027027
-##  6  10203     6      T         38   1020 Per_Pre 0.3684211
-##  7  10203     8      T         38   1020 Per_Pre 0.4144737
-##  8  10203    10      T         26   1020 Per_Pre 0.3461538
-##  9  10202     4      G         37   1020 Per_Pre 0.7094595
-## 10  10202     6      G         38   1020 Per_Pre 0.3815789</code></pre>
+##    ID     Week Format VocabWords Course Score   Value
+##    &lt;fct&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;chr&gt;   &lt;dbl&gt;
+##  1 10203     3 G              44 1020   Per_Pre 0.523
+##  2 10203     5 G              38 1020   Per_Pre 0.546
+##  3 10203     7 G              38 1020   Per_Pre 0.520
+##  4 10203     9 G              38 1020   Per_Pre 0.434
+##  5 10203     4 T              37 1020   Per_Pre 0.703
+##  6 10203     6 T              38 1020   Per_Pre 0.368
+##  7 10203     8 T              38 1020   Per_Pre 0.414
+##  8 10203    10 T              26 1020   Per_Pre 0.346
+##  9 10202     4 G              37 1020   Per_Pre 0.709
+## 10 10202     6 G              38 1020   Per_Pre 0.382</code></pre>
 Remember: We will use this data set later on when doing more advance visualization techniques. </br>
 <hr>
 <hr>
@@ -607,12 +614,8 @@ Remember: We will use this data set later on when doing more advance visualizati
 <div id="base-descriptive-packages" class="section level2">
 <h2><span class="header-section-number">5.1</span> Base Descriptive Packages</h2>
 <p>There are several packages that will automatically printout a set of descriptives for your entire data set. Which one you use will depend on preference and need.</p>
-<p>I like using <code>stargazer</code> because it prints out a formatted table. In the example below I have set <code>type</code> to text so that it will print out below the code, but you could change this to html or latex.</p>
-<pre class="r"><code>stargazer(df,type=&quot;text&quot;,digits=2) #I used the digits code to limit how long the numbers are. </code></pre>
-<pre><code>## 
-## =================================
-## Statistic N Mean St. Dev. Min Max
-## =================================</code></pre>
+<p>I like using <code>stargazer</code> because it prints out a formatted table. However, I have been having issues with displaying the output on the website, so I’ll just show the code. In the example below I have set <code>type</code> to text so that it will print out in the console, but you could change this to html or latex.</p>
+<pre class="r"><code>#stargazer(df,type=&quot;text&quot;,digits=2) #I used the digits code to limit how long the numbers are. </code></pre>
 <p>The summary function also provides a lot of quick and useuful information but it requires some formatting if you want to use it in paper.</p>
 <pre class="r"><code>summary(df)</code></pre>
 <pre><code>##        ID           Week       Format   VocabWords     Course  
@@ -642,16 +645,6 @@ Remember: We will use this data set later on when doing more advance visualizati
 <p>The <code>psych</code> package has a <code>describe</code> function similar to summary and a <code>describeBy</code> function that allows you to see descriptives by a certain group.</p>
 <pre class="r"><code>library(psych)
 describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as my group. So the first set is gloss format (G), and the second is traditional format (T). </code></pre>
-<pre><code>## Warning: NAs introduced by coercion</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
-## Inf</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
-## -Inf</code></pre>
-<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
-## Inf</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
-## -Inf</code></pre>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## Format: G
@@ -714,28 +707,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## gain_test   0.42    -0.44 1.14
 ## Pre_cat*      NA       NA   NA</code></pre>
 <p>You can also use the describeBy function to look at two groups.</p>
-<pre class="r"><code>library(psych)
-describeBy(df, group=c(&quot;Format&quot;,&quot;Course&quot;)) </code></pre>
-<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
-## Inf</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
-## -Inf</code></pre>
-<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
-## Inf</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
-## -Inf</code></pre>
-<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
-## Inf</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
-## -Inf</code></pre>
-<pre><code>## Warning in FUN(data[x, , drop = FALSE], ...): NAs introduced by coercion</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to min; returning
-## Inf</code></pre>
-<pre><code>## Warning in FUN(newX[, i], ...): no non-missing arguments to max; returning
-## -Inf</code></pre>
+<pre class="r"><code>describeBy(df, group=c(&quot;Format&quot;,&quot;Course&quot;)) </code></pre>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## Format: G
@@ -897,8 +869,8 @@ tab2</code></pre>
 tab3</code></pre>
 <pre><code>##       Pre_cat
 ## Format      High       Low
-##      G 0.1709459 0.2208207
-##      T        NA 0.2152205</code></pre>
+##      G 0.2166352 0.2223812
+##      T 0.2253465 0.2045472</code></pre>
 <p></br> </br></p>
 </div>
 </div>
@@ -907,11 +879,24 @@ tab3</code></pre>
 <p></br> </br></p>
 <div id="t-tests" class="section level2">
 <h2><span class="header-section-number">6.1</span> T-Tests</h2>
-<p><em>Coming Soon</em></p>
+<p>To look at simple comparison of means between two groups we will use a T-test. IN this example, I will compare means of Per_Gain (Percentage of Vocabulary Gains) between the two groups: traditional and gloss.</p>
+<pre class="r"><code>t.test(df$Per_Gain~df$Format, paired=FALSE)</code></pre>
+<pre><code>## 
+##  Welch Two Sample t-test
+## 
+## data:  df$Per_Gain by df$Format
+## t = 0.23826, df = 143.83, p-value = 0.812
+## alternative hypothesis: true difference in means is not equal to 0
+## 95 percent confidence interval:
+##  -0.03128275  0.03985813
+## sample estimates:
+## mean in group G mean in group T 
+##       0.2195082       0.2152205</code></pre>
+<p>It appears that these two groups are the same.</p>
 <p></br> </br></p>
 </div>
-<div id="anova" class="section level2">
-<h2><span class="header-section-number">6.2</span> ANOVA</h2>
+<div id="effect-size" class="section level2">
+<h2><span class="header-section-number">6.2</span> Effect Size</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
@@ -920,14 +905,116 @@ tab3</code></pre>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
-<div id="regressions" class="section level2">
-<h2><span class="header-section-number">6.4</span> Regressions</h2>
-<p><em>Coming Soon</em></p>
+<div id="anova" class="section level2">
+<h2><span class="header-section-number">6.4</span> ANOVA</h2>
+<p>The T-test is nice, but it does not allow us to control for potential differences in course. We can do this with a two-way factorial ANOVA.</p>
+<pre class="r"><code>#Next we will define our model. Here we are predicting Per_Gain while controlling for Format and Course
+fit &lt;- aov(Per_Gain ~  Format + Course + Format:Course, data=df) 
+summary(fit)</code></pre>
+<pre><code>##                Df Sum Sq Mean Sq F value   Pr(&gt;F)    
+## Format          1 0.0007 0.00070   0.064    0.800    
+## Course          1 0.2274 0.22737  20.870 1.03e-05 ***
+## Format:Course   1 0.0062 0.00623   0.572    0.451    
+## Residuals     148 1.6123 0.01089                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p>Here we can see that course is a significant predictor of gains. To look at the post-hoc we can use TukeyHSD test below.</p>
+<pre class="r"><code># Tukey Honestly Significant Differences
+TukeyHSD(fit) # where fit comes from aov()</code></pre>
+<pre><code>##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = Per_Gain ~ Format + Course + Format:Course, data = df)
+## 
+## $Format
+##             diff         lwr        upr     p adj
+## T-G -0.004287691 -0.03774729 0.02917191 0.8004413
+## 
+## $Course
+##                diff        lwr       upr    p adj
+## 2020-1020 0.0774593 0.04395326 0.1109653 1.03e-05
+## 
+## $`Format:Course`
+##                       diff          lwr        upr     p adj
+## T:1020-G:1020 -0.017780438 -0.081706581 0.04614570 0.8878925
+## G:2020-G:1020  0.064641189  0.002333693 0.12694869 0.0387902
+## T:2020-G:1020  0.072496971  0.010189474 0.13480447 0.0154472
+## G:2020-T:1020  0.082421627  0.020114131 0.14472912 0.0042058
+## T:2020-T:1020  0.090277409  0.027969912 0.15258491 0.0013574
+## T:2020-G:2020  0.007855782 -0.052789882 0.06850145 0.9868149</code></pre>
+<p>These findings show that regardless of format, the 2020 group (second year Chinese course) had a higher percentage of gains than the 1020 gorup.</p>
 <p></br> </br></p>
 </div>
-<div id="effect-size" class="section level2">
-<h2><span class="header-section-number">6.5</span> Effect Size</h2>
-<em>Coming Soon</em> </br> </br>
+<div id="regressions" class="section level2">
+<h2><span class="header-section-number">6.5</span> Regressions</h2>
+<pre class="r"><code>mod &lt;- lm(Per_Post ~ Per_Pre + Week + Course + VocabWords + Format, df)
+summary(mod)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Per_Post ~ Per_Pre + Week + Course + VocabWords + 
+##     Format, data = df)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.26929 -0.06022 -0.01583  0.05494  0.32452 
+## 
+## Coefficients:
+##              Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  0.243549   0.093359   2.609   0.0100 *  
+## Per_Pre      1.029308   0.053570  19.214  &lt; 2e-16 ***
+## Week         0.003479   0.004400   0.791   0.4304    
+## Course2020   0.094231   0.018962   4.970 1.85e-06 ***
+## VocabWords  -0.002833   0.001673  -1.694   0.0924 .  
+## FormatT      0.003827   0.017016   0.225   0.8224    
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.1026 on 146 degrees of freedom
+## Multiple R-squared:  0.7576, Adjusted R-squared:  0.7493 
+## F-statistic: 91.27 on 5 and 146 DF,  p-value: &lt; 2.2e-16</code></pre>
+<pre class="r"><code>mod1 &lt;- lm(Per_Post ~ Per_Pre, df)
+mod2 &lt;- lm(Per_Post ~ Per_Pre + Course, df)
+mod3 &lt;- lm(Per_Post ~ Per_Pre + Course + Format, df)
+mod4 &lt;- lm(Per_Post ~ Per_Pre + Course + Format + Format*Per_Pre, df)
+
+anova(mod1,mod2,mod3,mod4)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Model 1: Per_Post ~ Per_Pre
+## Model 2: Per_Post ~ Per_Pre + Course
+## Model 3: Per_Post ~ Per_Pre + Course + Format
+## Model 4: Per_Post ~ Per_Pre + Course + Format + Format * Per_Pre
+##   Res.Df    RSS Df Sum of Sq       F    Pr(&gt;F)    
+## 1    150 1.8448                                   
+## 2    149 1.6123  1  0.232511 21.6239 7.325e-06 ***
+## 3    148 1.6119  1  0.000358  0.0333   0.85543    
+## 4    147 1.5806  1  0.031297  2.9106   0.09011 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre class="r"><code>summary(mod4)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = Per_Post ~ Per_Pre + Course + Format + Format * 
+##     Per_Pre, data = df)
+## 
+## Residuals:
+##      Min       1Q   Median       3Q      Max 
+## -0.22077 -0.06566 -0.01568  0.05774  0.31830 
+## 
+## Coefficients:
+##                 Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)      0.19197    0.03418   5.617 9.45e-08 ***
+## Per_Pre          0.97078    0.06445  15.062  &lt; 2e-16 ***
+## Course2020       0.07828    0.01691   4.630 7.97e-06 ***
+## FormatT         -0.08170    0.04908  -1.665   0.0981 .  
+## Per_Pre:FormatT  0.17500    0.10258   1.706   0.0901 .  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 0.1037 on 147 degrees of freedom
+## Multiple R-squared:  0.7509, Adjusted R-squared:  0.7442 
+## F-statistic: 110.8 on 4 and 147 DF,  p-value: &lt; 2.2e-16</code></pre>
+</br> </br>
 <hr>
 <hr>
 </div>
@@ -938,6 +1025,17 @@ tab3</code></pre>
 <div id="wilcoxon-signed-rank-test" class="section level2">
 <h2><span class="header-section-number">7.1</span> Wilcoxon-Signed Rank Test</h2>
 <p><em>Coming Soon</em></p>
+<pre><code>## Loading required package: survival</code></pre>
+<pre><code>## Warning: package &#39;survival&#39; was built under R version 3.4.4</code></pre>
+<pre><code>## 
+##  Exact Wilcoxon-Pratt Signed-Rank Test
+## 
+## data:  y by x (pos, neg) 
+##   stratified by block
+## Z = 10.695, p-value &lt; 2.2e-16
+## alternative hypothesis: true mu is not equal to 0</code></pre>
+<pre><code>## [1] 0.68625</code></pre>
+<pre><code>## [1] 0.4559615</code></pre>
 </br> </br>
 <hr>
 <hr>
@@ -949,47 +1047,50 @@ tab3</code></pre>
 <div id="bar-graphs" class="section level2">
 <h2><span class="header-section-number">8.1</span> Bar Graphs</h2>
 <p><em>Coming Soon</em></p>
-<p></br> </br></p>
+<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.4.4</code></pre>
+<pre><code>## 
+## Attaching package: &#39;ggplot2&#39;</code></pre>
+<pre><code>## The following objects are masked from &#39;package:psych&#39;:
+## 
+##     %+%, alpha</code></pre>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-35-1.png" width="672" /> </br> </br></p>
 </div>
 <div id="box-plots" class="section level2">
 <h2><span class="header-section-number">8.2</span> Box Plots</h2>
-<p><em>Coming Soon</em></p>
-<p></br> </br></p>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-37-1.png" width="672" /> </br> </br></p>
 </div>
 <div id="linear-plots" class="section level2">
 <h2><span class="header-section-number">8.3</span> Linear Plots</h2>
-<p><em>Coming Soon</em></p>
-<p></br> </br></p>
-</div>
-<div id="customizing-basic-plots" class="section level2">
-<h2><span class="header-section-number">8.4</span> Customizing Basic Plots</h2>
-<p><em>Coming Soon</em></p>
-</br>
+<pre class="r"><code>f &lt;- ggplot(df, aes(Week,Per_Gain))
+f + geom_jitter() + geom_smooth()</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<pre class="r"><code>f &lt;- ggplot(df, aes(VocabWords,Per_Gain))
+f + geom_jitter(aes(col=Format)) + geom_smooth(method=&quot;loess&quot;, se=F) + 
+  labs(title=&quot;Vocabulary Gain (%) by Number of New Words&quot;, y=&quot;Gain (%)&quot;, x=&quot;Week&quot;)</code></pre>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-39-1.png" width="672" /> </br> </br></p>
 <hr>
 <hr>
 </div>
-</div>
-<div id="ggplot-graphs" class="section level1">
-<h1><span class="header-section-number">9</span> GGPLOT Graphs</h1>
-</br>
-<hr>
-<hr>
 </div>
 <div id="multivariate-analysis" class="section level1">
-<h1><span class="header-section-number">10</span> Multivariate Analysis</h1>
+<h1><span class="header-section-number">9</span> Multivariate Analysis</h1>
 <p></br> </br></p>
 <div id="path-models" class="section level2">
-<h2><span class="header-section-number">10.1</span> Path Models</h2>
+<h2><span class="header-section-number">9.1</span> Path Models</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="cluster-analysis" class="section level2">
-<h2><span class="header-section-number">10.2</span> Cluster Analysis</h2>
+<h2><span class="header-section-number">9.2</span> Cluster Analysis</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="cart-analysis" class="section level2">
-<h2><span class="header-section-number">10.3</span> CART Analysis</h2>
+<h2><span class="header-section-number">9.3</span> CART Analysis</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>

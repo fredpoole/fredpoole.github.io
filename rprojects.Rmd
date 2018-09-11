@@ -22,9 +22,7 @@ output:
 <center  style="font-size:40px">R Projects</center>
 
 
-```{r, fig.align='center',out.width = "100px",out.height="50px", echo=FALSE}
-library(stargazer)
-library (tidyr)
+```{r, fig.align='center',out.width = "100px",out.height="50px", echo=FALSE, warning=FALSE}
 knitr::include_graphics("images/Ricon.png")
 ```
 
@@ -51,6 +49,7 @@ For more information about this data set please see the following article:
 
 ```{r echo=FALSE, warning=FALSE}
 library(readxl)
+library (tidyr)
 gloss <- read_excel("eGlossData.xlsx", 
     col_types = c("text", "numeric", "text", 
         "numeric", "numeric", "numeric", 
@@ -140,7 +139,7 @@ head(df$gain, n=15)
 In another example, I'm going to create a categorical variable with two levels. This variable will be used to distinguish low and high level learners by their pre scores. Those who got `50%` or higher correct on their pre-tests will be labeled *high* and those who got below `50%` will be labeled *low*.  We will call this variable Pre_cat (cat for category). To do this we will need an `ifelse` statement. 
 
 ```{r}
-df$Pre_cat <- ifelse(df$Per_Pre >= .78, "High","Low")
+df$Pre_cat <- ifelse(df$Per_Pre >= .45, "High","Low")
 ```
 Simply put, if the Per_Pre is greater than .5, then label it as high, if not then label it as low. And save everything into the variable. Pre_cat.
 </br>
@@ -150,6 +149,10 @@ Simply put, if the Per_Pre is greater than .5, then label it as high, if not the
 
 ```{r}
 #Coming soon
+#Fix this ... 
+#library(VIM)
+#dat1 <- kNN(dat, variable= c("FS_pre","FS_post","FS_gains"),k=6)
+#dat2 <- kNN(dat)
 
 ```
 </br>
@@ -160,7 +163,6 @@ You may want to rename your variables for a variety of reasons. You could simply
 
 ```{r}
 colnames(df)[colnames(df)=="gain"] <- "gain_test"
-
 ```
 </br>
 </br>
@@ -243,10 +245,10 @@ In this section we will go over how to run descriptives on a data set. We will l
 ##Base Descriptive Packages
 There are several packages that will automatically printout a set of descriptives for your entire data set. Which one you use will depend on preference and need.
 
-I like using `stargazer` because it prints out a formatted table. In the example below I have set `type` to text so that it will print out below the code, but you could change this to html or latex. 
-```{r warning=FALSE}
+I like using `stargazer` because it prints out a formatted table. However, I have been having issues with displaying the output on the website, so I'll just show the code. In the example below I have set `type` to text so that it will print out in the console, but you could change this to html or latex. 
 
-stargazer(df,type="text",digits=2) #I used the digits code to limit how long the numbers are. 
+```{r, warning=FALSE}
+#stargazer(df,type="text",digits=2) #I used the digits code to limit how long the numbers are. 
 ```
 
 
@@ -256,13 +258,12 @@ summary(df)
 ```
 The `psych` package has a `describe` function similar to summary and a `describeBy` function that allows you to see descriptives by a certain group. 
 
-```{r}
+```{r, warning=FALSE}
 library(psych)
 describeBy(df, group="Format") #In this example I have used Format as my group. So the first set is gloss format (G), and the second is traditional format (T). 
 ```
 You can also use the describeBy function to look at two groups. 
-```{r}
-library(psych)
+```{r, warning=FALSE}
 describeBy(df, group=c("Format","Course")) 
 ```
 
@@ -306,20 +307,25 @@ tab3
 </br>
 
 ##T-Tests
+To look at simple comparison of means between two groups we will use a T-test. IN this example, I will compare means of Per_Gain (Percentage of Vocabulary Gains) between the two groups: traditional and gloss. 
+
+```{r}
+t.test(df$Per_Gain~df$Format, paired=FALSE)
+```
+It appears that these two groups are the same. 
+
+</br>
+</br>
+
+##Effect Size
 *Coming Soon*
+
 ```{r}
 
 ```
 </br>
 </br>
 
-##ANOVA
-*Coming Soon*
-```{r}
-
-```
-</br>
-</br>
 
 ##Chi-Square Tests
 *Coming Soon*
@@ -329,16 +335,44 @@ tab3
 </br>
 </br>
 
-##Regressions
-*Coming Soon*
+##ANOVA
+The T-test is nice, but it does not allow us to control for potential differences in course. We can do this with a two-way factorial ANOVA.
+
 ```{r}
-
+#Next we will define our model. Here we are predicting Per_Gain while controlling for Format and Course
+fit <- aov(Per_Gain ~  Format + Course + Format:Course, data=df) 
+summary(fit)
 ```
+Here we can see that course is a significant predictor of gains. 
+To look at the post-hoc we can use TukeyHSD test below. 
+```{r}
+# Tukey Honestly Significant Differences
+TukeyHSD(fit) # where fit comes from aov()
+```
+These findings show that regardless of format, the 2020 group (second year Chinese course) had a higher percentage of gains than the 1020 gorup. 
+
 </br>
 </br>
 
-##Effect Size
-*Coming Soon*
+
+##Regressions
+
+
+```{r}
+mod <- lm(Per_Post ~ Per_Pre + Week + Course + VocabWords + Format, df)
+summary(mod)
+```
+
+```{r}
+mod1 <- lm(Per_Post ~ Per_Pre, df)
+mod2 <- lm(Per_Post ~ Per_Pre + Course, df)
+mod3 <- lm(Per_Post ~ Per_Pre + Course + Format, df)
+mod4 <- lm(Per_Post ~ Per_Pre + Course + Format + Format*Per_Pre, df)
+
+anova(mod1,mod2,mod3,mod4)
+summary(mod4)
+```
+
 </br>
 </br>
 <hr>
@@ -351,8 +385,12 @@ tab3
 
 ##Wilcoxon-Signed Rank Test
 *Coming Soon*
-```{r}
-
+```{r, echo=FALSE}
+library(coin)
+gain <- wilcoxsign_test(Per_Post ~ Per_Pre, data = df, distribution="exact",paired=T)
+gain
+median(df$Per_Post)
+median(df$Per_Pre)
 ```
 </br>
 </br>
@@ -366,48 +404,55 @@ tab3
 
 ##Bar Graphs
 *Coming Soon*
-```{r}
-
+```{r,echo=FALSE}
+library(ggplot2)
+g <- ggplot(df, aes(Format, Per_Gain, fill=Format))
+g + geom_bar(stat="identity")
 ```
 
+
+```{r,echo=FALSE}
+g <- ggplot(df, aes(Format, Per_Gain, fill=Format))
+g + geom_bar(stat="identity") + facet_grid(~Course)
+```
+
+```{r,echo=FALSE}
+g <- ggplot(df, aes(Format, Per_Gain, fill=Format))
+g + geom_bar(stat="identity") + facet_grid(~Pre_cat)
+```
 </br>
 </br>
 
 ##Box Plots
-*Coming Soon*
-```{r}
 
+```{r,echo=FALSE}
+g <- ggplot(df, aes(Format, Per_Gain, fill=Format))
+g + geom_boxplot() 
 ```
 
+
+```{r,echo=FALSE}
+g <- ggplot(df, aes(Format, Per_Gain, fill=Format))
+g + geom_boxplot() + facet_grid(~Course)
+```
 </br>
 </br>
 
 ##Linear Plots
-*Coming Soon*
-```{r}
-
-```
-
-</br>
-</br>
-
-##Customizing Basic Plots
-*Coming Soon*
-```{r}
-
-```
-
-</br>
-<hr>
-<hr>
-
-#GGPLOT Graphs
 
 ```{r}
-
+f <- ggplot(df, aes(Week,Per_Gain))
+f + geom_jitter() + geom_smooth()
 ```
 
+```{r}
+f <- ggplot(df, aes(VocabWords,Per_Gain))
+f + geom_jitter(aes(col=Format)) + geom_smooth(method="loess", se=F) + 
+  labs(title="Vocabulary Gain (%) by Number of New Words", y="Gain (%)", x="Week")
+```
 </br>
+</br>
+
 <hr>
 <hr>
 
