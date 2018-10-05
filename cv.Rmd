@@ -62,6 +62,8 @@ knitr::include_graphics("images/fred.JPG")
 ####Educational Technology: Journal Articles & Conference Proceedings (refereed)
 <ol reversed>
 
+<li>In Press -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
+
 <li>2018 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., Sun, C., & Allan, V. How mother and father support affect youths’ interest in computer science. *In Proceedings of ACM ICER conference*, Espoo, Finland, August, 2018 </li><enter>
 
 <li>2018 --	Clarke-Midura, J., **Poole, F.**, Pantic, K., Hamilton, M., Sun, C., & Allan, V. How Near Peer Mentoring Affects Middle School Mentees. *In Proceedings of the 49th ACM Technical Symposium on Computer Science Education* (SIGCSE '18). ACM, New York, NY, USA, 664-669. (Second Best Paper CS Education Research)</li><enter>
@@ -84,8 +86,6 @@ knitr::include_graphics("images/fred.JPG")
 
 ####Educational Technology: Journal Articles (refereed)<enter>
 <ol reversed>
-
-<li>Under Review -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
 
 <li>Under Review -- Clarke-Midura, J.,Pantic, K., **Poole, F.**, Sun, C., Hamilton, M., & Allan, V. Increasing interest in computer science: designs for informal learning environments, *ACM Transactions on Computing Education (TOCE)*</li><enter>
 
