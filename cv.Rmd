@@ -62,7 +62,7 @@ knitr::include_graphics("images/fred.JPG")
 ####Educational Technology: Journal Articles & Conference Proceedings (refereed)
 <ol reversed>
 
-<li>In Press -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
+<li>2018 -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
 
 <li>2018 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., Sun, C., & Allan, V. How mother and father support affect youths’ interest in computer science. *In Proceedings of ACM ICER conference*, Espoo, Finland, August, 2018 </li><enter>
 
@@ -75,9 +75,9 @@ knitr::include_graphics("images/fred.JPG")
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
-<li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies.</li><enter>
+<li>Being Revised -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies.</li><enter>
 
-<li>In Preparation -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. </li><enter>
+<li>Under Review -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. </li><enter>
 
 <li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
@@ -89,9 +89,9 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>Under Review -- Clarke-Midura, J.,Pantic, K., **Poole, F.**, Sun, C., Hamilton, M., & Allan, V. Increasing interest in computer science: designs for informal learning environments, *ACM Transactions on Computing Education (TOCE)*</li><enter>
 
-<li>Under Review -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
+<li>Being Revised -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
 
-<li>Under Review -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
+<li>Being Revised -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
 </ol>
 
 <center  style="font-size:20px">PROFESSIONAL AND ACADEMIC POSITIONS</center><enter>
@@ -134,6 +134,8 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">CONFERENCE PRESENTATIONS</center><enter>
 <ol reversed>
+<li>2018 -- Analyzing Digital Literacy Practices via L2 Collaborative Reading. *World CALL*, Concepción, Chile (with Dr. Joshua Thoms). </li><enter>
+
 <li>2018 -- Interactive Stories with Twine. *Computer Assisted Language Instruction Consortium (CALICO) Conference*, Urbana-Champaign, IL. </li><enter>
 
 <li>2018 -- Using digital games in the language classroom. *Utah Foreign Language Teaching	Association (UFLA) Conference*, Ogden, UT.</li><enter>
@@ -164,6 +166,8 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">PROFESSIONAL ACTIVITIES/SERVICE</center><enter>
 <ul>
+<li>2018 -- Manuscript Reviewer, Computers & Education</li><enter>
+
 <li>2018 -- Search Committee for Tenure-Track Position in Department of Instructional Technology and Learning Sciences at Utah State University.</li><enter>
 
 <li>2018 -- Search Committee for Professor of Practice Position in Department of Instructional Technology and Learning Sciences at Utah State University.</li><enter>
