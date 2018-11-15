@@ -493,7 +493,6 @@ Voilà, my data set is now called <code>df</code>. </br>
 <p>For some analysis you’ll need to remove any missing variables. The easiest way to do this is to use the filter function in the <code>library(dplyr)</code>.</p>
 <p>For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run <code>nrow(df_c)</code> to get the number of cases in my new data set.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.4.4</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
@@ -502,9 +501,8 @@ Voilà, my data set is now called <code>df</code>. </br>
 <pre><code>## The following objects are masked from &#39;package:base&#39;:
 ## 
 ##     intersect, setdiff, setequal, union</code></pre>
-<pre class="r"><code>df_c &lt;-  df %&gt;% filter(complete.cases(.)) </code></pre>
-<pre><code>## Warning: package &#39;bindrcpp&#39; was built under R version 3.4.4</code></pre>
-<pre class="r"><code>nrow(df) #this is quick way to see how many cases you have in each data set</code></pre>
+<pre class="r"><code>df_c &lt;-  df %&gt;% filter(complete.cases(.)) 
+nrow(df) #this is quick way to see how many cases you have in each data set</code></pre>
 <pre><code>## [1] 152</code></pre>
 <pre class="r"><code>nrow(df_c) #notice they are the same, that&#39;s because we don&#39;t have any missing data sets. </code></pre>
 <pre><code>## [1] 152</code></pre>
@@ -615,7 +613,15 @@ Remember: We will use this data set later on when doing more advance visualizati
 <h2><span class="header-section-number">5.1</span> Base Descriptive Packages</h2>
 <p>There are several packages that will automatically printout a set of descriptives for your entire data set. Which one you use will depend on preference and need.</p>
 <p>I like using <code>stargazer</code> because it prints out a formatted table. However, I have been having issues with displaying the output on the website, so I’ll just show the code. In the example below I have set <code>type</code> to text so that it will print out in the console, but you could change this to html or latex.</p>
-<pre class="r"><code>#stargazer(df,type=&quot;text&quot;,digits=2) #I used the digits code to limit how long the numbers are. </code></pre>
+<pre class="r"><code>library(stargazer)</code></pre>
+<pre><code>## 
+## Please cite as:</code></pre>
+<pre><code>##  Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer</code></pre>
+<pre class="r"><code>stargazer(df,type=&quot;html&quot;,digits=2) #I used the digits code to limit how long the numbers are. </code></pre>
+<pre><code>## 
+## &lt;table style=&quot;text-align:center&quot;&gt;&lt;tr&gt;&lt;td colspan=&quot;8&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Statistic&lt;/td&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;Mean&lt;/td&gt;&lt;td&gt;St. Dev.&lt;/td&gt;&lt;td&gt;Min&lt;/td&gt;&lt;td&gt;Pctl(25)&lt;/td&gt;&lt;td&gt;Pctl(75)&lt;/td&gt;&lt;td&gt;Max&lt;/td&gt;&lt;/tr&gt;
+## &lt;tr&gt;&lt;td colspan=&quot;8&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
 <p>The summary function also provides a lot of quick and useuful information but it requires some formatting if you want to use it in paper.</p>
 <pre class="r"><code>summary(df)</code></pre>
 <pre><code>##        ID           Week       Format   VocabWords     Course  
@@ -1026,7 +1032,6 @@ anova(mod1,mod2,mod3,mod4)</code></pre>
 <h2><span class="header-section-number">7.1</span> Wilcoxon-Signed Rank Test</h2>
 <p><em>Coming Soon</em></p>
 <pre><code>## Loading required package: survival</code></pre>
-<pre><code>## Warning: package &#39;survival&#39; was built under R version 3.4.4</code></pre>
 <pre><code>## 
 ##  Exact Wilcoxon-Pratt Signed-Rank Test
 ## 
@@ -1047,7 +1052,6 @@ anova(mod1,mod2,mod3,mod4)</code></pre>
 <div id="bar-graphs" class="section level2">
 <h2><span class="header-section-number">8.1</span> Bar Graphs</h2>
 <p>This is a bar chart.</p>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 3.4.4</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;ggplot2&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:psych&#39;:

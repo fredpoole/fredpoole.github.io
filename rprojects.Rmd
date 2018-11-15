@@ -248,7 +248,8 @@ There are several packages that will automatically printout a set of descriptive
 I like using `stargazer` because it prints out a formatted table. However, I have been having issues with displaying the output on the website, so I'll just show the code. In the example below I have set `type` to text so that it will print out in the console, but you could change this to html or latex. 
 
 ```{r, warning=FALSE}
-#stargazer(df,type="text",digits=2) #I used the digits code to limit how long the numbers are. 
+library(stargazer)
+stargazer(df,type="html",digits=2) #I used the digits code to limit how long the numbers are. 
 ```
 
 
