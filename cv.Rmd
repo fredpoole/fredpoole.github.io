@@ -75,9 +75,9 @@ knitr::include_graphics("images/fred.JPG")
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
-<li>Being Revised -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies.</li><enter>
+<li>Being Revised -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *CALICO*. </li><enter>
 
-<li>Under Review -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. </li><enter>
+<li>Under Review -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*. </li><enter>
 
 <li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
