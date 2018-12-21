@@ -159,8 +159,11 @@ More information can be found in our publication: 2015 -- Sung, K. Y., & **Poole
 </br>
 </br>
 
-<a href="https://drive.google.com/open?id=1wtUCheogK_96-ymbEJPJKcLcJY8yplnb">Testing Game for Dissertation</a>
+##New Game in Development for Dissertation
+<a href="https://fredpoole.github.io/Legend%20of%20Four%20Dragons/www/index.html">Testing Game for Dissertation</a>
 
+</br>
+</br>
 <hr>
 <hr>
 
