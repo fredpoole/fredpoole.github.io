@@ -248,16 +248,44 @@ Game_Switches.saveFile = function(sw) {
     }
 }
 
+
+//=============================================================================
+// Send to Firebase
+//=============================================================================
+var firebase = require("firebase");
+import firebase from "firebase";
+
+var config = {
+  apiKey: "AIzaSyCEqWur0BGYcXhw9tpQcmj96RB8Ws1FvLk",
+  authDomain: "loddata.firebaseapp.com",
+  databaseURL: "https://loddata.firebaseio.com",
+  storageBucket: "loddata.appspot.com",
+};
+firebase.initializeApp(config);
+
+
 StorageManager.saveToTestFile = function(json) {
     var fs = require('fs');
     var dirPath = this.localFileDirectoryPath();
+    var playerName = $gameActors.actor(1).name();
     var ref = Number(PluginManager.parameters("LudoSavePathing")["Max Saves"]) - $msaves + 1;
-    var filePath = this.localFileDirectoryPath() + "test" + ref + ".txt";
+    var filePath = this.localFileDirectoryPath() + playerName + ref + ".txt";
     if (!fs.existsSync(dirPath)) {
         fs.mkdirSync(dirPath);
     }
     fs.writeFileSync(filePath, json);
+    var file = playerName + ref + ".txt";
+    var storageRef = firebase.storage().ref('testData/' + file.name);
+    storageRef.put(file);
 };
+
+
+
+
+
+//=============================================================================
+// End game stuff for save
+//=============================================================================
 
 Scene_GameEnd.prototype.commandToTitle = function() {    
     if($titlesave) Game_Switches.saveFile(true);  

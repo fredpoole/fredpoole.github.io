@@ -132,7 +132,7 @@ Game_Message.prototype.add = function(text) {
 				}
 				Array.prototype.push.apply(occurances, o);
 				Array.prototype.push.apply(unorderedWords, a);
-				return itemCodex.highlightColor+"\x99"+text+"\x98"+"\\c[0]";
+				return itemCodex.highlightColor + "\x99"+ text + "\x98"+"\\c[0]";
 			});
 		}
 		var list = [];
