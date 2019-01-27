@@ -172,9 +172,17 @@ More information can be found in our publication: 2015 -- Sung, K. Y., & **Poole
 ```{r, fig.align='center',out.width = "400px",out.height="20px", echo=FALSE}
 knitr::include_graphics("images/Appcamp.png")
 ```
-In addition to my research on Second Language Acquisition, I have also worked on several projects investigating computer science pedagogical and recruitment strategies your middle school learners. In particular helped design and a series of summer app camps aimed at teaching programming and broadening participation in computer science. Specifically, my responsibilties included designing curriculum and subsequently building a Canvas site which hosted the curriculum for the app camps. I participated in student recruitment by travelling to local middle schools and giving presentations about computer science. Before the app camps began I was also involved in several pre-camp set up procedures including: survey and interview protocol development, data collection procedures (e.g. setting up computers to record both student interactions and screen activity), and app camp log data retrieval protocols. During the camps I collected observational data, served as technical support, and occasionally took on a teaching role to support campers when camp mentors could were not available. Finally, following the camp I cleaned data and conducted preliminary analysis. I have also co-written several manuscripts related to this subject (See my CV for more information).
+##App Camp
+In addition to my research on Second Language Acquisition, I have also worked on several projects investigating computer science pedagogical and recruitment strategies your middle school learners. Starting in 2016 I began to design and a series of summer app camps aimed at teaching programming and broadening participation in computer science. Specifically, my responsibilties included designing curriculum and subsequently building a Canvas site which hosted the curriculum for the app camps. I participated in student recruitment by travelling to local middle schools and giving presentations about computer science. Before the app camps began I was also involved in several pre-camp set up procedures including: survey and interview protocol development, data collection procedures (e.g. setting up computers to record both student interactions and screen activity), and app camp log data retrieval protocols. During the camps I collected observational data, served as technical support, and occasionally took on a teaching role to support campers when camp mentors could were not available. Finally, following the camp I cleaned data and conducted preliminary analysis. I have also co-written several manuscripts related to this subject (See my CV for more information).
 
 https://appcamp.usu.edu/ 
+
+##Tabletop to Screen (T2S)
+In 2019 I started working on the T2S project. On this project we are exploring the use of unplugged board games as a bridge to programming on Scratch. We are interested in exploring computational thinking skills that are developd via board games in the //Code  Series. Furthermore, we are working with a local elementary school to investigate pedagogical approaches that leverage the board games for introducing programming concepts in Scratch. This is project has just started and updates will be made as we progress. 
+
+##Esports
+In 2019 I began a project with Dr. Victor Lee exploring learning that occurs in a collegiate esports team. Specifically we are looking at how the team understands and utilizes data to inform their gameplay, practices, and evaluation of success. 
+
 
 <hr>
 <hr>

@@ -35,6 +35,8 @@ knitr::include_graphics("images/fred.JPG")
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
+<li>2019 -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*,2(2), 261-280. </li><enter>
+
 <li>2018 -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*, 22(2), Retrieved from http://www.tesl-ej.org/wordpress/issues/volume22/ej86/ej86a2/ </li><enter>
 
 <li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2), Retrieved from https://escholarship.org/uc/item/0fk329vn.</li><enter>
@@ -75,13 +77,11 @@ knitr::include_graphics("images/fred.JPG")
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
-<li>Being Revised -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *CALICO*. </li><enter>
+<li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *CALICO*. </li><enter>
 
-<li>Under Review -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*. </li><enter>
+<li>Under Review -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
-<li>In Preparation -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
-
-<li>In Preparation -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom.</li><enter>
+<li>Under Review -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom. *Modern Language Journal*.</li><enter>
 </ol>
 
 ####Educational Technology: Journal Articles (refereed)<enter>
@@ -89,9 +89,12 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>Under Review -- Clarke-Midura, J.,Pantic, K., **Poole, F.**, Sun, C., Hamilton, M., & Allan, V. Increasing interest in computer science: designs for informal learning environments, *ACM Transactions on Computing Education (TOCE)*</li><enter>
 
-<li>Being Revised -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
+<li>Under Review -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
 
-<li>Being Revised -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
+<li>Under Review -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
+
+<li>Under Review -- Lee, V., Vincent, H.M., **Poole, F.**, Recker, M., & Clarke-Midura, J. Extending the research on computational thinking with tabletop board games: Analyzing the //CODE Series. *CSCL 2019*.  </li><enter>
+
 </ol>
 
 <center  style="font-size:20px">PROFESSIONAL AND ACADEMIC POSITIONS</center><enter>
@@ -115,6 +118,7 @@ knitr::include_graphics("images/fred.JPG")
 ####Utah State University
 <enter>
 <ul>
+<li>Spring 2019 -- Games and Learning (ITLS 6730) (*Graduate Level Online Course*)
 <li>Fall 2017 -- Learning Theory (ITLS 6540) (*Graduate-level course, taught last 7 weeks of course at request of department due to maternity leave of a faculty member*)</li><enter>
 <li>Fall 2017 -- Second Language/Literacy Acquisition and Development (TEAL 4745)</li><enter>
 <li>Fall 2016 -- First-Year Chinese 1 (Chinese 1010) </li><enter>
@@ -134,6 +138,8 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">CONFERENCE PRESENTATIONS</center><enter>
 <ol reversed>
+<li>2019 -- A Chinese RPG Game, *Computer Assisted Language Instruction Consortium (CALICO) Conference* [Showcase Presentation], Montreal, Canada. </li><enter>
+
 <li>2018 -- Analyzing Digital Literacy Practices via L2 Collaborative Reading. *World CALL*, Concepción, Chile (with Dr. Joshua Thoms). </li><enter>
 
 <li>2018 -- Interactive Stories with Twine. *Computer Assisted Language Instruction Consortium (CALICO) Conference*, Urbana-Champaign, IL. </li><enter>
@@ -166,6 +172,8 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">PROFESSIONAL ACTIVITIES/SERVICE</center><enter>
 <ul>
+<li>2019 -- Book Reviewer, Language Learning & Technology </li><enter>
+
 <li>2018 -- Manuscript Reviewer, Computers & Education</li><enter>
 
 <li>2018 -- Search Committee for Tenure-Track Position in Department of Instructional Technology and Learning Sciences at Utah State University.</li><enter>
@@ -203,6 +211,8 @@ knitr::include_graphics("images/fred.JPG")
 </ol>
 <center  style="font-size:20px">PROFESSIONAL AFFILIATIONS</center><enter>
 <ul>
+<li>American Educational Research Association (AERA) </li>
+
 <li>Computer Assisted Language Instruction Consortium (CALICO)</li><enter>
 
 <li>American Association of Applied Linguistics (AAAL) </li><enter>
