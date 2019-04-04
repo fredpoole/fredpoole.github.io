@@ -64,6 +64,8 @@ knitr::include_graphics("images/fred.JPG")
 ####Educational Technology: Journal Articles & Conference Proceedings (refereed)
 <ol reversed>
 
+<li>2019 -- Clarke-Midura, J., Sun, C., Pantic, K., **Poole, F.**, & Allan, V. Using informed design in informal Computer Science programs to increase youths' interest, self-efficacy, and perceptions of parental support, * Transactions on Computing Education (TOCE)*</li><enter>
+
 <li>2018 -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
 
 <li>2018 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., Sun, C., & Allan, V. How mother and father support affect youths’ interest in computer science. *In Proceedings of ACM ICER conference*, Espoo, Finland, August, 2018 </li><enter>
@@ -81,25 +83,30 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>Under Review -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
-<li>Under Review -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom. *Modern Language Journal*.</li><enter>
+<li>Under Review -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom. *Foreign Language Annals*.</li><enter>
+
+<li>In prepration -- Thoms, J. & **Poole, F.** Analyzing Digital Social Reading Practices in an L2 Chinese Literature Course. </li><enter>
+
+<li>In preparation -- **Poole, F.** 	Developing and evaluating stealth assessments for an educational game to assess young Chinese dual language immersion learners' reading comprehension.  </li><enter>
+
 </ol>
 
 ####Educational Technology: Journal Articles (refereed)<enter>
 <ol reversed>
 
-<li>Under Review -- Clarke-Midura, J.,Pantic, K., **Poole, F.**, Sun, C., Hamilton, M., & Allan, V. Increasing interest in computer science: designs for informal learning environments, *ACM Transactions on Computing Education (TOCE)*</li><enter>
-
-<li>Under Review -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
+<li>In preparation -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
 
 <li>Under Review -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
 
-<li>Under Review -- Lee, V., Vincent, H.M., **Poole, F.**, Recker, M., & Clarke-Midura, J. Extending the research on computational thinking with tabletop board games: Analyzing the //CODE Series. *CSCL 2019*.  </li><enter>
+<li> In preparation -- Lee, V. & **Poole, F.** Exploring data practices by a collegiate esports team. </li><enter>
 
 </ol>
 
 <center  style="font-size:20px">PROFESSIONAL AND ACADEMIC POSITIONS</center><enter>
 <ul>
-<li>2017 – Present --  Adjunct Instructor, School of Teacher Education and Leadership, Utah State University, Logan, UT </li><enter>
+<li>2019 – Adjunct Instructor, Instructional Technology and Learning Sciences, Utah State University, Logan, UT </li><enter>
+
+<li>2017 – 2018 --  Adjunct Instructor, School of Teacher Education and Leadership, Utah State University, Logan, UT </li><enter>
 
 <li>2015 – Present --	Graduate Research Assistant, Instructional Technology and Learning Sciences Department, Utah State University, Logan, UT</li><enter>
 
