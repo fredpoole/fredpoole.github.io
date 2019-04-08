@@ -57,6 +57,9 @@ knitr::include_graphics("images/fred.JPG")
 
 ####Second Language Acquisition: Book Chapters (refereed)<enter>
 <ol reversed>
+
+<li>Forthcoming -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.*Open education and foreign language learning and teaching: The rise of a new knowledge ecology.* Bristol, UK: Multilingual Matters.</li><enter>
+
 <li>2018 -- **Poole, F.**, Franco, J., & Clarke-Midura, J. Developing a personalized, educational gaming experience for young Chinese DLI learners: A design-based approach. In R. Zheng (Ed.), *Digital Technologies and Instructional Design for Personalized Learning* (pp. 253-274). IGI Global</li><enter>
 
 <li>2016 --	Sung, K. Y., & **Poole, F.** Differences between native and non-native Chinese speaking teachers: Voices from overseas students who study Chinese in China. In C. P. Chou & J. Spangler (Eds.) *Chinese Education Models in a Global Age* (pp. 133–147). Springer, Singapore.</li></ol><enter>
@@ -80,8 +83,6 @@ knitr::include_graphics("images/fred.JPG")
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 <li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *CALICO*. </li><enter>
-
-<li>Under Review -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.</li><enter>
 
 <li>Under Review -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom. *Foreign Language Annals*.</li><enter>
 
