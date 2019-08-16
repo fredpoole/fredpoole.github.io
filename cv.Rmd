@@ -35,6 +35,8 @@ knitr::include_graphics("images/fred.JPG")
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
+<li>Forthcoming -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*.</li><enter>
+
 <li>2019 -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*,2(2), 261-280. </li><enter>
 
 <li>2018 -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*, 22(2), Retrieved from http://www.tesl-ej.org/wordpress/issues/volume22/ej86/ej86a2/ </li><enter>
@@ -82,24 +84,31 @@ knitr::include_graphics("images/fred.JPG")
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
-<li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *CALICO*. </li><enter>
 
-<li>Under Review -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a board game in a Chinese dual language immersion classroom. *Foreign Language Annals*.</li><enter>
+<li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *CALICO*. </li><enter>
 
 <li>In prepration -- Thoms, J. & **Poole, F.** Analyzing Digital Social Reading Practices in an L2 Chinese Literature Course. </li><enter>
 
-<li>In preparation -- **Poole, F.** 	Developing and evaluating stealth assessments for an educational game to assess young Chinese dual language immersion learners' reading comprehension.  </li><enter>
+<li>In prepration -- **Poole, F.** & Thoms, J. Exploring L2 comments in a digital social reading environemnt using sentiment analysis. </li><enter>
+
+<li>In preparation -- **Poole, F.** Developing and evaluating stealth assessments for an educational game to assess young Chinese dual language immersion learners' reading comprehension.  </li><enter>
+
+<li>In preparation -- **Poole, F.** What do we mean by meaningful language use?.</li><enter>
+
+<li>In preparation -- **Poole, F.** Developing automated assessments for elementary dual language immersion programs.</li><enter>
 
 </ol>
 
 ####Educational Technology: Journal Articles (refereed)<enter>
 <ol reversed>
 
-<li>In preparation -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
+<li>Under Review -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
 
-<li>Under Review -- **Poole, F.**, & Clarke-Midura, J. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
+<li>Under Review -- Clarke-Midura, J. & **Poole, F.**. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
 
-<li> In preparation -- Lee, V. & **Poole, F.** Exploring data practices by a collegiate esports team. </li><enter>
+<li> Under Review -- **Poole, F.** & Lee, V. Exploring data practices by a collegiate esports team. </li><enter>
+
+<li>Under Review  -- Lee, V., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction </li><enter>
 
 </ol>
 
@@ -126,6 +135,7 @@ knitr::include_graphics("images/fred.JPG")
 ####Utah State University
 <enter>
 <ul>
+<li>Fall 2019 -- Mobile Design and Development for Learning (ITLS 3870/5750) (*Graduate Level Online Course*)
 <li>Spring 2019 -- Games and Learning (ITLS 6730) (*Graduate Level Online Course*)
 <li>Fall 2017 -- Learning Theory (ITLS 6540) (*Graduate-level course, taught last 7 weeks of course at request of department due to maternity leave of a faculty member*)</li><enter>
 <li>Fall 2017 -- Second Language/Literacy Acquisition and Development (TEAL 4745)</li><enter>
