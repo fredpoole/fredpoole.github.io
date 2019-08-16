@@ -35,7 +35,7 @@ knitr::include_graphics("images/fred.JPG")
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
-<li>Forthcoming -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*.</li><enter>
+<li>Forthcoming -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. (Impact Factor= 1.78)</li><enter>
 
 <li>2019 -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*,2(2), 261-280. </li><enter>
 
@@ -45,9 +45,9 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .17)</li><enter>
 
-<li>2017 --	Thoms, J., Sung, K. Y., & **Poole, F.** Investigating the linguistic and pedagogical affordances of an L2 open reading environment via eComma: An exploratory study in a Chinese language course. *System*, 69, 38–53. (CiteScore = 1.55)</li><enter>
+<li>2017 --	Thoms, J., Sung, K. Y., & **Poole, F.** Investigating the linguistic and pedagogical affordances of an L2 open reading environment via eComma: An exploratory study in a Chinese language course. *System*, 69, 38–53. (Impact Factor = 1.93)</li><enter>
 
-<li>2017 --	Thoms, J., & **Poole, F.** Investigating linguistic, literary, and social affordances of L2 collaborative reading. *Language Learning & Technology*, 21(2), 139–156. (CiteScore = 2.61) </li><enter>
+<li>2017 --	Thoms, J., & **Poole, F.** Investigating linguistic, literary, and social affordances of L2 collaborative reading. *Language Learning & Technology*, 21(2), 139–156. (Impact Factor = 2.13) </li><enter>
 
 <li>2016 --	**Poole, F.**, & Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. *Journal of Chinese Language Teachers Association*. 51(3), 266–285. </li><enter>
 
