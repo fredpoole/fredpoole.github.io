@@ -190,22 +190,25 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">PROFESSIONAL ACTIVITIES/SERVICE</center><enter>
 <ul>
-<li>2019 -- Book Reviewer, Language Learning & Technology </li><enter>
+<li>2019 -- Manuscript Reviewer, *Foreign Language Annals* </li><enter>
 
-<li>2018 -- Manuscript Reviewer, Computers & Education</li><enter>
+<li>2019 -- Book Reviewer, *Language Learning & Technology* </li><enter>
+
+<li>2018 -- Manuscript Reviewer, *Computers & Education* </li><enter>
 
 <li>2018 -- Search Committee for Tenure-Track Position in Department of Instructional Technology and Learning Sciences at Utah State University.</li><enter>
 
 <li>2018 -- Search Committee for Professor of Practice Position in Department of Instructional Technology and Learning Sciences at Utah State University.</li><enter>
 
-<li>2017 -- Manuscript Reviewer, Computers & Education</li><enter>
+<li>2017 -- Manuscript Reviewer, *Computers & Education* </li><enter>
 
-<li>2017 -- Manuscript Reviewer, Digital Technologies and Instructional Design for Personalized Learning</li><enter>
+<li>2017 -- Manuscript Reviewer, *Digital Technologies and Instructional Design for Personalized Learning* </li><enter>
 
-<li>2016 -- Manuscript Reviewer, New Waves—Educational Research and Development</li><enter>
+<li>2016 -- Manuscript Reviewer, *New Waves—Educational Research and Development* </li><enter>
 </ul>
 
 <center  style="font-size:20px">AWARDS & GRANTS</center><enter>
+
 <ol reversed>
 <li>2018 -- Doctoral Student Researcher of the Year, Department of Instructional Technology and Learning Sciences, Utah State University</li><enter>
 
