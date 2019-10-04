@@ -69,6 +69,8 @@ knitr::include_graphics("images/fred.JPG")
 ####Educational Technology: Journal Articles & Conference Proceedings (refereed)
 <ol reversed>
 
+<li>Forthcoming --	Lee, V., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter>
+
 <li>2019 -- Clarke-Midura, J., Sun, C., Pantic, K., **Poole, F.**, & Allan, V. Using Informed Design in Informal Computer Science Programs to Increase Youths’ Interest, Self-efficacy, and Perceptions of Parental Support. *ACM Transactions on Computing Education (TOCE)*, 19 (4), 1-12 (Article 37), doi: 10.1145/3319445 </li><enter>
 
 <li>2018 -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
@@ -85,17 +87,13 @@ knitr::include_graphics("images/fred.JPG")
 ####Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
-<li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *CALICO*. </li><enter>
+<li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *IJGBL*. </li><enter>
 
 <li>In prepration -- Thoms, J. & **Poole, F.** Analyzing Digital Social Reading Practices in an L2 Chinese Literature Course. </li><enter>
 
 <li>In prepration -- **Poole, F.** & Thoms, J. Exploring L2 comments in a digital social reading environemnt using sentiment analysis. </li><enter>
 
 <li>In preparation -- **Poole, F.** Developing and evaluating stealth assessments for an educational game to assess young Chinese dual language immersion learners' reading comprehension.  </li><enter>
-
-<li>In preparation -- **Poole, F.** What do we mean by meaningful language use?.</li><enter>
-
-<li>In preparation -- **Poole, F.** Developing automated assessments for elementary dual language immersion programs.</li><enter>
 
 </ol>
 
@@ -107,8 +105,6 @@ knitr::include_graphics("images/fred.JPG")
 <li>Under Review -- Clarke-Midura, J. & **Poole, F.**. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
 
 <li> Under Review -- **Poole, F.** & Lee, V. Exploring data practices by a collegiate esports team. </li><enter>
-
-<li>Under Review  -- Lee, V., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction </li><enter>
 
 </ol>
 

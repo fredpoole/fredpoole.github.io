@@ -406,7 +406,7 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 ## 13 10202     3 T              44   1020    30       59.5    29.5   0.341
 ## 14 10202     5 T              38   1020    40       51      11     0.526
 ## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
-## # ... with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
+## # … with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <div id="download-r-and-rstudio" class="section level1">
 <h1><span class="header-section-number">1</span> Download R and Rstudio</h1>
 <p>1.<a href="https://www.r-project.org/" class="button">Download R</a> </br> </br> 2.<a href="https://www.rstudio.com/ " class="button">Download R Studio</a></p>
@@ -442,7 +442,7 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 ## 13 10202     3 T              44   1020    30       59.5    29.5   0.341
 ## 14 10202     5 T              38   1020    40       51      11     0.526
 ## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
-## # ... with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
+## # … with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <p></br> </br></p>
 <div id="renaming-your-data" class="section level2">
 <h2><span class="header-section-number">3.1</span> Renaming your Data</h2>
@@ -493,6 +493,7 @@ Voilà, my data set is now called <code>df</code>. </br>
 <p>For some analysis you’ll need to remove any missing variables. The easiest way to do this is to use the filter function in the <code>library(dplyr)</code>.</p>
 <p>For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run <code>nrow(df_c)</code> to get the number of cases in my new data set.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.5.2</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
@@ -574,7 +575,7 @@ df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 ## 4 10203     9 G              38 1020      33       39.5     6.5   0.434
 ## 5 10203     4 T              37 1020      52       53       1     0.703
 ## 6 10203     6 T              38 1020      28       42      14     0.368
-## # ... with 4 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;,
+## # … with 4 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;,
 ## #   gain_test &lt;dbl&gt;, Pre_cat &lt;chr&gt;</code></pre>
 <p>To do this I will first create a subset of my data set so that I remove the variables that I don’t want in my long data set.</p>
 <pre class="r"><code>#Here I&#39;m preparing my data set to remove the unneeded variables. The variables below are the ones I want to keep.
