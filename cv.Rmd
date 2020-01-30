@@ -35,14 +35,9 @@ knitr::include_graphics("images/fred.JPG")
 #### Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
-<<<<<<< HEAD
 <li>Forthcoming -- **Poole, F.,** & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, (CiteScore = 1.27).
 
 <li>2019 -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. 753-775 52(4). https://doi.org/10.1111/flan.12425 (Impact Factor= 1.78)</li><enter>
-=======
-
-<li>2019 -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*.1-23. https://doi.org/10.1111/flan.12425. (Impact Factor= 1.78)</li><enter>
->>>>>>> 51efcba32cfb1b66c56462fc7bdf396f1a1b5786
 
 <li>2019 -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*,2(2), 261-280. </li><enter>
 
@@ -76,9 +71,9 @@ knitr::include_graphics("images/fred.JPG")
 #### Educational Technology: Journal Articles & Conference Proceedings (refereed)
 <ol reversed>
 
-<li>2020 -- Lee, V.R., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction. *Paper presented at the American Educational Research Association Conference (AERA)*, San Francisco, CA.
+<li>2020 -- Lee, V. R., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction. *Paper presented at the American Educational Research Association Conference (AERA)*, San Francisco, CA.
 
-<li>2020 --	Lee, V.R., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter>
+<li>2020 --	Lee, V. R., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter>
 
 <li>2019 -- Clarke-Midura, J., Sun, C., Pantic, K., **Poole, F.**, & Allan, V. Using Informed Design in Informal Computer Science Programs to Increase Youths’ Interest, Self-efficacy, and Perceptions of Parental Support. *ACM Transactions on Computing Education (TOCE)*, 19 (4), 1-12 (Article 37), doi: 10.1145/3319445 </li><enter>
 
