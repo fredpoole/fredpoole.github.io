@@ -29,15 +29,15 @@ knitr::include_graphics("images/iconFred2.png")
 
 <hr>
 <hr>
-#L2 Research Projects
-##Gaming in the Chinese Dual Language Immersion Classroom
+# L2 Research Projects
+## Gaming in the Chinese Dual Language Immersion Classroom
 
 </br>
 Utah is one of the first states in the U.S. to offer a statewide dual language immersion (DLI) program in public schools. Currently nearly 200 schools offer one of 5 languages (German, Spanish, Portuguese, French, and Chinese). In these programs students spend half of the day learning in English and the other half in the target language. From first to third grade DLI students learn math in the target language and then in fourth to sixth grade they begin learning science and social studies in the target language. 
 </br></br>
 One issue, particularly with Chinese DLI students (given the difficulty of the text) is developing both literacy skills and content simultaneously. Learners need more instructional time to learn the Chinese text than students of other DLI languages. However, given the time constraints that DLI programs face, finding the extra time is difficult. One solution is to use games to both improve Chinese literacy skills and subject (e.g. math, science) knowledge. In my research I have developed and tested two games in Chinese DLI classrooms and I am currently working on a mod to create support within a commercial-off-the-shelf game as well as provide methods for tracking students in-game play and behavior as a means to assess learning. Below I provide a brief description of past projects and will update this site as new projects arise. 
 
-###DLI Board Game -- *神秘森林 (Mystery Forest)*
+### DLI Board Game -- *神秘森林 (Mystery Forest)*
 
 </br>
 ```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Board Game Cover", echo=FALSE}
@@ -63,10 +63,10 @@ knitr::include_graphics("images/charactersheet.png")
 ```
 The game ends once players have defeated all baddies on the board. However, the game can continue on by adding more baddies each during each subsequent session. 
 
-####Findings 
+#### Findings 
 This study was not published as I am currently working on revising the game. In the initial round some groups played the game successfully and engaged in meaningful addition/subtraction in the target language, however other groups struggled with using the character sheet and the many pieces on the board ended up being a distraction. At the moment I am working on turning it into a card game which will eliminate many of the distractions and allow learners to spend more time on the collaborative and educational aspects of the game. 
 
-###Interactive Fiction Game -- *Adventure Chinese*
+### Interactive Fiction Game -- *Adventure Chinese*
 
 Following the board game I developed an HTML based interactive fiction game using the open source tool <a href="twinery.org">Twine</a>. In the game players are sent on an adventure to stop a villian from world domination by collecting three keys in the wilderness and opening a chest to retreive a magic seed.
 </br></br>
@@ -91,7 +91,7 @@ Click the link below to try the game. *For best results open the game using Fire
 </br>
 </br>
 
-##Reading in Digital, Collaborative Environments
+## Reading in Digital, Collaborative Environments
 In the last few years I have collaborated with <a href="https://lpcs.usu.edu/directory/faculty/thoms-joshua">Dr. Joshua Thoms</a> and <a href="https://lpcs.usu.edu/directory/faculty/sung-ko-yin">Dr. Ko-Yin Sung</a>, to explore the affordances and pedagogical implications of reading in a digital, collaborative environment. 
 
 In our first project we used eComma in a first-year Chinese course. See the article below for more information. 
@@ -120,7 +120,7 @@ knitr::include_graphics("images/hylighter.png")
 </br>
 </br>
 
-##Using We Chat in the Chinese L2 Classroom
+## Using We Chat in the Chinese L2 Classroom
 
 ```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="微信", echo=FALSE}
 knitr::include_graphics("images/wechat.png")
@@ -133,7 +133,7 @@ More information can be found in our publication: 2017 -- Sung, K. Y., & **Poole
 </br>
 </br>
 
-##Using E-Gloss Tools to Faciliate Reading in Chinese
+## Using E-Gloss Tools to Faciliate Reading in Chinese
 In 2015 I conducted a research project investigating the effect of using E-gloss tools on Chinese vocabulary development. E-gloss tools are tools that allow learners to immediately look up vocabulary in a text by simply hovering their mouse over the word. The image below shows the tool Dim Sum (http://www.mandarintools.com/dimsum.html) that was used in this research project. 
 ```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="E-Gloss Tool: Dim Sum", echo=FALSE}
 knitr::include_graphics("images/eglossPic.png")
@@ -152,14 +152,14 @@ More information can be found in our publication: 2016 --	**Poole, F.**, & Sung,
 </br>
 </br>
 
-##Graded Readers for Chinese as a Foreign Language Learners
+## Graded Readers for Chinese as a Foreign Language Learners
 In 2013 I designed a graded reading series for true beginners of Chinese. The entire series can be found in the *Teaching Languages* tab above. The graded reading series was designed to both expose learners to new Chinese words in context, while also providing explicit information about new characters to learners before they saw them in a story. 
 
 More information can be found in our publication: 2015 -- Sung, K. Y., & **Poole, F.** Evaluating the impact of graded readings on the recognition of Chinese characters and reading comprehension by learners of Chinese as a foreign language. *Konin Language Studies*, 3(3), 271–294.
 </br>
 </br>
 
-##New Game in Development for Dissertation
+## New Game in Development for Dissertation
 <a href="https://fredpoole.github.io/Legend%20of%20Four%20Dragons/www/index.html">Testing Game for Dissertation</a>
 
 </br>
@@ -167,21 +167,21 @@ More information can be found in our publication: 2015 -- Sung, K. Y., & **Poole
 <hr>
 <hr>
 
-#Computer Science Education Research
+# Computer Science Education Research
 </br>
 ```{r, fig.align='center',out.width = "400px",out.height="20px", echo=FALSE}
 knitr::include_graphics("images/Appcamp.png")
 ```
 
-##App Camp
+## App Camp
 In addition to my research on Second Language Acquisition, I have also worked on several projects investigating computer science pedagogical and recruitment strategies your middle school learners. Starting in 2016 I began to design and a series of summer app camps aimed at teaching programming and broadening participation in computer science. Specifically, my responsibilties included designing curriculum and subsequently building a Canvas site which hosted the curriculum for the app camps. I participated in student recruitment by travelling to local middle schools and giving presentations about computer science. Before the app camps began I was also involved in several pre-camp set up procedures including: survey and interview protocol development, data collection procedures (e.g. setting up computers to record both student interactions and screen activity), and app camp log data retrieval protocols. During the camps I collected observational data, served as technical support, and occasionally took on a teaching role to support campers when camp mentors could were not available. Finally, following the camp I cleaned data and conducted preliminary analysis. I have also co-written several manuscripts related to this subject (See my CV for more information).
 
 https://appcamp.usu.edu/ 
 
-##Tabletop to Screen (T2S)
+## Tabletop to Screen (T2S)
 In 2019 I started working on the T2S project. On this project we are exploring the use of unplugged board games as a bridge to programming on Scratch. We are interested in exploring computational thinking skills that are developd via board games in the //Code  Series. Furthermore, we are working with a local elementary school to investigate pedagogical approaches that leverage the board games for introducing programming concepts in Scratch. This is project has just started and updates will be made as we progress. 
 
-##Esports
+## Esports
 In 2019 I began a project with Dr. Victor Lee exploring learning that occurs in a collegiate esports team. Specifically we are looking at how the team understands and utilizes data to inform their gameplay, practices, and evaluation of success. 
 
 

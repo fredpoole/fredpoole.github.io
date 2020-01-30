@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title></title>
+<title>rprojects.utf8</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,9 +25,8 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.0.13/css/fa-svg-with-js.css" rel="stylesheet" />
-<script src="site_libs/font-awesome-5.0.13/js/fontawesome-all.min.js"></script>
-<script src="site_libs/font-awesome-5.0.13/js/fa-v4-shims.min.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -77,9 +76,7 @@ h6 {
 
 <link rel="stylesheet" href="custom.css" type="text/css" />
 
-</head>
 
-<body>
 
 <style type = "text/css">
 .main-container {
@@ -93,7 +90,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -103,6 +99,9 @@ img {
 }
 button.code-folding-btn:focus {
   outline: none;
+}
+summary {
+  display: list-item;
 }
 </style>
 
@@ -118,7 +117,6 @@ body {
   padding-top: 65px;
   margin-top: -65px;
 }
-
 .section h2 {
   padding-top: 65px;
   margin-top: -65px;
@@ -138,6 +136,43 @@ body {
 .section h6 {
   padding-top: 65px;
   margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
 }
 </style>
 
@@ -159,47 +194,66 @@ $(document).ready(function () {
 });
 </script>
 
-
-<div class="container-fluid main-container">
-
 <!-- tabsets -->
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-</script>
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
 
 <!-- code folding -->
 
 
-
-
-<script>
-$(document).ready(function ()  {
-
-    // move toc-ignore selectors from section div to header
-    $('div.section.toc-ignore')
-        .removeClass('toc-ignore')
-        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
-
-    // establish options
-    var options = {
-      selectors: "h1,h2",
-      theme: "bootstrap3",
-      context: '.toc-content',
-      hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
-      },
-      ignoreSelector: ".toc-ignore",
-      scrollTo: 0
-    };
-    options.showAndHide = false;
-    options.smoothScroll = false;
-
-    // tocify
-    var toc = $("#TOC").tocify(options).data("toc-tocify");
-});
-</script>
 
 <style type="text/css">
 
@@ -213,6 +267,12 @@ $(document).ready(function ()  {
 }
 }
 
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
 
 .toc-content {
   padding-left: 30px;
@@ -248,8 +308,6 @@ div.tocify {
 
 .tocify-subheader .tocify-item {
   font-size: 0.90em;
-  padding-left: 25px;
-  text-indent: 0;
 }
 
 .tocify .list-group-item {
@@ -264,6 +322,16 @@ div.tocify {
 }
 
 </style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
 <div class="row-fluid">
@@ -464,11 +532,9 @@ Voilà, my data set is now called <code>df</code>. </br>
 <pre class="r"><code>df$gain &lt;- df$Post_Sum - df$Pre_Sum</code></pre>
 <p>To check our answer we will look at the first 15 cases of each variable using the <code>head</code> command.</p>
 <pre class="r"><code>head(df$RawGain, n=15)</code></pre>
-<pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0
-## [15] 12.5</code></pre>
+<pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0 12.5</code></pre>
 <pre class="r"><code>head(df$gain, n=15)</code></pre>
-<pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0
-## [15] 12.5</code></pre>
+<pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0 12.5</code></pre>
 <p>In another example, I’m going to create a categorical variable with two levels. This variable will be used to distinguish low and high level learners by their pre scores. Those who got <code>50%</code> or higher correct on their pre-tests will be labeled <em>high</em> and those who got below <code>50%</code> will be labeled <em>low</em>. We will call this variable Pre_cat (cat for category). To do this we will need an <code>ifelse</code> statement.</p>
 <pre class="r"><code>df$Pre_cat &lt;- ifelse(df$Per_Pre &gt;= .45, &quot;High&quot;,&quot;Low&quot;)</code></pre>
 <p>Simply put, if the Per_Pre is greater than .5, then label it as high, if not then label it as low. And save everything into the variable. Pre_cat. </br> </br></p>
@@ -493,7 +559,6 @@ Voilà, my data set is now called <code>df</code>. </br>
 <p>For some analysis you’ll need to remove any missing variables. The easiest way to do this is to use the filter function in the <code>library(dplyr)</code>.</p>
 <p>For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run <code>nrow(df_c)</code> to get the number of cases in my new data set.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 3.5.2</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
 <pre><code>## The following objects are masked from &#39;package:stats&#39;:
@@ -567,16 +632,15 @@ df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 <p>For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds <em>Per_Pre</em>, <em>Per_Post</em>, and <em>Per_Gain</em>, and then another column that holds the value for each of those constructs. We will need the <code>library(tidyr)</code> to run this code.</p>
 <pre class="r"><code>head(df)</code></pre>
 <pre><code>## # A tibble: 6 x 13
-##   ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre
-##   &lt;fct&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
-## 1 10203     3 G              44 1020      46       58.5    12.5   0.523
-## 2 10203     5 G              38 1020      41.5     51.5    10     0.546
-## 3 10203     7 G              38 1020      39.5     46       6.5   0.520
-## 4 10203     9 G              38 1020      33       39.5     6.5   0.434
-## 5 10203     4 T              37 1020      52       53       1     0.703
-## 6 10203     6 T              38 1020      28       42      14     0.368
-## # … with 4 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;,
-## #   gain_test &lt;dbl&gt;, Pre_cat &lt;chr&gt;</code></pre>
+##   ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre Per_Post
+##   &lt;fct&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
+## 1 10203     3 G              44 1020      46       58.5    12.5   0.523    0.665
+## 2 10203     5 G              38 1020      41.5     51.5    10     0.546    0.678
+## 3 10203     7 G              38 1020      39.5     46       6.5   0.520    0.605
+## 4 10203     9 G              38 1020      33       39.5     6.5   0.434    0.520
+## 5 10203     4 T              37 1020      52       53       1     0.703    0.716
+## 6 10203     6 T              38 1020      28       42      14     0.368    0.553
+## # … with 3 more variables: Per_Gain &lt;dbl&gt;, gain_test &lt;dbl&gt;, Pre_cat &lt;chr&gt;</code></pre>
 <p>To do this I will first create a subset of my data set so that I remove the variables that I don’t want in my long data set.</p>
 <pre class="r"><code>#Here I&#39;m preparing my data set to remove the unneeded variables. The variables below are the ones I want to keep.
 df_temp &lt;- subset(df, select= c(&quot;ID&quot;,&quot;Week&quot;,&quot;Format&quot;,&quot;VocabWords&quot;,&quot;Course&quot;,&quot;Per_Pre&quot;,&quot;Per_Post&quot;,&quot;Per_Gain&quot;))
@@ -625,29 +689,29 @@ Remember: We will use this data set later on when doing more advance visualizati
 ## &lt;tr&gt;&lt;td colspan=&quot;8&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
 <p>The summary function also provides a lot of quick and useuful information but it requires some formatting if you want to use it in paper.</p>
 <pre class="r"><code>summary(df)</code></pre>
-<pre><code>##        ID           Week       Format   VocabWords     Course  
-##  10201  :  8   Min.   : 3.00   G:76   Min.   :26.00   1020:72  
-##  102010 :  8   1st Qu.: 4.75   T:76   1st Qu.:37.75   2020:80  
-##  10202  :  8   Median : 6.50          Median :38.00            
-##  10203  :  8   Mean   : 6.50          Mean   :40.09            
-##  10204  :  8   3rd Qu.: 8.25          3rd Qu.:46.00            
-##  10205  :  8   Max.   :10.00          Max.   :52.00            
-##  (Other):104                                                   
-##     Pre_Sum         Post_Sum        RawGain         Per_Pre       
-##  Min.   : 4.50   Min.   :20.50   Min.   : 1.00   Min.   :0.04688  
-##  1st Qu.:25.25   1st Qu.:38.38   1st Qu.:11.00   1st Qu.:0.33458  
-##  Median :35.75   Median :52.25   Median :16.00   Median :0.45596  
-##  Mean   :35.78   Mean   :53.15   Mean   :17.38   Mean   :0.45246  
-##  3rd Qu.:44.62   3rd Qu.:68.00   3rd Qu.:21.12   3rd Qu.:0.57964  
-##  Max.   :70.00   Max.   :95.50   Max.   :51.50   Max.   :0.83108  
-##                                                                   
-##     Per_Post         Per_Gain         gain_test       Pre_cat         
-##  Min.   :0.2135   Min.   :0.01316   Min.   : 1.00   Length:152        
-##  1st Qu.:0.5312   1st Qu.:0.14189   1st Qu.:11.00   Class :character  
-##  Median :0.6863   Median :0.20119   Median :16.00   Mode  :character  
-##  Mean   :0.6698   Mean   :0.21736   Mean   :17.38                     
-##  3rd Qu.:0.8290   3rd Qu.:0.27461   3rd Qu.:21.12                     
-##  Max.   :1.0952   Max.   :0.58333   Max.   :51.50                     
+<pre><code>##        ID           Week       Format   VocabWords     Course      Pre_Sum     
+##  10201  :  8   Min.   : 3.00   G:76   Min.   :26.00   1020:72   Min.   : 4.50  
+##  102010 :  8   1st Qu.: 4.75   T:76   1st Qu.:37.75   2020:80   1st Qu.:25.25  
+##  10202  :  8   Median : 6.50          Median :38.00             Median :35.75  
+##  10203  :  8   Mean   : 6.50          Mean   :40.09             Mean   :35.78  
+##  10204  :  8   3rd Qu.: 8.25          3rd Qu.:46.00             3rd Qu.:44.62  
+##  10205  :  8   Max.   :10.00          Max.   :52.00             Max.   :70.00  
+##  (Other):104                                                                   
+##     Post_Sum        RawGain         Per_Pre           Per_Post     
+##  Min.   :20.50   Min.   : 1.00   Min.   :0.04688   Min.   :0.2135  
+##  1st Qu.:38.38   1st Qu.:11.00   1st Qu.:0.33458   1st Qu.:0.5312  
+##  Median :52.25   Median :16.00   Median :0.45596   Median :0.6863  
+##  Mean   :53.15   Mean   :17.38   Mean   :0.45246   Mean   :0.6698  
+##  3rd Qu.:68.00   3rd Qu.:21.12   3rd Qu.:0.57964   3rd Qu.:0.8290  
+##  Max.   :95.50   Max.   :51.50   Max.   :0.83108   Max.   :1.0952  
+##                                                                    
+##     Per_Gain         gain_test       Pre_cat         
+##  Min.   :0.01316   Min.   : 1.00   Length:152        
+##  1st Qu.:0.14189   1st Qu.:11.00   Class :character  
+##  Median :0.20119   Median :16.00   Mode  :character  
+##  Mean   :0.21736   Mean   :17.38                     
+##  3rd Qu.:0.27461   3rd Qu.:21.12                     
+##  Max.   :0.58333   Max.   :51.50                     
 ## </code></pre>
 <p>The <code>psych</code> package has a <code>describe</code> function similar to summary and a <code>describeBy</code> function that allows you to see descriptives by a certain group.</p>
 <pre class="r"><code>library(psych)
@@ -655,191 +719,191 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## Format: G
-##            vars  n  mean    sd median trimmed   mad   min   max range
-## ID*           1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00
-## Week          2 76  6.58  2.31   6.50    6.60  2.97  3.00 10.00  7.00
-## Format*       3 76  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
-## VocabWords    4 76 38.91  7.01  38.00   38.98  8.90 26.00 52.00 26.00
-## Course*       5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00
-## Pre_Sum       6 76 35.71 14.93  33.75   35.16 15.20 10.50 68.50 58.00
-## Post_Sum      7 76 52.78 17.14  53.00   52.28 21.50 23.00 89.00 66.00
-## RawGain       8 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50
-## Per_Pre       9 76  0.47  0.19   0.45    0.47  0.23  0.11  0.83  0.72
-## Per_Post     10 76  0.69  0.20   0.72    0.70  0.25  0.24  1.00  0.76
-## Per_Gain     11 76  0.22  0.10   0.21    0.21  0.10  0.06  0.58  0.52
-## gain_test    12 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50
-## Pre_cat*     13 76   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
-##             skew kurtosis   se
-## ID*         0.00    -1.25 0.63
-## Week        0.00    -1.29 0.26
-## Format*      NaN      NaN 0.00
-## VocabWords  0.03    -0.58 0.80
-## Course*    -0.10    -2.02 0.06
-## Pre_Sum     0.31    -0.72 1.71
-## Post_Sum    0.20    -1.05 1.97
-## RawGain     1.65     3.55 1.02
-## Per_Pre    -0.11    -0.99 0.02
-## Per_Post   -0.33    -0.84 0.02
-## Per_Gain    1.07     1.60 0.01
-## gain_test   1.65     3.55 1.02
-## Pre_cat*      NA       NA   NA
-## -------------------------------------------------------- 
+##            vars  n  mean    sd median trimmed   mad   min   max range  skew
+## ID*           1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00  0.00
+## Week          2 76  6.58  2.31   6.50    6.60  2.97  3.00 10.00  7.00  0.00
+## Format*       3 76  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## VocabWords    4 76 38.91  7.01  38.00   38.98  8.90 26.00 52.00 26.00  0.03
+## Course*       5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00 -0.10
+## Pre_Sum       6 76 35.71 14.93  33.75   35.16 15.20 10.50 68.50 58.00  0.31
+## Post_Sum      7 76 52.78 17.14  53.00   52.28 21.50 23.00 89.00 66.00  0.20
+## RawGain       8 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50  1.65
+## Per_Pre       9 76  0.47  0.19   0.45    0.47  0.23  0.11  0.83  0.72 -0.11
+## Per_Post     10 76  0.69  0.20   0.72    0.70  0.25  0.24  1.00  0.76 -0.33
+## Per_Gain     11 76  0.22  0.10   0.21    0.21  0.10  0.06  0.58  0.52  1.07
+## gain_test    12 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50  1.65
+## Pre_cat*     13 76   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+##            kurtosis   se
+## ID*           -1.25 0.63
+## Week          -1.29 0.26
+## Format*         NaN 0.00
+## VocabWords    -0.58 0.80
+## Course*       -2.02 0.06
+## Pre_Sum       -0.72 1.71
+## Post_Sum      -1.05 1.97
+## RawGain        3.55 1.02
+## Per_Pre       -0.99 0.02
+## Per_Post      -0.84 0.02
+## Per_Gain       1.60 0.01
+## gain_test      3.55 1.02
+## Pre_cat*         NA   NA
+## ------------------------------------------------------------ 
 ## Format: T
-##            vars  n  mean    sd median trimmed   mad   min   max range
-## ID*           1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00
-## Week          2 76  6.42  2.31   6.50    6.40  2.97  3.00 10.00  7.00
-## Format*       3 76  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
-## VocabWords    4 76 41.26  6.35  40.00   41.32  5.93 26.00 52.00 26.00
-## Course*       5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00
-## Pre_Sum       6 76 35.85 13.66  36.50   35.66 13.71  4.50 70.00 65.50
-## Post_Sum      7 76 53.53 18.59  51.50   53.31 22.24 20.50 95.50 75.00
-## RawGain       8 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00
-## Per_Pre       9 76  0.44  0.15   0.46    0.44  0.16  0.05  0.73  0.68
-## Per_Post     10 76  0.65  0.21   0.68    0.66  0.20  0.21  1.10  0.88
-## Per_Gain     11 76  0.22  0.12   0.20    0.21  0.11  0.01  0.56  0.55
-## gain_test    12 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00
-## Pre_cat*     13 76   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
-##             skew kurtosis   se
-## ID*         0.00    -1.25 0.63
-## Week        0.00    -1.29 0.26
-## Format*      NaN      NaN 0.00
-## VocabWords -0.03    -0.58 0.73
-## Course*    -0.10    -2.02 0.06
-## Pre_Sum     0.16    -0.04 1.57
-## Post_Sum    0.13    -0.86 2.13
-## RawGain     0.42    -0.44 1.14
-## Per_Pre    -0.41    -0.09 0.02
-## Per_Post   -0.19    -0.70 0.02
-## Per_Gain    0.60     0.15 0.01
-## gain_test   0.42    -0.44 1.14
-## Pre_cat*      NA       NA   NA</code></pre>
+##            vars  n  mean    sd median trimmed   mad   min   max range  skew
+## ID*           1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00  0.00
+## Week          2 76  6.42  2.31   6.50    6.40  2.97  3.00 10.00  7.00  0.00
+## Format*       3 76  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## VocabWords    4 76 41.26  6.35  40.00   41.32  5.93 26.00 52.00 26.00 -0.03
+## Course*       5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00 -0.10
+## Pre_Sum       6 76 35.85 13.66  36.50   35.66 13.71  4.50 70.00 65.50  0.16
+## Post_Sum      7 76 53.53 18.59  51.50   53.31 22.24 20.50 95.50 75.00  0.13
+## RawGain       8 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00  0.42
+## Per_Pre       9 76  0.44  0.15   0.46    0.44  0.16  0.05  0.73  0.68 -0.41
+## Per_Post     10 76  0.65  0.21   0.68    0.66  0.20  0.21  1.10  0.88 -0.19
+## Per_Gain     11 76  0.22  0.12   0.20    0.21  0.11  0.01  0.56  0.55  0.60
+## gain_test    12 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00  0.42
+## Pre_cat*     13 76   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+##            kurtosis   se
+## ID*           -1.25 0.63
+## Week          -1.29 0.26
+## Format*         NaN 0.00
+## VocabWords    -0.58 0.73
+## Course*       -2.02 0.06
+## Pre_Sum       -0.04 1.57
+## Post_Sum      -0.86 2.13
+## RawGain       -0.44 1.14
+## Per_Pre       -0.09 0.02
+## Per_Post      -0.70 0.02
+## Per_Gain       0.15 0.01
+## gain_test     -0.44 1.14
+## Pre_cat*         NA   NA</code></pre>
 <p>You can also use the describeBy function to look at two groups.</p>
 <pre class="r"><code>describeBy(df, group=c(&quot;Format&quot;,&quot;Course&quot;)) </code></pre>
 <pre><code>## 
 ##  Descriptive statistics by group 
 ## Format: G
 ## Course: 1020
-##            vars  n  mean    sd median trimmed   mad   min   max range
-## ID*           1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00
-## Week          2 36  6.78  2.31   6.50    6.80  2.97  3.00 10.00  7.00
-## Format*       3 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
-## VocabWords    4 36 35.81  5.11  38.00   36.17  0.00 26.00 44.00 18.00
-## Course*       5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
-## Pre_Sum       6 36 34.68 10.69  33.00   34.08 10.75 17.50 61.50 44.00
-## Post_Sum      7 36 47.72 12.02  44.25   47.28 11.86 29.00 72.00 43.00
-## RawGain       8 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00
-## Per_Pre       9 36  0.49  0.14   0.45    0.48  0.12  0.23  0.83  0.60
-## Per_Post     10 36  0.67  0.16   0.65    0.67  0.16  0.41  0.98  0.57
-## Per_Gain     11 36  0.19  0.08   0.17    0.18  0.08  0.07  0.43  0.37
-## gain_test    12 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00
-## Pre_cat*     13 36   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
-##             skew kurtosis   se
-## ID*         0.00    -1.33 0.44
-## Week       -0.01    -1.37 0.38
-## Format*      NaN      NaN 0.00
-## VocabWords -1.10     0.03 0.85
-## Course*      NaN      NaN 0.00
-## Pre_Sum     0.53    -0.51 1.78
-## Post_Sum    0.43    -1.07 2.00
-## RawGain     1.27     1.97 0.97
-## Per_Pre     0.40    -0.55 0.02
-## Per_Post    0.27    -1.20 0.03
-## Per_Gain    0.87     0.54 0.01
-## gain_test   1.27     1.97 0.97
-## Pre_cat*      NA       NA   NA
-## -------------------------------------------------------- 
+##            vars  n  mean    sd median trimmed   mad   min   max range  skew
+## ID*           1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00  0.00
+## Week          2 36  6.78  2.31   6.50    6.80  2.97  3.00 10.00  7.00 -0.01
+## Format*       3 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## VocabWords    4 36 35.81  5.11  38.00   36.17  0.00 26.00 44.00 18.00 -1.10
+## Course*       5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## Pre_Sum       6 36 34.68 10.69  33.00   34.08 10.75 17.50 61.50 44.00  0.53
+## Post_Sum      7 36 47.72 12.02  44.25   47.28 11.86 29.00 72.00 43.00  0.43
+## RawGain       8 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00  1.27
+## Per_Pre       9 36  0.49  0.14   0.45    0.48  0.12  0.23  0.83  0.60  0.40
+## Per_Post     10 36  0.67  0.16   0.65    0.67  0.16  0.41  0.98  0.57  0.27
+## Per_Gain     11 36  0.19  0.08   0.17    0.18  0.08  0.07  0.43  0.37  0.87
+## gain_test    12 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00  1.27
+## Pre_cat*     13 36   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+##            kurtosis   se
+## ID*           -1.33 0.44
+## Week          -1.37 0.38
+## Format*         NaN 0.00
+## VocabWords     0.03 0.85
+## Course*         NaN 0.00
+## Pre_Sum       -0.51 1.78
+## Post_Sum      -1.07 2.00
+## RawGain        1.97 0.97
+## Per_Pre       -0.55 0.02
+## Per_Post      -1.20 0.03
+## Per_Gain       0.54 0.01
+## gain_test      1.97 0.97
+## Pre_cat*         NA   NA
+## ------------------------------------------------------------ 
 ## Format: T
 ## Course: 1020
-##            vars  n  mean    sd median trimmed   mad   min   max range
-## ID*           1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00
-## Week          2 36  6.22  2.31   6.50    6.20  2.97  3.00 10.00  7.00
-## Format*       3 36  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
-## VocabWords    4 36 38.44  3.91  38.00   38.77  0.00 26.00 44.00 18.00
-## Course*       5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
-## Pre_Sum       6 36 34.07  9.18  34.50   33.73  8.90 18.00 53.50 35.50
-## Post_Sum      7 36 46.74 11.52  48.00   46.67 11.12 22.50 70.00 47.50
-## RawGain       8 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00
-## Per_Pre       9 36  0.45  0.13   0.44    0.44  0.14  0.22  0.70  0.49
-## Per_Post     10 36  0.61  0.16   0.64    0.62  0.14  0.26  0.94  0.69
-## Per_Gain     11 36  0.17  0.10   0.16    0.16  0.06  0.01  0.39  0.38
-## gain_test    12 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00
-## Pre_cat*     13 36   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
-##             skew kurtosis   se
-## ID*         0.00    -1.33 0.44
-## Week        0.01    -1.37 0.38
-## Format*      NaN      NaN 0.00
-## VocabWords -1.24     3.50 0.65
-## Course*      NaN      NaN 0.00
-## Pre_Sum     0.31    -0.59 1.53
-## Post_Sum    0.01    -0.36 1.92
-## RawGain     0.47     0.29 1.20
-## Per_Pre     0.27    -0.76 0.02
-## Per_Post   -0.13    -0.05 0.03
-## Per_Gain    0.28    -0.32 0.02
-## gain_test   0.47     0.29 1.20
-## Pre_cat*      NA       NA   NA
-## -------------------------------------------------------- 
+##            vars  n  mean    sd median trimmed   mad   min   max range  skew
+## ID*           1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00  0.00
+## Week          2 36  6.22  2.31   6.50    6.20  2.97  3.00 10.00  7.00  0.01
+## Format*       3 36  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## VocabWords    4 36 38.44  3.91  38.00   38.77  0.00 26.00 44.00 18.00 -1.24
+## Course*       5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## Pre_Sum       6 36 34.07  9.18  34.50   33.73  8.90 18.00 53.50 35.50  0.31
+## Post_Sum      7 36 46.74 11.52  48.00   46.67 11.12 22.50 70.00 47.50  0.01
+## RawGain       8 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00  0.47
+## Per_Pre       9 36  0.45  0.13   0.44    0.44  0.14  0.22  0.70  0.49  0.27
+## Per_Post     10 36  0.61  0.16   0.64    0.62  0.14  0.26  0.94  0.69 -0.13
+## Per_Gain     11 36  0.17  0.10   0.16    0.16  0.06  0.01  0.39  0.38  0.28
+## gain_test    12 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00  0.47
+## Pre_cat*     13 36   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+##            kurtosis   se
+## ID*           -1.33 0.44
+## Week          -1.37 0.38
+## Format*         NaN 0.00
+## VocabWords     3.50 0.65
+## Course*         NaN 0.00
+## Pre_Sum       -0.59 1.53
+## Post_Sum      -0.36 1.92
+## RawGain        0.29 1.20
+## Per_Pre       -0.76 0.02
+## Per_Post      -0.05 0.03
+## Per_Gain      -0.32 0.02
+## gain_test      0.29 1.20
+## Pre_cat*         NA   NA
+## ------------------------------------------------------------ 
 ## Format: G
 ## Course: 2020
-##            vars  n  mean    sd median trimmed   mad   min   max range
-## ID*           1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00
-## Week          2 40  6.40  2.32   6.50    6.38  2.97  3.00 10.00  7.00
-## Format*       3 40  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00
-## VocabWords    4 40 41.70  7.37  42.00   41.62 10.38 32.00 52.00 20.00
-## Course*       5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
-## Pre_Sum       6 40 36.64 18.00  38.00   36.05 25.95 10.50 68.50 58.00
-## Post_Sum      7 40 57.34 19.76  60.75   57.73 21.50 23.00 89.00 66.00
-## RawGain       8 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50
-## Per_Pre       9 40  0.45  0.22   0.46    0.45  0.30  0.11  0.79  0.68
-## Per_Post     10 40  0.70  0.23   0.75    0.72  0.25  0.24  1.00  0.76
-## Per_Gain     11 40  0.25  0.10   0.23    0.24  0.07  0.06  0.58  0.52
-## gain_test    12 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50
-## Pre_cat*     13 40   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
-##             skew kurtosis   se
-## ID*         0.00    -1.31 0.46
-## Week        0.00    -1.33 0.37
-## Format*      NaN      NaN 0.00
-## VocabWords -0.18    -1.48 1.16
-## Course*      NaN      NaN 0.00
-## Pre_Sum     0.13    -1.26 2.85
-## Post_Sum   -0.26    -1.25 3.12
-## RawGain     1.52     2.32 1.52
-## Per_Pre    -0.08    -1.52 0.03
-## Per_Post   -0.57    -0.94 0.04
-## Per_Gain    1.07     1.41 0.02
-## gain_test   1.52     2.32 1.52
-## Pre_cat*      NA       NA   NA
-## -------------------------------------------------------- 
+##            vars  n  mean    sd median trimmed   mad   min   max range  skew
+## ID*           1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00  0.00
+## Week          2 40  6.40  2.32   6.50    6.38  2.97  3.00 10.00  7.00  0.00
+## Format*       3 40  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## VocabWords    4 40 41.70  7.37  42.00   41.62 10.38 32.00 52.00 20.00 -0.18
+## Course*       5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## Pre_Sum       6 40 36.64 18.00  38.00   36.05 25.95 10.50 68.50 58.00  0.13
+## Post_Sum      7 40 57.34 19.76  60.75   57.73 21.50 23.00 89.00 66.00 -0.26
+## RawGain       8 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50  1.52
+## Per_Pre       9 40  0.45  0.22   0.46    0.45  0.30  0.11  0.79  0.68 -0.08
+## Per_Post     10 40  0.70  0.23   0.75    0.72  0.25  0.24  1.00  0.76 -0.57
+## Per_Gain     11 40  0.25  0.10   0.23    0.24  0.07  0.06  0.58  0.52  1.07
+## gain_test    12 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50  1.52
+## Pre_cat*     13 40   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+##            kurtosis   se
+## ID*           -1.31 0.46
+## Week          -1.33 0.37
+## Format*         NaN 0.00
+## VocabWords    -1.48 1.16
+## Course*         NaN 0.00
+## Pre_Sum       -1.26 2.85
+## Post_Sum      -1.25 3.12
+## RawGain        2.32 1.52
+## Per_Pre       -1.52 0.03
+## Per_Post      -0.94 0.04
+## Per_Gain       1.41 0.02
+## gain_test      2.32 1.52
+## Pre_cat*         NA   NA
+## ------------------------------------------------------------ 
 ## Format: T
 ## Course: 2020
-##            vars  n  mean    sd median trimmed   mad   min   max range
-## ID*           1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00
-## Week          2 40  6.60  2.32   6.50    6.62  2.97  3.00 10.00  7.00
-## Format*       3 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
-## VocabWords    4 40 43.80  7.07  46.00   44.25  5.93 32.00 52.00 20.00
-## Course*       5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00
-## Pre_Sum       6 40 37.45 16.67  39.75   37.48 15.20  4.50 70.00 65.50
-## Post_Sum      7 40 59.64 21.56  65.25   60.52 18.16 20.50 95.50 75.00
-## RawGain       8 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00
-## Per_Pre       9 40  0.43  0.17   0.46    0.44  0.17  0.05  0.73  0.68
-## Per_Post     10 40  0.69  0.24   0.73    0.70  0.27  0.21  1.10  0.88
-## Per_Gain     11 40  0.26  0.13   0.25    0.25  0.12  0.02  0.56  0.55
-## gain_test    12 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00
-## Pre_cat*     13 40   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf
-##             skew kurtosis   se
-## ID*         0.00    -1.31 0.46
-## Week        0.00    -1.33 0.37
-## Format*      NaN      NaN 0.00
-## VocabWords -0.58    -1.06 1.12
-## Course*      NaN      NaN 0.00
-## Pre_Sum    -0.08    -0.68 2.64
-## Post_Sum   -0.43    -1.09 3.41
-## RawGain     0.01    -0.69 1.58
-## Per_Pre    -0.57    -0.42 0.03
-## Per_Post   -0.43    -1.02 0.04
-## Per_Gain    0.45    -0.38 0.02
-## gain_test   0.01    -0.69 1.58
-## Pre_cat*      NA       NA   NA</code></pre>
+##            vars  n  mean    sd median trimmed   mad   min   max range  skew
+## ID*           1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00  0.00
+## Week          2 40  6.60  2.32   6.50    6.62  2.97  3.00 10.00  7.00  0.00
+## Format*       3 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## VocabWords    4 40 43.80  7.07  46.00   44.25  5.93 32.00 52.00 20.00 -0.58
+## Course*       5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## Pre_Sum       6 40 37.45 16.67  39.75   37.48 15.20  4.50 70.00 65.50 -0.08
+## Post_Sum      7 40 59.64 21.56  65.25   60.52 18.16 20.50 95.50 75.00 -0.43
+## RawGain       8 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00  0.01
+## Per_Pre       9 40  0.43  0.17   0.46    0.44  0.17  0.05  0.73  0.68 -0.57
+## Per_Post     10 40  0.69  0.24   0.73    0.70  0.27  0.21  1.10  0.88 -0.43
+## Per_Gain     11 40  0.26  0.13   0.25    0.25  0.12  0.02  0.56  0.55  0.45
+## gain_test    12 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00  0.01
+## Pre_cat*     13 40   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+##            kurtosis   se
+## ID*           -1.31 0.46
+## Week          -1.33 0.37
+## Format*         NaN 0.00
+## VocabWords    -1.06 1.12
+## Course*         NaN 0.00
+## Pre_Sum       -0.68 2.64
+## Post_Sum      -1.09 3.41
+## RawGain       -0.69 1.58
+## Per_Pre       -0.42 0.03
+## Per_Post      -1.02 0.04
+## Per_Gain      -0.38 0.02
+## gain_test     -0.69 1.58
+## Pre_cat*         NA   NA</code></pre>
 <p></br> </br></p>
 </div>
 <div id="using-tapply-and-sapply-to-get-specific-descriptives" class="section level2">
@@ -848,12 +912,10 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 <p>To just look at the means we can use sapply on our data set.</p>
 <pre class="r"><code>t &lt;- sapply(df, mean, na.rm=TRUE) #Note we can change mean to sd or whatever statistic we want. Use ?sapply to get more information.
 t</code></pre>
-<pre><code>##         ID       Week     Format VocabWords     Course    Pre_Sum 
-##         NA  6.5000000         NA 40.0855263         NA 35.7796053 
-##   Post_Sum    RawGain    Per_Pre   Per_Post   Per_Gain  gain_test 
-## 53.1546053 17.3750000  0.4524636  0.6698279  0.2173643 17.3750000 
-##    Pre_cat 
-##         NA</code></pre>
+<pre><code>##         ID       Week     Format VocabWords     Course    Pre_Sum   Post_Sum 
+##         NA  6.5000000         NA 40.0855263         NA 35.7796053 53.1546053 
+##    RawGain    Per_Pre   Per_Post   Per_Gain  gain_test    Pre_cat 
+## 17.3750000  0.4524636  0.6698279  0.2173643 17.3750000         NA</code></pre>
 <p><em>Note above I saved my output into the object <code>t</code> and then printed the object <code>t</code> for formatting puproses.</em></p>
 <p>If I want to compare means between two groups on one variable. I can use <code>tapply</code>. Below I’m comparing the Glossing group (G) with the traditional group (T). There does not seem to be much of a difference.</p>
 <pre class="r"><code>tapply(df$Per_Gain,df$Format, mean, na.rm=TRUE)</code></pre>
@@ -863,13 +925,13 @@ t</code></pre>
 <pre class="r"><code>tab2 &lt;- tapply(df$Per_Gain, df[,c(&quot;Format&quot;,&quot;Week&quot;)],mean,na.rm=T)
 tab2</code></pre>
 <pre><code>##       Week
-## Format         3        4         5         6         7         8
-##      G 0.2116477 0.208987 0.1982265 0.2127273 0.2323705 0.1953748
-##      T 0.2271178 0.175497 0.1731329 0.2405592 0.1909016 0.2266310
+## Format         3        4         5         6         7         8         9
+##      G 0.2116477 0.208987 0.1982265 0.2127273 0.2323705 0.1953748 0.2396176
+##      T 0.2271178 0.175497 0.1731329 0.2405592 0.1909016 0.2266310 0.2257028
 ##       Week
-## Format         9        10
-##      G 0.2396176 0.2581585
-##      T 0.2257028 0.2787317</code></pre>
+## Format        10
+##      G 0.2581585
+##      T 0.2787317</code></pre>
 <p><em>Here I’m saving my outpout as tab2 because further down I will use tab2 to make a visualization of this table</em></p>
 <p>The final thing we want to look at is how high and low learners performed in each of the formats. Here we can see that Low-level learners (&lt;50% correct on the pre-test) performed slightly better in a gloss format than a traditional format. And that high-level learners (&gt;50% correct on the pre-test) performed slightly better in a traditional format. We will need to test if this is statistically signficiant later.</p>
 <pre class="r"><code>tab3 &lt;- tapply(df$Per_Gain, df[,c(&quot;Format&quot;,&quot;Pre_cat&quot;)],mean,na.rm=T)
@@ -1126,6 +1188,49 @@ $(document).ready(function () {
 });
 
 
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
 </script>
 
 <!-- dynamically load mathjax for compatibility with self-contained -->

@@ -58,13 +58,13 @@ gloss <- read_excel("eGlossData.xlsx",
 head(gloss,n=15)
 ```
 
-#Download R and Rstudio
+# Download R and Rstudio
 1.<a href="https://www.r-project.org/" class="button">Download R</a>
 </br>
 </br>
 2.<a href="https://www.rstudio.com/ " class="button">Download R Studio</a>
 
-#Create a Project
+# Create a Project
 Once you have downloaded R and Rstudio. You should begin by creating a new project in RStudio. You could just simply open R studio and start coding in the console, or create a new script and start coding in the script, but creating a new Project for each data analysis project that you do will save trouble further down the road. 
 
 To start a new project open Rstudio, click File, New Project. The image below should pop up and prompt you to create a new directory or to use an existing directory. I usually just create an empty folder somewhere on my computer and then use select an existing directory. 
@@ -75,7 +75,7 @@ knitr::include_graphics("images/newProject.png")
 
 Once you have created a new project you should see a .Rproj file in the folder that you created. In this same folder you will want to drag in whatever data file you are currently using (.csv, .spss, .xsls are all suitable among others). By creating a project and adding your data file to the folder you will a) save yourself time when importing the file into your project because you won't have to add a long path file to your code, and b) you will make your life easier when you have to return to your analysis five months after you already completed it. More on this later. 
 
-#Loading Data
+# Loading Data
 When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you'll need to run the following code in the console: `install.packages("PackageName")` **(Don't forget to add the parentheses when installing a package...loading a library does not use parentheses)**. After you have installed it once, you can simply recall the package by running `library(PackageName)`. Below are list of the packages that are needed for each file type. 
 
 **.csv files** -- `No Package Needed` -- `df <- read.table("eGloss.csv", header=TRUE, sep=",")`
@@ -102,7 +102,7 @@ head(gloss,n=15)
 </br>
 </br>
 
-##Renaming your Data
+## Renaming your Data
 Now that I have my data uploaded, I need to rename it. Renamining your data to something simple and generic can be very useful in R. First, if you keep the name `eGlossData`, then everytime you want to run an analysis or use a variable from this data set you'll need to either use `attach()` and `detach()` functions, or you'll need to type out the entire name. It doesn't seem like a long name now, but after you type it out 100 times, you'll wish you had a smaller name. Secondly, if you use a generic name like `df` (data frame) and if you save your code into a script within your project, then the next time you want to run your script with say another data set, you'll just need to rename your new data set to `df` and then all of your code should run smoothly... provided that the data is in a similar format. 
 
 Renaming data sets in R is pretty simple. See code below. 
@@ -115,12 +115,12 @@ Voilà, my data set is now called `df`.
 <hr>
 <hr>
 
-#Transorming Data
+# Transorming Data
 
 </br>
 </br>
 
-##Creating New Variables
+## Creating New Variables
 In the this data set we already have a variable called "RawGain." But to practice we are going to create another variable simply called gain to show a) how to create new variables and b) how to do simple arithmetic in R. 
 
 To create a new variable simple use the `$` after your data set, and then type in a variable that is not currently in your data set. Then use the arror `<-` to define what will be stored in the variable. See examples below.
@@ -145,7 +145,7 @@ Simply put, if the Per_Pre is greater than .5, then label it as high, if not the
 </br>
 </br>
 
-##Impute Missing Data
+## Impute Missing Data
 
 ```{r}
 #Coming soon
@@ -158,7 +158,7 @@ Simply put, if the Per_Pre is greater than .5, then label it as high, if not the
 </br>
 </br>
 
-##Renaming your Variables
+## Renaming your Variables
 You may want to rename your variables for a variety of reasons. You could simply change the name in your excel file, but if you'd like to do it in R you can use the following code. For this example, I will use the *gain* variable that we made a copy of earlier. I want to make sure that it is known that this variable is just a test variable, so I will change the name to *gain_test*
 
 ```{r}
@@ -167,7 +167,7 @@ colnames(df)[colnames(df)=="gain"] <- "gain_test"
 </br>
 </br>
 
-##Complete Cases
+## Complete Cases
 For some analysis you'll need to remove any missing variables. The easiest way to do this is to use the filter function in the `library(dplyr)`. 
 
 For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run `nrow(df_c)` to get the number of cases in my new data set.
@@ -181,7 +181,7 @@ nrow(df_c) #notice they are the same, that's because we don't have any missing d
 </br>
 </br>
 
-##Changing Variable Types (e.g. numeric, factor)
+## Changing Variable Types (e.g. numeric, factor)
 Often times when you import your data set into R using excel or csv your variables will be loaded as incorrect data types. For exmample if you coded Gender as 1=Female, and 2=Male, your gender variable will be saved as a numeric variable, when it should probably be a factor. That being said, if you want to use gender in a correlation matrix you'll need to convert it back to a numeric variable. The easiest way to see how your variables are being stored is to use `str(df)`. Currently, my variables *ID* and *Format* are being stored as characters. For most analyses this is ok. But for this tutorial I will change them into Factors. My *Course* variable is also being stored as a numeric, when this should really be a factor. There are two ways to do this, first I will demonstrate how to do each individual variable, then I'll show a way to do multiple variables. 
 
 ```{r}
@@ -199,7 +199,7 @@ str(df)
 </br>
 </br>
 
-##Subsetting Data
+## Subsetting Data
 There are many reasons to subset your data. Subsetting your data simply means that you create a separate data set with only a subset of your variables. You may want to do this to create a correlation matrix with a specific set of variables. You may also want to do this to create a data set of only females or males. In this case of this data set, I will create two subsetted (I don't think that's a word... but let's run with it) datasets one for a correlation matrix using only *Per_Pre*, *Per_Post* and *Week* to see if pre and post scores correlate with time in the study. I will also create a separate data set for each *Course* in the data set to do separate analyses. 
 
 ```{r}
@@ -214,7 +214,7 @@ df_2020 <- subset(df, Course=="2020")
 </br>
 </br>
 
-##Transform Wide to Long
+## Transform Wide to Long
 For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds *Per_Pre*, *Per_Post*, and *Per_Gain*, and then another column that holds the value for each of those constructs. We will need the `library(tidyr)` to run this code. 
 
 ```{r}
@@ -237,12 +237,12 @@ Remember: We will use this data set later on when doing more advance visualizati
 <hr>
 <hr>
 
-#Descriptives
+# Descriptives
 In this section we will go over how to run descriptives on a data set. We will look at some of the base packages that allow you to automatically run descriptives on all of your variables and then we'll look at some other quick functions that allow you to explore your data with more precision. 
 </br>
 </br>
 
-##Base Descriptive Packages
+## Base Descriptive Packages
 There are several packages that will automatically printout a set of descriptives for your entire data set. Which one you use will depend on preference and need.
 
 I like using `stargazer` because it prints out a formatted table. However, I have been having issues with displaying the output on the website, so I'll just show the code. In the example below I have set `type` to text so that it will print out in the console, but you could change this to html or latex. 
@@ -271,7 +271,7 @@ describeBy(df, group=c("Format","Course"))
 </br>
 </br>
 
-##Using Tapply and Sapply to get specific descriptives
+## Using Tapply and Sapply to get specific descriptives
 While the descriptives above are nice, they can sometimes be overbearing. There is just too much information. Sometimes we want to be able to just look at the mean or maybe pinpoint a variable or possibly look at variable and compare it across two groups. 
 
 To just look at the means we can use sapply on our data set. 
@@ -302,12 +302,12 @@ tab3
 </br>
 </br>
 
-#Simple Parametric Tests
+# Simple Parametric Tests
 
 </br>
 </br>
 
-##T-Tests
+## T-Tests
 To look at simple comparison of means between two groups we will use a T-test. IN this example, I will compare means of Per_Gain (Percentage of Vocabulary Gains) between the two groups: traditional and gloss. 
 
 ```{r}
@@ -318,7 +318,7 @@ It appears that these two groups are the same.
 </br>
 </br>
 
-##Effect Size
+## Effect Size
 *Coming Soon*
 
 ```{r}
@@ -328,7 +328,7 @@ It appears that these two groups are the same.
 </br>
 
 
-##Chi-Square Tests
+## Chi-Square Tests
 *Coming Soon*
 ```{r}
 
@@ -336,7 +336,7 @@ It appears that these two groups are the same.
 </br>
 </br>
 
-##ANOVA
+## ANOVA
 The T-test is nice, but it does not allow us to control for potential differences in course. We can do this with a two-way factorial ANOVA.
 
 ```{r}
@@ -356,7 +356,7 @@ These findings show that regardless of format, the 2020 group (second year Chine
 </br>
 
 
-##Regressions
+## Regressions
 
 
 ```{r}
@@ -379,12 +379,12 @@ summary(mod4)
 <hr>
 <hr>
 
-#Simple Non-Parametric Tests
+# Simple Non-Parametric Tests
 
 </br>
 </br>
 
-##Wilcoxon-Signed Rank Test
+## Wilcoxon-Signed Rank Test
 *Coming Soon*
 ```{r, echo=FALSE}
 library(coin)
@@ -398,12 +398,12 @@ median(df$Per_Pre)
 <hr>
 <hr>
 
-#Basic Graphs
+# Basic Graphs
 
 </br>
 </br>
 
-##Bar Graphs
+## Bar Graphs
 This is a bar chart. 
 ```{r,echo=FALSE}
 library(ggplot2)
@@ -424,7 +424,7 @@ g + geom_bar(stat="identity") + facet_grid(~Pre_cat)
 </br>
 </br>
 
-##Box Plots
+## Box Plots
 
 ```{r,echo=FALSE}
 g <- ggplot(df, aes(Format, Per_Gain, fill=Format))
@@ -439,7 +439,7 @@ g + geom_boxplot() + facet_grid(~Course)
 </br>
 </br>
 
-##Linear Plots
+## Linear Plots
 
 ```{r}
 f <- ggplot(df, aes(Week,Per_Gain))
@@ -457,11 +457,11 @@ f + geom_jitter(aes(col=Format)) + geom_smooth(method="loess", se=F) +
 <hr>
 <hr>
 
-#Multivariate Analysis
+# Multivariate Analysis
 </br>
 </br>
 
-##Path Models
+## Path Models
 *Coming Soon*
 ```{r}
 
@@ -469,7 +469,7 @@ f + geom_jitter(aes(col=Format)) + geom_smooth(method="loess", se=F) +
 </br>
 </br>
 
-##Cluster Analysis
+## Cluster Analysis
 *Coming Soon*
 ```{r}
 
@@ -477,7 +477,7 @@ f + geom_jitter(aes(col=Format)) + geom_smooth(method="loess", se=F) +
 </br>
 </br>
 
-##CART Analysis
+## CART Analysis
 *Coming Soon*
 ```{r}
 

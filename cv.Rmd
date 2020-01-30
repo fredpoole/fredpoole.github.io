@@ -22,7 +22,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">EDUCATION</center>
 <ul>
-<li>Expected (2019) -- Ph.D. Student Instructional Technology and Learning Sciences, Utah State University </li><enter>
+<li>Expected (May 2020) -- Ph.D. Student Instructional Technology and Learning Sciences, Utah State University </li><enter>
 	
 <ul><li>*Advisor*: Assistant Professor Jody Clarke-Midura</li></ul> <enter>
 
@@ -32,10 +32,12 @@ knitr::include_graphics("images/fred.JPG")
 </ul><enter>
 
 <center  style="font-size:20px">PUBLICATIONS</center>
-####Second Language Acquisition: Journal Articles (refereed)
+#### Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
-<li>Forthcoming -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. (Impact Factor= 1.78)</li><enter>
+<li>Forthcoming -- **Poole, F.,** & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, (CiteScore = 1.27).
+
+<li>2019 -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. 753-775 52(4). https://doi.org/10.1111/flan.12425 (Impact Factor= 1.78)</li><enter>
 
 <li>2019 -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*,2(2), 261-280. </li><enter>
 
@@ -43,7 +45,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2), Retrieved from https://escholarship.org/uc/item/0fk329vn.</li><enter>
 
-<li>2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .17)</li><enter>
+<li>2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .62)</li><enter>
 
 <li>2017 --	Thoms, J., Sung, K. Y., & **Poole, F.** Investigating the linguistic and pedagogical affordances of an L2 open reading environment via eComma: An exploratory study in a Chinese language course. *System*, 69, 38–53. (Impact Factor = 1.93)</li><enter>
 
@@ -57,7 +59,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>2015 -- **Poole, F.**, & Sung, K. Three approaches to beginning Chinese instruction and their effects on oral development and character recognition. *Eurasian Journal of Applied Linguistics*, 1(1), 59–75. </li></ol><enter>
 
-####Second Language Acquisition: Book Chapters (refereed)<enter>
+#### Second Language Acquisition: Book Chapters (refereed)<enter>
 <ol reversed>
 
 <li>Forthcoming -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.*Open education and foreign language learning and teaching: The rise of a new knowledge ecology.* Bristol, UK: Multilingual Matters.</li><enter>
@@ -66,14 +68,16 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>2016 --	Sung, K. Y., & **Poole, F.** Differences between native and non-native Chinese speaking teachers: Voices from overseas students who study Chinese in China. In C. P. Chou & J. Spangler (Eds.) *Chinese Education Models in a Global Age* (pp. 133–147). Springer, Singapore.</li></ol><enter>
 
-####Educational Technology: Journal Articles & Conference Proceedings (refereed)
+#### Educational Technology: Journal Articles & Conference Proceedings (refereed)
 <ol reversed>
 
-<li>Forthcoming --	Lee, V., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter>
+<li>2020 -- Lee, V.R., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction. *Paper presented at the American Educational Research Association Conference (AERA)*, San Francisco, CA.
+
+<li>2020 --	Lee, V.R., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter>
 
 <li>2019 -- Clarke-Midura, J., Sun, C., Pantic, K., **Poole, F.**, & Allan, V. Using Informed Design in Informal Computer Science Programs to Increase Youths’ Interest, Self-efficacy, and Perceptions of Parental Support. *ACM Transactions on Computing Education (TOCE)*, 19 (4), 1-12 (Article 37), doi: 10.1145/3319445 </li><enter>
 
-<li>2018 -- Pantic, K., Clarke-Midura, J., **Poole, F.**, & Roller, J. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
+<li>2018 -- Pantic, K., Clarke-Midura, J., **Poole, F.**, Roller, J, & Allan, V. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
 
 <li>2018 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., Sun, C., & Allan, V. How mother and father support affect youths’ interest in computer science. *In Proceedings of ACM ICER conference*, Espoo, Finland, August, 2018 </li><enter>
 
@@ -84,33 +88,31 @@ knitr::include_graphics("images/fred.JPG")
 </ol>
 
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
-####Second Language Acquisition: Journal Articles (refereed)
+#### Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
-
-<li>Under Review -- **Poole, F.** & Clarke-Midura, J. A systematic review of digital games used in second language studies. *IJGBL*. </li><enter>
 
 <li>In prepration -- Thoms, J. & **Poole, F.** Analyzing Digital Social Reading Practices in an L2 Chinese Literature Course. </li><enter>
 
-<li>In prepration -- **Poole, F.** & Thoms, J. Exploring L2 comments in a digital social reading environemnt using sentiment analysis. </li><enter>
+<li>In prepration -- **Poole, F.** & Thoms, J. Exploring L2 comments in a digital social reading environment using sentiment analysis. </li><enter>
 
 <li>In preparation -- **Poole, F.** Developing and evaluating stealth assessments for an educational game to assess young Chinese dual language immersion learners' reading comprehension.  </li><enter>
 
 </ol>
 
-####Educational Technology: Journal Articles (refereed)<enter>
+#### Educational Technology: Journal Articles (refereed)<enter>
 <ol reversed>
 
-<li>Under Review -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, *Mentoring & Tutoring: Partnership in Learning*</li><enter>
+<li>In preparation -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, </li><enter>
 
-<li>Under Review -- Clarke-Midura, J. & **Poole, F.**. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
+<li>In preparation -- Clarke-Midura, J. & **Poole, F.**. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
 
-<li> Under Review -- **Poole, F.** & Lee, V. Exploring data practices by a collegiate esports team. </li><enter>
+<li>In preparation -- **Poole, F.** & Lee, V. Exploring data practices by a collegiate esports team. </li><enter>
 
 </ol>
 
 <center  style="font-size:20px">PROFESSIONAL AND ACADEMIC POSITIONS</center><enter>
 <ul>
-<li>2019 – Adjunct Instructor, Instructional Technology and Learning Sciences, Utah State University, Logan, UT </li><enter>
+<li>2019 - Present – Adjunct Instructor, Instructional Technology and Learning Sciences, Utah State University, Logan, UT </li><enter>
 
 <li>2017 – 2018 --  Adjunct Instructor, School of Teacher Education and Leadership, Utah State University, Logan, UT </li><enter>
 
@@ -128,9 +130,10 @@ knitr::include_graphics("images/fred.JPG")
 </ul><enter>
 
 <center  style="font-size:20px">TEACHING</center>
-####Utah State University
+#### Utah State University
 <enter>
 <ul>
+<li>Spring 2020 -- Games and Learning (ITLS 6730) (*Graduate Level Online Course*)
 <li>Fall 2019 -- Mobile Design and Development for Learning (ITLS 3870/5750) (*Graduate Level Online Course*)
 <li>Spring 2019 -- Games and Learning (ITLS 6730) (*Graduate Level Online Course*)
 <li>Fall 2017 -- Learning Theory (ITLS 6540) (*Graduate-level course, taught last 7 weeks of course at request of department due to maternity leave of a faculty member*)</li><enter>
@@ -143,7 +146,7 @@ knitr::include_graphics("images/fred.JPG")
 <li>Fall 2013 -- First-Year Chinese 1 (Chinese 1010) </li><enter>
 </ul><enter>
 
-####Mercan School (Private EFL Institute in China)<enter>
+#### Mercan School (Private EFL Institute in China)<enter>
 <ul>
 <li>2008 – 2013	->	TOEFL/IELTS Test Prep </li><enter>
 <li>2008 – 2013	->	High School American Literature/American Culture Course </li><enter>

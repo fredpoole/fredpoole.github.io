@@ -25,12 +25,12 @@ output:
 knitr::include_graphics("images/iconFred3.png")
 ```
 
-#Language Teaching Activities
+# Language Teaching Activities
 In this section you will find activities/lessons/curriculum that I designed throughout the years in both the Chinese and English as a Foreign Language Classroom. I am currently only posting a sample of what I have created and will slowly add more material as I have time. 
 
 </br>
 
-##Activities for Chinese as a Foreign Language
+## Activities for Chinese as a Foreign Language
 The following activities are taken from a first year Chinese course at the university level. Each of the zip files contains a power point and 1-2 handouts. Generally speaking one of the handouts will have a listening exercise in which new vocabulary/sentence structure is introduced. In the listening activities I use the powerpoints to tell a story or to discuss a topic. For example in the professions lesson I talk about the qualities of each professesions (i.e. Being a writer can relaxing but lonely.). The handouts are used for students to keep track of what is said during the presentation. The speaking handout is usually a lesson that asks students to reproduce some version of what they heard in the listening activity. *More details for each individual lesson will be provided later*.
 
 <a href="chineseactivities/professions.zip" class="button">Professions Activity</a>
@@ -43,7 +43,7 @@ The following activities are taken from a first year Chinese course at the unive
 </br>
 </br>
 
-##Activities for English as a Foreign Language
+## Activities for English as a Foreign Language
 While living/working in China I developed several lesson plans and curriculum to be used for either one-to-one instruction or small 6-10 student classes focused on developing speaking skills and U.S. cultural knowledge.
 </br>
 </br>
@@ -81,7 +81,7 @@ Recently I created the U.S. Values course as an easier version of the Culture Cl
 <hr>
 <hr>
 
-#Graded Readers
+# Graded Readers
 In 2014, I designed a graded reader series for learners of Chinese as a foreign learner. The stories consist of four parts. In the first part, all new words are presented in the English (the learners L1). This was done to provide true beginners of Chinese with background information on the characters as well as to allow learners a chance to see characters in a familiar, stress-reduced environemnt. In the second section, there are writing activities to allow learners to again familiarize themselvs with new characters. In the third section is the reading or the text. Then in the final section a series of questions and tasks are presented to the reader to review both the content and the vocabulary learned in the reading.
 </br></br>
 The story is about a brother and sister who find some items missing from their school and then try to find the culprit. This was my first attempt at creaing a reading series so forgive any typos, or bad story lines. If you have any suggestions or would like to cooperate on future reading please email me at frdbrick@gmail.com. 
@@ -113,7 +113,7 @@ Cite: 2015 -- Sung, K. Y., & **Poole, F.** Evaluating the impact of graded readi
 <hr>
 <hr>
 
-#Thoughts on Language Teaching
+# Thoughts on Language Teaching
 This section includes my teaching philosophy as well as some powerpoints that I created from past presentations. I will continue to update this as more things come in. 
 </br>
 </br>
