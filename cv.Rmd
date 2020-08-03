@@ -16,13 +16,13 @@ knitr::include_graphics("images/fred.JPG")
 ```
 </div>
 <center  style="font-size:30px">Curriculum Vitae</center> <enter>
-<center  style="font-size:10px">2830 Old Main Hill 	</center> <enter>
-<center  style="font-size:10px">Utah State University, Logan, UT 84322</center> <enter>
+<center  style="font-size:10px">619 Red Cedar Road 	</center> <enter>
+<center  style="font-size:10px">Michigan State University, Michigan, MI 48824</center> <enter>
 <center  style="font-size:10px">E-mail: frdbrick@gmail.com</center> <enter>
 
 <center  style="font-size:20px">EDUCATION</center>
 <ul>
-<li>Expected (May 2020) -- Ph.D. Student Instructional Technology and Learning Sciences, Utah State University </li><enter>
+<li>2020 - Ph.D. Student Instructional Technology and Learning Sciences, Utah State University </li><enter>
 	
 <ul><li>*Advisor*: Assistant Professor Jody Clarke-Midura</li></ul> <enter>
 
@@ -35,7 +35,7 @@ knitr::include_graphics("images/fred.JPG")
 #### Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
-<li>Forthcoming -- **Poole, F.,** & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, (CiteScore = 1.27).
+<li> 2020 -- **Poole, F.,** & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, 10(3),1-15. (CiteScore = 1.27).
 
 <li>2019 -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. 753-775 52(4). https://doi.org/10.1111/flan.12425 (Impact Factor= 1.78)</li><enter>
 
@@ -102,17 +102,15 @@ knitr::include_graphics("images/fred.JPG")
 #### Educational Technology: Journal Articles (refereed)<enter>
 <ol reversed>
 
-<li>In preparation -- Clarke-Midura, J., Pantic, K., **Poole, F.**, Allan, V., Dorward, J. Benefits of near-peer mentoring for females in computer programming: A Three-Tier Model, </li><enter>
-
-<li>In preparation -- Clarke-Midura, J. & **Poole, F.**. Conceptualizing student perceptions of computer scientist from an imagined communities’ framework: A keyword analysis. </li><enter>
-
 <li>In preparation -- **Poole, F.** & Lee, V. Exploring data practices by a collegiate esports team. </li><enter>
 
 </ol>
 
 <center  style="font-size:20px">PROFESSIONAL AND ACADEMIC POSITIONS</center><enter>
 <ul>
-<li>2019 - Present – Adjunct Instructor, Instructional Technology and Learning Sciences, Utah State University, Logan, UT </li><enter>
+<li>2020 - Present – Assistant Professor, Master of Arts in Foreign Language Teaching Program, Michigan State University, Michigan, MI </li><enter>
+
+<li>2019 - 2020 – Adjunct Instructor, Instructional Technology and Learning Sciences, Utah State University, Logan, UT </li><enter>
 
 <li>2017 – 2018 --  Adjunct Instructor, School of Teacher Education and Leadership, Utah State University, Logan, UT </li><enter>
 
