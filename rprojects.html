@@ -488,8 +488,8 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 </div>
 <div id="loading-data" class="section level1">
 <h1><span class="header-section-number">3</span> Loading Data</h1>
-<p>When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you’ll need to run the following code in the console: <code>install.packages(&quot;PackageName&quot;)</code> <strong>(Don’t forget to add the parentheses when installing a package…loading a library does not use parentheses)</strong>. After you have installed it once, you can simply recall the package by running <code>library(PackageName)</code>. Below are list of the packages that are needed for each file type.</p>
-<p><strong>.csv files</strong> – <code>No Package Needed</code> – <code>df &lt;- read.table(&quot;eGloss.csv&quot;, header=TRUE, sep=&quot;,&quot;)</code> </br> <strong>.xlsx files</strong> – <code>library(readxl)</code> – <code>df &lt;- read_excel(&quot;eGlossData.xlsx&quot;)</code> </br> <strong>.spss files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sav(eGlossData.spss)</code> </br> <strong>.sas files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sas(eGlossData.sas)</code> </br></p>
+<p>When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you’ll need to run the following code in the console: <code>install.packages("PackageName")</code> <strong>(Don’t forget to add the parentheses when installing a package…loading a library does not use parentheses)</strong>. After you have installed it once, you can simply recall the package by running <code>library(PackageName)</code>. Below are list of the packages that are needed for each file type.</p>
+<p><strong>.csv files</strong> – <code>No Package Needed</code> – <code>df &lt;- read.table("eGloss.csv", header=TRUE, sep=",")</code> </br> <strong>.xlsx files</strong> – <code>library(readxl)</code> – <code>df &lt;- read_excel("eGlossData.xlsx")</code> </br> <strong>.spss files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sav(eGlossData.spss)</code> </br> <strong>.sas files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sas(eGlossData.sas)</code> </br></p>
 <p>For this project I’ll be uploading the following excel file. <em>Remember if you create a project and add the file to the same folder as your project, you don’t need to worry about specifying the path ofthe file.</em></p>
 <p>The code <code>col_types</code> identifies the type of variable that each column is. So column one is a text variable, two is a numeric and so on.</p>
 <pre><code>## # A tibble: 15 x 11
@@ -574,7 +574,7 @@ nrow(df) #this is quick way to see how many cases you have in each data set</cod
 <pre><code>## [1] 152</code></pre>
 <p></br> </br></p>
 </div>
-<div id="changing-variable-types-e.g.numeric-factor" class="section level2">
+<div id="changing-variable-types-e.g.-numeric-factor" class="section level2">
 <h2><span class="header-section-number">4.5</span> Changing Variable Types (e.g. numeric, factor)</h2>
 <p>Often times when you import your data set into R using excel or csv your variables will be loaded as incorrect data types. For exmample if you coded Gender as 1=Female, and 2=Male, your gender variable will be saved as a numeric variable, when it should probably be a factor. That being said, if you want to use gender in a correlation matrix you’ll need to convert it back to a numeric variable. The easiest way to see how your variables are being stored is to use <code>str(df)</code>. Currently, my variables <em>ID</em> and <em>Format</em> are being stored as characters. For most analyses this is ok. But for this tutorial I will change them into Factors. My <em>Course</em> variable is also being stored as a numeric, when this should really be a factor. There are two ways to do this, first I will demonstrate how to do each individual variable, then I’ll show a way to do multiple variables.</p>
 <pre class="r"><code>str(df)</code></pre>
@@ -732,7 +732,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 76  0.69  0.20   0.72    0.70  0.25  0.24  1.00  0.76 -0.33
 ## Per_Gain     11 76  0.22  0.10   0.21    0.21  0.10  0.06  0.58  0.52  1.07
 ## gain_test    12 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50  1.65
-## Pre_cat*     13 76   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+## Pre_cat*     13 76  1.50  0.50   1.50    1.50  0.74  1.00  2.00  1.00  0.00
 ##            kurtosis   se
 ## ID*           -1.25 0.63
 ## Week          -1.29 0.26
@@ -746,7 +746,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -0.84 0.02
 ## Per_Gain       1.60 0.01
 ## gain_test      3.55 1.02
-## Pre_cat*         NA   NA
+## Pre_cat*      -2.03 0.06
 ## ------------------------------------------------------------ 
 ## Format: T
 ##            vars  n  mean    sd median trimmed   mad   min   max range  skew
@@ -762,7 +762,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 76  0.65  0.21   0.68    0.66  0.20  0.21  1.10  0.88 -0.19
 ## Per_Gain     11 76  0.22  0.12   0.20    0.21  0.11  0.01  0.56  0.55  0.60
 ## gain_test    12 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00  0.42
-## Pre_cat*     13 76   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+## Pre_cat*     13 76  1.49  0.50   1.00    1.48  0.00  1.00  2.00  1.00  0.05
 ##            kurtosis   se
 ## ID*           -1.25 0.63
 ## Week          -1.29 0.26
@@ -776,7 +776,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -0.70 0.02
 ## Per_Gain       0.15 0.01
 ## gain_test     -0.44 1.14
-## Pre_cat*         NA   NA</code></pre>
+## Pre_cat*      -2.02 0.06</code></pre>
 <p>You can also use the describeBy function to look at two groups.</p>
 <pre class="r"><code>describeBy(df, group=c(&quot;Format&quot;,&quot;Course&quot;)) </code></pre>
 <pre><code>## 
@@ -796,7 +796,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 36  0.67  0.16   0.65    0.67  0.16  0.41  0.98  0.57  0.27
 ## Per_Gain     11 36  0.19  0.08   0.17    0.18  0.08  0.07  0.43  0.37  0.87
 ## gain_test    12 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00  1.27
-## Pre_cat*     13 36   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+## Pre_cat*     13 36  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
 ##            kurtosis   se
 ## ID*           -1.33 0.44
 ## Week          -1.37 0.38
@@ -810,7 +810,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -1.20 0.03
 ## Per_Gain       0.54 0.01
 ## gain_test      1.97 0.97
-## Pre_cat*         NA   NA
+## Pre_cat*      -2.05 0.08
 ## ------------------------------------------------------------ 
 ## Format: T
 ## Course: 1020
@@ -827,7 +827,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 36  0.61  0.16   0.64    0.62  0.14  0.26  0.94  0.69 -0.13
 ## Per_Gain     11 36  0.17  0.10   0.16    0.16  0.06  0.01  0.39  0.38  0.28
 ## gain_test    12 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00  0.47
-## Pre_cat*     13 36   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+## Pre_cat*     13 36  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
 ##            kurtosis   se
 ## ID*           -1.33 0.44
 ## Week          -1.37 0.38
@@ -841,7 +841,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -0.05 0.03
 ## Per_Gain      -0.32 0.02
 ## gain_test      0.29 1.20
-## Pre_cat*         NA   NA
+## Pre_cat*      -2.05 0.08
 ## ------------------------------------------------------------ 
 ## Format: G
 ## Course: 2020
@@ -858,7 +858,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 40  0.70  0.23   0.75    0.72  0.25  0.24  1.00  0.76 -0.57
 ## Per_Gain     11 40  0.25  0.10   0.23    0.24  0.07  0.06  0.58  0.52  1.07
 ## gain_test    12 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50  1.52
-## Pre_cat*     13 40   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+## Pre_cat*     13 40  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
 ##            kurtosis   se
 ## ID*           -1.31 0.46
 ## Week          -1.33 0.37
@@ -872,7 +872,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -0.94 0.04
 ## Per_Gain       1.41 0.02
 ## gain_test      2.32 1.52
-## Pre_cat*         NA   NA
+## Pre_cat*      -2.05 0.08
 ## ------------------------------------------------------------ 
 ## Format: T
 ## Course: 2020
@@ -889,7 +889,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 40  0.69  0.24   0.73    0.70  0.27  0.21  1.10  0.88 -0.43
 ## Per_Gain     11 40  0.26  0.13   0.25    0.25  0.12  0.02  0.56  0.55  0.45
 ## gain_test    12 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00  0.01
-## Pre_cat*     13 40   NaN    NA     NA     NaN    NA   Inf  -Inf  -Inf    NA
+## Pre_cat*     13 40  1.48  0.51   1.00    1.47  0.00  1.00  2.00  1.00  0.10
 ##            kurtosis   se
 ## ID*           -1.31 0.46
 ## Week          -1.33 0.37
@@ -903,7 +903,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -1.02 0.04
 ## Per_Gain      -0.38 0.02
 ## gain_test     -0.69 1.58
-## Pre_cat*         NA   NA</code></pre>
+## Pre_cat*      -2.04 0.08</code></pre>
 <p></br> </br></p>
 </div>
 <div id="using-tapply-and-sapply-to-get-specific-descriptives" class="section level2">

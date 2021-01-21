@@ -145,5 +145,19 @@ This is my first conference presentation and it contains a list of ideas for int
 </br>
 <a href="thoughts/readingESL.pptx" class="button">Reading in the Communicative Classroom</a>
 </br>
+
+# White Papers
+These are papers that I wrote at some point for another but never got around to publishing them anywhere. 
+
+This is a short paper and lesson plan using concept-based instruction to teach intermediate Chinese learners the difference between 就(Jiu) and  才(Cai)
+</br>
+<a href="WhitePapers/cbidoc.docx" class="button">Using Concept-Based Instruction in the Chinese as an L2 Classroom: “jiu” and “cai”</a>
+</br>
+
+In this paper I critique past models on compliement responses and then provide an argument for how compliment responses should be viewed using The Rapport Management Model. I conclude the article with a lesson plan illustrating how my model applies to the classroom.
+</br>
+<a href="WhitePapers/compResp.docx" class="button">Whose pragmatics are we talking about?: A lesson plan on compliment responses</a>
+</br>
+
 <hr>
 <hr>
