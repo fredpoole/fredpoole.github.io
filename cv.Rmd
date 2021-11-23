@@ -35,7 +35,9 @@ knitr::include_graphics("images/fred.JPG")
 #### Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
-<li> 2020 -- **Poole, F.,** & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, 10(3),1-15. (CiteScore = 1.27).
+<li> 2021 -- York, J., **Poole, F.**, & deHaan, J. Playing a new game: An argument for a teacher-focused field around games and play in language education. *Foreign Language Annals* (Impact Factor=2.06)</li><enter>
+
+<li> 2020 -- **Poole, F.,** & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, 10(3),1-15. (CiteScore = 1.27).</li><enter>
 
 <li>2019 -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. 753-775 52(4). https://doi.org/10.1111/flan.12425 (Impact Factor= 1.78)</li><enter>
 
@@ -43,7 +45,7 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>2018 -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*, 22(2), Retrieved from http://www.tesl-ej.org/wordpress/issues/volume22/ej86/ej86a2/ </li><enter>
 
-<li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2), Retrieved from https://escholarship.org/uc/item/0fk329vn.</li><enter>
+<li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2), Retrieved from https://escholarship.org/uc/item/0fk329vn </li><enter>
 
 <li>2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .62)</li><enter>
 
@@ -59,10 +61,16 @@ knitr::include_graphics("images/fred.JPG")
 
 <li>2015 -- **Poole, F.**, & Sung, K. Three approaches to beginning Chinese instruction and their effects on oral development and character recognition. *Eurasian Journal of Applied Linguistics*, 1(1), 59–75. </li></ol><enter>
 
-#### Second Language Acquisition: Book Chapters (refereed)<enter>
+#### Second Language Acquisition: Book Chapters and other Publications (refereed)<enter>
 <ol reversed>
 
-<li>Forthcoming -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.*Open education and foreign language learning and teaching: The rise of a new knowledge ecology.* Bristol, UK: Multilingual Matters.</li><enter>
+<li>2021 --**Poole, F.**. Using Scratch to Teach Computer Science in the Langauge Classroom. *FLTMag*, November 2021. https://fltmag.com/scratch-computer-science/ </li><enter>
+
+<li>2021 --**Poole, F.**. Co-Management: A Ludic Language Pedagogy Approach. *Ludic Language Pedagogy* (3). 48-59. </li><enter>
+
+<li>2021 -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.*Open education and foreign language learning and teaching: The rise of a new knowledge ecology.* Bristol, UK: Multilingual Matters.</li><enter>
+
+<li>2020 --**Poole, F.**. Exploring authentic language use in the classroom. *Ludic Language Pedagogy* (2). 75-85. </li><enter>
 
 <li>2018 -- **Poole, F.**, Franco, J., & Clarke-Midura, J. Developing a personalized, educational gaming experience for young Chinese DLI learners: A design-based approach. In R. Zheng (Ed.), *Digital Technologies and Instructional Design for Personalized Learning* (pp. 253-274). IGI Global</li><enter>
 
@@ -71,7 +79,11 @@ knitr::include_graphics("images/fred.JPG")
 #### Educational Technology: Journal Articles & Conference Proceedings (refereed)
 <ol reversed>
 
-<li>2020 -- Lee, V. R., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction. *Paper presented at the American Educational Research Association Conference (AERA)*, San Francisco, CA.
+<li>2022 -- Shehzad, U., Lee, V.R., Clarke-Midura, J., Recker, Mi.,& **Poole, F.**. Authorship and intended difficulty in the context of an expansively-framed-unplugged elementary computer science unit. Paper presented at the *American Educational Research Association Conference*, San Diego, CA  </li><enter>
+
+<li>2021 -- **Poole, F.**, Clarke-Midura, J., Rasmussen, M., Shehzad, U., & Lee, V. R. Tabletop games designed to promote computational thinking. *Computer Science Education*: DOI: 10.1080/08993408.2021.1947642(CiteScore=5.1)</li><enter>
+
+<li>2020 -- Lee, V. R., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction. *Paper presented at the American Educational Research Association Conference (AERA)*, San Francisco, CA.</li><enter>
 
 <li>2020 --	Lee, V. R., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter>
 
@@ -187,6 +199,14 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">PROFESSIONAL ACTIVITIES/SERVICE</center><enter>
 <ul>
+<li>2021 -- Manuscript Reviewer, *System Journal* </li><enter>
+
+<li>2021 -- Manuscript Reviewer, *International Journal of Computer-Supported Collaborative Learning* </li><enter>
+
+<li>2020 -- Manuscript Reviewer, *Language Learning & Technology* </li><enter>
+
+<li>2020 -- Manuscript Reviewer, *Ludic Language Pedagogy* </li><enter>
+
 <li>2019 -- Manuscript Reviewer, *Foreign Language Annals* </li><enter>
 
 <li>2019 -- Book Reviewer, *Language Learning & Technology* </li><enter>
@@ -229,6 +249,12 @@ knitr::include_graphics("images/fred.JPG")
 </ol>
 <center  style="font-size:20px">PROFESSIONAL AFFILIATIONS</center><enter>
 <ul>
+<li>Japanese Association of Language Teaching (JALT) </li>
+
+<li>International Association for Language Learning Technology (IALLT) </li>
+
+<li>Ludic Language Pedagogy (LLP) </li>
+
 <li>American Educational Research Association (AERA) </li>
 
 <li>Computer Assisted Language Instruction Consortium (CALICO)</li><enter>

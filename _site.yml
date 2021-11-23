@@ -26,5 +26,8 @@ navbar:
   - text: R Projects
     icon: ion-stats-bars
     href: rprojects.html
+  - text: Blog
+    icon: ion-social-rss
+    href: https://langgame741090563.wordpress.com
 
 
