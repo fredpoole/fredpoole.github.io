@@ -58,6 +58,10 @@ gloss <- read_excel("eGlossData.xlsx",
 head(gloss,n=15)
 ```
 
+# A shiny App to explore the data first
+<iframe src="https://u3fi03-fred-poole.shinyapps.io/eGloss/" height=400px width=800px></iframe>
+
+
 # Download R and Rstudio
 1.<a href="https://www.r-project.org/" class="button">Download R</a>
 </br>

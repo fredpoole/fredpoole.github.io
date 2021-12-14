@@ -451,19 +451,24 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 ## 14 10202     5 T              38   1020    40       51      11     0.526
 ## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
 ## # … with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
+<div id="a-shiny-app-to-explore-the-data-first" class="section level1">
+<h1><span class="header-section-number">1</span> A shiny App to explore the data first</h1>
+<iframe src="https://u3fi03-fred-poole.shinyapps.io/eGloss/" height="400px" width="800px">
+</iframe>
+</div>
 <div id="download-r-and-rstudio" class="section level1">
-<h1><span class="header-section-number">1</span> Download R and Rstudio</h1>
+<h1><span class="header-section-number">2</span> Download R and Rstudio</h1>
 <p>1.<a href="https://www.r-project.org/" class="button">Download R</a> </br> </br> 2.<a href="https://www.rstudio.com/ " class="button">Download R Studio</a></p>
 </div>
 <div id="create-a-project" class="section level1">
-<h1><span class="header-section-number">2</span> Create a Project</h1>
+<h1><span class="header-section-number">3</span> Create a Project</h1>
 <p>Once you have downloaded R and Rstudio. You should begin by creating a new project in RStudio. You could just simply open R studio and start coding in the console, or create a new script and start coding in the script, but creating a new Project for each data analysis project that you do will save trouble further down the road.</p>
 <p>To start a new project open Rstudio, click File, New Project. The image below should pop up and prompt you to create a new directory or to use an existing directory. I usually just create an empty folder somewhere on my computer and then use select an existing directory.</p>
 <p><img src="images/newProject.png" width="300px" height="300px" style="display: block; margin: auto;" /></p>
 <p>Once you have created a new project you should see a .Rproj file in the folder that you created. In this same folder you will want to drag in whatever data file you are currently using (.csv, .spss, .xsls are all suitable among others). By creating a project and adding your data file to the folder you will a) save yourself time when importing the file into your project because you won’t have to add a long path file to your code, and b) you will make your life easier when you have to return to your analysis five months after you already completed it. More on this later.</p>
 </div>
 <div id="loading-data" class="section level1">
-<h1><span class="header-section-number">3</span> Loading Data</h1>
+<h1><span class="header-section-number">4</span> Loading Data</h1>
 <p>When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you’ll need to run the following code in the console: <code>install.packages("PackageName")</code> <strong>(Don’t forget to add the parentheses when installing a package…loading a library does not use parentheses)</strong>. After you have installed it once, you can simply recall the package by running <code>library(PackageName)</code>. Below are list of the packages that are needed for each file type.</p>
 <p><strong>.csv files</strong> – <code>No Package Needed</code> – <code>df &lt;- read.table("eGloss.csv", header=TRUE, sep=",")</code> </br> <strong>.xlsx files</strong> – <code>library(readxl)</code> – <code>df &lt;- read_excel("eGlossData.xlsx")</code> </br> <strong>.spss files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sav(eGlossData.spss)</code> </br> <strong>.sas files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sas(eGlossData.sas)</code> </br></p>
 <p>For this project I’ll be uploading the following excel file. <em>Remember if you create a project and add the file to the same folder as your project, you don’t need to worry about specifying the path ofthe file.</em></p>
@@ -489,7 +494,7 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 ## # … with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <p></br> </br></p>
 <div id="renaming-your-data" class="section level2">
-<h2><span class="header-section-number">3.1</span> Renaming your Data</h2>
+<h2><span class="header-section-number">4.1</span> Renaming your Data</h2>
 <p>Now that I have my data uploaded, I need to rename it. Renamining your data to something simple and generic can be very useful in R. First, if you keep the name <code>eGlossData</code>, then everytime you want to run an analysis or use a variable from this data set you’ll need to either use <code>attach()</code> and <code>detach()</code> functions, or you’ll need to type out the entire name. It doesn’t seem like a long name now, but after you type it out 100 times, you’ll wish you had a smaller name. Secondly, if you use a generic name like <code>df</code> (data frame) and if you save your code into a script within your project, then the next time you want to run your script with say another data set, you’ll just need to rename your new data set to <code>df</code> and then all of your code should run smoothly… provided that the data is in a similar format.</p>
 <p>Renaming data sets in R is pretty simple. See code below.</p>
 <pre class="r"><code>df &lt;- gloss</code></pre>
@@ -499,10 +504,10 @@ Voilà, my data set is now called <code>df</code>. </br>
 </div>
 </div>
 <div id="transorming-data" class="section level1">
-<h1><span class="header-section-number">4</span> Transorming Data</h1>
+<h1><span class="header-section-number">5</span> Transorming Data</h1>
 <p></br> </br></p>
 <div id="creating-new-variables" class="section level2">
-<h2><span class="header-section-number">4.1</span> Creating New Variables</h2>
+<h2><span class="header-section-number">5.1</span> Creating New Variables</h2>
 <p>In the this data set we already have a variable called “RawGain.” But to practice we are going to create another variable simply called gain to show a) how to create new variables and b) how to do simple arithmetic in R.</p>
 <p>To create a new variable simple use the <code>$</code> after your data set, and then type in a variable that is not currently in your data set. Then use the arror <code>&lt;-</code> to define what will be stored in the variable. See examples below.</p>
 <pre class="r"><code>df$gain &lt;- df$Post_Sum - df$Pre_Sum</code></pre>
@@ -516,7 +521,7 @@ Voilà, my data set is now called <code>df</code>. </br>
 <p>Simply put, if the Per_Pre is greater than .5, then label it as high, if not then label it as low. And save everything into the variable. Pre_cat. </br> </br></p>
 </div>
 <div id="impute-missing-data" class="section level2">
-<h2><span class="header-section-number">4.2</span> Impute Missing Data</h2>
+<h2><span class="header-section-number">5.2</span> Impute Missing Data</h2>
 <pre class="r"><code>#Coming soon
 #Fix this ... 
 #library(VIM)
@@ -525,13 +530,13 @@ Voilà, my data set is now called <code>df</code>. </br>
 <p></br> </br></p>
 </div>
 <div id="renaming-your-variables" class="section level2">
-<h2><span class="header-section-number">4.3</span> Renaming your Variables</h2>
+<h2><span class="header-section-number">5.3</span> Renaming your Variables</h2>
 <p>You may want to rename your variables for a variety of reasons. You could simply change the name in your excel file, but if you’d like to do it in R you can use the following code. For this example, I will use the <em>gain</em> variable that we made a copy of earlier. I want to make sure that it is known that this variable is just a test variable, so I will change the name to <em>gain_test</em></p>
 <pre class="r"><code>colnames(df)[colnames(df)==&quot;gain&quot;] &lt;- &quot;gain_test&quot;</code></pre>
 <p></br> </br></p>
 </div>
 <div id="complete-cases" class="section level2">
-<h2><span class="header-section-number">4.4</span> Complete Cases</h2>
+<h2><span class="header-section-number">5.4</span> Complete Cases</h2>
 <p>For some analysis you’ll need to remove any missing variables. The easiest way to do this is to use the filter function in the <code>library(dplyr)</code>.</p>
 <p>For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run <code>nrow(df_c)</code> to get the number of cases in my new data set.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
@@ -551,7 +556,7 @@ nrow(df) #this is quick way to see how many cases you have in each data set</cod
 <p></br> </br></p>
 </div>
 <div id="changing-variable-types-e.g.-numeric-factor" class="section level2">
-<h2><span class="header-section-number">4.5</span> Changing Variable Types (e.g. numeric, factor)</h2>
+<h2><span class="header-section-number">5.5</span> Changing Variable Types (e.g. numeric, factor)</h2>
 <p>Often times when you import your data set into R using excel or csv your variables will be loaded as incorrect data types. For exmample if you coded Gender as 1=Female, and 2=Male, your gender variable will be saved as a numeric variable, when it should probably be a factor. That being said, if you want to use gender in a correlation matrix you’ll need to convert it back to a numeric variable. The easiest way to see how your variables are being stored is to use <code>str(df)</code>. Currently, my variables <em>ID</em> and <em>Format</em> are being stored as characters. For most analyses this is ok. But for this tutorial I will change them into Factors. My <em>Course</em> variable is also being stored as a numeric, when this should really be a factor. There are two ways to do this, first I will demonstrate how to do each individual variable, then I’ll show a way to do multiple variables.</p>
 <pre class="r"><code>str(df)</code></pre>
 <pre><code>## tibble [152 × 13] (S3: tbl_df/tbl/data.frame)
@@ -593,7 +598,7 @@ str(df)</code></pre>
 <p></br> </br></p>
 </div>
 <div id="subsetting-data" class="section level2">
-<h2><span class="header-section-number">4.6</span> Subsetting Data</h2>
+<h2><span class="header-section-number">5.6</span> Subsetting Data</h2>
 <p>There are many reasons to subset your data. Subsetting your data simply means that you create a separate data set with only a subset of your variables. You may want to do this to create a correlation matrix with a specific set of variables. You may also want to do this to create a data set of only females or males. In this case of this data set, I will create two subsetted (I don’t think that’s a word… but let’s run with it) datasets one for a correlation matrix using only <em>Per_Pre</em>, <em>Per_Post</em> and <em>Week</em> to see if pre and post scores correlate with time in the study. I will also create a separate data set for each <em>Course</em> in the data set to do separate analyses.</p>
 <pre class="r"><code>#Note for each new subset I create a new object that identifies my new dataset. 
 
@@ -604,7 +609,7 @@ df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 <p></br> </br></p>
 </div>
 <div id="transform-wide-to-long" class="section level2">
-<h2><span class="header-section-number">4.7</span> Transform Wide to Long</h2>
+<h2><span class="header-section-number">5.7</span> Transform Wide to Long</h2>
 <p>For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds <em>Per_Pre</em>, <em>Per_Post</em>, and <em>Per_Gain</em>, and then another column that holds the value for each of those constructs. We will need the <code>library(tidyr)</code> to run this code.</p>
 <pre class="r"><code>head(df)</code></pre>
 <pre><code>## # A tibble: 6 x 13
@@ -648,10 +653,10 @@ Remember: We will use this data set later on when doing more advance visualizati
 </div>
 </div>
 <div id="descriptives" class="section level1">
-<h1><span class="header-section-number">5</span> Descriptives</h1>
+<h1><span class="header-section-number">6</span> Descriptives</h1>
 <p>In this section we will go over how to run descriptives on a data set. We will look at some of the base packages that allow you to automatically run descriptives on all of your variables and then we’ll look at some other quick functions that allow you to explore your data with more precision. </br> </br></p>
 <div id="base-descriptive-packages" class="section level2">
-<h2><span class="header-section-number">5.1</span> Base Descriptive Packages</h2>
+<h2><span class="header-section-number">6.1</span> Base Descriptive Packages</h2>
 <p>There are several packages that will automatically printout a set of descriptives for your entire data set. Which one you use will depend on preference and need.</p>
 <p>I like using <code>stargazer</code> because it prints out a formatted table. However, I have been having issues with displaying the output on the website, so I’ll just show the code. In the example below I have set <code>type</code> to text so that it will print out in the console, but you could change this to html or latex.</p>
 <pre class="r"><code>library(stargazer)</code></pre>
@@ -883,7 +888,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 <p></br> </br></p>
 </div>
 <div id="using-tapply-and-sapply-to-get-specific-descriptives" class="section level2">
-<h2><span class="header-section-number">5.2</span> Using Tapply and Sapply to get specific descriptives</h2>
+<h2><span class="header-section-number">6.2</span> Using Tapply and Sapply to get specific descriptives</h2>
 <p>While the descriptives above are nice, they can sometimes be overbearing. There is just too much information. Sometimes we want to be able to just look at the mean or maybe pinpoint a variable or possibly look at variable and compare it across two groups.</p>
 <p>To just look at the means we can use sapply on our data set.</p>
 <pre class="r"><code>t &lt;- sapply(df, mean, na.rm=TRUE) #Note we can change mean to sd or whatever statistic we want. Use ?sapply to get more information.
@@ -920,10 +925,10 @@ tab3</code></pre>
 </div>
 </div>
 <div id="simple-parametric-tests" class="section level1">
-<h1><span class="header-section-number">6</span> Simple Parametric Tests</h1>
+<h1><span class="header-section-number">7</span> Simple Parametric Tests</h1>
 <p></br> </br></p>
 <div id="t-tests" class="section level2">
-<h2><span class="header-section-number">6.1</span> T-Tests</h2>
+<h2><span class="header-section-number">7.1</span> T-Tests</h2>
 <p>To look at simple comparison of means between two groups we will use a T-test. IN this example, I will compare means of Per_Gain (Percentage of Vocabulary Gains) between the two groups: traditional and gloss.</p>
 <pre class="r"><code>t.test(df$Per_Gain~df$Format, paired=FALSE)</code></pre>
 <pre><code>## 
@@ -941,17 +946,17 @@ tab3</code></pre>
 <p></br> </br></p>
 </div>
 <div id="effect-size" class="section level2">
-<h2><span class="header-section-number">6.2</span> Effect Size</h2>
+<h2><span class="header-section-number">7.2</span> Effect Size</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="chi-square-tests" class="section level2">
-<h2><span class="header-section-number">6.3</span> Chi-Square Tests</h2>
+<h2><span class="header-section-number">7.3</span> Chi-Square Tests</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="anova" class="section level2">
-<h2><span class="header-section-number">6.4</span> ANOVA</h2>
+<h2><span class="header-section-number">7.4</span> ANOVA</h2>
 <p>The T-test is nice, but it does not allow us to control for potential differences in course. We can do this with a two-way factorial ANOVA.</p>
 <pre class="r"><code>#Next we will define our model. Here we are predicting Per_Gain while controlling for Format and Course
 fit &lt;- aov(Per_Gain ~  Format + Course + Format:Course, data=df) 
@@ -991,7 +996,7 @@ TukeyHSD(fit) # where fit comes from aov()</code></pre>
 <p></br> </br></p>
 </div>
 <div id="regressions" class="section level2">
-<h2><span class="header-section-number">6.5</span> Regressions</h2>
+<h2><span class="header-section-number">7.5</span> Regressions</h2>
 <pre class="r"><code>mod &lt;- lm(Per_Post ~ Per_Pre + Week + Course + VocabWords + Format, df)
 summary(mod)</code></pre>
 <pre><code>## 
@@ -1065,10 +1070,10 @@ anova(mod1,mod2,mod3,mod4)</code></pre>
 </div>
 </div>
 <div id="simple-non-parametric-tests" class="section level1">
-<h1><span class="header-section-number">7</span> Simple Non-Parametric Tests</h1>
+<h1><span class="header-section-number">8</span> Simple Non-Parametric Tests</h1>
 <p></br> </br></p>
 <div id="wilcoxon-signed-rank-test" class="section level2">
-<h2><span class="header-section-number">7.1</span> Wilcoxon-Signed Rank Test</h2>
+<h2><span class="header-section-number">8.1</span> Wilcoxon-Signed Rank Test</h2>
 <p><em>Coming Soon</em></p>
 <pre><code>## Loading required package: survival</code></pre>
 <pre><code>## 
@@ -1086,10 +1091,10 @@ anova(mod1,mod2,mod3,mod4)</code></pre>
 </div>
 </div>
 <div id="basic-graphs" class="section level1">
-<h1><span class="header-section-number">8</span> Basic Graphs</h1>
+<h1><span class="header-section-number">9</span> Basic Graphs</h1>
 <p></br> </br></p>
 <div id="bar-graphs" class="section level2">
-<h2><span class="header-section-number">8.1</span> Bar Graphs</h2>
+<h2><span class="header-section-number">9.1</span> Bar Graphs</h2>
 <p>This is a bar chart.</p>
 <pre><code>## 
 ## Attaching package: &#39;ggplot2&#39;</code></pre>
@@ -1101,12 +1106,12 @@ anova(mod1,mod2,mod3,mod4)</code></pre>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-35-1.png" width="672" /> </br> </br></p>
 </div>
 <div id="box-plots" class="section level2">
-<h2><span class="header-section-number">8.2</span> Box Plots</h2>
+<h2><span class="header-section-number">9.2</span> Box Plots</h2>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-37-1.png" width="672" /> </br> </br></p>
 </div>
 <div id="linear-plots" class="section level2">
-<h2><span class="header-section-number">8.3</span> Linear Plots</h2>
+<h2><span class="header-section-number">9.3</span> Linear Plots</h2>
 <pre class="r"><code>f &lt;- ggplot(df, aes(Week,Per_Gain))
 f + geom_jitter() + geom_smooth()</code></pre>
 <pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
@@ -1121,20 +1126,20 @@ f + geom_jitter(aes(col=Format)) + geom_smooth(method=&quot;loess&quot;, se=F) +
 </div>
 </div>
 <div id="multivariate-analysis" class="section level1">
-<h1><span class="header-section-number">9</span> Multivariate Analysis</h1>
+<h1><span class="header-section-number">10</span> Multivariate Analysis</h1>
 <p></br> </br></p>
 <div id="path-models" class="section level2">
-<h2><span class="header-section-number">9.1</span> Path Models</h2>
+<h2><span class="header-section-number">10.1</span> Path Models</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="cluster-analysis" class="section level2">
-<h2><span class="header-section-number">9.2</span> Cluster Analysis</h2>
+<h2><span class="header-section-number">10.2</span> Cluster Analysis</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
 <div id="cart-analysis" class="section level2">
-<h2><span class="header-section-number">9.3</span> CART Analysis</h2>
+<h2><span class="header-section-number">10.3</span> CART Analysis</h2>
 <p><em>Coming Soon</em></p>
 </br>
 <hr>
