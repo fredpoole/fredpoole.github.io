@@ -15,3 +15,59 @@ ul.gradedreaders {
   -webkit-columns: 4;
   -moz-columns: 4;
 }
+
+.container {
+  overflow: hidden;
+}
+
+.filterDiv {
+  float: left;
+  background-color: white;
+  color: black;
+  width: 70%;
+  line-height: normal;
+  text-align: left;
+  margin: 2px;
+  display: none; /* Hidden by default */
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+.myBtnContainer{
+  width:60%;
+  display:flex;
+  justify-content:center;
+}
+
+/* Style the buttons */
+.btn {
+  border: 2px solid black;
+  outline: none;
+  padding: 5px 10px;
+  margin:5px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+ 
+}
+
+/* Add a light grey background on mouse-over */
+.btn:hover {
+  background-color: #ddd;
+}
+
+/* Add a dark background to the active button */
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+li{
+  margin:5px 0;
+}
+
+ul{
+  margin:5px 0;
+}

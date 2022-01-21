@@ -3,6 +3,7 @@ title: ""
 ---
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116712862-1"></script>
+<script src="button.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -31,90 +32,91 @@ knitr::include_graphics("images/fred.JPG")
 <li>2007 -- B.A. Double Major Spanish Literature and Psychology, University of Colorado at Boulder</li><enter>
 </ul><enter>
 
+
 <center  style="font-size:20px">PUBLICATIONS</center>
-#### Second Language Acquisition: Journal Articles (refereed)
+<div id="myBtnContainer">
+<button class="btn active" onclick="filterSelection('all')"> Show all</button>
+<button class="btn" onclick="filterSelection('FLL')"> Foreign Language Learning/Teaching Articles</button>
+<button class="btn" onclick="filterSelection('ET')"> Learning Sciences Articles</button>
+<button class="btn" onclick="filterSelection('Games')"> Articles involving Games and Learning</button>
+<button class="btn" onclick="filterSelection('Chap')">Book Chapters</button>
+<button class="btn" onclick="filterSelection('Proc')">Conference Proceedings</button>
+<button class="btn" onclick="filterSelection('FA')"> First Authored Articles</button>
+</div>
+
+<div class="container">
 <ol reversed>
 
-<li> 2021 -- York, J., **Poole, F.**, & deHaan, J. Playing a new game: An argument for a teacher-focused field around games and play in language education. *Foreign Language Annals* (Impact Factor=2.06)</li><enter>
+<div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J. (In Press). Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*. (Impact Factor=4.31)</li> </div> <enter>
 
-<li> 2020 -- **Poole, F.,** & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, 10(3),1-15. (CiteScore = 1.27).</li><enter>
+<div class="filterDiv ET Proc" ><li>2022 -- Shehzad, U., Lee, V.R., Clarke-Midura, J., Recker, Mi.,& **Poole, F.**. Authorship and intended difficulty in the context of an expansively-framed-unplugged elementary computer science unit. Paper presented at the *American Educational Research Association Conference*, San Diego, CA </li></div><enter>
 
-<li>2019 -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. 753-775 52(4). https://doi.org/10.1111/flan.12425 (Impact Factor= 1.78)</li><enter>
+<div class="filterDiv FLL Games" ><li> 2021 -- York, J., **Poole, F.**, & deHaan, J. Playing a new game: An argument for a teacher-focused field around games and play in language education. *Foreign Language Annals* (Impact Factor=2.06)</li><enter> </div>
 
-<li>2019 -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*,2(2), 261-280. </li><enter>
+<div class="filterDiv ET FA Games" ><li>2021 -- **Poole, F.**, Clarke-Midura, J., Rasmussen, M., Shehzad, U., & Lee, V. R. Tabletop games designed to promote computational thinking. *Computer Science Education*: DOI: 10.1080/08993408.2021.1947642(CiteScore=5.1)</li><enter></div>
 
-<li>2018 -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*, 22(2), Retrieved from http://www.tesl-ej.org/wordpress/issues/volume22/ej86/ej86a2/ </li><enter>
+<div class="filterDiv FLL FA" ><li>2021 --**Poole, F.**. Using Scratch to Teach Computer Science in the Language Classroom. *FLTMag*, November 2021. https://fltmag.com/scratch-computer-science/ </li><enter></div>
 
-<li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2), Retrieved from https://escholarship.org/uc/item/0fk329vn </li><enter>
+<div class="filterDiv FLL Games FA" ><li>2021 --**Poole, F.**. Co-Management: A Ludic Language Pedagogy Approach. *Ludic Language Pedagogy* (3). 48-59. </li><enter></div>
 
-<li>2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .62)</li><enter>
+<div class="filterDiv FLL Chap" ><li>2021 -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.*Open education and foreign language learning and teaching: The rise of a new knowledge ecology.* Bristol, UK: Multilingual Matters.</li><enter></div>
 
-<li>2017 --	Thoms, J., Sung, K. Y., & **Poole, F.** Investigating the linguistic and pedagogical affordances of an L2 open reading environment via eComma: An exploratory study in a Chinese language course. *System*, 69, 38–53. (Impact Factor = 1.93)</li><enter>
+<div class="filterDiv FLL Games FA" ><li> 2020 -- **Poole, F.,** & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, 10(3),1-15. (CiteScore = 1.27).</li><enter></div>
 
-<li>2017 --	Thoms, J., & **Poole, F.** Investigating linguistic, literary, and social affordances of L2 collaborative reading. *Language Learning & Technology*, 21(2), 139–156. (Impact Factor = 2.13) </li><enter>
+<div class="filterDiv FLL Games FA" ><li>2020 --**Poole, F.**. Exploring authentic language use in the classroom. *Ludic Language Pedagogy* (2). 75-85. </li><enter></div>
 
-<li>2016 --	**Poole, F.**, & Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. *Journal of Chinese Language Teachers Association*. 51(3), 266–285. </li><enter>
+<div class="filterDiv ET Games Proc" ><li>2020 -- Lee, V. R., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction. *Paper presented at the American Educational Research Association Conference (AERA)*, San Francisco, CA.</li><enter></div>
 
-<li>2016 -- Sung, K. Y., & **Poole, F.** Differences between native and non-native English speaking teachers in China from the perspectives of Chinese EFL students. *The Journal of English as an International Language*, 11(2), 1–18. </li><enter>
+<div class="filterDiv ET Games Proc" ><li>2020 --	Lee, V. R., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter></div>
 
-<li>2015 -- Sung, K. Y., & **Poole, F.** Evaluating the impact of graded readings on the recognition of Chinese characters and reading comprehension by learners of Chinese as a foreign language. *Konin Language Studies*, 3(3), 271–294.</li><enter>
+<div class="filterDiv FLL Games FA" ><li>2019 -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. 753-775 52(4). https://doi.org/10.1111/flan.12425 (Impact Factor= 1.78)</li><enter></div>
 
-<li>2015 -- **Poole, F.**, & Sung, K. Three approaches to beginning Chinese instruction and their effects on oral development and character recognition. *Eurasian Journal of Applied Linguistics*, 1(1), 59–75. </li></ol><enter>
+<div class="filterDiv FLL" ><li>2019 -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*,2(2), 261-280. </li><enter></div>
 
-#### Second Language Acquisition: Book Chapters and other Publications (refereed)<enter>
-<ol reversed>
+<div class="filterDiv ET Proc" ><li>2019 -- Clarke-Midura, J., Sun, C., Pantic, K., **Poole, F.**, & Allan, V. Using Informed Design in Informal Computer Science Programs to Increase Youths’ Interest, Self-efficacy, and Perceptions of Parental Support. *ACM Transactions on Computing Education (TOCE)*, 19 (4), 1-12 (Article 37), doi: 10.1145/3319445 </li><enter></div>
 
-<li>2021 --**Poole, F.**. Using Scratch to Teach Computer Science in the Langauge Classroom. *FLTMag*, November 2021. https://fltmag.com/scratch-computer-science/ </li><enter>
+<div class="filterDiv FLL" ><li>2018 -- Thoms, J., Arshavskaya, E., & **Poole, F.** Open educational resources and ESL education: Insights from educators in the United States.*TESL-EJ*, 22(2), Retrieved from http://www.tesl-ej.org/wordpress/issues/volume22/ej86/ej86a2/ </li><enter></div>
 
-<li>2021 --**Poole, F.**. Co-Management: A Ludic Language Pedagogy Approach. *Ludic Language Pedagogy* (3). 48-59. </li><enter>
+<div class="filterDiv FLL" ><li>2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue), 10(2), Retrieved from https://escholarship.org/uc/item/0fk329vn </li><enter></div>
 
-<li>2021 -- Thoms, J. & **Poole, F.** Language teachers and the open education movement: A national survey.*Open education and foreign language learning and teaching: The rise of a new knowledge ecology.* Bristol, UK: Multilingual Matters.</li><enter>
+<div class="filterDiv FLL Games FA Chap" ><li>2018 -- **Poole, F.**, Franco, J., & Clarke-Midura, J. Developing a personalized, educational gaming experience for young Chinese DLI learners: A design-based approach. In R. Zheng (Ed.), *Digital Technologies and Instructional Design for Personalized Learning* (pp. 253-274). IGI Global</li><enter></div>
 
-<li>2020 --**Poole, F.**. Exploring authentic language use in the classroom. *Ludic Language Pedagogy* (2). 75-85. </li><enter>
+<div class="filterDiv ET" ><li>2018 -- Pantic, K., Clarke-Midura, J., **Poole, F.**, Roller, J, & Allan, V. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter></div>
 
-<li>2018 -- **Poole, F.**, Franco, J., & Clarke-Midura, J. Developing a personalized, educational gaming experience for young Chinese DLI learners: A design-based approach. In R. Zheng (Ed.), *Digital Technologies and Instructional Design for Personalized Learning* (pp. 253-274). IGI Global</li><enter>
+<div class="filterDiv ET Proc" ><li>2018 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., Sun, C., & Allan, V. How mother and father support affect youths’ interest in computer science. *In Proceedings of ACM ICER conference*, Espoo, Finland, August, 2018 </li><enter></div>
 
-<li>2016 --	Sung, K. Y., & **Poole, F.** Differences between native and non-native Chinese speaking teachers: Voices from overseas students who study Chinese in China. In C. P. Chou & J. Spangler (Eds.) *Chinese Education Models in a Global Age* (pp. 133–147). Springer, Singapore.</li></ol><enter>
+<div class="filterDiv ET Proc" ><li>2018 --	Clarke-Midura, J., **Poole, F.**, Pantic, K., Hamilton, M., Sun, C., & Allan, V. How Near Peer Mentoring Affects Middle School Mentees. *In Proceedings of the 49th ACM Technical Symposium on Computer Science Education* (SIGCSE '18). ACM, New York, NY, USA, 664-669. (Second Best Paper CS Education Research)</li><enter></div>
 
-#### Educational Technology: Journal Articles & Conference Proceedings (refereed)
-<ol reversed>
+<div class="filterDiv FLL" ><li>2017 -- Sung, K. Y., & **Poole, F.** Investigating the use of a smartphone social networking application on language learning. *JALT CALL Journal*, 13(2), 97–115. (CiteScore= .62)</li><enter></div>
 
-<li>2022 -- Shehzad, U., Lee, V.R., Clarke-Midura, J., Recker, Mi.,& **Poole, F.**. Authorship and intended difficulty in the context of an expansively-framed-unplugged elementary computer science unit. Paper presented at the *American Educational Research Association Conference*, San Diego, CA  </li><enter>
+<div class="filterDiv FLL" ><li>2017 --	Thoms, J., Sung, K. Y., & **Poole, F.** Investigating the linguistic and pedagogical affordances of an L2 open reading environment via eComma: An exploratory study in a Chinese language course. *System*, 69, 38–53. (Impact Factor = 1.93)</li><enter></div>
 
-<li>2021 -- **Poole, F.**, Clarke-Midura, J., Rasmussen, M., Shehzad, U., & Lee, V. R. Tabletop games designed to promote computational thinking. *Computer Science Education*: DOI: 10.1080/08993408.2021.1947642(CiteScore=5.1)</li><enter>
+<div class="filterDiv FLL"><li>2017 --	Thoms, J., & **Poole, F.** Investigating linguistic, literary, and social affordances of L2 collaborative reading. *Language Learning & Technology*, 21(2), 139–156. (Impact Factor = 2.13) </li><enter></div>
 
-<li>2020 -- Lee, V. R., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction. *Paper presented at the American Educational Research Association Conference (AERA)*, San Francisco, CA.</li><enter>
+<div class="filterDiv ET" ><li>2017 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., & Allan, V. Playing mentor: A new strategy for recruiting young women into computer science. *Journal of Women and Minorities in Science and Engineering*, 23(3). (CiteScore= 1.15)</li><enter></div>
 
-<li>2020 --	Lee, V. R., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter>
+<div class="filterDiv FLL FA" ><li>2016 --	**Poole, F.**, & Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. *Journal of Chinese Language Teachers Association*. 51(3), 266–285. </li><enter></div>
 
-<li>2019 -- Clarke-Midura, J., Sun, C., Pantic, K., **Poole, F.**, & Allan, V. Using Informed Design in Informal Computer Science Programs to Increase Youths’ Interest, Self-efficacy, and Perceptions of Parental Support. *ACM Transactions on Computing Education (TOCE)*, 19 (4), 1-12 (Article 37), doi: 10.1145/3319445 </li><enter>
+<div class="filterDiv FLL" ><li>2016 -- Sung, K. Y., & **Poole, F.** Differences between native and non-native English speaking teachers in China from the perspectives of Chinese EFL students. *The Journal of English as an International Language*, 11(2), 1–18. </li><enter></div>
 
-<li>2018 -- Pantic, K., Clarke-Midura, J., **Poole, F.**, Roller, J, & Allan, V. Drawing a computer scientist: Stereotypical representations or lack of awareness? *Computer Science Education Journal*</li><enter>
+<div class="filterDiv FLL Chap" ><li>2016 --	Sung, K. Y., & **Poole, F.** Differences between native and non-native Chinese speaking teachers: Voices from overseas students who study Chinese in China. In C. P. Chou & J. Spangler (Eds.) *Chinese Education Models in a Global Age* (pp. 133–147). Springer, Singapore.</li><enter></div>
 
-<li>2018 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., Sun, C., & Allan, V. How mother and father support affect youths’ interest in computer science. *In Proceedings of ACM ICER conference*, Espoo, Finland, August, 2018 </li><enter>
+<div class="filterDiv FLL" ><li>2015 -- Sung, K. Y., & **Poole, F.** Evaluating the impact of graded readings on the recognition of Chinese characters and reading comprehension by learners of Chinese as a foreign language. *Konin Language Studies*, 3(3), 271–294.</li><enter></div>
 
-<li>2018 --	Clarke-Midura, J., **Poole, F.**, Pantic, K., Hamilton, M., Sun, C., & Allan, V. How Near Peer Mentoring Affects Middle School Mentees. *In Proceedings of the 49th ACM Technical Symposium on Computer Science Education* (SIGCSE '18). ACM, New York, NY, USA, 664-669. (Second Best Paper CS Education Research)</li><enter>
-
-<li>2017 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., & Allan, V. Playing mentor: A new strategy for recruiting young women into computer science. *Journal of Women and Minorities in Science and Engineering*, 23(3). (CiteScore= 1.15)</li><enter>
+<div class="filterDiv FLL FA" ><li>2015 -- **Poole, F.**, & Sung, K. Three approaches to beginning Chinese instruction and their effects on oral development and character recognition. *Eurasian Journal of Applied Linguistics*, 1(1), 59–75. </li><enter></div>
 
 </ol>
 
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
-#### Second Language Acquisition: Journal Articles (refereed)
 <ol reversed>
 
-<li>In prepration -- Thoms, J. & **Poole, F.** Analyzing Digital Social Reading Practices in an L2 Chinese Literature Course. </li><enter>
+<li>In preparation -- Thoms, J. & **Poole, F.** Analyzing Digital Social Reading Practices in an L2 Chinese Literature Course. </li>
 
-<li>In prepration -- **Poole, F.** & Thoms, J. Exploring L2 comments in a digital social reading environment using sentiment analysis. </li><enter>
+<li>In preparation -- **Poole, F.** & Thoms, J. Exploring L2 comments in a digital social reading environment using sentiment analysis. </li>
 
-<li>In preparation -- **Poole, F.** Developing and evaluating stealth assessments for an educational game to assess young Chinese dual language immersion learners' reading comprehension.  </li><enter>
+<li>In preparation -- **Poole, F.** Developing and evaluating stealth assessments for an educational game to assess young Chinese dual language immersion learners' reading comprehension.  </li>
 
-</ol>
-
-#### Educational Technology: Journal Articles (refereed)<enter>
-<ol reversed>
-
-<li>In preparation -- **Poole, F.** & Lee, V. Exploring data practices by a collegiate esports team. </li><enter>
+<li>In preparation -- **Poole, F.** & Lee, V. Exploring data practices by a collegiate esports team. </li>
 
 </ol>
 
@@ -165,6 +167,17 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">CONFERENCE PRESENTATIONS</center><enter>
 <ol reversed>
+
+<li>2021 -- Developing Intercultural Competence through Social Justice Education. *American Council on the Teaching of Foreign Languages (ACTFL) Conference*, Virtual. (With Kaleigh Doan) </li> <enter>
+
+<li>2021 -- Bringing Computer Science into the Language Classroom. *International Association for Language Learning Technology (IALLT) Conference*. (Virtual)</li><enter>
+
+<li>2021 -- Applying educational data mining techniques to explore second language learning in a digital game. *American Association of Applied Linguistics (AAAL) Conference*.(Virtual)</li><enter>
+
+<li>2021 -- Teaching languages with games: A practice-based workshop. *Computer Assisted Language Instruction (CALICO)* Winter Workshop (Virtual).</li><enter>
+
+<li>2020 -- Analyzing Digital Social Reading Practices in an L2 Chinese Literature Course. *American Association of Applied Linguistics (AAAL) Conference*, Denver, Co,(with Dr. Joshua Thoms). – CANCELED (Covid-19) </li><enter>
+
 <li>2019 -- A Chinese RPG Game, *Computer Assisted Language Instruction Consortium (CALICO) Conference* [Showcase Presentation], Montreal, Canada. </li><enter>
 
 <li>2018 -- Analyzing Digital Literacy Practices via L2 Collaborative Reading. *World CALL*, Concepción, Chile (with Dr. Joshua Thoms). </li><enter>
@@ -278,3 +291,4 @@ knitr::include_graphics("images/fred.JPG")
 </ul>
 <hr>
 <hr>
+</div>
