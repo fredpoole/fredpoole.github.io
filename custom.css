@@ -24,7 +24,7 @@ ul.gradedreaders {
   float: left;
   background-color: white;
   color: black;
-  width: 70%;
+  width: 100%;
   line-height: normal;
   text-align: left;
   margin: 2px;
@@ -37,7 +37,7 @@ ul.gradedreaders {
 }
 
 .myBtnContainer{
-  width:60%;
+  width:100%;
   display:flex;
   justify-content:center;
 }
