@@ -13,6 +13,7 @@
 
 <title>rprojects.knit</title>
 
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
@@ -397,41 +398,68 @@ div.tocify {
 R Projects
 </center>
 <p><img src="images/Ricon.png" width="100px" height="50px" style="display: block; margin: auto;" /></p>
-<p>On this page you’ll find a brief introduction to R as well as some examples of the analysis that I have run using R in the last few years.</p>
-For the Analysis below I will be using the EGloss data set. This data was collected in 2014 and compares vocabulary learning by second language learners of Chinese when reading via traditional format and a gloss (<a href="http://www.mandarintools.com/dimsum.html" class="uri">http://www.mandarintools.com/dimsum.html</a>). Below is a list of the variables in the data set. </br> </br>
+<p>On this page you’ll find a brief introduction to R as well as some
+examples of the analysis that I have run using R in the last few
+years.</p>
+For the Analysis below I will be using the EGloss data set. This data
+was collected in 2014 and compares vocabulary learning by second
+language learners of Chinese when reading via traditional format and a
+gloss (<a href="http://www.mandarintools.com/dimsum.html"
+class="uri">http://www.mandarintools.com/dimsum.html</a>). Below is a
+list of the variables in the data set. </br> </br>
 <ul>
 <li>
-<strong>ID</strong> – This is the unique ID for each student in the data set
+<strong>ID</strong> – This is the unique ID for each student in the data
+set
 </li>
 <li>
-<strong>Week</strong> – This is the week in which the student did the reading. Students read one reading per week for ten weeks. The first two weeks were used a trial run and thus were not included in this data set.
+<strong>Week</strong> – This is the week in which the student did the
+reading. Students read one reading per week for ten weeks. The first two
+weeks were used a trial run and thus were not included in this data set.
 </li>
 <li>
-<strong>VocabWords</strong> – Each week the length of reading varied slightly, so this variable counts the number of words in the text read to control for text lenght.
+<strong>VocabWords</strong> – Each week the length of reading varied
+slightly, so this variable counts the number of words in the text read
+to control for text lenght.
 </li>
 <li>
-<strong>Course</strong> – There were two courses, year one (1020) and year two (2020) Chinese.
+<strong>Course</strong> – There were two courses, year one (1020) and
+year two (2020) Chinese.
 </li>
 <li>
-<strong>Pre_Sum</strong> – This is the total correct score on the pre-vocabuly test. All words have two possible points, one for pinyin and one for the English.
+<strong>Pre_Sum</strong> – This is the total correct score on the
+pre-vocabuly test. All words have two possible points, one for pinyin
+and one for the English.
 </li>
 <li>
-<strong>Post_Sum</strong> – This is the total correct score on the post-vocabuly test. All words have two possible points, one for pinyin and one for the English.
+<strong>Post_Sum</strong> – This is the total correct score on the
+post-vocabuly test. All words have two possible points, one for pinyin
+and one for the English.
 </li>
 <li>
-<strong>RawGain</strong> – This is the gain score that was calculated by subtracting the pre-test scores from the post-test scores.
+<strong>RawGain</strong> – This is the gain score that was calculated by
+subtracting the pre-test scores from the post-test scores.
 </li>
 <li>
-<strong>Per_Pre</strong> – Because each week had a different number of vocabulary words, this is the percentage of correct vocabulary on the pre-test.
+<strong>Per_Pre</strong> – Because each week had a different number of
+vocabulary words, this is the percentage of correct vocabulary on the
+pre-test.
 </li>
 <li>
-<strong>Per_Post</strong> –Because each week had a different number of vocabulary words, this is the percentage of correct vocabulary on the post-test.
+<strong>Per_Post</strong> –Because each week had a different number of
+vocabulary words, this is the percentage of correct vocabulary on the
+post-test.
 </li>
 <li>
-<strong>Per_Gain</strong> – This is the percentage of vocabulary gained after each reading each week.
+<strong>Per_Gain</strong> – This is the percentage of vocabulary gained
+after each reading each week.
 </li>
 </ul>
-<p>For more information about this data set please see the following article: 2016 – <strong>Poole, F.</strong>, &amp; Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. <em>Journal of Chinese Language Teachers Association</em>. 51(3), 266–285.</p>
+<p>For more information about this data set please see the following
+article: 2016 – <strong>Poole, F.</strong>, &amp; Sung, K. A preliminary
+study on the effects of an E-gloss tool on incidental vocabulary
+learning when reading Chinese as a foreign language. <em>Journal of
+Chinese Language Teachers Association</em>. 51(3), 266–285.</p>
 <pre><code>## # A tibble: 15 x 11
 ##    ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre
 ##    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
@@ -451,28 +479,69 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 ## 14 10202     5 T              38   1020    40       51      11     0.526
 ## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
 ## # … with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
-<div id="a-shiny-app-to-explore-the-data-first" class="section level1">
-<h1><span class="header-section-number">1</span> A shiny App to explore the data first</h1>
+<div id="a-shiny-app-to-explore-the-data-first" class="section level1"
+number="1">
+<h1><span class="header-section-number">1</span> A shiny App to explore
+the data first</h1>
 <iframe src="https://u3fi03-fred-poole.shinyapps.io/eGloss/" height="600px" width="800px">
 </iframe>
 </div>
-<div id="download-r-and-rstudio" class="section level1">
-<h1><span class="header-section-number">2</span> Download R and Rstudio</h1>
-<p>1.<a href="https://www.r-project.org/" class="button">Download R</a> </br> </br> 2.<a href="https://www.rstudio.com/ " class="button">Download R Studio</a></p>
+<div id="download-r-and-rstudio" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> Download R and
+Rstudio</h1>
+<p>1.<a href="https://www.r-project.org/" class="button">Download R</a>
+</br> </br>
+2.<a href="https://www.rstudio.com/ " class="button">Download R
+Studio</a></p>
 </div>
-<div id="create-a-project" class="section level1">
+<div id="create-a-project" class="section level1" number="3">
 <h1><span class="header-section-number">3</span> Create a Project</h1>
-<p>Once you have downloaded R and Rstudio. You should begin by creating a new project in RStudio. You could just simply open R studio and start coding in the console, or create a new script and start coding in the script, but creating a new Project for each data analysis project that you do will save trouble further down the road.</p>
-<p>To start a new project open Rstudio, click File, New Project. The image below should pop up and prompt you to create a new directory or to use an existing directory. I usually just create an empty folder somewhere on my computer and then use select an existing directory.</p>
+<p>Once you have downloaded R and Rstudio. You should begin by creating
+a new project in RStudio. You could just simply open R studio and start
+coding in the console, or create a new script and start coding in the
+script, but creating a new Project for each data analysis project that
+you do will save trouble further down the road.</p>
+<p>To start a new project open Rstudio, click File, New Project. The
+image below should pop up and prompt you to create a new directory or to
+use an existing directory. I usually just create an empty folder
+somewhere on my computer and then use select an existing directory.</p>
 <p><img src="images/newProject.png" width="300px" height="300px" style="display: block; margin: auto;" /></p>
-<p>Once you have created a new project you should see a .Rproj file in the folder that you created. In this same folder you will want to drag in whatever data file you are currently using (.csv, .spss, .xsls are all suitable among others). By creating a project and adding your data file to the folder you will a) save yourself time when importing the file into your project because you won’t have to add a long path file to your code, and b) you will make your life easier when you have to return to your analysis five months after you already completed it. More on this later.</p>
+<p>Once you have created a new project you should see a .Rproj file in
+the folder that you created. In this same folder you will want to drag
+in whatever data file you are currently using (.csv, .spss, .xsls are
+all suitable among others). By creating a project and adding your data
+file to the folder you will a) save yourself time when importing the
+file into your project because you won’t have to add a long path file to
+your code, and b) you will make your life easier when you have to return
+to your analysis five months after you already completed it. More on
+this later.</p>
 </div>
-<div id="loading-data" class="section level1">
+<div id="loading-data" class="section level1" number="4">
 <h1><span class="header-section-number">4</span> Loading Data</h1>
-<p>When loading data into R you will often need to use a package for files other than .csv. If you have not already installed a package into your R environment, you’ll need to run the following code in the console: <code>install.packages("PackageName")</code> <strong>(Don’t forget to add the parentheses when installing a package…loading a library does not use parentheses)</strong>. After you have installed it once, you can simply recall the package by running <code>library(PackageName)</code>. Below are list of the packages that are needed for each file type.</p>
-<p><strong>.csv files</strong> – <code>No Package Needed</code> – <code>df &lt;- read.table("eGloss.csv", header=TRUE, sep=",")</code> </br> <strong>.xlsx files</strong> – <code>library(readxl)</code> – <code>df &lt;- read_excel("eGlossData.xlsx")</code> </br> <strong>.spss files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sav(eGlossData.spss)</code> </br> <strong>.sas files</strong> – <code>library(haven)</code> – <code>df &lt;- read_sas(eGlossData.sas)</code> </br></p>
-<p>For this project I’ll be uploading the following excel file. <em>Remember if you create a project and add the file to the same folder as your project, you don’t need to worry about specifying the path ofthe file.</em></p>
-<p>The code <code>col_types</code> identifies the type of variable that each column is. So column one is a text variable, two is a numeric and so on.</p>
+<p>When loading data into R you will often need to use a package for
+files other than .csv. If you have not already installed a package into
+your R environment, you’ll need to run the following code in the
+console: <code>install.packages("PackageName")</code> <strong>(Don’t
+forget to add the parentheses when installing a package…loading a
+library does not use parentheses)</strong>. After you have installed it
+once, you can simply recall the package by running
+<code>library(PackageName)</code>. Below are list of the packages that
+are needed for each file type.</p>
+<p><strong>.csv files</strong> – <code>No Package Needed</code> –
+<code>df &lt;- read.table("eGloss.csv", header=TRUE, sep=",")</code>
+</br> <strong>.xlsx files</strong> – <code>library(readxl)</code> –
+<code>df &lt;- read_excel("eGlossData.xlsx")</code> </br> <strong>.spss
+files</strong> – <code>library(haven)</code> –
+<code>df &lt;- read_sav(eGlossData.spss)</code> </br> <strong>.sas
+files</strong> – <code>library(haven)</code> –
+<code>df &lt;- read_sas(eGlossData.sas)</code> </br></p>
+<p>For this project I’ll be uploading the following excel file.
+<em>Remember if you create a project and add the file to the same folder
+as your project, you don’t need to worry about specifying the path ofthe
+file.</em></p>
+<p>The code <code>col_types</code> identifies the type of variable that
+each column is. So column one is a text variable, two is a numeric and
+so on.</p>
 <pre><code>## # A tibble: 15 x 11
 ##    ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre
 ##    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
@@ -493,9 +562,22 @@ For the Analysis below I will be using the EGloss data set. This data was collec
 ## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
 ## # … with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <p></br> </br></p>
-<div id="renaming-your-data" class="section level2">
-<h2><span class="header-section-number">4.1</span> Renaming your Data</h2>
-<p>Now that I have my data uploaded, I need to rename it. Renamining your data to something simple and generic can be very useful in R. First, if you keep the name <code>eGlossData</code>, then everytime you want to run an analysis or use a variable from this data set you’ll need to either use <code>attach()</code> and <code>detach()</code> functions, or you’ll need to type out the entire name. It doesn’t seem like a long name now, but after you type it out 100 times, you’ll wish you had a smaller name. Secondly, if you use a generic name like <code>df</code> (data frame) and if you save your code into a script within your project, then the next time you want to run your script with say another data set, you’ll just need to rename your new data set to <code>df</code> and then all of your code should run smoothly… provided that the data is in a similar format.</p>
+<div id="renaming-your-data" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Renaming your
+Data</h2>
+<p>Now that I have my data uploaded, I need to rename it. Renamining
+your data to something simple and generic can be very useful in R.
+First, if you keep the name <code>eGlossData</code>, then everytime you
+want to run an analysis or use a variable from this data set you’ll need
+to either use <code>attach()</code> and <code>detach()</code> functions,
+or you’ll need to type out the entire name. It doesn’t seem like a long
+name now, but after you type it out 100 times, you’ll wish you had a
+smaller name. Secondly, if you use a generic name like <code>df</code>
+(data frame) and if you save your code into a script within your
+project, then the next time you want to run your script with say another
+data set, you’ll just need to rename your new data set to
+<code>df</code> and then all of your code should run smoothly… provided
+that the data is in a similar format.</p>
 <p>Renaming data sets in R is pretty simple. See code below.</p>
 <pre class="r"><code>df &lt;- gloss</code></pre>
 Voilà, my data set is now called <code>df</code>. </br>
@@ -503,25 +585,42 @@ Voilà, my data set is now called <code>df</code>. </br>
 <hr>
 </div>
 </div>
-<div id="transorming-data" class="section level1">
+<div id="transorming-data" class="section level1" number="5">
 <h1><span class="header-section-number">5</span> Transorming Data</h1>
 <p></br> </br></p>
-<div id="creating-new-variables" class="section level2">
-<h2><span class="header-section-number">5.1</span> Creating New Variables</h2>
-<p>In the this data set we already have a variable called “RawGain.” But to practice we are going to create another variable simply called gain to show a) how to create new variables and b) how to do simple arithmetic in R.</p>
-<p>To create a new variable simple use the <code>$</code> after your data set, and then type in a variable that is not currently in your data set. Then use the arror <code>&lt;-</code> to define what will be stored in the variable. See examples below.</p>
+<div id="creating-new-variables" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Creating New
+Variables</h2>
+<p>In the this data set we already have a variable called “RawGain.” But
+to practice we are going to create another variable simply called gain
+to show a) how to create new variables and b) how to do simple
+arithmetic in R.</p>
+<p>To create a new variable simple use the <code>$</code> after your
+data set, and then type in a variable that is not currently in your data
+set. Then use the arror <code>&lt;-</code> to define what will be stored
+in the variable. See examples below.</p>
 <pre class="r"><code>df$gain &lt;- df$Post_Sum - df$Pre_Sum</code></pre>
-<p>To check our answer we will look at the first 15 cases of each variable using the <code>head</code> command.</p>
+<p>To check our answer we will look at the first 15 cases of each
+variable using the <code>head</code> command.</p>
 <pre class="r"><code>head(df$RawGain, n=15)</code></pre>
 <pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0 12.5</code></pre>
 <pre class="r"><code>head(df$gain, n=15)</code></pre>
 <pre><code>##  [1] 12.5 10.0  6.5  6.5  1.0 14.0  9.5 17.5 12.5 16.5 14.0  7.0 29.5 11.0 12.5</code></pre>
-<p>In another example, I’m going to create a categorical variable with two levels. This variable will be used to distinguish low and high level learners by their pre scores. Those who got <code>50%</code> or higher correct on their pre-tests will be labeled <em>high</em> and those who got below <code>50%</code> will be labeled <em>low</em>. We will call this variable Pre_cat (cat for category). To do this we will need an <code>ifelse</code> statement.</p>
+<p>In another example, I’m going to create a categorical variable with
+two levels. This variable will be used to distinguish low and high level
+learners by their pre scores. Those who got <code>50%</code> or higher
+correct on their pre-tests will be labeled <em>high</em> and those who
+got below <code>50%</code> will be labeled <em>low</em>. We will call
+this variable Pre_cat (cat for category). To do this we will need an
+<code>ifelse</code> statement.</p>
 <pre class="r"><code>df$Pre_cat &lt;- ifelse(df$Per_Pre &gt;= .45, &quot;High&quot;,&quot;Low&quot;)</code></pre>
-<p>Simply put, if the Per_Pre is greater than .5, then label it as high, if not then label it as low. And save everything into the variable. Pre_cat. </br> </br></p>
+<p>Simply put, if the Per_Pre is greater than .5, then label it as high,
+if not then label it as low. And save everything into the variable.
+Pre_cat. </br> </br></p>
 </div>
-<div id="impute-missing-data" class="section level2">
-<h2><span class="header-section-number">5.2</span> Impute Missing Data</h2>
+<div id="impute-missing-data" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Impute Missing
+Data</h2>
 <pre class="r"><code>#Coming soon
 #Fix this ... 
 #library(VIM)
@@ -529,16 +628,28 @@ Voilà, my data set is now called <code>df</code>. </br>
 #dat2 &lt;- kNN(dat)</code></pre>
 <p></br> </br></p>
 </div>
-<div id="renaming-your-variables" class="section level2">
-<h2><span class="header-section-number">5.3</span> Renaming your Variables</h2>
-<p>You may want to rename your variables for a variety of reasons. You could simply change the name in your excel file, but if you’d like to do it in R you can use the following code. For this example, I will use the <em>gain</em> variable that we made a copy of earlier. I want to make sure that it is known that this variable is just a test variable, so I will change the name to <em>gain_test</em></p>
+<div id="renaming-your-variables" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Renaming your
+Variables</h2>
+<p>You may want to rename your variables for a variety of reasons. You
+could simply change the name in your excel file, but if you’d like to do
+it in R you can use the following code. For this example, I will use the
+<em>gain</em> variable that we made a copy of earlier. I want to make
+sure that it is known that this variable is just a test variable, so I
+will change the name to <em>gain_test</em></p>
 <pre class="r"><code>colnames(df)[colnames(df)==&quot;gain&quot;] &lt;- &quot;gain_test&quot;</code></pre>
 <p></br> </br></p>
 </div>
-<div id="complete-cases" class="section level2">
+<div id="complete-cases" class="section level2" number="5.4">
 <h2><span class="header-section-number">5.4</span> Complete Cases</h2>
-<p>For some analysis you’ll need to remove any missing variables. The easiest way to do this is to use the filter function in the <code>library(dplyr)</code>.</p>
-<p>For this data set, I do not have any missing cases, but I will run it anyway. Notice that I add an _c to the data set. Whenever removing multiple cases I like to save it into another object and then run <code>nrow(df_c)</code> to get the number of cases in my new data set.</p>
+<p>For some analysis you’ll need to remove any missing variables. The
+easiest way to do this is to use the filter function in the
+<code>library(dplyr)</code>.</p>
+<p>For this data set, I do not have any missing cases, but I will run it
+anyway. Notice that I add an _c to the data set. Whenever removing
+multiple cases I like to save it into another object and then run
+<code>nrow(df_c)</code> to get the number of cases in my new data
+set.</p>
 <pre class="r"><code>library(dplyr)</code></pre>
 <pre><code>## 
 ## Attaching package: &#39;dplyr&#39;</code></pre>
@@ -555,9 +666,23 @@ nrow(df) #this is quick way to see how many cases you have in each data set</cod
 <pre><code>## [1] 152</code></pre>
 <p></br> </br></p>
 </div>
-<div id="changing-variable-types-e.g.-numeric-factor" class="section level2">
-<h2><span class="header-section-number">5.5</span> Changing Variable Types (e.g. numeric, factor)</h2>
-<p>Often times when you import your data set into R using excel or csv your variables will be loaded as incorrect data types. For exmample if you coded Gender as 1=Female, and 2=Male, your gender variable will be saved as a numeric variable, when it should probably be a factor. That being said, if you want to use gender in a correlation matrix you’ll need to convert it back to a numeric variable. The easiest way to see how your variables are being stored is to use <code>str(df)</code>. Currently, my variables <em>ID</em> and <em>Format</em> are being stored as characters. For most analyses this is ok. But for this tutorial I will change them into Factors. My <em>Course</em> variable is also being stored as a numeric, when this should really be a factor. There are two ways to do this, first I will demonstrate how to do each individual variable, then I’ll show a way to do multiple variables.</p>
+<div id="changing-variable-types-e.g.-numeric-factor"
+class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Changing Variable
+Types (e.g. numeric, factor)</h2>
+<p>Often times when you import your data set into R using excel or csv
+your variables will be loaded as incorrect data types. For exmample if
+you coded Gender as 1=Female, and 2=Male, your gender variable will be
+saved as a numeric variable, when it should probably be a factor. That
+being said, if you want to use gender in a correlation matrix you’ll
+need to convert it back to a numeric variable. The easiest way to see
+how your variables are being stored is to use <code>str(df)</code>.
+Currently, my variables <em>ID</em> and <em>Format</em> are being stored
+as characters. For most analyses this is ok. But for this tutorial I
+will change them into Factors. My <em>Course</em> variable is also being
+stored as a numeric, when this should really be a factor. There are two
+ways to do this, first I will demonstrate how to do each individual
+variable, then I’ll show a way to do multiple variables.</p>
 <pre class="r"><code>str(df)</code></pre>
 <pre><code>## tibble [152 × 13] (S3: tbl_df/tbl/data.frame)
 ##  $ ID        : chr [1:152] &quot;10203&quot; &quot;10203&quot; &quot;10203&quot; &quot;10203&quot; ...
@@ -597,9 +722,19 @@ str(df)</code></pre>
 ##  $ Pre_cat   : chr [1:152] &quot;High&quot; &quot;High&quot; &quot;High&quot; &quot;Low&quot; ...</code></pre>
 <p></br> </br></p>
 </div>
-<div id="subsetting-data" class="section level2">
+<div id="subsetting-data" class="section level2" number="5.6">
 <h2><span class="header-section-number">5.6</span> Subsetting Data</h2>
-<p>There are many reasons to subset your data. Subsetting your data simply means that you create a separate data set with only a subset of your variables. You may want to do this to create a correlation matrix with a specific set of variables. You may also want to do this to create a data set of only females or males. In this case of this data set, I will create two subsetted (I don’t think that’s a word… but let’s run with it) datasets one for a correlation matrix using only <em>Per_Pre</em>, <em>Per_Post</em> and <em>Week</em> to see if pre and post scores correlate with time in the study. I will also create a separate data set for each <em>Course</em> in the data set to do separate analyses.</p>
+<p>There are many reasons to subset your data. Subsetting your data
+simply means that you create a separate data set with only a subset of
+your variables. You may want to do this to create a correlation matrix
+with a specific set of variables. You may also want to do this to create
+a data set of only females or males. In this case of this data set, I
+will create two subsetted (I don’t think that’s a word… but let’s run
+with it) datasets one for a correlation matrix using only
+<em>Per_Pre</em>, <em>Per_Post</em> and <em>Week</em> to see if pre and
+post scores correlate with time in the study. I will also create a
+separate data set for each <em>Course</em> in the data set to do
+separate analyses.</p>
 <pre class="r"><code>#Note for each new subset I create a new object that identifies my new dataset. 
 
 df_cor &lt;- subset(df, select= c(&quot;Per_Pre&quot;,&quot;Per_Post&quot;,&quot;Week&quot;)) #Here I am telling R to create a new data set with the three variables selected. 
@@ -608,9 +743,16 @@ df_1020 &lt;- subset(df, Course==&quot;1020&quot;) #Here I am saying to create a
 df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 <p></br> </br></p>
 </div>
-<div id="transform-wide-to-long" class="section level2">
-<h2><span class="header-section-number">5.7</span> Transform Wide to Long</h2>
-<p>For some visualization tehcniques it becomes useful to transform our data set from wide to Long. Notice below our data set is currently in wide format. Each column represents one variable. I want to create another variable that holds <em>Per_Pre</em>, <em>Per_Post</em>, and <em>Per_Gain</em>, and then another column that holds the value for each of those constructs. We will need the <code>library(tidyr)</code> to run this code.</p>
+<div id="transform-wide-to-long" class="section level2" number="5.7">
+<h2><span class="header-section-number">5.7</span> Transform Wide to
+Long</h2>
+<p>For some visualization tehcniques it becomes useful to transform our
+data set from wide to Long. Notice below our data set is currently in
+wide format. Each column represents one variable. I want to create
+another variable that holds <em>Per_Pre</em>, <em>Per_Post</em>, and
+<em>Per_Gain</em>, and then another column that holds the value for each
+of those constructs. We will need the <code>library(tidyr)</code> to run
+this code.</p>
 <pre class="r"><code>head(df)</code></pre>
 <pre><code>## # A tibble: 6 x 13
 ##   ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre Per_Post
@@ -622,7 +764,8 @@ df_2020 &lt;- subset(df, Course==&quot;2020&quot;)</code></pre>
 ## 5 10203     4 T              37 1020      52       53       1     0.703    0.716
 ## 6 10203     6 T              38 1020      28       42      14     0.368    0.553
 ## # … with 3 more variables: Per_Gain &lt;dbl&gt;, gain_test &lt;dbl&gt;, Pre_cat &lt;chr&gt;</code></pre>
-<p>To do this I will first create a subset of my data set so that I remove the variables that I don’t want in my long data set.</p>
+<p>To do this I will first create a subset of my data set so that I
+remove the variables that I don’t want in my long data set.</p>
 <pre class="r"><code>#Here I&#39;m preparing my data set to remove the unneeded variables. The variables below are the ones I want to keep.
 df_temp &lt;- subset(df, select= c(&quot;ID&quot;,&quot;Week&quot;,&quot;Format&quot;,&quot;VocabWords&quot;,&quot;Course&quot;,&quot;Per_Pre&quot;,&quot;Per_Post&quot;,&quot;Per_Gain&quot;))
 #Before transforming the data set it is useful to use the colnames() function. This will allow you to see the column numbers. 
@@ -647,18 +790,30 @@ head(df_long,n=10)</code></pre>
 ##  8 10203    10 T              26 1020   Per_Pre 0.346
 ##  9 10202     4 G              37 1020   Per_Pre 0.709
 ## 10 10202     6 G              38 1020   Per_Pre 0.382</code></pre>
-Remember: We will use this data set later on when doing more advance visualization techniques. </br>
+Remember: We will use this data set later on when doing more advance
+visualization techniques. </br>
 <hr>
 <hr>
 </div>
 </div>
-<div id="descriptives" class="section level1">
+<div id="descriptives" class="section level1" number="6">
 <h1><span class="header-section-number">6</span> Descriptives</h1>
-<p>In this section we will go over how to run descriptives on a data set. We will look at some of the base packages that allow you to automatically run descriptives on all of your variables and then we’ll look at some other quick functions that allow you to explore your data with more precision. </br> </br></p>
-<div id="base-descriptive-packages" class="section level2">
-<h2><span class="header-section-number">6.1</span> Base Descriptive Packages</h2>
-<p>There are several packages that will automatically printout a set of descriptives for your entire data set. Which one you use will depend on preference and need.</p>
-<p>I like using <code>stargazer</code> because it prints out a formatted table. However, I have been having issues with displaying the output on the website, so I’ll just show the code. In the example below I have set <code>type</code> to text so that it will print out in the console, but you could change this to html or latex.</p>
+<p>In this section we will go over how to run descriptives on a data
+set. We will look at some of the base packages that allow you to
+automatically run descriptives on all of your variables and then we’ll
+look at some other quick functions that allow you to explore your data
+with more precision. </br> </br></p>
+<div id="base-descriptive-packages" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Base Descriptive
+Packages</h2>
+<p>There are several packages that will automatically printout a set of
+descriptives for your entire data set. Which one you use will depend on
+preference and need.</p>
+<p>I like using <code>stargazer</code> because it prints out a formatted
+table. However, I have been having issues with displaying the output on
+the website, so I’ll just show the code. In the example below I have set
+<code>type</code> to text so that it will print out in the console, but
+you could change this to html or latex.</p>
 <pre class="r"><code>library(stargazer)</code></pre>
 <pre><code>## 
 ## Please cite as:</code></pre>
@@ -668,7 +823,9 @@ Remember: We will use this data set later on when doing more advance visualizati
 <pre><code>## 
 ## &lt;table style=&quot;text-align:center&quot;&gt;&lt;tr&gt;&lt;td colspan=&quot;8&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Statistic&lt;/td&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;Mean&lt;/td&gt;&lt;td&gt;St. Dev.&lt;/td&gt;&lt;td&gt;Min&lt;/td&gt;&lt;td&gt;Pctl(25)&lt;/td&gt;&lt;td&gt;Pctl(75)&lt;/td&gt;&lt;td&gt;Max&lt;/td&gt;&lt;/tr&gt;
 ## &lt;tr&gt;&lt;td colspan=&quot;8&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
-<p>The summary function also provides a lot of quick and useuful information but it requires some formatting if you want to use it in paper.</p>
+<p>The summary function also provides a lot of quick and useuful
+information but it requires some formatting if you want to use it in
+paper.</p>
 <pre class="r"><code>summary(df)</code></pre>
 <pre><code>##        ID           Week       Format   VocabWords     Course      Pre_Sum     
 ##  10201  :  8   Min.   : 3.00   G:76   Min.   :26.00   1020:72   Min.   : 4.50  
@@ -694,7 +851,9 @@ Remember: We will use this data set later on when doing more advance visualizati
 ##  3rd Qu.:0.27461   3rd Qu.:21.12                     
 ##  Max.   :0.58333   Max.   :51.50                     
 ## </code></pre>
-<p>The <code>psych</code> package has a <code>describe</code> function similar to summary and a <code>describeBy</code> function that allows you to see descriptives by a certain group.</p>
+<p>The <code>psych</code> package has a <code>describe</code> function
+similar to summary and a <code>describeBy</code> function that allows
+you to see descriptives by a certain group.</p>
 <pre class="r"><code>library(psych)
 describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as my group. So the first set is gloss format (G), and the second is traditional format (T). </code></pre>
 <pre><code>## 
@@ -887,9 +1046,14 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Pre_cat*      -2.04 0.08</code></pre>
 <p></br> </br></p>
 </div>
-<div id="using-tapply-and-sapply-to-get-specific-descriptives" class="section level2">
-<h2><span class="header-section-number">6.2</span> Using Tapply and Sapply to get specific descriptives</h2>
-<p>While the descriptives above are nice, they can sometimes be overbearing. There is just too much information. Sometimes we want to be able to just look at the mean or maybe pinpoint a variable or possibly look at variable and compare it across two groups.</p>
+<div id="using-tapply-and-sapply-to-get-specific-descriptives"
+class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Using Tapply and
+Sapply to get specific descriptives</h2>
+<p>While the descriptives above are nice, they can sometimes be
+overbearing. There is just too much information. Sometimes we want to be
+able to just look at the mean or maybe pinpoint a variable or possibly
+look at variable and compare it across two groups.</p>
 <p>To just look at the means we can use sapply on our data set.</p>
 <pre class="r"><code>t &lt;- sapply(df, mean, na.rm=TRUE) #Note we can change mean to sd or whatever statistic we want. Use ?sapply to get more information.
 t</code></pre>
@@ -897,12 +1061,19 @@ t</code></pre>
 ##         NA  6.5000000         NA 40.0855263         NA 35.7796053 53.1546053 
 ##    RawGain    Per_Pre   Per_Post   Per_Gain  gain_test    Pre_cat 
 ## 17.3750000  0.4524636  0.6698279  0.2173643 17.3750000         NA</code></pre>
-<p><em>Note above I saved my output into the object <code>t</code> and then printed the object <code>t</code> for formatting puproses.</em></p>
-<p>If I want to compare means between two groups on one variable. I can use <code>tapply</code>. Below I’m comparing the Glossing group (G) with the traditional group (T). There does not seem to be much of a difference.</p>
+<p><em>Note above I saved my output into the object <code>t</code> and
+then printed the object <code>t</code> for formatting puproses.</em></p>
+<p>If I want to compare means between two groups on one variable. I can
+use <code>tapply</code>. Below I’m comparing the Glossing group (G) with
+the traditional group (T). There does not seem to be much of a
+difference.</p>
 <pre class="r"><code>tapply(df$Per_Gain,df$Format, mean, na.rm=TRUE)</code></pre>
 <pre><code>##         G         T 
 ## 0.2195082 0.2152205</code></pre>
-<p>This does not seem too interesting as the mean scores are about the same. I am also interested to see if there is any change in gloss and traditional fomrat by week. It may have been that the reading was too difficult on some weeks.</p>
+<p>This does not seem too interesting as the mean scores are about the
+same. I am also interested to see if there is any change in gloss and
+traditional fomrat by week. It may have been that the reading was too
+difficult on some weeks.</p>
 <pre class="r"><code>tab2 &lt;- tapply(df$Per_Gain, df[,c(&quot;Format&quot;,&quot;Week&quot;)],mean,na.rm=T)
 tab2</code></pre>
 <pre><code>##       Week
@@ -913,8 +1084,15 @@ tab2</code></pre>
 ## Format        10
 ##      G 0.2581585
 ##      T 0.2787317</code></pre>
-<p><em>Here I’m saving my outpout as tab2 because further down I will use tab2 to make a visualization of this table</em></p>
-<p>The final thing we want to look at is how high and low learners performed in each of the formats. Here we can see that Low-level learners (&lt;50% correct on the pre-test) performed slightly better in a gloss format than a traditional format. And that high-level learners (&gt;50% correct on the pre-test) performed slightly better in a traditional format. We will need to test if this is statistically signficiant later.</p>
+<p><em>Here I’m saving my outpout as tab2 because further down I will
+use tab2 to make a visualization of this table</em></p>
+<p>The final thing we want to look at is how high and low learners
+performed in each of the formats. Here we can see that Low-level
+learners (&lt;50% correct on the pre-test) performed slightly better in
+a gloss format than a traditional format. And that high-level learners
+(&gt;50% correct on the pre-test) performed slightly better in a
+traditional format. We will need to test if this is statistically
+signficiant later.</p>
 <pre class="r"><code>tab3 &lt;- tapply(df$Per_Gain, df[,c(&quot;Format&quot;,&quot;Pre_cat&quot;)],mean,na.rm=T)
 tab3</code></pre>
 <pre><code>##       Pre_cat
@@ -924,12 +1102,15 @@ tab3</code></pre>
 <p></br> </br></p>
 </div>
 </div>
-<div id="simple-parametric-tests" class="section level1">
-<h1><span class="header-section-number">7</span> Simple Parametric Tests</h1>
+<div id="simple-parametric-tests" class="section level1" number="7">
+<h1><span class="header-section-number">7</span> Simple Parametric
+Tests</h1>
 <p></br> </br></p>
-<div id="t-tests" class="section level2">
+<div id="t-tests" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> T-Tests</h2>
-<p>To look at simple comparison of means between two groups we will use a T-test. IN this example, I will compare means of Per_Gain (Percentage of Vocabulary Gains) between the two groups: traditional and gloss.</p>
+<p>To look at simple comparison of means between two groups we will use
+a T-test. IN this example, I will compare means of Per_Gain (Percentage
+of Vocabulary Gains) between the two groups: traditional and gloss.</p>
 <pre class="r"><code>t.test(df$Per_Gain~df$Format, paired=FALSE)</code></pre>
 <pre><code>## 
 ##  Welch Two Sample t-test
@@ -945,19 +1126,21 @@ tab3</code></pre>
 <p>It appears that these two groups are the same.</p>
 <p></br> </br></p>
 </div>
-<div id="effect-size" class="section level2">
+<div id="effect-size" class="section level2" number="7.2">
 <h2><span class="header-section-number">7.2</span> Effect Size</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
-<div id="chi-square-tests" class="section level2">
+<div id="chi-square-tests" class="section level2" number="7.3">
 <h2><span class="header-section-number">7.3</span> Chi-Square Tests</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
-<div id="anova" class="section level2">
+<div id="anova" class="section level2" number="7.4">
 <h2><span class="header-section-number">7.4</span> ANOVA</h2>
-<p>The T-test is nice, but it does not allow us to control for potential differences in course. We can do this with a two-way factorial ANOVA.</p>
+<p>The T-test is nice, but it does not allow us to control for potential
+differences in course. We can do this with a two-way factorial
+ANOVA.</p>
 <pre class="r"><code>#Next we will define our model. Here we are predicting Per_Gain while controlling for Format and Course
 fit &lt;- aov(Per_Gain ~  Format + Course + Format:Course, data=df) 
 summary(fit)</code></pre>
@@ -968,7 +1151,8 @@ summary(fit)</code></pre>
 ## Residuals     148 1.6123 0.01089                     
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<p>Here we can see that course is a significant predictor of gains. To look at the post-hoc we can use TukeyHSD test below.</p>
+<p>Here we can see that course is a significant predictor of gains. To
+look at the post-hoc we can use TukeyHSD test below.</p>
 <pre class="r"><code># Tukey Honestly Significant Differences
 TukeyHSD(fit) # where fit comes from aov()</code></pre>
 <pre><code>##   Tukey multiple comparisons of means
@@ -992,10 +1176,12 @@ TukeyHSD(fit) # where fit comes from aov()</code></pre>
 ## G:2020-T:1020  0.082421627  0.020114131 0.14472912 0.0042058
 ## T:2020-T:1020  0.090277409  0.027969912 0.15258491 0.0013574
 ## T:2020-G:2020  0.007855782 -0.052789882 0.06850145 0.9868149</code></pre>
-<p>These findings show that regardless of format, the 2020 group (second year Chinese course) had a higher percentage of gains than the 1020 gorup.</p>
+<p>These findings show that regardless of format, the 2020 group (second
+year Chinese course) had a higher percentage of gains than the 1020
+gorup.</p>
 <p></br> </br></p>
 </div>
-<div id="regressions" class="section level2">
+<div id="regressions" class="section level2" number="7.5">
 <h2><span class="header-section-number">7.5</span> Regressions</h2>
 <pre class="r"><code>mod &lt;- lm(Per_Post ~ Per_Pre + Week + Course + VocabWords + Format, df)
 summary(mod)</code></pre>
@@ -1069,11 +1255,13 @@ anova(mod1,mod2,mod3,mod4)</code></pre>
 <hr>
 </div>
 </div>
-<div id="simple-non-parametric-tests" class="section level1">
-<h1><span class="header-section-number">8</span> Simple Non-Parametric Tests</h1>
+<div id="simple-non-parametric-tests" class="section level1" number="8">
+<h1><span class="header-section-number">8</span> Simple Non-Parametric
+Tests</h1>
 <p></br> </br></p>
-<div id="wilcoxon-signed-rank-test" class="section level2">
-<h2><span class="header-section-number">8.1</span> Wilcoxon-Signed Rank Test</h2>
+<div id="wilcoxon-signed-rank-test" class="section level2" number="8.1">
+<h2><span class="header-section-number">8.1</span> Wilcoxon-Signed Rank
+Test</h2>
 <p><em>Coming Soon</em></p>
 <pre><code>## Loading required package: survival</code></pre>
 <pre><code>## 
@@ -1090,10 +1278,10 @@ anova(mod1,mod2,mod3,mod4)</code></pre>
 <hr>
 </div>
 </div>
-<div id="basic-graphs" class="section level1">
+<div id="basic-graphs" class="section level1" number="9">
 <h1><span class="header-section-number">9</span> Basic Graphs</h1>
 <p></br> </br></p>
-<div id="bar-graphs" class="section level2">
+<div id="bar-graphs" class="section level2" number="9.1">
 <h2><span class="header-section-number">9.1</span> Bar Graphs</h2>
 <p>This is a bar chart.</p>
 <pre><code>## 
@@ -1103,14 +1291,16 @@ anova(mod1,mod2,mod3,mod4)</code></pre>
 ##     %+%, alpha</code></pre>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-33-1.png" width="672" /></p>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-34-1.png" width="672" /></p>
-<p><img src="rprojects_files/figure-html/unnamed-chunk-35-1.png" width="672" /> </br> </br></p>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-35-1.png" width="672" />
+</br> </br></p>
 </div>
-<div id="box-plots" class="section level2">
+<div id="box-plots" class="section level2" number="9.2">
 <h2><span class="header-section-number">9.2</span> Box Plots</h2>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
-<p><img src="rprojects_files/figure-html/unnamed-chunk-37-1.png" width="672" /> </br> </br></p>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-37-1.png" width="672" />
+</br> </br></p>
 </div>
-<div id="linear-plots" class="section level2">
+<div id="linear-plots" class="section level2" number="9.3">
 <h2><span class="header-section-number">9.3</span> Linear Plots</h2>
 <pre class="r"><code>f &lt;- ggplot(df, aes(Week,Per_Gain))
 f + geom_jitter() + geom_smooth()</code></pre>
@@ -1120,25 +1310,28 @@ f + geom_jitter() + geom_smooth()</code></pre>
 f + geom_jitter(aes(col=Format)) + geom_smooth(method=&quot;loess&quot;, se=F) + 
   labs(title=&quot;Vocabulary Gain (%) by Number of New Words&quot;, y=&quot;Gain (%)&quot;, x=&quot;Week&quot;)</code></pre>
 <pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
-<p><img src="rprojects_files/figure-html/unnamed-chunk-39-1.png" width="672" /> </br> </br></p>
+<p><img src="rprojects_files/figure-html/unnamed-chunk-39-1.png" width="672" />
+</br> </br></p>
 <hr>
 <hr>
 </div>
 </div>
-<div id="multivariate-analysis" class="section level1">
-<h1><span class="header-section-number">10</span> Multivariate Analysis</h1>
+<div id="multivariate-analysis" class="section level1" number="10">
+<h1><span class="header-section-number">10</span> Multivariate
+Analysis</h1>
 <p></br> </br></p>
-<div id="path-models" class="section level2">
+<div id="path-models" class="section level2" number="10.1">
 <h2><span class="header-section-number">10.1</span> Path Models</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
-<div id="cluster-analysis" class="section level2">
-<h2><span class="header-section-number">10.2</span> Cluster Analysis</h2>
+<div id="cluster-analysis" class="section level2" number="10.2">
+<h2><span class="header-section-number">10.2</span> Cluster
+Analysis</h2>
 <p><em>Coming Soon</em></p>
 <p></br> </br></p>
 </div>
-<div id="cart-analysis" class="section level2">
+<div id="cart-analysis" class="section level2" number="10.3">
 <h2><span class="header-section-number">10.3</span> CART Analysis</h2>
 <p><em>Coming Soon</em></p>
 </br>
@@ -1152,6 +1345,7 @@ document.write("This page was last modified on: " + document.lastModified +"");
 </SCRIPT>
 <br>
 <a href="https://twitter.com/frdbrick?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @frdbrick</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 
 
 </div>

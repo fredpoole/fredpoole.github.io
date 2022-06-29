@@ -47,6 +47,10 @@ knitr::include_graphics("images/fred.JPG")
 <div class="container">
 <ol reversed>
 
+<div class="filterDiv FLL Games Proc" ><li> In Press -- Nagai, T., York, J., Poole, F. & Nakayama, H.. Developing an AR language learning system: Comparing the effects of modality on reading comprehension, vocabulary acquisition and motivation. In T. Bastiaens (Ed.), Proceedings of *EdMedia + Innovate Learning* (pp. 388-395). New York City, NY, United States: Association for the Advancement of Computing in Education (AACE). </li> </div> <enter>
+
+<div class="filterDiv Proc Games FA" ><li>In Press -- **Poole, F.**, & Lee, V. R.. Esports athletes’ group sensemaking of team gameplay data analytics. Paper Presented at *Games, Learning and Society Proceedings*, Irvine, CA</li> </div> <enter>
+
 <div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J. (In Press). Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*. (Impact Factor=4.31)</li> </div> <enter>
 
 <div class="filterDiv ET Proc" ><li>2022 -- Shehzad, U., Lee, V.R., Clarke-Midura, J., Recker, Mi.,& **Poole, F.**. Authorship and intended difficulty in the context of an expansively-framed-unplugged elementary computer science unit. Paper presented at the *American Educational Research Association Conference*, San Diego, CA </li></div><enter>
@@ -110,13 +114,9 @@ knitr::include_graphics("images/fred.JPG")
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
 <ol reversed>
 
-<li>In preparation -- Thoms, J. & **Poole, F.** Analyzing Digital Social Reading Practices in an L2 Chinese Literature Course. </li>
+<li>In preparation -- Folse, B. & **Poole, F.** Gamifying gamification in the Sociology classroom. </li>
 
 <li>In preparation -- **Poole, F.** & Thoms, J. Exploring L2 comments in a digital social reading environment using sentiment analysis. </li>
-
-<li>In preparation -- **Poole, F.** Developing and evaluating stealth assessments for an educational game to assess young Chinese dual language immersion learners' reading comprehension.  </li>
-
-<li>In preparation -- **Poole, F.** & Lee, V. Exploring data practices by a collegiate esports team. </li>
 
 </ol>
 
@@ -142,12 +142,34 @@ knitr::include_graphics("images/fred.JPG")
 </ul><enter>
 
 <center  style="font-size:20px">TEACHING</center>
+
+#### Michigan State University
+<enter>
+<li>Summer 2022	Foreign/Second Language Acquisition (FLT 860)</li><enter>
+<li>Summer 2022	Assessment for Foreign Language Teaching (FLT 808)</li><enter>
+<li>Spring 2022		Foreign/Second Language Acquisition (FLT 860)</li><enter>
+<li>Spring 2022		Assessment for Foreign Language Teaching (FLT 808)</li><enter>
+<li>Spring 2022		Foreign/Second Language Methods (FLT 807)</li><enter>
+<li>Fall 2021		Teaching Foreign Languages with Technology (FLT 881)</li><enter>
+<li>Fall 2021		Sociolinguistics & Spoken Language (FLT 841)</li><enter>
+<li>Fall 2021		Foreign/Second Language Methods (FLT 807)</li><enter>
+<li>Summer 2021   	Teaching Foreign Languages with Technology (FLT 881)</li><enter>
+<li>Summer 2021	Foreign/Second Language Methods (FLT 807)</li><enter>
+<li>Spring 2021		Foreign/Second Language Acquisition (FLT 860)</li><enter>
+<li>Spring 2021		Assessment for Foreign Language Teaching (FLT 808)</li><enter>
+<li>Spring 2021		Experiential Module (FLT 885)</li><enter>
+<li>Fall 2020		Teaching Foreign Languages with Technology (FLT 881)</li><enter>
+<li>Fall 2020		Sociolinguistics & Spoken Language (FLT 841)</li><enter>
+<li>Fall 2020		Experiential Module (FLT 885)</li><enter>
+
+</ul><enter>
+
 #### Utah State University
 <enter>
 <ul>
-<li>Spring 2020 -- Games and Learning (ITLS 6730) (*Graduate Level Online Course*)
-<li>Fall 2019 -- Mobile Design and Development for Learning (ITLS 3870/5750) (*Graduate Level Online Course*)
-<li>Spring 2019 -- Games and Learning (ITLS 6730) (*Graduate Level Online Course*)
+<li>Spring 2020 -- Games and Learning (ITLS 6730) (*Graduate Level Online Course*) </li><enter>
+<li>Fall 2019 -- Mobile Design and Development for Learning (ITLS 3870/5750) (*Graduate Level Online Course*)</li><enter>
+<li>Spring 2019 -- Games and Learning (ITLS 6730) (*Graduate Level Online Course*)</li><enter>
 <li>Fall 2017 -- Learning Theory (ITLS 6540) (*Graduate-level course, taught last 7 weeks of course at request of department due to maternity leave of a faculty member*)</li><enter>
 <li>Fall 2017 -- Second Language/Literacy Acquisition and Development (TEAL 4745)</li><enter>
 <li>Fall 2016 -- First-Year Chinese 1 (Chinese 1010) </li><enter>
@@ -167,6 +189,12 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">CONFERENCE PRESENTATIONS</center><enter>
 <ol reversed>
+
+<li> 2022 -- Leveraging a spatial chat software to design gaming experiences for in-class instruction. JALT CALL Conference, Virtual.</li> <enter>
+
+<li> 2022 -- Esports athletes’ group sensemaking of team gameplay data analytics. Games Learning and Society (GLS). Irvine, CA</li> <enter>
+
+<li> 2022 -- Using Gather.Town to Re-Imagine Interaction in Virtual and Hybrid Language Learning. Midwest Association for Language Learning Technology (MWALLT) Conference, Virtual. (With Amanda Lanier and Bruna Sommer Farias)</li> <enter>
 
 <li>2021 -- Developing Intercultural Competence through Social Justice Education. *American Council on the Teaching of Foreign Languages (ACTFL) Conference*, Virtual. (With Kaleigh Doan) </li> <enter>
 
@@ -212,6 +240,10 @@ knitr::include_graphics("images/fred.JPG")
 
 <center  style="font-size:20px">PROFESSIONAL ACTIVITIES/SERVICE</center><enter>
 <ul>
+<li>2022 -- Co-Chair, *JALT CALL Conference* </li><enter>
+
+<li>2021 -- Manuscript Reviewer, *Language Learning & Technology* </li><enter>
+
 <li>2021 -- Manuscript Reviewer, *System Journal* </li><enter>
 
 <li>2021 -- Manuscript Reviewer, *International Journal of Computer-Supported Collaborative Learning* </li><enter>
