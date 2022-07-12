@@ -47,15 +47,17 @@ knitr::include_graphics("images/fred.JPG")
 <div class="container">
 <ol reversed>
 
-<div class="filterDiv FLL Games Proc" ><li> In Press -- Nagai, T., York, J., Poole, F. & Nakayama, H.. Developing an AR language learning system: Comparing the effects of modality on reading comprehension, vocabulary acquisition and motivation. In T. Bastiaens (Ed.), Proceedings of *EdMedia + Innovate Learning* (pp. 388-395). New York City, NY, United States: Association for the Advancement of Computing in Education (AACE). </li> </div> <enter>
-
 <div class="filterDiv Proc Games FA" ><li>In Press -- **Poole, F.**, & Lee, V. R.. Esports athletes’ group sensemaking of team gameplay data analytics. Paper Presented at *Games, Learning and Society Proceedings*, Irvine, CA</li> </div> <enter>
 
-<div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J. (In Press). Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*. (Impact Factor=4.31)</li> </div> <enter>
+<div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J.. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*. (Impact Factor=4.31)</li> </div> <enter>
+
+<div class="filterDiv FLL Games FA" ><li> 2022 --  **Poole, F.**, Clarke-Midura, J., & Ji, S..Exploring the Affordances and Effectiveness of a Digital Game in the Chinese Dual Language Immersion Classroom. *Journal of Technology and Chinese Language Teaching*,13(1),46-73.  </li> </div> <enter>
+
+<div class="filterDiv FLL Games Proc" ><li> 2022 -- Nagai, T., York, J., **Poole, F.** & Nakayama, H.. Developing an AR language learning system: Comparing the effects of modality on reading comprehension, vocabulary acquisition and motivation. In T. Bastiaens (Ed.), Proceedings of *EdMedia + Innovate Learning* (pp. 388-395). New York City, NY, United States: Association for the Advancement of Computing in Education (AACE). </li> </div> <enter>
 
 <div class="filterDiv ET Proc" ><li>2022 -- Shehzad, U., Lee, V.R., Clarke-Midura, J., Recker, Mi.,& **Poole, F.**. Authorship and intended difficulty in the context of an expansively-framed-unplugged elementary computer science unit. Paper presented at the *American Educational Research Association Conference*, San Diego, CA </li></div><enter>
 
-<div class="filterDiv FLL Games" ><li> 2021 -- York, J., **Poole, F.**, & deHaan, J. Playing a new game: An argument for a teacher-focused field around games and play in language education. *Foreign Language Annals* (Impact Factor=2.06)</li><enter> </div>
+<div class="filterDiv FLL Games" ><li> 2021 -- York, J., **Poole, F.**, & deHaan, J. Playing a new game: An argument for a teacher-focused field around games and play in language education. *Foreign Language Annals*,54(4), 1164-1188. (Impact Factor=2.06)</li><enter> </div>
 
 <div class="filterDiv ET FA Games" ><li>2021 -- **Poole, F.**, Clarke-Midura, J., Rasmussen, M., Shehzad, U., & Lee, V. R. Tabletop games designed to promote computational thinking. *Computer Science Education*: DOI: 10.1080/08993408.2021.1947642(CiteScore=5.1)</li><enter></div>
 
