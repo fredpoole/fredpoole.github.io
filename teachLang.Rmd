@@ -31,7 +31,7 @@ In this section you will find activities/lessons/curriculum that I designed thro
 </br>
 
 ## Activities for Chinese as a Foreign Language
-The following activities are taken from a first year Chinese course at the university level. Each of the zip files contains a power point and 1-2 handouts. Generally speaking one of the handouts will have a listening exercise in which new vocabulary/sentence structure is introduced. In the listening activities I use the powerpoints to tell a story or to discuss a topic. For example in the professions lesson I talk about the qualities of each professesions (i.e. Being a writer can relaxing but lonely.). The handouts are used for students to keep track of what is said during the presentation. The speaking handout is usually a lesson that asks students to reproduce some version of what they heard in the listening activity. *More details for each individual lesson will be provided later*.
+The following activities are taken from a first year Chinese course at the university level. Each of the zip files contains a power point and 1-2 handouts. Generally speaking one of the handouts will have a listening exercise in which new vocabulary/sentence structure is introduced. In the listening activities I use the powerpoints to tell a story or to discuss a topic. For example in the professions lesson I talk about the qualities of each professions (i.e. Being a writer can relaxing but lonely.). The handouts are used for students to keep track of what is said during the presentation. The speaking handout is usually a lesson that asks students to reproduce some version of what they heard in the listening activity. *More details for each individual lesson will be provided later*.
 
 <a href="chineseactivities/professions.zip" class="button">Professions Activity</a>
 </br>
@@ -69,17 +69,7 @@ During the summers in China I taught 2-week intensive courses that focused on de
 <a href="eslMaterial/Summer Classes Advance.docx" class="button">Oral English Advance</a>
 </br>
 </br>
-Many of my students in China were prepping to come to a university in the U.S. They were interested in not only developing their English skills but also learning about U.S. culture. The book below was created to teach/expose the learners to culture that I felt was interesting/important/unique. 
-</br>
-<a href="eslMaterial/Culture Class Compiled copy.pdf" class="button">Culture Class</a>
-</br>
-</br>
-Recently I created the U.S. Values course as an easier version of the Culture Class. This course exposes students to trendy topics in the U.S. and provides opportunities for learners to enage in these topics via readings, debates, discussions, and writing assignments. 
-</br>
-<a href="eslMaterial/American Values_Final.docx" class="button">U.S. Values</a>
-</br>
-<hr>
-<hr>
+
 
 # Graded Readers
 In 2014, I designed a graded reader series for learners of Chinese as a foreign learner. The stories consist of four parts. In the first part, all new words are presented in the English (the learners L1). This was done to provide true beginners of Chinese with background information on the characters as well as to allow learners a chance to see characters in a familiar, stress-reduced environemnt. In the second section, there are writing activities to allow learners to again familiarize themselvs with new characters. In the third section is the reading or the text. Then in the final section a series of questions and tasks are presented to the reader to review both the content and the vocabulary learned in the reading.
