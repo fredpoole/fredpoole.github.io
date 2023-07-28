@@ -43,9 +43,11 @@ title: ""
 <div class="container">
 <ol reversed>
 
-<div class="filterDiv Proc Games FA" ><li>In Press -- **Poole, F.**, & Lee, V. R.. Esports athletes’ group sensemaking of team gameplay data analytics. Paper Presented at *Games, Learning and Society Proceedings*, Irvine, CA</li> </div> <enter>
-
 <div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J.. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*. (Impact Factor=4.31)</li> </div> <enter>
+
+<div class="filterDiv Proc Games FA" ><li>2023-- **Poole, F.**, & Lee, V. R.. Esports athletes’ group sensemaking of team gameplay data analytics. Paper Presented at *Games, Learning and Society Proceedings*, Irvine, CA</li> </div> <enter>
+
+<div class="filterDiv FLL FA" ><li>2022 -- **Poole, F.**. Using ChatGPT to design language material and exercise. *FLTMag*, https://fltmag.com/chatgpt-design-material-exercises/ </li> </div> <enter>
 
 <div class="filterDiv FLL Games FA" ><li> 2022 --  **Poole, F.**, Clarke-Midura, J., & Ji, S..Exploring the Affordances and Effectiveness of a Digital Game in the Chinese Dual Language Immersion Classroom. *Journal of Technology and Chinese Language Teaching*,13(1),46-73.  </li> </div> <enter>
 
