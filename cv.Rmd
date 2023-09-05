@@ -43,7 +43,8 @@ title: ""
 <div class="container">
 <ol reversed>
 
-<div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*. (Impact Factor=4.31)</li> </div> <enter>
+<div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*.27(1), 1–26. http://hdl.handle.net/10125/73522
+(Impact Factor=4.31)</li> </div> <enter>
 
 <div class="filterDiv Proc Games FA" ><li>2023-- **Poole, F.**, & Lee, V. R.. Esports athletes’ group sensemaking of team gameplay data analytics. Paper Presented at *Games, Learning and Society Proceedings*, Irvine, CA</li> </div> <enter>
 
