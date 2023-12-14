@@ -43,6 +43,12 @@ title: ""
 <div class="container">
 <ol reversed>
 
+<div class="filterDiv FLL FA" ><li> In Press -- **Poole, F.**. From Sci-Fi to the Classroom: Implications of AI in Task-Based Writing . *Journal on Task-based Language Teaching and Learning*.3(2).
+(Impact Factor=2.2)</li> </div> <enter>
+
+<div class="filterDiv ET Games" ><li> In Press -- Folse, B & **Poole, F.**. Gamifying gamification in the sociology classroom. *Teaching Sociology*.1–13. https://doi.org/10.1177/0092055X231175176 
+(Impact Factor=2.2)</li> </div> <enter>
+
 <div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*.27(1), 1–26. http://hdl.handle.net/10125/73522
 (Impact Factor=4.31)</li> </div> <enter>
 
@@ -115,9 +121,7 @@ title: ""
 <center  style="font-size:20px">WORKS IN PROGRESS</center>
 <ol reversed>
 
-<li>In preparation -- Folse, B. & **Poole, F.** Gamifying gamification in the Sociology classroom. </li>
 
-<li>In preparation -- **Poole, F.** & Thoms, J. Exploring L2 comments in a digital social reading environment using sentiment analysis. </li>
 
 </ol>
 
