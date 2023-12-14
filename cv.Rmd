@@ -43,7 +43,7 @@ title: ""
 <div class="container">
 <ol reversed>
 
-<div class="filterDiv FLL FA" ><li> In Press -- **Poole, F.**. From Sci-Fi to the Classroom: Implications of AI in Task-Based Writing . *Journal on Task-based Language Teaching and Learning*.3(2).
+<div class="filterDiv FLL FA" ><li> In Press -- **Poole, F.** & Polio, C. From Sci-Fi to the Classroom: Implications of AI in Task-Based Writing . *Journal on Task-based Language Teaching and Learning*.3(2).
 (Impact Factor=2.2)</li> </div> <enter>
 
 <div class="filterDiv ET Games" ><li> In Press -- Folse, B & **Poole, F.**. Gamifying gamification in the sociology classroom. *Teaching Sociology*.1–13. https://doi.org/10.1177/0092055X231175176 
@@ -52,7 +52,7 @@ title: ""
 <div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*.27(1), 1–26. http://hdl.handle.net/10125/73522
 (Impact Factor=4.31)</li> </div> <enter>
 
-<div class="filterDiv Proc Games FA" ><li>2023-- **Poole, F.**, & Lee, V. R.. Esports athletes’ group sensemaking of team gameplay data analytics. Paper Presented at *Games, Learning and Society Proceedings*, Irvine, CA</li> </div> <enter>
+<div class="filterDiv Proc Games FA" ><li>2023-- **Poole, F.**, & Lee, V. R. Esports athletes’ group sensemaking of team gameplay data analytics. Paper Presented at *Games, Learning and Society Proceedings*, Irvine, CA</li> </div> <enter>
 
 <div class="filterDiv FLL FA" ><li>2022 -- **Poole, F.**. Using ChatGPT to design language material and exercise. *FLTMag*, https://fltmag.com/chatgpt-design-material-exercises/ </li> </div> <enter>
 
