@@ -13,8 +13,8 @@
 
 <title>rprojects.knit</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="site_libs/header-attrs-2.26/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -29,14 +29,14 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
-<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
-<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.4.2/css/v4-shims.min.css" rel="stylesheet" />
 <link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
 
 <style type="text/css">
@@ -58,6 +58,7 @@ if (window.hljs) {
   }
 }
 </script>
+
 
 
 
@@ -87,6 +88,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -144,11 +148,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -177,8 +185,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -186,16 +194,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -318,7 +319,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -460,7 +461,7 @@ article: 2016 – <strong>Poole, F.</strong>, &amp; Sung, K. A preliminary
 study on the effects of an E-gloss tool on incidental vocabulary
 learning when reading Chinese as a foreign language. <em>Journal of
 Chinese Language Teachers Association</em>. 51(3), 266–285.</p>
-<pre><code>## # A tibble: 15 x 11
+<pre><code>## # A tibble: 15 × 11
 ##    ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre
 ##    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 10203     3 G              44   1020    46       58.5    12.5   0.523
@@ -478,7 +479,7 @@ Chinese Language Teachers Association</em>. 51(3), 266–285.</p>
 ## 13 10202     3 T              44   1020    30       59.5    29.5   0.341
 ## 14 10202     5 T              38   1020    40       51      11     0.526
 ## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
-## # … with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
+## # ℹ 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <div id="a-shiny-app-to-explore-the-data-first" class="section level1"
 number="1">
 <h1><span class="header-section-number">1</span> A shiny App to explore
@@ -542,7 +543,7 @@ file.</em></p>
 <p>The code <code>col_types</code> identifies the type of variable that
 each column is. So column one is a text variable, two is a numeric and
 so on.</p>
-<pre><code>## # A tibble: 15 x 11
+<pre><code>## # A tibble: 15 × 11
 ##    ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre
 ##    &lt;chr&gt; &lt;dbl&gt; &lt;chr&gt;       &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
 ##  1 10203     3 G              44   1020    46       58.5    12.5   0.523
@@ -560,7 +561,7 @@ so on.</p>
 ## 13 10202     3 T              44   1020    30       59.5    29.5   0.341
 ## 14 10202     5 T              38   1020    40       51      11     0.526
 ## 15 10202     7 T              38   1020    37.5     50      12.5   0.493
-## # … with 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
+## # ℹ 2 more variables: Per_Post &lt;dbl&gt;, Per_Gain &lt;dbl&gt;</code></pre>
 <p></br> </br></p>
 <div id="renaming-your-data" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Renaming your
@@ -754,7 +755,7 @@ another variable that holds <em>Per_Pre</em>, <em>Per_Post</em>, and
 of those constructs. We will need the <code>library(tidyr)</code> to run
 this code.</p>
 <pre class="r"><code>head(df)</code></pre>
-<pre><code>## # A tibble: 6 x 13
+<pre><code>## # A tibble: 6 × 13
 ##   ID     Week Format VocabWords Course Pre_Sum Post_Sum RawGain Per_Pre Per_Post
 ##   &lt;fct&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;fct&gt;    &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt;
 ## 1 10203     3 G              44 1020      46       58.5    12.5   0.523    0.665
@@ -763,7 +764,7 @@ this code.</p>
 ## 4 10203     9 G              38 1020      33       39.5     6.5   0.434    0.520
 ## 5 10203     4 T              37 1020      52       53       1     0.703    0.716
 ## 6 10203     6 T              38 1020      28       42      14     0.368    0.553
-## # … with 3 more variables: Per_Gain &lt;dbl&gt;, gain_test &lt;dbl&gt;, Pre_cat &lt;chr&gt;</code></pre>
+## # ℹ 3 more variables: Per_Gain &lt;dbl&gt;, gain_test &lt;dbl&gt;, Pre_cat &lt;chr&gt;</code></pre>
 <p>To do this I will first create a subset of my data set so that I
 remove the variables that I don’t want in my long data set.</p>
 <pre class="r"><code>#Here I&#39;m preparing my data set to remove the unneeded variables. The variables below are the ones I want to keep.
@@ -777,7 +778,7 @@ library(tidyr)
 df_long &lt;- gather(df_temp, Score, Value, c(6:8))
 #Now let&#39;s look at our data structure again. 
 head(df_long,n=10)</code></pre>
-<pre><code>## # A tibble: 10 x 7
+<pre><code>## # A tibble: 10 × 7
 ##    ID     Week Format VocabWords Course Score   Value
 ##    &lt;fct&gt; &lt;dbl&gt; &lt;fct&gt;       &lt;dbl&gt; &lt;fct&gt;  &lt;chr&gt;   &lt;dbl&gt;
 ##  1 10203     3 G              44 1020   Per_Pre 0.523
@@ -817,12 +818,12 @@ you could change this to html or latex.</p>
 <pre class="r"><code>library(stargazer)</code></pre>
 <pre><code>## 
 ## Please cite as:</code></pre>
-<pre><code>##  Hlavac, Marek (2018). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
-<pre><code>##  R package version 5.2.2. https://CRAN.R-project.org/package=stargazer</code></pre>
+<pre><code>##  Hlavac, Marek (2022). stargazer: Well-Formatted Regression and Summary Statistics Tables.</code></pre>
+<pre><code>##  R package version 5.2.3. https://CRAN.R-project.org/package=stargazer</code></pre>
 <pre class="r"><code>stargazer(df,type=&quot;html&quot;,digits=2) #I used the digits code to limit how long the numbers are. </code></pre>
 <pre><code>## 
-## &lt;table style=&quot;text-align:center&quot;&gt;&lt;tr&gt;&lt;td colspan=&quot;8&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Statistic&lt;/td&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;Mean&lt;/td&gt;&lt;td&gt;St. Dev.&lt;/td&gt;&lt;td&gt;Min&lt;/td&gt;&lt;td&gt;Pctl(25)&lt;/td&gt;&lt;td&gt;Pctl(75)&lt;/td&gt;&lt;td&gt;Max&lt;/td&gt;&lt;/tr&gt;
-## &lt;tr&gt;&lt;td colspan=&quot;8&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
+## &lt;table style=&quot;text-align:center&quot;&gt;&lt;tr&gt;&lt;td colspan=&quot;6&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td style=&quot;text-align:left&quot;&gt;Statistic&lt;/td&gt;&lt;td&gt;N&lt;/td&gt;&lt;td&gt;Mean&lt;/td&gt;&lt;td&gt;St. Dev.&lt;/td&gt;&lt;td&gt;Min&lt;/td&gt;&lt;td&gt;Max&lt;/td&gt;&lt;/tr&gt;
+## &lt;tr&gt;&lt;td colspan=&quot;6&quot; style=&quot;border-bottom: 1px solid black&quot;&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
 <p>The summary function also provides a lot of quick and useuful
 information but it requires some formatting if you want to use it in
 paper.</p>
@@ -858,13 +859,13 @@ you to see descriptives by a certain group.</p>
 describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as my group. So the first set is gloss format (G), and the second is traditional format (T). </code></pre>
 <pre><code>## 
 ##  Descriptive statistics by group 
-## Format: G
+## Format: 1
 ##            vars  n  mean    sd median trimmed   mad   min   max range  skew
-## ID*           1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00  0.00
+## ID            1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00  0.00
 ## Week          2 76  6.58  2.31   6.50    6.60  2.97  3.00 10.00  7.00  0.00
-## Format*       3 76  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## Format        3 76  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
 ## VocabWords    4 76 38.91  7.01  38.00   38.98  8.90 26.00 52.00 26.00  0.03
-## Course*       5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00 -0.10
+## Course        5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00 -0.10
 ## Pre_Sum       6 76 35.71 14.93  33.75   35.16 15.20 10.50 68.50 58.00  0.31
 ## Post_Sum      7 76 52.78 17.14  53.00   52.28 21.50 23.00 89.00 66.00  0.20
 ## RawGain       8 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50  1.65
@@ -872,13 +873,13 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 76  0.69  0.20   0.72    0.70  0.25  0.24  1.00  0.76 -0.33
 ## Per_Gain     11 76  0.22  0.10   0.21    0.21  0.10  0.06  0.58  0.52  1.07
 ## gain_test    12 76 17.07  8.86  15.50   15.90  6.67  5.00 51.50 46.50  1.65
-## Pre_cat*     13 76  1.50  0.50   1.50    1.50  0.74  1.00  2.00  1.00  0.00
+## Pre_cat      13 76  1.50  0.50   1.50    1.50  0.74  1.00  2.00  1.00  0.00
 ##            kurtosis   se
-## ID*           -1.25 0.63
+## ID            -1.25 0.63
 ## Week          -1.29 0.26
-## Format*         NaN 0.00
+## Format          NaN 0.00
 ## VocabWords    -0.58 0.80
-## Course*       -2.02 0.06
+## Course        -2.02 0.06
 ## Pre_Sum       -0.72 1.71
 ## Post_Sum      -1.05 1.97
 ## RawGain        3.55 1.02
@@ -886,15 +887,15 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -0.84 0.02
 ## Per_Gain       1.60 0.01
 ## gain_test      3.55 1.02
-## Pre_cat*      -2.03 0.06
+## Pre_cat       -2.03 0.06
 ## ------------------------------------------------------------ 
-## Format: T
+## Format: 2
 ##            vars  n  mean    sd median trimmed   mad   min   max range  skew
-## ID*           1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00  0.00
+## ID            1 76 10.00  5.51  10.00   10.00  7.41  1.00 19.00 18.00  0.00
 ## Week          2 76  6.42  2.31   6.50    6.40  2.97  3.00 10.00  7.00  0.00
-## Format*       3 76  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## Format        3 76  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
 ## VocabWords    4 76 41.26  6.35  40.00   41.32  5.93 26.00 52.00 26.00 -0.03
-## Course*       5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00 -0.10
+## Course        5 76  1.53  0.50   2.00    1.53  0.00  1.00  2.00  1.00 -0.10
 ## Pre_Sum       6 76 35.85 13.66  36.50   35.66 13.71  4.50 70.00 65.50  0.16
 ## Post_Sum      7 76 53.53 18.59  51.50   53.31 22.24 20.50 95.50 75.00  0.13
 ## RawGain       8 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00  0.42
@@ -902,13 +903,13 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 76  0.65  0.21   0.68    0.66  0.20  0.21  1.10  0.88 -0.19
 ## Per_Gain     11 76  0.22  0.12   0.20    0.21  0.11  0.01  0.56  0.55  0.60
 ## gain_test    12 76 17.68  9.95  16.00   17.27  9.27  1.00 43.00 42.00  0.42
-## Pre_cat*     13 76  1.49  0.50   1.00    1.48  0.00  1.00  2.00  1.00  0.05
+## Pre_cat      13 76  1.49  0.50   1.00    1.48  0.00  1.00  2.00  1.00  0.05
 ##            kurtosis   se
-## ID*           -1.25 0.63
+## ID            -1.25 0.63
 ## Week          -1.29 0.26
-## Format*         NaN 0.00
+## Format          NaN 0.00
 ## VocabWords    -0.58 0.73
-## Course*       -2.02 0.06
+## Course        -2.02 0.06
 ## Pre_Sum       -0.04 1.57
 ## Post_Sum      -0.86 2.13
 ## RawGain       -0.44 1.14
@@ -916,19 +917,19 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -0.70 0.02
 ## Per_Gain       0.15 0.01
 ## gain_test     -0.44 1.14
-## Pre_cat*      -2.02 0.06</code></pre>
+## Pre_cat       -2.02 0.06</code></pre>
 <p>You can also use the describeBy function to look at two groups.</p>
 <pre class="r"><code>describeBy(df, group=c(&quot;Format&quot;,&quot;Course&quot;)) </code></pre>
 <pre><code>## 
 ##  Descriptive statistics by group 
-## Format: G
-## Course: 1020
+## Format: 1
+## Course: 1
 ##            vars  n  mean    sd median trimmed   mad   min   max range  skew
-## ID*           1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00  0.00
+## ID            1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00  0.00
 ## Week          2 36  6.78  2.31   6.50    6.80  2.97  3.00 10.00  7.00 -0.01
-## Format*       3 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## Format        3 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
 ## VocabWords    4 36 35.81  5.11  38.00   36.17  0.00 26.00 44.00 18.00 -1.10
-## Course*       5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## Course        5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
 ## Pre_Sum       6 36 34.68 10.69  33.00   34.08 10.75 17.50 61.50 44.00  0.53
 ## Post_Sum      7 36 47.72 12.02  44.25   47.28 11.86 29.00 72.00 43.00  0.43
 ## RawGain       8 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00  1.27
@@ -936,13 +937,13 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 36  0.67  0.16   0.65    0.67  0.16  0.41  0.98  0.57  0.27
 ## Per_Gain     11 36  0.19  0.08   0.17    0.18  0.08  0.07  0.43  0.37  0.87
 ## gain_test    12 36 13.04  5.81  12.00   12.47  4.45  5.00 33.00 28.00  1.27
-## Pre_cat*     13 36  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
+## Pre_cat      13 36  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
 ##            kurtosis   se
-## ID*           -1.33 0.44
+## ID            -1.33 0.44
 ## Week          -1.37 0.38
-## Format*         NaN 0.00
+## Format          NaN 0.00
 ## VocabWords     0.03 0.85
-## Course*         NaN 0.00
+## Course          NaN 0.00
 ## Pre_Sum       -0.51 1.78
 ## Post_Sum      -1.07 2.00
 ## RawGain        1.97 0.97
@@ -950,16 +951,16 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -1.20 0.03
 ## Per_Gain       0.54 0.01
 ## gain_test      1.97 0.97
-## Pre_cat*      -2.05 0.08
+## Pre_cat       -2.05 0.08
 ## ------------------------------------------------------------ 
-## Format: T
-## Course: 1020
+## Format: 2
+## Course: 1
 ##            vars  n  mean    sd median trimmed   mad   min   max range  skew
-## ID*           1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00  0.00
+## ID            1 36  5.00  2.62   5.00    5.00  2.97  1.00  9.00  8.00  0.00
 ## Week          2 36  6.22  2.31   6.50    6.20  2.97  3.00 10.00  7.00  0.01
-## Format*       3 36  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## Format        3 36  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
 ## VocabWords    4 36 38.44  3.91  38.00   38.77  0.00 26.00 44.00 18.00 -1.24
-## Course*       5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## Course        5 36  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
 ## Pre_Sum       6 36 34.07  9.18  34.50   33.73  8.90 18.00 53.50 35.50  0.31
 ## Post_Sum      7 36 46.74 11.52  48.00   46.67 11.12 22.50 70.00 47.50  0.01
 ## RawGain       8 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00  0.47
@@ -967,13 +968,13 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 36  0.61  0.16   0.64    0.62  0.14  0.26  0.94  0.69 -0.13
 ## Per_Gain     11 36  0.17  0.10   0.16    0.16  0.06  0.01  0.39  0.38  0.28
 ## gain_test    12 36 12.67  7.20  12.50   12.17  4.45  1.00 30.00 29.00  0.47
-## Pre_cat*     13 36  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
+## Pre_cat      13 36  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
 ##            kurtosis   se
-## ID*           -1.33 0.44
+## ID            -1.33 0.44
 ## Week          -1.37 0.38
-## Format*         NaN 0.00
+## Format          NaN 0.00
 ## VocabWords     3.50 0.65
-## Course*         NaN 0.00
+## Course          NaN 0.00
 ## Pre_Sum       -0.59 1.53
 ## Post_Sum      -0.36 1.92
 ## RawGain        0.29 1.20
@@ -981,16 +982,16 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -0.05 0.03
 ## Per_Gain      -0.32 0.02
 ## gain_test      0.29 1.20
-## Pre_cat*      -2.05 0.08
+## Pre_cat       -2.05 0.08
 ## ------------------------------------------------------------ 
-## Format: G
-## Course: 2020
+## Format: 1
+## Course: 2
 ##            vars  n  mean    sd median trimmed   mad   min   max range  skew
-## ID*           1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00  0.00
+## ID            1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00  0.00
 ## Week          2 40  6.40  2.32   6.50    6.38  2.97  3.00 10.00  7.00  0.00
-## Format*       3 40  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
+## Format        3 40  1.00  0.00   1.00    1.00  0.00  1.00  1.00  0.00   NaN
 ## VocabWords    4 40 41.70  7.37  42.00   41.62 10.38 32.00 52.00 20.00 -0.18
-## Course*       5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## Course        5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
 ## Pre_Sum       6 40 36.64 18.00  38.00   36.05 25.95 10.50 68.50 58.00  0.13
 ## Post_Sum      7 40 57.34 19.76  60.75   57.73 21.50 23.00 89.00 66.00 -0.26
 ## RawGain       8 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50  1.52
@@ -998,13 +999,13 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 40  0.70  0.23   0.75    0.72  0.25  0.24  1.00  0.76 -0.57
 ## Per_Gain     11 40  0.25  0.10   0.23    0.24  0.07  0.06  0.58  0.52  1.07
 ## gain_test    12 40 20.70  9.60  18.50   19.28  6.67  6.00 51.50 45.50  1.52
-## Pre_cat*     13 40  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
+## Pre_cat      13 40  1.50  0.51   1.50    1.50  0.74  1.00  2.00  1.00  0.00
 ##            kurtosis   se
-## ID*           -1.31 0.46
+## ID            -1.31 0.46
 ## Week          -1.33 0.37
-## Format*         NaN 0.00
+## Format          NaN 0.00
 ## VocabWords    -1.48 1.16
-## Course*         NaN 0.00
+## Course          NaN 0.00
 ## Pre_Sum       -1.26 2.85
 ## Post_Sum      -1.25 3.12
 ## RawGain        2.32 1.52
@@ -1012,16 +1013,16 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -0.94 0.04
 ## Per_Gain       1.41 0.02
 ## gain_test      2.32 1.52
-## Pre_cat*      -2.05 0.08
+## Pre_cat       -2.05 0.08
 ## ------------------------------------------------------------ 
-## Format: T
-## Course: 2020
+## Format: 2
+## Course: 2
 ##            vars  n  mean    sd median trimmed   mad   min   max range  skew
-## ID*           1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00  0.00
+## ID            1 40 14.50  2.91  14.50   14.50  3.71 10.00 19.00  9.00  0.00
 ## Week          2 40  6.60  2.32   6.50    6.62  2.97  3.00 10.00  7.00  0.00
-## Format*       3 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## Format        3 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
 ## VocabWords    4 40 43.80  7.07  46.00   44.25  5.93 32.00 52.00 20.00 -0.58
-## Course*       5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
+## Course        5 40  2.00  0.00   2.00    2.00  0.00  2.00  2.00  0.00   NaN
 ## Pre_Sum       6 40 37.45 16.67  39.75   37.48 15.20  4.50 70.00 65.50 -0.08
 ## Post_Sum      7 40 59.64 21.56  65.25   60.52 18.16 20.50 95.50 75.00 -0.43
 ## RawGain       8 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00  0.01
@@ -1029,13 +1030,13 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post     10 40  0.69  0.24   0.73    0.70  0.27  0.21  1.10  0.88 -0.43
 ## Per_Gain     11 40  0.26  0.13   0.25    0.25  0.12  0.02  0.56  0.55  0.45
 ## gain_test    12 40 22.19  9.99  22.00   22.19  9.27  1.00 43.00 42.00  0.01
-## Pre_cat*     13 40  1.48  0.51   1.00    1.47  0.00  1.00  2.00  1.00  0.10
+## Pre_cat      13 40  1.48  0.51   1.00    1.47  0.00  1.00  2.00  1.00  0.10
 ##            kurtosis   se
-## ID*           -1.31 0.46
+## ID            -1.31 0.46
 ## Week          -1.33 0.37
-## Format*         NaN 0.00
+## Format          NaN 0.00
 ## VocabWords    -1.06 1.12
-## Course*         NaN 0.00
+## Course          NaN 0.00
 ## Pre_Sum       -0.68 2.64
 ## Post_Sum      -1.09 3.41
 ## RawGain       -0.69 1.58
@@ -1043,7 +1044,7 @@ describeBy(df, group=&quot;Format&quot;) #In this example I have used Format as 
 ## Per_Post      -1.02 0.04
 ## Per_Gain      -0.38 0.02
 ## gain_test     -0.69 1.58
-## Pre_cat*      -2.04 0.08</code></pre>
+## Pre_cat       -2.04 0.08</code></pre>
 <p></br> </br></p>
 </div>
 <div id="using-tapply-and-sapply-to-get-specific-descriptives"
@@ -1117,7 +1118,7 @@ of Vocabulary Gains) between the two groups: traditional and gloss.</p>
 ## 
 ## data:  df$Per_Gain by df$Format
 ## t = 0.23826, df = 143.83, p-value = 0.812
-## alternative hypothesis: true difference in means is not equal to 0
+## alternative hypothesis: true difference in means between group G and group T is not equal to 0
 ## 95 percent confidence interval:
 ##  -0.03128275  0.03985813
 ## sample estimates:
@@ -1304,12 +1305,13 @@ Test</h2>
 <h2><span class="header-section-number">9.3</span> Linear Plots</h2>
 <pre class="r"><code>f &lt;- ggplot(df, aes(Week,Per_Gain))
 f + geom_jitter() + geom_smooth()</code></pre>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~
+## x&#39;</code></pre>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 <pre class="r"><code>f &lt;- ggplot(df, aes(VocabWords,Per_Gain))
 f + geom_jitter(aes(col=Format)) + geom_smooth(method=&quot;loess&quot;, se=F) + 
   labs(title=&quot;Vocabulary Gain (%) by Number of New Words&quot;, y=&quot;Gain (%)&quot;, x=&quot;Week&quot;)</code></pre>
-<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-39-1.png" width="672" />
 </br> </br></p>
 <hr>
