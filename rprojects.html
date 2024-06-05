@@ -1305,8 +1305,7 @@ Test</h2>
 <h2><span class="header-section-number">9.3</span> Linear Plots</h2>
 <pre class="r"><code>f &lt;- ggplot(df, aes(Week,Per_Gain))
 f + geom_jitter() + geom_smooth()</code></pre>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~
-## x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="rprojects_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
 <pre class="r"><code>f &lt;- ggplot(df, aes(VocabWords,Per_Gain))
 f + geom_jitter(aes(col=Format)) + geom_smooth(method=&quot;loess&quot;, se=F) + 
