@@ -4,6 +4,8 @@ title: ""
 ---
 <script src="button.js"></script>
 
+<img class="cv-photo" src="images/fred.JPG" alt="Photo of Fred Poole" width="180" height="225" style="width:180px;height:225px;object-fit:cover;object-position:top">
+
 <center  style="font-size:30px">Curriculum Vitae</center> <enter>
 <center  style="font-size:10px">619 Red Cedar Road 	</center> <enter>
 <center  style="font-size:10px">Michigan State University, Lansing, MI 48824</center> <enter>

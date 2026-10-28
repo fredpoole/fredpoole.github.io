@@ -10,7 +10,7 @@ output:
     lib_dir: site_libs
     self_contained: no
 navbar:
-  title: 'Fred Poole'
+  title: ''
   left:
   - text: Home
     icon: fa-gamepad 

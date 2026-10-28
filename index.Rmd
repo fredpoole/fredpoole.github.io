@@ -14,8 +14,10 @@ title: ""
 </p>
 </div>
 
-<div class="about">
-<img class="about-photo" width="240" height="300" style="width:240px;height:300px;object-fit:cover;object-position:top" src="images/fred.JPG" alt="Photo of Fred Poole">
+```{r, fig.align='center',out.width = "600px", echo=FALSE}
+knitr::include_graphics("images/iconFred.png")
+```
+
 <div class="about-text">
 <h2>About Me</h2>
 
@@ -24,5 +26,4 @@ I am an Assistant Professor in the Master of Arts in Foreign Language Teaching p
 My research looks at how technology, and especially games and generative AI, can be used to improve and assess second language learning. Lately, I have been looking at how ChatGPT can be used to score L2 writing and to act as a conversation partner for learners of less commonly taught languages, and at how gameplay data can be used to assess young learners' reading in Chinese. My work has been published in *Foreign Language Annals*, *Language Learning & Technology*, *CALICO Journal*, *System*, and *Computer Science Education*.
 
 Before moving into academia I spent several years teaching English in China, Spain, and Chile. I have taught both English and Chinese as a foreign language, as well as graduate-level courses on second language teaching methods, assessment, educational technology, and using games for learning. You can find more about my work on the <a href="research.html">Research</a> page.
-</div>
 </div>
