@@ -1,4 +1,5 @@
 ---
+pagetitle: "Fred Poole | Teaching Languages"
 title: ""
 output:
   html_document:
@@ -10,18 +11,9 @@ output:
       collapsed: false
       smooth_scroll: false
 ---
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116712862-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-116712862-1');
-</script>
 <center  style="font-size:40px">Second language Teaching </center>
 
-```{r, fig.align='center',out.width = "600px",out.height="400px", echo=FALSE}
+```{r, fig.align='center',out.width = "600px", echo=FALSE}
 knitr::include_graphics("images/iconFred3.png")
 ```
 

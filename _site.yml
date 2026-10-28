@@ -5,11 +5,12 @@ output:
     theme: flatly
     css: custom.css
     include:
+      in_header: header.html
       after_body: footer.html
     lib_dir: site_libs
     self_contained: no
 navbar:
-  title: ''
+  title: 'Fred Poole'
   left:
   - text: Home
     icon: fa-gamepad 

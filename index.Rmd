@@ -1,34 +1,32 @@
 ---
+pagetitle: "Fred Poole"
 title: ""
 ---
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116712862-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'UA-116712862-1');
-</script>
+<div class="home-header">
+<h1 class="home-name">Frederick J. Poole</h1>
+<p class="home-role">Assistant Professor, MA in Foreign Language Teaching, Michigan State University</p>
+<p class="home-links">
+<a href="https://scholar.google.com/citations?user=7KNV6UYAAAAJ&hl=en"><i class="fa-solid fa-graduation-cap"></i> Google Scholar</a>
+<a href="https://github.com/fredpoole"><i class="fa-brands fa-github"></i> GitHub</a>
+<a href="mailto:frdbrick@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+<a href="cv.html"><i class="fa-solid fa-file-lines"></i> CV</a>
+</p>
+</div>
 
-<center  style="font-size:40px">Frederick J Poole </center>
-</br>
-</br>
+<div class="about">
+<img class="about-photo" src="images/fred.JPG" alt="Photo of Fred Poole">
+<div class="about-text">
+<h2>About Me</h2>
 
+I am an Assistant Professor in the Master of Arts in Foreign Language Teaching program at Michigan State University. I received my Ph.D. in Instructional Technology and Learning Sciences from Utah State University in 2020, and before that I earned a Master of Second Language Teaching, also at Utah State.
 
-```{r, fig.align='center',out.width = "600px",out.height="400px", echo=FALSE}
+My research looks at how technology, and especially games and generative AI, can be used to improve and assess second language learning. Lately, I have been looking at how ChatGPT can be used to score L2 writing and to act as a conversation partner for learners of less commonly taught languages, and at how gameplay data can be used to assess young learners' reading in Chinese. My work has been published in *Foreign Language Annals*, *Language Learning & Technology*, *CALICO Journal*, *System*, and *Computer Science Education*.
+
+Before moving into academia I spent several years teaching English in China, Spain, and Chile. I have taught both English and Chinese as a foreign language, as well as graduate-level courses on second language teaching methods, assessment, educational technology, and using games for learning. You can find more about my work on the <a href="research.html">Research</a> page.
+</div>
+</div>
+
+```{r, fig.align='center',out.width = "360px", echo=FALSE}
 knitr::include_graphics("images/iconFred.png")
 ```
-</br>
-</br>
-
-<center  style="font-size:40px">About Me </center>
-
-#### I am an Assistant Professor in the Master of Arts in Foreign Language Teaching program at Michigan State University. I received my Ph.D. in Instructional Technology and Learning Sciences in the College of Education at Utah State University in 2020. I also earned a Master of Second Language Teaching Degree in 2015. My research investigates the implementation of technology for improving and assessing second language literacy skills and the effect of well-designed games on second language learning, teaching, and classroom dynamics. My work has been published in Foreign Language Annals, System, and Language Learning & Technology. I have taught both English and Chinese as a Foreign language as well as graduate-level courses related to second language teaching methods, educational technology, and using games for learning. 
-<hr>
-<hr>
-<a class="twitter-timeline" href="https://twitter.com/frdbrick?ref_src=twsrc%5Etfw" data-chrome="nofooter noborders" 
-data-tweet-limit="2" 
-data-height="250">Tweets by frdbrick</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-<hr>
-<hr>

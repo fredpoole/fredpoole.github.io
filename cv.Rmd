@@ -1,16 +1,8 @@
 ---
+pagetitle: "Fred Poole | CV"
 title: ""
 ---
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116712862-1"></script>
 <script src="button.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-116712862-1');
-</script>
 
 <center  style="font-size:30px">Curriculum Vitae</center> <enter>
 <center  style="font-size:10px">619 Red Cedar Road 	</center> <enter>
@@ -19,7 +11,7 @@ title: ""
 
 <center  style="font-size:20px">EDUCATION</center>
 <ul>
-<li>2020 - Ph.D. Student Instructional Technology and Learning Sciences, Utah State University </li><enter>
+<li>2020 -- Ph.D. Instructional Technology and Learning Sciences, Utah State University </li><enter>
 	
 <ul><li>*Advisor*: Assistant Professor Jody Clarke-Midura</li></ul> <enter>
 
