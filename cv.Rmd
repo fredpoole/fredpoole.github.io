@@ -43,16 +43,54 @@ title: ""
 <div class="container">
 <ol reversed>
 
-<div class="filterDiv FLL FA" ><li> In Press -- **Poole, F.** & Polio, C. From Sci-Fi to the Classroom: Implications of AI in Task-Based Writing . *Journal on Task-based Language Teaching and Learning*.3(2).
+<div class="filterDiv FLL Chap" ><li>2026 -- Ranjan, R., & **Poole, F.** AI meets Hindi: Addressing linguistic and cultural gaps in ChatGPT. In *Fighting Stigma and Discrimination in Minoritised Languages: A Worldwide Sample* (pp. 209-231). Cambridge Scholars Publishing.</li> </div> <enter>
+
+<div class="filterDiv FLL Games FA Chap" ><li>2026 -- **Poole, F.**, & Dixon, D. H. Digital games. In *Digital and Internet-Based Research Methods in Applied Linguistics* (pp. 123-146). John Benjamins.</li> </div> <enter>
+
+<div class="filterDiv FLL" ><li>2025 -- Toda Cosi, M., & **Poole, F.** Enhancing linguistic interaction with ChatGPT: An exploratory study of proficiency-matching and ecological validity in less commonly taught languages. *CALICO Journal*, 42(3), 527-550. https://doi.org/10.3138/calico-2025-0023</li> </div> <enter>
+
+<div class="filterDiv FLL Games FA" ><li>2025 -- **Poole, F.** A systematic review of board games used in language learning contexts. *Ludic Language Pedagogy*, 7, 53-65. https://doi.org/10.55853/llp_v7Ar2</li> </div> <enter>
+
+<div class="filterDiv FLL Games FA" ><li>2025 -- **Poole, F.**, Coss, M. D., & Clarke-Midura, J. Developing stealth assessments to assess young Chinese learners’ L2 reading comprehension. *Language Learning & Technology*, 29(2), 104-131.</li> </div> <enter>
+
+<div class="filterDiv FLL" ><li>2025 -- Loewen, S., **Poole, F.**, Hwang, H.-B., & Coss, M. D. (Eds.). *Technology and Instructed Second Language Acquisition: Connecting research and pedagogy*. John Benjamins. https://doi.org/10.1075/lllt.63</li> </div> <enter>
+
+<div class="filterDiv FLL FA Chap" ><li>2025 -- **Poole, F.**, & Toda Cosi, M. Generative AI in instructed SLA: Bridging AI literacies in L2 pedagogy. In *Technology and Instructed Second Language Acquisition: Connecting research and pedagogy* (pp. 163-184). John Benjamins.</li> </div> <enter>
+
+<div class="filterDiv FLL FA Chap" ><li>2025 -- **Poole, F.**, Loewen, S., Coss, M. D., & Hwang, H.-B. Working towards a shared goal: Building bridges between CALL and instructed second language acquisition to enhance pedagogy and research. In *Technology and Instructed Second Language Acquisition: Connecting research and pedagogy* (pp. 1-15). John Benjamins.</li> </div> <enter>
+
+<div class="filterDiv FLL Games FA Chap" ><li>2025 -- **Poole, F.** Research practices in DGBLLT. In *The Palgrave Encyclopedia of Computer-Assisted Language Learning*. Palgrave Macmillan.</li> </div> <enter>
+
+<div class="filterDiv FLL FA" ><li>2024 -- **Poole, F.**, & Coss, M. Can ChatGPT reliably and accurately apply a rubric to L2 writing assessments? The devil is in the prompt(s). *Journal of Technology and Chinese Language Teaching*, 15(1), 1-24.</li> </div> <enter>
+
+<div class="filterDiv FLL FA Chap" ><li>2024 -- **Poole, F.**, & Thoms, J. Digital social reading annotations as evidence of L2 proficiency: An exploratory assessment approach. In *Digital Social Reading and Second Language Learning and Teaching* (pp. 128-152). John Benjamins. https://doi.org/10.1075/aals.21.06poo</li> </div> <enter>
+
+<div class="filterDiv FLL FA Chap" ><li>2024 -- **Poole, F.** From purposeless memorization to purposeful communication: Using, not just writing, Chinese. In *Transforming Hanzi Pedagogy in the Digital Age: Theory, Research, and Practice* (pp. 258-261). Routledge.</li> </div> <enter>
+
+<div class="filterDiv FLL" ><li>2024 -- Coss, M. D., Moser, D., **Poole, F.**, & Carter, L. “国际中文教育‘电写转型’必要性与紧迫性”多人谈. *云南师范大学学报（对外汉语教学与研究版）*, 22(5), 20-30.</li> </div> <enter>
+
+<div class="filterDiv ET Games" ><li>2024 -- Folse, B., & **Poole, F.** Gamifying gamification in the sociology classroom. *Teaching Sociology*, 52(3), 206-218. https://doi.org/10.1177/0092055X231175176
 (Impact Factor=2.2)</li> </div> <enter>
 
-<div class="filterDiv ET Games" ><li> In Press -- Folse, B & **Poole, F.**. Gamifying gamification in the sociology classroom. *Teaching Sociology*.1–13. https://doi.org/10.1177/0092055X231175176 
+<div class="filterDiv FLL Games FA" ><li>2024 -- **Poole, F.** Wisp and the next generation of glossing tools for video games. *FLTMag*, November 2024. https://fltmag.com/wisp-glossing-video-games/</li> </div> <enter>
+
+<div class="filterDiv FLL FA" ><li>2023 -- **Poole, F.**, & Polio, C. From sci-fi to the classroom: Implications of AI in task-based writing. *TASK: Journal on Task-Based Language Teaching and Learning*, 3(2), 243-272.
 (Impact Factor=2.2)</li> </div> <enter>
 
-<div class="filterDiv FLL Games FA" ><li> In Press -- **Poole, F.** & Clarke-Midura, J. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*.27(1), 1–26. http://hdl.handle.net/10125/73522
+<div class="filterDiv FLL Games FA" ><li>2023 -- **Poole, F.**, & Clarke-Midura, J. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*, 27(1), 1-26. http://hdl.handle.net/10125/73522
 (Impact Factor=4.31)</li> </div> <enter>
 
+<div class="filterDiv FLL" ><li>2023 -- Quinn, S., & **Poole, F.** DALL·E: An “intelligent” illustrator for your language classroom. *FLTMag*, March 2023. https://fltmag.com/dall%c2%b7e/</li> </div> <enter>
+
+<div class="filterDiv FLL" ><li>2023 -- Ferris, A., & **Poole, F.** Designing lesson plans around video-based annotations. *FLTMag*, March 2023. https://fltmag.com/video-based-annotations/</li> </div> <enter>
+
+<div class="filterDiv FLL" ><li>2023 -- Sommer-Farias, B., **Poole, F.**, & Lanier, A. Language teacher development via video-based inquiry. *The Language Educator*, 18(4), 34.</li> </div> <enter>
+
 <div class="filterDiv Proc Games FA" ><li>2023-- **Poole, F.**, & Lee, V. R. Esports athletes’ group sensemaking of team gameplay data analytics. Paper Presented at *Games, Learning and Society Proceedings*, Irvine, CA</li> </div> <enter>
+
+<div class="filterDiv ET FA Games" ><li>2022 -- **Poole, F.**, Clarke-Midura, J., Rasmussen, M., Shehzad, U., & Lee, V. R. Tabletop games designed to promote computational thinking. *Computer Science Education*, 32(4), 449-475. https://doi.org/10.1080/08993408.2021.1947642 (CiteScore=5.1)</li><enter></div>
+
+<div class="filterDiv FLL Games" ><li>2022 -- Kronenberg, F., & **Poole, F.** From buzzword to the classroom: Exploring VR gaming for language learning. *FLTMag*, November 2022. https://fltmag.com/from-buzzword-to-the-classroom-exploring-vr-gaming-for-language-learning/</li> </div> <enter>
 
 <div class="filterDiv FLL FA" ><li>2022 -- **Poole, F.**. Using ChatGPT to design language material and exercise. *FLTMag*, https://fltmag.com/chatgpt-design-material-exercises/ </li> </div> <enter>
 
@@ -64,8 +102,6 @@ title: ""
 
 <div class="filterDiv FLL Games" ><li> 2021 -- York, J., **Poole, F.**, & deHaan, J. Playing a new game: An argument for a teacher-focused field around games and play in language education. *Foreign Language Annals*,54(4), 1164-1188. (Impact Factor=2.06)</li><enter> </div>
 
-<div class="filterDiv ET FA Games" ><li>2021 -- **Poole, F.**, Clarke-Midura, J., Rasmussen, M., Shehzad, U., & Lee, V. R. Tabletop games designed to promote computational thinking. *Computer Science Education*: DOI: 10.1080/08993408.2021.1947642(CiteScore=5.1)</li><enter></div>
-
 <div class="filterDiv FLL FA" ><li>2021 --**Poole, F.**. Using Scratch to Teach Computer Science in the Language Classroom. *FLTMag*, November 2021. https://fltmag.com/scratch-computer-science/ </li><enter></div>
 
 <div class="filterDiv FLL Games FA" ><li>2021 --**Poole, F.**. Co-Management: A Ludic Language Pedagogy Approach. *Ludic Language Pedagogy* (3). 48-59. </li><enter></div>
@@ -76,11 +112,17 @@ title: ""
 
 <div class="filterDiv FLL Games FA" ><li>2020 --**Poole, F.**. Exploring authentic language use in the classroom. *Ludic Language Pedagogy* (2). 75-85. </li><enter></div>
 
+<div class="filterDiv FLL Games FA" ><li>2020 -- **Poole, F.** Developing and validating stealth assessments for an educational game to assess young dual language immersion learners' reading comprehension [Doctoral dissertation, Utah State University].</li><enter></div>
+
+<div class="filterDiv ET Games Proc" ><li>2020 -- Lee, V. R., **Poole, F.**, Clarke-Midura, J., & Recker, M. Design of an expansively-framed board game-based unit to introduce computer programming to upper elementary students. *International Society of the Learning Sciences (ISLS)*. https://repository.isls.org/handle/1/6412</li><enter></div>
+
 <div class="filterDiv ET Games Proc" ><li>2020 -- Lee, V. R., **Poole, F.**, Rasmussen, M., Clarke-Midura, J., & Recker, M. Examining Variations in Teacher Talk when Implementing New Unplugged-to-plugged Computing Instruction. *Paper presented at the American Educational Research Association Conference (AERA)*, San Francisco, CA.</li><enter></div>
 
 <div class="filterDiv ET Games Proc" ><li>2020 --	Lee, V. R., **Poole, F.**, Clarke-Midura, J., Recker, M., Rasmussen, M. Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *In Proceedings of the ACM Technical Symposium on Computer Science Education* (SIGCSE '20). ACM, Portland, OR, USA</li><enter></div>
 
 <div class="filterDiv FLL Games FA" ><li>2019 -- **Poole, F.,** Clarke-Midura, J., Sun, C, & Lam, K. Exploring the pedagogical affordances of a collaborative board game in a dual language immersion classroom. *Foreign Language Annals*. 753-775 52(4). https://doi.org/10.1111/flan.12425 (Impact Factor= 1.78)</li><enter></div>
+
+<div class="filterDiv FLL FA" ><li>2019 -- **Poole, F.** Review of *Technology-enhanced teaching and learning of Chinese as a foreign language*. *Language Learning & Technology*, 23(2), 12-15.</li><enter></div>
 
 <div class="filterDiv FLL" ><li>2019 -- Walker, J., & **Poole, F.** Effects of delaying character instruction in a Chinese as second language middle school classroom. *Researching and Teaching Chinese as a Foreign Language*,2(2), 261-280. </li><enter></div>
 
@@ -104,6 +146,8 @@ title: ""
 
 <div class="filterDiv FLL"><li>2017 --	Thoms, J., & **Poole, F.** Investigating linguistic, literary, and social affordances of L2 collaborative reading. *Language Learning & Technology*, 21(2), 139–156. (Impact Factor = 2.13) </li><enter></div>
 
+<div class="filterDiv FLL Chap" ><li>2017 -- Zhao, H., & **Poole, F.** Developing literacy skills in the Chinese dual language immersion classroom. In *Perspectives on Effective Teaching in DLI and Foreign Language Classrooms* (p. 61).</li><enter></div>
+
 <div class="filterDiv ET" ><li>2017 -- Clarke-Midura, J., **Poole, F.**, Pantic, K., & Allan, V. Playing mentor: A new strategy for recruiting young women into computer science. *Journal of Women and Minorities in Science and Engineering*, 23(3). (CiteScore= 1.15)</li><enter></div>
 
 <div class="filterDiv FLL FA" ><li>2016 --	**Poole, F.**, & Sung, K. A preliminary study on the effects of an E-gloss tool on incidental vocabulary learning when reading Chinese as a foreign language. *Journal of Chinese Language Teachers Association*. 51(3), 266–285. </li><enter></div>
@@ -115,6 +159,8 @@ title: ""
 <div class="filterDiv FLL" ><li>2015 -- Sung, K. Y., & **Poole, F.** Evaluating the impact of graded readings on the recognition of Chinese characters and reading comprehension by learners of Chinese as a foreign language. *Konin Language Studies*, 3(3), 271–294.</li><enter></div>
 
 <div class="filterDiv FLL FA" ><li>2015 -- **Poole, F.**, & Sung, K. Three approaches to beginning Chinese instruction and their effects on oral development and character recognition. *Eurasian Journal of Applied Linguistics*, 1(1), 59–75. </li><enter></div>
+
+<div class="filterDiv FLL FA" ><li>2015 -- **Poole, F.** Teaching Chinese as a foreign language: A foreigner's perspective [Master's report, Utah State University]. https://digitalcommons.usu.edu/gradreports/457/</li><enter></div>
 
 </ol>
 
