@@ -29,13 +29,108 @@ knitr::include_graphics("images/iconFred2.png")
 
 <hr>
 <hr>
-# L2 Research Projects
+# Current Research
+## Generative AI and Language Teaching
+
+Since ChatGPT came out at the end of 2022, a lot of my research has shifted towards how generative AI can be used in language teaching and learning. My first piece on this topic was a short article for *FLTMag* on <a href="https://fltmag.com/chatgpt-design-material-exercises/">using ChatGPT to design language materials and exercises</a>. Shortly after, Dr. Charlene Polio and I wrote a commentary for *TASK* where we discussed three issues that AI raises for task-based writing: authorship, authenticity and accuracy, and digital literacies. We argue that helping students understand these issues is now part of the language teacher's job.
+</br></br>
+Dr. Matthew Coss and I then looked at whether ChatGPT could reliably score L2 writing samples using a rubric. We tested ten different prompting strategies and compared ChatGPT's scores to the scores the writing samples had already received. The figure below shows how well each prompt lined up with the original scores. Our findings suggest that ChatGPT can be a useful tool for scoring writing, but only if the prompt is carefully designed. In other words, the devil is in the prompt(s).
+```{r, fig.align='center',out.width = "500px",fig.cap="Pearson Correlation and QWK for Each Prompt", echo=FALSE}
+knitr::include_graphics("images/chatgptPrompts.png")
+```
+I have also worked with Mireia Toda Cosi on a study where intermediate learners of Catalan completed conversational tasks with ChatGPT. We were interested in whether ChatGPT could be used as a conversation partner for learners of less commonly taught languages, and how the type of task and the proficiency level of the task affected the language that both the learners and ChatGPT produced. Along the same lines, Dr. Rajiv Ranjan and I wrote a chapter on what AI can and cannot do for learners of Hindi.
+</br></br>
+See the publications below for more information.
+</br></br>
+2023 -- **Poole, F.**, & Polio, C. From sci-fi to the classroom: Implications of AI in task-based writing. *TASK*, 3(2), 243-272.
+</br></br>
+2024 -- **Poole, F.**, & Coss, M. Can ChatGPT reliably and accurately apply a rubric to L2 writing assessments? The devil is in the prompt(s). *Journal of Technology and Chinese Language Teaching*, 15(1), 1-24.
+</br></br>
+2025 -- Toda Cosi, M., & **Poole, F.** Enhancing linguistic interaction with ChatGPT: An exploratory study of proficiency-matching and ecological validity in less commonly taught languages. *CALICO Journal*, 42(3), 527-550.
+</br></br>
+2025 -- **Poole, F.**, & Toda Cosi, M. Generative AI in instructed SLA: Bridging AI literacies in L2 pedagogy. In *Technology and Instructed Second Language Acquisition* (pp. 163-184). John Benjamins.
+</br></br>
+2026 -- Ranjan, R., & **Poole, F.** AI meets Hindi: Addressing linguistic and cultural gaps in ChatGPT. In *Fighting Stigma and Discrimination in Minoritised Languages* (pp. 209-231). Cambridge Scholars Publishing.
+
+</br>
+</br>
+
+## Games and Play in Language Education
+
+Games have been a big part of my research since I started my PhD. In 2021, Dr. James York, Dr. Jonathan deHaan, and I wrote an article for *Foreign Language Annals* arguing that most of the research on games and language learning leaves out the teacher. We proposed a new field that focuses on how teachers actually bring games and play into their classrooms, and that is open to all kinds of games, not just digital ones.
+</br></br>
+I have also written two systematic reviews on games in language learning. The first looked at digital games used in L2 research between 2012 and 2017, and the second looked at board games. More recently, Dr. Daniel Dixon and I wrote a chapter on the research methods commonly used in digital game studies for a methods book in applied linguistics. I have also written several practice-oriented pieces for *Ludic Language Pedagogy* and *FLTMag*. In my most recent *FLTMag* article I wrote about glossing tools for video games, and specifically a tool called Wisp (see below).
+```{r, fig.align='center',out.width = "450px",fig.cap="Wisp", echo=FALSE}
+knitr::include_graphics("images/wisp.gif")
+```
+Outside of language learning, Brandon Folse and I gamified a lesson on gamification in a sociology of work course. Students played two gamified activities and then rated how problematic a series of gamified work scenarios were.
+</br></br>
+See the publications below for more information.
+</br></br>
+2021 -- York, J., **Poole, F.**, & deHaan, J. Playing a new game: An argument for a teacher-focused field around games and play in language education. *Foreign Language Annals*, 54(4), 1164-1188.
+</br></br>
+2020 -- **Poole, F.**, & Clarke-Midura, J. A systematic review of digital games in second language learning studies. *International Journal of Game-Based Learning*, 10(3), 1-15.
+</br></br>
+2025 -- **Poole, F.** A systematic review of board games used in language learning contexts. *Ludic Language Pedagogy*, 7, 53-65.
+</br></br>
+2026 -- **Poole, F.**, & Dixon, D. H. Digital games. In *Digital and Internet-Based Research Methods in Applied Linguistics* (pp. 123-146). John Benjamins.
+</br></br>
+2024 -- **Poole, F.** <a href="https://fltmag.com/wisp-glossing-video-games/">Wisp and the next generation of glossing tools for video games</a>. *FLTMag*.
+</br></br>
+2024 -- Folse, B., & **Poole, F.** Gamifying gamification in the sociology classroom. *Teaching Sociology*, 52(3), 206-218.
+
+</br>
+</br>
+
+## Stealth Assessment in Digital Games
+
+For my dissertation I designed a Chinese RPG for sixth grade students in a Chinese dual language immersion program. In the game, players travel across a map of China, visiting villages and cities and fighting their way through dungeons. To move forward in the game, players have to read and understand texts in Chinese.
+```{r, fig.align='center',out.width = "400px",fig.cap="Dissertation Game", echo=FALSE}
+knitr::include_graphics("images/dissGame.png")
+```
+
+```{r, fig.align='center',out.width = "400px",fig.cap="Game Map", echo=FALSE}
+knitr::include_graphics("images/dissMap.png")
+```
+Thirty-six students played the game for eight 25-minute sessions as part of their regular class. Students made significant gains in both vocabulary and reading comprehension. One of the advantages of digital games is that they can track everything that students do while playing. So, in the second study I used educational data mining techniques (classification and regression trees and cluster analysis) to look at how in-game behaviors, such as how long students spent reading a text and how often they looked up words in the glossary, were related to their learning.
+```{r, fig.align='center',out.width = "400px",fig.cap="Regression Tree of Vocabulary Gains", echo=FALSE}
+knitr::include_graphics("images/edmTree.png")
+```
+In the final study, Dr. Matthew Coss, Dr. Jody Clarke-Midura and I used the gameplay data to build Bayesian networks that model students' reading comprehension. The idea is that we can assess students' reading while they play, without stopping the game to give them a test. This approach is called stealth assessment.
+```{r, fig.align='center',out.width = "500px",fig.cap="Bayesian Network Modeling Reading Comprehension", echo=FALSE}
+knitr::include_graphics("images/bayesNet.png")
+```
+See the publications below for more information.
+</br></br>
+2022 -- **Poole, F.**, Clarke-Midura, J., & Ji, S. Exploring the affordances and effectiveness of a digital game in the Chinese dual language immersion classroom. *Journal of Technology and Chinese Language Teaching*, 13(1), 46-73.
+</br></br>
+2023 -- **Poole, F.**, & Clarke-Midura, J. Applying educational data mining to explore individual experiences in digital games. *Language Learning & Technology*, 27(1), 1-26.
+</br></br>
+2025 -- **Poole, F.**, Coss, M. D., & Clarke-Midura, J. Developing stealth assessments to assess young Chinese learners' L2 reading comprehension. *Language Learning & Technology*, 29(2), 104-131.
+
+</br>
+</br>
+
+## Technology and Instructed SLA
+```{r, fig.align='center',out.width = "200px", echo=FALSE}
+knitr::include_graphics("images/tislaBook.png")
+```
+Dr. Shawn Loewen, Hyun-Bin Hwang, Dr. Matthew Coss, and I recently edited a book on technology and instructed second language acquisition (ISLA). Researchers in computer-assisted language learning (CALL) and ISLA are both trying to improve how languages are taught and learned, but the two fields don't always talk to each other. The goal of this book was to bring the two fields together and connect research with what teachers are doing in the classroom. 
+</br></br>
+2025 -- Loewen, S., **Poole, F.**, Hwang, H.-B., & Coss, M. D. (Eds.). *Technology and Instructed Second Language Acquisition: Connecting research and pedagogy*. John Benjamins.
+
+</br>
+</br>
+<hr>
+<hr>
+
+# Earlier L2 Research Projects
 ## Gaming in the Chinese Dual Language Immersion Classroom
 
 </br>
 Utah is one of the first states in the U.S. to offer a statewide dual language immersion (DLI) program in public schools. Currently nearly 200 schools offer one of 5 languages (German, Spanish, Portuguese, French, and Chinese). In these programs students spend half of the day learning in English and the other half in the target language. From first to third grade DLI students learn math in the target language and then in fourth to sixth grade they begin learning science and social studies in the target language. 
 </br></br>
-One issue, particularly with Chinese DLI students (given the difficulty of the text) is developing both literacy skills and content simultaneously. Learners need more instructional time to learn the Chinese text than students of other DLI languages. However, given the time constraints that DLI programs face, finding the extra time is difficult. One solution is to use games to both improve Chinese literacy skills and subject (e.g. math, science) knowledge. In my research I have developed and tested two games in Chinese DLI classrooms and I am currently working on a mod to create support within a commercial-off-the-shelf game as well as provide methods for tracking students in-game play and behavior as a means to assess learning. Below I provide a brief description of past projects and will update this site as new projects arise. 
+One issue, particularly with Chinese DLI students (given the difficulty of the text) is developing both literacy skills and content simultaneously. Learners need more instructional time to learn the Chinese text than students of other DLI languages. However, given the time constraints that DLI programs face, finding the extra time is difficult. One solution is to use games to both improve Chinese literacy skills and subject (e.g. math, science) knowledge. In my research I developed and tested two early games in Chinese DLI classrooms, described below. This work led to my dissertation game and the stealth assessment research described under *Current Research* above.
 
 ### DLI Board Game -- *神秘森林 (Mystery Forest)*
 
@@ -107,7 +202,7 @@ knitr::include_graphics("images/eComma.png")
 Dr. Joshua Thoms and I have conducted some additional studies using the Hylighter Environment with an Advanced Spanish Poetry class. See the articles below for more information. 
 </br>
 </br>
-Forthcoming -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal* (Special Issue).
+2018 -- Thoms, J., & **Poole, F.** Exploring digital literacy practices via L2 social reading, *L2 Journal*, 10(2).
 </br>
 </br>
 Thoms, J., & **Poole, F.** Investigating linguistic, literary, and social affordances of L2 collaborative reading. *Language Learning & Technology*, 21(2), 139–156.
@@ -116,6 +211,11 @@ Thoms, J., & **Poole, F.** Investigating linguistic, literary, and social afford
 ```{r, fig.align='center',out.width = "400px",out.height="200px",fig.cap="Hylighter Environment", echo=FALSE}
 knitr::include_graphics("images/hylighter.png")
 ```
+
+More recently, Dr. Thoms and I drew on data from our earlier studies in Chinese L2 classrooms to show how digital social reading annotations can serve as evidence of learners' reading proficiency. This opens up an approach to classroom-based, performance-based assessment.
+</br>
+</br>
+2024 -- **Poole, F.**, & Thoms, J. Digital social reading annotations as evidence of L2 proficiency: An exploratory assessment approach. In *Digital Social Reading and Second Language Learning and Teaching* (pp. 128-152). John Benjamins.
 
 </br>
 </br>
@@ -159,11 +259,6 @@ More information can be found in our publication: 2015 -- Sung, K. Y., & **Poole
 </br>
 </br>
 
-## New Game in Development for Dissertation
-<a href="https://fredpoole.github.io/Legend%20of%20Four%20Dragons/www/index.html">Testing Game for Dissertation</a>
-
-</br>
-</br>
 <hr>
 <hr>
 
@@ -179,10 +274,18 @@ In addition to my research on Second Language Acquisition, I have also worked on
 https://appcamp.usu.edu/ 
 
 ## Tabletop to Screen (T2S)
-In 2019 I started working on the T2S project. On this project we are exploring the use of unplugged board games as a bridge to programming on Scratch. We are interested in exploring computational thinking skills that are developd via board games in the //Code  Series. Furthermore, we are working with a local elementary school to investigate pedagogical approaches that leverage the board games for introducing programming concepts in Scratch. This is project has just started and updates will be made as we progress. 
+In 2019 I started working on the T2S project. On this project we are exploring the use of unplugged board games as a bridge to programming on Scratch. We are interested in exploring computational thinking skills that are developd via board games in the //Code  Series. Furthermore, we are working with a local elementary school to investigate pedagogical approaches that leverage the board games for introducing programming concepts in Scratch. As part of this work, we analyzed the tabletop games currently marketed as teaching computational thinking: who they are marketed to, and how their designs could create opportunities to develop computational thinking. We also described a model for using school libraries and board games to introduce coding in elementary schools.
+
+</br>
+**Poole, F.**, Clarke-Midura, J., Rasmussen, M., Shehzad, U., & Lee, V. R. (2022). Tabletop games designed to promote computational thinking. *Computer Science Education*, 32(4), 449-475.
+</br></br>
+Lee, V. R., **Poole, F.**, Clarke-Midura, J., Recker, M., & Rasmussen, M. (2020). Introducing coding through tabletop board games and their digital instantiations across elementary classrooms and school libraries. *Proceedings of the 51st ACM Technical Symposium on Computer Science Education* (SIGCSE '20).
 
 ## Esports
-In 2019 I began a project with Dr. Victor Lee exploring learning that occurs in a collegiate esports team. Specifically we are looking at how the team understands and utilizes data to inform their gameplay, practices, and evaluation of success. 
+In 2019 I began a project with Dr. Victor Lee exploring learning that occurs in a collegiate esports team. Specifically, we looked at how the team understands and uses data to inform their gameplay, practices, and evaluation of success. We introduced the team to new data collection practices, supported them with data analysis and visualizations, and held sensemaking sessions to discuss what the analytics meant for the team.
+
+</br>
+**Poole, F.**, & Lee, V. R. (2022). Esports athletes' group sensemaking of team gameplay data analytics. *Games, Learning and Society Conference Proceedings*.
 
 
 <hr>

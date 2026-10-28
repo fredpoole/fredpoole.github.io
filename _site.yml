@@ -23,11 +23,5 @@ navbar:
   - text: Teaching Languages
     icon: fa-language
     href: teachLang.html
-  - text: R Projects
-    icon: ion-stats-bars
-    href: rprojects.html
-  - text: Blog
-    icon: ion-social-rss
-    href: https://frdbrick.blogspot.com
 
 
