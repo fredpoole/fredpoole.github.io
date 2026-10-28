@@ -171,9 +171,3 @@ ul{
 }
 
 .about-text h2 { text-align: center; }
-
-.cv-photo {
-  display: block;
-  margin: 20px auto 10px;
-  border-radius: 12px;
-}
