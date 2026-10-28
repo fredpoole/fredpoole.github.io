@@ -15,7 +15,7 @@ title: ""
 </div>
 
 <div class="about">
-<img class="about-photo" src="images/fred.JPG" alt="Photo of Fred Poole">
+<img class="about-photo" width="240" height="300" style="width:240px;height:300px;object-fit:cover;object-position:top" src="images/fred.JPG" alt="Photo of Fred Poole">
 <div class="about-text">
 <h2>About Me</h2>
 
@@ -26,7 +26,3 @@ My research looks at how technology, and especially games and generative AI, can
 Before moving into academia I spent several years teaching English in China, Spain, and Chile. I have taught both English and Chinese as a foreign language, as well as graduate-level courses on second language teaching methods, assessment, educational technology, and using games for learning. You can find more about my work on the <a href="research.html">Research</a> page.
 </div>
 </div>
-
-```{r, fig.align='center',out.width = "360px", echo=FALSE}
-knitr::include_graphics("images/iconFred.png")
-```
