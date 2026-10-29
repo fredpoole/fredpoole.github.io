@@ -171,3 +171,56 @@ ul{
 }
 
 .about-text h2 { text-align: center; }
+
+/* Old-book page frame */
+body {
+  background-color: #E9E0C9;
+  background-image: radial-gradient(ellipse at center, #EFE7D3 0%, #E2D6B8 100%);
+  background-attachment: fixed;
+}
+
+.main-container {
+  position: relative;
+  background-color: #FBF7EC;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 50px 56px 30px;
+  border: 3px double #8B6F47;
+  outline: 1px solid #8B6F47;
+  outline-offset: 6px;
+  box-shadow: 0 0 0 12px #FBF7EC, 0 0 0 13px #8B6F47, 0 6px 24px rgba(60, 40, 10, 0.35);
+}
+
+/* Fleurons at the top and bottom of the page */
+.main-container::before,
+.main-container::after {
+  content: "\2766";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Georgia, serif;
+  font-size: 26px;
+  line-height: 1;
+  color: #8B6F47;
+  background-color: #FBF7EC;
+  padding: 0 12px;
+}
+.main-container::before { top: -16px; }
+.main-container::after { bottom: -16px; transform: translateX(-50%) rotate(180deg); }
+
+.main-container h1 { border-bottom: 1px solid #C9B48A; padding-bottom: 6px; }
+.main-container h1.home-name { border-bottom: none; }
+.main-container hr { border-top: 1px solid #C9B48A; }
+
+.list-group-item, .filterDiv, .btn { background-color: transparent; }
+.tocify { border-color: #C9B48A; }
+
+.site-footer { border-top-color: #C9B48A; }
+
+@media (max-width: 700px) {
+  .main-container {
+    margin: 24px 12px;
+    padding: 36px 18px 24px;
+    box-shadow: 0 4px 16px rgba(60, 40, 10, 0.3);
+  }
+}
