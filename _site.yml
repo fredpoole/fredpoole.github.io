@@ -24,5 +24,8 @@ navbar:
   - text: Teaching Languages
     icon: fa-language
     href: teachLang.html
+  - text: Apps
+    icon: fa-mobile
+    href: apps.html
 
 

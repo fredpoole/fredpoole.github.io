@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Fred Poole | Apps</title>
+
+<script src="site_libs/header-attrs-2.29/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-6.5.2/css/all.min.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet" />
+<link href="site_libs/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="custom.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "\e258";
+  font-family: 'Glyphicons Halflings';
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"></a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-gamepad"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="cv.html">
+    <span class="ion ion-ios-paper"></span>
+     
+    CV
+  </a>
+</li>
+<li>
+  <a href="research.html">
+    <span class="ion ion-ios-search"></span>
+     
+    Research
+  </a>
+</li>
+<li>
+  <a href="teachLang.html">
+    <span class="fa fa-language"></span>
+     
+    Teaching Languages
+  </a>
+</li>
+<li>
+  <a href="apps.html">
+    <span class="fa fa-mobile"></span>
+     
+    Apps
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Apps</h1>
+
+</div>
+
+
+<p>This page is a place for the apps and games I have been building.
+Some of them are tools for language teachers and others are games that
+try to make an argument. I will add more here as they are ready to
+share.</p>
+<hr>
+<div id="winning-the-academic-game" class="section level1">
+<h1>Winning the Academic Game</h1>
+<div class="home-links" style="justify-content:flex-start">
+<p><a href="https://fredpoole.github.io/academic-game/" target="_blank">Play
+the game</a>
+<a href="https://github.com/fredpoole/academic-game" target="_blank">Source
+code</a></p>
+</div>
+<p><img src="images/academicGameTitle.jpg" width="700px" style="display: block; margin: auto;" /></p>
+<div id="why-i-made-this-game" class="section level2">
+<h2>Why I made this game</h2>
+<p>In the past ten years anyone working at a university can tell you
+that general morale and belief in the academic institution is on the
+decline. The job market, publishing, peer review, public trust, and
+student literacy all seem to be failing at the same time. I have been
+arguing that these are not separate problems. They are the predictable
+outcome of one process, the gamification of the academy through what the
+philosopher C. Thi Nguyen calls value capture.</p>
+<blockquote>
+<p>“Value capture does not happen through coercion. It happens through
+seduction. A metric is offered as a convenient shorthand for something
+that matters and it is, initially, a reasonable shorthand.”</p>
+</blockquote>
+<p>A letter grade stands in for what a student learned. An impact factor
+or an h-index stands in for whether a scholar’s work matters. Over time
+the proxy replaces the thing it was meant to represent. We stop asking
+whether we are doing good work and start asking whether our numbers are
+going up.</p>
+<blockquote>
+<p>“These metrics do not measure scholarly value. They measure scholarly
+legibility, the degree to which a scholar’s output is visible within the
+citation economy. And once scholars understood that their careers
+depended on these numbers, they optimized for them.”</p>
+</blockquote>
+<p>I have written about this, but I am a games researcher, and it seemed
+fitting to make the argument as a game. Games are very good at teaching
+you to chase points. The idea was to build one where chasing the points
+works, and then show you at the end what it cost.</p>
+</div>
+<div id="how-it-plays" class="section level2">
+<h2>How it plays</h2>
+<p>You play a newly hired Assistant Professor over a ten year career.
+Each year you split your work week across activities like deep research,
+salami-slicing papers, rigorous or crowd-pleasing teaching, mentoring,
+peer review, invisible service, and social media self-promotion. Events
+come up along the way (reviewer #2, an editorship offer, AI-drafted
+papers, donuts on evaluation day) and you only see the “game” effects of
+each choice. The university scores you on what it can count:
+publications, citations, grant dollars, teaching evaluations, and lines
+on your CV. You go up for reappointment in Year 3, tenure in Year 6, and
+Full Professor in Year 10.</p>
+<p><img src="images/academicGamePlan.jpg" width="700px" style="display: block; margin: auto;" /></p>
+<p>A hidden second scorecard tracks what the job is actually for:
+knowledge created, student learning, real service, and your own
+wellbeing. It is revealed at the end. In testing, players who purely
+game the metrics reach tenure almost every time while having very little
+real impact, and players who try to do the job well often do not make
+it.</p>
+<p>At the start you also choose who your professor is. Identity does not
+change what you are able to do, but it does change how the system
+responds to what you do, following patterns documented in published
+research on teaching evaluations, citations, grant funding, and service
+loads. With identical choices, a balanced career reaches tenure about
+23% of the time as a white man and about 14% as a Black woman. The
+effects and their sources are listed at the end of the game.</p>
+</div>
+<div id="what-is-to-be-done" class="section level2">
+<h2>What is to be done?</h2>
+<p>The game does not offer a fix, but the essay it came from ends with
+three: professionalizing peer review, unbundling the faculty role into
+research, teaching, and bridge tracks, and reclaiming evaluation from
+metrics.</p>
+<blockquote>
+<p>“The problems are the result of a system that has made it
+structurally difficult to do good work. Value capture does not require
+bad actors. It only requires metrics.”</p>
+</blockquote>
+<blockquote>
+<p>“The game, as currently played, has no winner. Only an institution
+brave enough to stop playing it has any chance of remembering what it
+was supposed to be for.”</p>
+</blockquote>
+<p>The game takes about 20-30 minutes and runs in the browser on a
+computer or a phone (it takes about 15 seconds to load).</p>
+<p><b>References</b></p>
+<p>Hilpert, M. (2024).
+<a href="https://youtu.be/eKlEeKC8qLk" target="_blank">Academia is
+broken</a> [Video]. YouTube.</p>
+<p>Nguyen, C. T. (2021). <i>Games: Agency as art.</i> Oxford University
+Press.</p>
+</div>
+</div>
+
+<div class="site-footer">
+  <a href="https://scholar.google.com/citations?user=7KNV6UYAAAAJ&hl=en">Google Scholar</a> ·
+  <a href="https://github.com/fredpoole">GitHub</a> ·
+  <a href="mailto:frdbrick@gmail.com">Email</a>
+  <br>
+  <span id="last-modified"></span>
+  <script>document.getElementById("last-modified").textContent = "Last updated " + new Date(document.lastModified).toLocaleDateString("en-US", {year: "numeric", month: "long", day: "numeric"});</script>
+</div>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = false;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
