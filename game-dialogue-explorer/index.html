@@ -319,12 +319,14 @@ footer p { margin: 0; }
       (<a href="https://doi.org/10.5281/zenodo.16994468" target="_blank" rel="noopener">doi 10.5281/zenodo.16994468</a>), used under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a>.
       This tool reformats the corpus's per-character statistics and keyness tables and merges some of its gender groups (neutral, genderless and ambiguous become Neutral). It is not made or endorsed by the corpus authors.</p>
     <p>If you use the data, please cite: Rennick, S. &amp; Roberts, S. G. (in press). The Video Game Dialogue Corpus. <i>Corpora</i> 19(1). · Rennick, S., Clinton, M., Ioannidou, E., Oh, L., Clooney, C., E. T., Healy, E. &amp; Roberts, S. G. (2023). Gender bias in video game dialogue. <i>Royal Society Open Science</i> 10(5).</p>
+    <p><b>Sentiment.</b> Positive and negative words come from the VADER lexicon (Hutto, C. J. &amp; Gilbert, E. (2014). VADER: A parsimonious rule-based model for sentiment analysis of social media text. <i>ICWSM</i>; <a href="https://github.com/cjhutto/vaderSentiment" target="_blank" rel="noopener">MIT licence</a>). Emotion words (joy, trust, anticipation, surprise, fear, sadness, anger, disgust, the eight emotions in Plutchik's wheel) come from this tool's own short list of everyday words. Both count single words and ignore context such as "not happy".</p>
     <p>Games added through this tool keep only word counts and statistics, never the script text. Full-script search runs on a file you load, and that file never leaves your browser. Game titles and dialogue belong to their publishers.</p>
   </footer>
 </div>
 
 <script src="corpus-data.js"></script>
 <script src="ready-made-games.js"></script>
+<script src="sentiment-lexicon.js"></script>
 <script>
 (function () {
 "use strict";
@@ -333,13 +335,6 @@ const GENDERS = ["Female", "Male", "Trans", "Neutral", "Other"];
 const GVAR = { Female: "--c-female", Male: "--c-male", Trans: "--c-trans", Neutral: "--c-neutral", Other: "--c-other" };
 const GROUP_TO_GENDER = { female: "Female", GenericFemale: "Female", male: "Male", GenericMale: "Male", trans: "Trans", neutral: "Neutral", genderless: "Neutral", ambiguous: "Neutral" };
 const EXCLUDE_KEYS = new Set(["ACTION", "CHOICE", "LOCATION", "COMMENT", "SYSTEM", "GOTO", "NARRATIVE", "STATUS"]);
-const PRONOUN_SETS = [
-  ["I / me / my", ["i", "me", "my"]],
-  ["you", ["you"]],
-  ["he / his", ["he", "his"]],
-  ["she / hers", ["she", "hers"]],
-  ["they / them / theirs", ["they", "them", "theirs"]],
-];
 const STYLE_MARKERS = [
   ["Questions (?)", "Question marks per 1,000 words", t => count(t, /[?？]/g)],
   ["Exclamations (!)", "Exclamation marks per 1,000 words", t => count(t, /[!！]/g)],
@@ -353,7 +348,16 @@ const STYLE_MARKERS = [
 // Chinese words counted in the English pronoun and question-word columns (same lists as build_ready_made.py).
 const ZH_WORDS = { i: ["我", "吾", "俺", "在下"], you: ["你", "您", "汝"], he: ["他"], she: ["她"], they: ["他们", "她们"],
   who: ["谁"], what: ["什么", "何"], why: ["为什么", "为何"], where: ["哪里", "哪儿", "何处"], when: ["何时"], how: ["怎么", "如何", "怎样"] };
-const ZH_LABELS = { "I / me / my": "我", "you": "你 您", "he / his": "他", "she / hers": "她", "they / them / theirs": "他们 她们" };
+// Sentiment: counts of positive words, negative words, then each emotion (sentiment-lexicon.js, built by build_lexicon.py).
+const SENT = window.SENTIMENT || { pos: [], neg: [], emotions: [], emo: [] };
+const SENT_SETS = [new Set(SENT.pos), new Set(SENT.neg), ...SENT.emo.map(ws => new Set(ws))];
+const SENT_HEADERS = [
+  ["Positive %", "Share of words on the VADER positive list"],
+  ["Negative %", "Share of words on the VADER negative list"],
+  ["Neutral %", "Share of words on neither list"],
+  ["Net tone", "(positive − negative) ÷ (positive + negative) × 100: +100 is all positive, −100 all negative"],
+];
+const EMO_HEADERS = SENT.emotions.map((e, i) => [e[0].toUpperCase() + e.slice(1), `${e} words per 1,000 words: ${SENT.emo[i].slice(0, 14).join(", ")}…`]);
 const CJK = /[\u3400-\u9fff\uf900-\ufaff]/;
 const STOP = new Set(("a about above after again against all am an and any are as at be because been before being below between both but by can could did do does doing down during each few for from further had has have having he her here hers herself him himself his how i if in into is it its itself just let me more most my myself no nor not now of off on once only or other our ours ourselves out over own same she should so some such than that the their theirs them themselves then there these they this those through to too under until up very was we were what when where which while who whom why will with would you your yours yourself yourselves i'm it's don't that's you're i'll can't i've we're what's there's he's she's let's didn't won't isn't we'll they're you'll doesn't wasn't i'd ain't oh yeah yes ok okay hey uh um ah well just got get go going come know right like 的 了 是 我 你 他 她 它 们 我们 你们 他们 这 那 这个 那个 在 有 也 就 都 不 没 没有 吗 呢 吧 啊 呀 么 和 与 一 个 着 过 把 被 给 要 会 能 说 还 又 很 去 来 上 下 里 到 让 对 自己 什么 怎么 之 其 而 以 于 此 乃 便 已 哦 嗯 哈 罢 您 那么 这么 便是 就是 不是 可是 但 却 若 如 中 为").split(" "));
 const SAMPLE_SCRIPT = `Example transcript (made up, for trying the importer)
@@ -450,10 +454,6 @@ function charStats(c) {
   const [lines, words, sentences, syll] = c.s;
   return { lines, words, sentences, syll, wpl: lines ? words / lines : NaN, wps: sentences ? words / sentences : NaN, spw: words && syll ? syll / words : NaN };
 }
-function pronounRates(pr, words) {
-  const cols = C.pronounCols;
-  return PRONOUN_SETS.map(([, ws]) => ws.reduce((s, w) => s + (pr ? pr[cols.indexOf(w)] || 0 : 0), 0) / words * 1000);
-}
 function sumBy(chars, f) { return chars.reduce((s, c) => s + f(c), 0); }
 function slug(s) { return (s || "game").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "game"; }
 
@@ -487,12 +487,39 @@ function tokenize(t) {
   return t.match(/[a-z0-9]+(?:'[a-z]+)*/g) || [];
 }
 function zhCount(kw, w) { return (kw[w] || 0) + (ZH_WORDS[w] || []).reduce((s, z) => s + (kw[z] || 0), 0); }
-function prLabel(label) { return game().lang === "zh" && ZH_LABELS[label] ? `${label} · ${ZH_LABELS[label]}` : label; }
 // A regex source for a search phrase; word boundaries only make sense next to Latin letters and digits.
 function phraseSource(q) {
   const pat = q.toLowerCase().replace(/[’‘]/g, "'").replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
   const edge = c => /[a-z0-9']/.test(c) ? "\\b" : "";
   return { pat, src: edge(q.trim().slice(0, 1).toLowerCase()) + pat + edge(q.trim().slice(-1).toLowerCase()) };
+}
+function sentimentCounts(kw) {
+  const out = SENT_SETS.map(() => 0);
+  for (const w in kw) SENT_SETS.forEach((set, i) => { if (set.has(w)) out[i] += kw[w]; });
+  return out;
+}
+// A character's sentiment counts and word total: stored with the game, or counted from a loaded script.
+function sentimentOf(g, c) {
+  if (g.lang === "zh") return null;
+  if (c.se) return { se: c.se, words: c.s[1] };
+  const v = state.scripts[g.id] && state.scripts[g.id].byChar[c.n];
+  if (!v || !v.words) return null;
+  return { se: v.se || (v.se = sentimentCounts(v.counts)), words: v.words };
+}
+function sentimentRates(list) {
+  const w = list.reduce((s, x) => s + x.words, 0), t = SENT_SETS.map((_, i) => list.reduce((s, x) => s + x.se[i], 0));
+  const [pos, neg] = t;
+  return { w, sent: [pos / w * 100, neg / w * 100, (w - pos - neg) / w * 100, pos + neg ? (pos - neg) / (pos + neg) * 100 : NaN], emo: t.slice(2).map(n => n / w * 1000) };
+}
+function noSentimentText(g) {
+  if (g.lang === "zh") return "Sentiment uses English word lists, so it isn't available for this Chinese script.";
+  if (!g.custom) return "Sentiment needs every word each character says, and the corpus only shares counts for its 200 keywords. Load this game's script on the Full script tab and sentiment will appear here.";
+  return "This game was added before sentiment was counted. Load its script on the Full script tab to see sentiment here.";
+}
+function wordListsHTML() {
+  return `<details style="margin-top:8px"><summary class="note" style="cursor:pointer">See the emotion word lists</summary>
+    <div class="tbl-wrap" style="max-height:320px"><table><tbody>${SENT.emotions.map((e, i) => `<tr><td><b>${esc(e)}</b></td><td style="white-space:normal">${SENT.emo[i].map(esc).join(", ")}</td></tr>`).join("")}</tbody></table></div>
+    <p class="note">Positive and negative: ${fmt(SENT.pos.length)} and ${fmt(SENT.neg.length)} words from the VADER lexicon.</p></details>`;
 }
 function syllables(w) {
   if (CJK.test(w)) return (w.match(/[\u3400-\u9fff\uf900-\ufaff]/g) || []).length;
@@ -747,8 +774,8 @@ function finishRecord(r) {
 
 // Splits a record into a header document plus word-count chunks, each under the 256 KiB limit.
 function packForClass(rec) {
-  let chars = rec.chars.map(c => ({ n: c.n, g: c.g, grp: c.grp, s: c.s, pr: c.pr, qw: c.qw, st: c.st }));
-  const header = () => ({ title: rec.title, series: rec.series, year: rec.year, source: rec.source, sourceType: rec.sourceType, completeness: rec.completeness, choices: rec.choices, pcs: rec.pcs, chars, custom: { addedAt: rec.custom.addedAt, notes: rec.custom.notes, importOpts: rec.custom.importOpts, speakerMap: rec.custom.speakerMap, totals: rec.custom.totals } });
+  let chars = rec.chars.map(c => ({ n: c.n, g: c.g, grp: c.grp, s: c.s, pr: c.pr, qw: c.qw, st: c.st, se: c.se }));
+  const header = () => ({ title: rec.title, series: rec.series, year: rec.year, lang: rec.lang, source: rec.source, sourceType: rec.sourceType, completeness: rec.completeness, choices: rec.choices, pcs: rec.pcs, chars, custom: { addedAt: rec.custom.addedAt, notes: rec.custom.notes, importOpts: rec.custom.importOpts, speakerMap: rec.custom.speakerMap, totals: rec.custom.totals } });
   while (JSON.stringify(header()).length > 230000 && chars.length > 50) chars = chars.slice(0, Math.floor(chars.length * 0.8));
   const kept = new Set(chars.map(c => c.n));
   const chunks = []; let cur = {}, size = 0;
@@ -853,7 +880,7 @@ function renderFacts() {
   if (g.completeness === "sample") warns.push("This script is only a sample of the game's dialogue.");
   if (g.custom && g.custom.where === "ready") warns.push("Gender tags for this game were added by hand for this tool, not by the corpus authors. Check them before relying on them. Untagged speakers (objects, documents, minor characters) count as Other.");
   else if (g.custom && !g.stub) warns.push("Added by a class member. Check the source and the gender coding before relying on it.");
-  if (!g.custom && !g.hasFeatures) warns.push("No precomputed pronoun or keyword counts for this game. Load its full script for language analysis.");
+  if (!g.custom && !g.hasFeatures) warns.push("No precomputed keyword counts for this game. Load its full script for sentiment and language analysis.");
   if (titleCount[g.title] > 1 && !g.custom) warns.push("The corpus has more than one script for this game from different sources. Counts can differ between versions.");
   document.getElementById("sourceWarn").innerHTML = warns.map(w => `<div class="warnbox">${w}</div>`).join("") +
     (canDelete(g) && !g.stub ? `<button class="btn small" id="delGame">Delete this added game</button><div id="delConfirm"></div>` : "");
@@ -1027,21 +1054,37 @@ function renderDetail() {
   const all = g.chars.slice().sort((a, b) => b.s[1] - a.s[1]);
   const rank = all.indexOf(c) + 1;
 
-  let pronHTML = "";
-  if (c.pr) {
-    const mine = pronounRates(c.pr, c.s[1]);
-    const withPr = pool.filter(x => x.pr);
-    const totW = sumBy(withPr, x => x.s[1]);
-    const gameRates = PRONOUN_SETS.map((_, i) => sumBy(withPr, x => pronounRates(x.pr, 1)[i] / 1000) / totW * 1000);
-    const max = Math.max(...mine, ...gameRates.filter(Number.isFinite), 1);
-    pronHTML = `<div class="section"><h3>Pronoun use per 1,000 words</h3>
-      <div class="bars">${PRONOUN_SETS.map(([label], i) => `
-        <div class="bar-row"><span class="name">${prLabel(label)}</span>
+  const sc = state.scripts[g.id];
+  let sentHTML = "";
+  const mineS = sentimentOf(g, c);
+  if (mineS) {
+    const me = sentimentRates([mineS]);
+    const others = pool.map(x => sentimentOf(g, x)).filter(Boolean);
+    const avg = sentimentRates(others.length ? others : [mineS]);
+    const bars = (labels, mine, base, digits, unit) => {
+      const max = Math.max(...mine.filter(Number.isFinite), ...base.filter(Number.isFinite), 1e-9);
+      return `<div class="bars">${labels.map((label, i) => `
+        <div class="bar-row"><span class="name">${label}</span>
           <span class="track" style="display:grid;gap:2px;height:auto;background:none">
             <span class="fill" style="display:block;height:9px;width:${mine[i] / max * 100}%;background:${gcol(c.g)}"></span>
-            <span class="fill" style="display:block;height:5px;width:${(gameRates[i] || 0) / max * 100}%;background:var(--line)"></span></span>
-          <span class="val">${fmt(mine[i], 1)} <span style="color:var(--muted)">/ ${fmt(gameRates[i], 1)}</span></span></div>`).join("")}</div>
-      <p class="note">Thick bar: ${esc(c.n)}. Thin grey bar and grey number: everyone shown in this game with at least ${state.minWords} words.</p></div>`;
+            <span class="fill" style="display:block;height:5px;width:${(base[i] || 0) / max * 100}%;background:var(--line)"></span></span>
+          <span class="val">${fmt(mine[i], digits)}${unit} <span style="color:var(--muted)">/ ${fmt(base[i], digits)}${unit}</span></span></div>`).join("")}</div>`;
+    };
+    const counts = sc && sc.byChar[c.n] ? sc.byChar[c.n].counts : c.kw || {};
+    const topOf = set => Object.entries(counts).filter(([w]) => set.has(w)).sort((a, b) => b[1] - a[1]).slice(0, 14);
+    const list = items => items.length ? `<div class="wordlist">${items.map(([w, n]) => `<span data-w="${esc(w)}">${esc(w)}<em>${n}</em></span>`).join("")}</div>` : '<div class="empty">None.</div>';
+    const tone = v => Number.isFinite(v) ? (v > 0 ? "+" : "") + fmt(v, 0) : "–";
+    sentHTML = `<div class="two">
+      <div class="section"><h3>Sentiment</h3>
+        ${bars(["Positive words", "Negative words"], me.sent.slice(0, 2), avg.sent.slice(0, 2), 1, "%")}
+        <p style="margin:8px 0 0">Net tone <b>${tone(me.sent[3])}</b> <span class="note">game ${tone(avg.sent[3])}, on a scale from −100 (all negative) to +100 (all positive)</span></p>
+        <h3 style="margin-top:14px">Emotions per 1,000 words</h3>
+        ${bars(EMO_HEADERS.map(h => h[0]), me.emo, avg.emo, 1, "")}
+        <p class="note">Thick bar: ${esc(c.n)}. Thin grey bar and grey number: everyone shown in this game with at least ${state.minWords} words.</p></div>
+      <div class="section"><h3>Positive words ${esc(c.n)} uses most</h3>${list(topOf(SENT_SETS[0]))}
+        <h3 style="margin-top:14px">Negative words ${esc(c.n)} uses most</h3>${list(topOf(SENT_SETS[1]))}
+        <p class="note">${sc ? "Click a word to see the lines." : "Load the script on the Full script tab to see these words in context."}${!sc && g.custom ? " Words a big talker said only once aren't stored, so this list leaves them out." : ""}</p></div>
+    </div>`;
   }
   let kwHTML = "";
   if (c.kw) {
@@ -1050,7 +1093,6 @@ function renderDetail() {
       <p class="note">${g.custom ? "Common function words hidden." : "From the corpus authors' list of 200 words that differ most between male and female speech across all games."}</p></div>`;
   }
   let scriptHTML = "";
-  const sc = state.scripts[g.id];
   if (sc && sc.byChar[c.n]) {
     const lines = sc.byChar[c.n].lines;
     const sample = lines.length <= 6 ? lines : Array.from({ length: 6 }, (_, i) => lines[Math.floor((i + .5) * lines.length / 6)]);
@@ -1081,7 +1123,7 @@ function renderDetail() {
       <div><div class="k">Syllables per word</div><div class="v">${fmt(s.spw, 2)}</div></div>
     </div>
     ${s.words < state.minWords ? `<div class="warnbox">${esc(c.n)} has fewer than ${state.minWords} words, so rates below may not mean much.</div>` : ""}
-    ${pronHTML}${kwHTML}${scriptHTML}
+    ${sentHTML}${kwHTML}${scriptHTML}
     ${!sc ? `<p class="note">Load this game's script on the Full script tab to see sample lines${g.custom ? "" : ", distinctive words"} and example sentences for any word this character uses.</p>` : ""}
   </div>`;
   box.querySelector("#closeDetail").addEventListener("click", () => { state.selected = null; renderCharacters(); });
@@ -1122,15 +1164,16 @@ function heatTable(headers, rows, digits) {
   const max = headers.map((_, i) => Math.max(...rows.map(r => r.vals[i]).filter(Number.isFinite), 1e-9));
   return `<div class="tbl-wrap" style="max-height:none"><table><thead><tr><th></th>${headers.map(h => `<th class="num" title="${esc(h[1] || "")}">${esc(h[0])}</th>`).join("")}</tr></thead>
     <tbody>${rows.map(r => `<tr><td><span style="display:inline-flex;align-items:center;gap:6px">${sw(r.gender)}${esc(r.label)}</span></td>${r.vals.map((v, i) =>
-      `<td class="num heat"><i style="opacity:${Number.isFinite(v) ? (v / max[i]) * .35 : 0}"></i><b>${fmt(v, digits)}</b></td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
+      `<td class="num heat"><i style="opacity:${Number.isFinite(v) ? Math.max(0, v / max[i]) * .35 : 0}"></i><b>${fmt(v, digits)}</b></td>`).join("")}</tr>`).join("")}</tbody></table></div>`;
 }
 
 function renderLanguage() {
   const g = game(), pane = document.getElementById("pane-language");
   const chars = visibleChars();
-  if (!g.hasFeatures) {
-    pane.innerHTML = `<div class="empty">The corpus release has no precomputed pronoun, question-word or keyword tables for <b>${esc(g.label)}</b>.
-      You can still compare characters by amount of dialogue (Characters tab), or load the game's full script on the Full script tab.</div>`;
+  const sChars = chars.filter(c => sentimentOf(g, c));
+  if (!g.hasFeatures && !sChars.length) {
+    pane.innerHTML = `<div class="empty">The corpus release has no precomputed question-word or keyword tables for <b>${esc(g.label)}</b>.
+      You can still compare characters by amount of dialogue (Characters tab), or load the game's full script on the Full script tab to see sentiment and every word.</div>`;
     return;
   }
   const withF = chars.filter(c => c.pr);
@@ -1140,22 +1183,31 @@ function renderLanguage() {
 
   const gRows = groups.map(x => {
     const m = withF.filter(c => c.g === x), w = sumBy(m, c => c.s[1]);
-    const pr = PRONOUN_SETS.map((_, i) => sumBy(m, c => pronounRates(c.pr, 1)[i] / 1000) / w * 1000);
     const q = qcols.map((_, i) => sumBy(m, c => c.qw ? c.qw[i] : 0) / w * 1000);
     const st = STYLE_MARKERS.map((_, i) => sumBy(m, c => c.st ? c.st[i] : 0) / w * 1000);
-    return { label: `${x} (${m.length})`, gender: x, pr, q, st, w };
+    return { label: `${x} (${m.length})`, gender: x, q, st, w };
+  });
+  const sgRows = GENDERS.filter(x => sChars.some(c => c.g === x)).map(x => {
+    const m = sChars.filter(c => c.g === x);
+    return Object.assign({ label: `${x} (${m.length})`, gender: x }, sentimentRates(m.map(c => sentimentOf(g, c))));
   });
 
-  let picked = [...state.compareSet].map(n => withF.find(c => c.n === n)).filter(Boolean);
+  const base = chars.filter(c => c.pr || sentimentOf(g, c));
+  let picked = [...state.compareSet].map(n => base.find(c => c.n === n)).filter(Boolean);
   const auto = !picked.length;
-  if (auto) picked = withF.filter(c => c.s[1] >= state.minWords).slice(0, 12);
-  const cRows = picked.map(c => ({
+  if (auto) picked = base.filter(c => c.s[1] >= state.minWords).slice(0, 12);
+  const NA = n => Array(n).fill(NaN);
+  const cSent = picked.map(c => { const o = sentimentOf(g, c); return o ? sentimentRates([o]) : null; });
+  const hasSent = cSent.some(Boolean);
+  const cRows = picked.map((c, i) => ({
     label: c.n, gender: c.g,
-    vals: [...pronounRates(c.pr, c.s[1]), sumBy(qcols.map((_, i) => i), i => c.qw ? c.qw[i] : 0) / c.s[1] * 1000, charStats(c).wpl, charStats(c).wps],
+    vals: [...(cSent[i] ? [cSent[i].sent[0], cSent[i].sent[1], cSent[i].sent[3]] : NA(3)), c.qw ? sumBy(qcols.map((_, j) => j), j => c.qw[j]) / c.s[1] * 1000 : NaN, charStats(c).wpl, charStats(c).wps],
   }));
+  const eRows = picked.map((c, i) => ({ label: c.n, gender: c.g, vals: cSent[i] ? cSent[i].emo : NA(EMO_HEADERS.length) }));
   const hasStyle = withF.some(c => c.st);
   const stRows = hasStyle ? picked.map(c => ({ label: c.n, gender: c.g, vals: STYLE_MARKERS.map((_, i) => (c.st ? c.st[i] : 0) / c.s[1] * 1000) })) : [];
 
+  const hasKw = withF.some(c => c.kw);
   const opts = groupOptions(withF.filter(c => c.kw), true);
   if (!opts.some(o => o[0] === state.cmpA)) state.cmpA = opts[0] ? opts[0][0] : "";
   if (state.cmpB !== "__REST" && !opts.some(o => o[0] === state.cmpB)) state.cmpB = opts[1] ? opts[1][0] : "__REST";
@@ -1163,17 +1215,22 @@ function renderLanguage() {
 
   pane.innerHTML = `
     <p class="note" style="max-width:80ch">${custom
-      ? "Counts were made when this script was added. Rates are per 1,000 words so groups of different size can be compared."
-      : "These counts come from the corpus authors' precomputed tables. They count a fixed set of words: 11 pronouns, 6 question words, and 200 keywords that most separate male and female speech across the whole corpus. Rates are per 1,000 words so groups of different size can be compared."}</p>
-    <div class="section">
-      <div class="section-head"><h3>Pronouns by gender</h3><span class="note">per 1,000 words</span></div>
-      ${heatTable(PRONOUN_SETS.map(p => [prLabel(p[0])]), gRows.map(r => ({ label: r.label, gender: r.gender, vals: r.pr })), 1)}
-      <p class="note">Talking about yourself (I/me/my), addressing others (you), or talking about third parties (he/she/they) can point to who drives the conversation and who gets talked about.</p>
+      ? "Counts were made when this script was added. Rates are per 1,000 words (or per cent for sentiment) so groups of different size can be compared."
+      : `Question words and keywords come from the corpus authors' precomputed tables, which count a fixed set of words: 6 question words and 200 keywords that most separate male and female speech across the whole corpus. ${sChars.length ? "Sentiment is counted from the script you loaded." : ""} Rates are per 1,000 words so groups of different size can be compared.`}</p>
+    ${sgRows.length ? `<div class="section">
+      <div class="section-head"><h3>Sentiment by gender</h3><span class="note">share of all words · hover a column for details</span></div>
+      ${heatTable(SENT_HEADERS, sgRows.map(r => ({ label: r.label, gender: r.gender, vals: r.sent })), 1)}
+      <p class="note">Each word is looked up in the VADER sentiment lexicon. Most words in any dialogue are neutral, so small differences in the positive and negative columns matter. Net tone compares positive with negative words only. Word lists can't see context: "not happy" counts as positive, swearing between friends counts as negative, and filler such as "like", "well" or "no" counts too. Open a character's profile to see which words drive their score.</p>
     </div>
     <div class="section">
+      <div class="section-head"><h3>Emotions by gender</h3><span class="note">per 1,000 words · hover a column for example words</span></div>
+      ${heatTable(EMO_HEADERS, sgRows.map(r => ({ label: r.label, gender: r.gender, vals: r.emo })), 2)}
+      ${wordListsHTML()}
+    </div>` : `<div class="section"><h3>Sentiment and emotion</h3><div class="empty">${noSentimentText(g)}</div></div>`}
+    ${gRows.length ? `<div class="section">
       <div class="section-head"><h3>Question words by gender</h3><span class="note">per 1,000 words</span></div>
       ${heatTable(qcols.map(q => [q]), gRows.map(r => ({ label: r.label, gender: r.gender, vals: r.q })), 2)}
-    </div>
+    </div>` : ""}
     ${hasStyle ? `<div class="section">
       <div class="section-head"><h3>Speech style by gender</h3><span class="note">per 1,000 words · hover a column for the words counted</span></div>
       ${heatTable(STYLE_MARKERS.map(m => [m[0], m[1]]), gRows.map(r => ({ label: r.label, gender: r.gender, vals: r.st })), 1)}
@@ -1182,10 +1239,12 @@ function renderLanguage() {
       <div class="section-head"><h3>Characters side by side</h3>
         <button class="btn small" id="copyCmp">Copy as CSV</button></div>
       <p class="note">${auto ? `Showing the ${picked.length} biggest speakers with at least ${state.minWords} words. Tick "Compare" on the Characters tab to choose your own.` : `Showing the ${picked.length} characters you picked on the Characters tab.`}</p>
-      ${cRows.length ? heatTable([...PRONOUN_SETS.map(p => [prLabel(p[0]), "per 1,000 words"]), ["questions", "who/what/why/where/when/how per 1,000 words"], ["words / line"], ["words / sentence"]], cRows, 1) : '<div class="empty">No characters match. Lower the minimum words setting or change the gender filter.</div>'}
+      ${cRows.length ? heatTable([SENT_HEADERS[0], SENT_HEADERS[1], SENT_HEADERS[3], ["questions", "who/what/why/where/when/how per 1,000 words"], ["words / line"], ["words / sentence"]], cRows, 1) : '<div class="empty">No characters match. Lower the minimum words setting or change the gender filter.</div>'}
+      ${cRows.length && hasSent ? `<h3 style="margin:14px 0 6px">Emotions <span class="note">per 1,000 words</span></h3>${heatTable(EMO_HEADERS, eRows, 2)}` : ""}
+      ${cRows.length && !hasSent ? `<p class="note">${noSentimentText(g)}</p>` : ""}
       ${stRows.length ? heatTable(STYLE_MARKERS.map(m => [m[0], m[1]]), stRows, 1) : ""}
     </div>
-    <div class="section">
+    ${hasKw ? `<div class="section">
       <div class="section-head"><h3>${custom ? "Distinctive words" : "Which keywords lean one way?"}</h3></div>
       <div class="toolbar"><span>Compare</span>${selectHTML("cmpA", opts, state.cmpA)}<span>with</span>${selectHTML("cmpB", opts, state.cmpB, true)}
         ${custom ? "" : `<label class="chip"><input type="checkbox" id="cmpStop" ${state.cmpHideStop ? "checked" : ""}>Hide function words</label>`}</div>
@@ -1193,7 +1252,7 @@ function renderLanguage() {
       <p class="note">Ranked by log-likelihood (G²): higher means the difference is less likely to be chance. Above about 3.84 is roughly p &lt; .05 and above 10.83 roughly p &lt; .001. ${custom
         ? "Every word in the script is counted, except words a character used only once (left out to save space). Character and place names often top the list. Look past them for words about emotion, relationships, bodies, violence or care."
         : "Only the corpus's 200 keywords are counted here; load the full script for every word."}</p>
-    </div>`;
+    </div>` : ""}`;
 
   const runCmp = () => {
     const kwChars = withF.filter(c => c.kw);
@@ -1206,14 +1265,16 @@ function renderLanguage() {
     const k = keyness(merge(A), aw, merge(B), bw, 5, hideStop);
     out.innerHTML = keynessHTML(k, labelOf(opts, state.cmpA), state.cmpB === "__REST" ? "Everyone else" : labelOf(opts, state.cmpB), aw, bw);
   };
-  pane.querySelector("#cmpA").addEventListener("change", e => { state.cmpA = e.target.value; runCmp(); });
-  pane.querySelector("#cmpB").addEventListener("change", e => { state.cmpB = e.target.value; runCmp(); });
+  if (hasKw) {
+    pane.querySelector("#cmpA").addEventListener("change", e => { state.cmpA = e.target.value; runCmp(); });
+    pane.querySelector("#cmpB").addEventListener("change", e => { state.cmpB = e.target.value; runCmp(); });
+  }
   const cs = pane.querySelector("#cmpStop");
   if (cs) cs.addEventListener("change", e => { state.cmpHideStop = e.target.checked; renderLanguage(); });
   pane.querySelector("#copyCmp").addEventListener("click", () => copyText(toCSV([
-    ["character", "gender", ...PRONOUN_SETS.map(p => p[0] + " per 1000"), "question words per 1000", "words per line", "words per sentence", ...(hasStyle ? STYLE_MARKERS.map(m => m[0] + " per 1000") : [])],
-    ...cRows.map((r, i) => [r.label, r.gender, ...r.vals.map(v => v.toFixed(2)), ...(hasStyle ? stRows[i].vals.map(v => v.toFixed(2)) : [])])]), "Comparison"));
-  runCmp();
+    ["character", "gender", "positive %", "negative %", "net tone", "question words per 1000", "words per line", "words per sentence", ...EMO_HEADERS.map(h => h[0].toLowerCase() + " per 1000"), ...(hasStyle ? STYLE_MARKERS.map(m => m[0] + " per 1000") : [])],
+    ...cRows.map((r, i) => [r.label, r.gender, ...r.vals.map(v => Number.isFinite(v) ? v.toFixed(2) : ""), ...eRows[i].vals.map(v => Number.isFinite(v) ? v.toFixed(2) : ""), ...(hasStyle ? stRows[i].vals.map(v => v.toFixed(2)) : [])])]), "Comparison"));
+  if (hasKw) runCmp();
 }
 function labelOf(opts, v) { const o = opts.find(x => x[0] === v); return o ? o[1] : v; }
 function keynessHTML(k, la, lb, aw, bw) {
@@ -1453,7 +1514,7 @@ python3 parseRawData.py ../data/${esc(g.id)}</pre></li>
             const matched = s.all.filter(([n]) => known.has(n)).length / s.all.length;
             if (matched < .5) throw new Error("its speakers don't match this game. Check that it's the same file used to add the game");
           }
-          state.scripts[g.id] = s; renderScript(); renderDetail();
+          state.scripts[g.id] = s; renderScript(); renderDetail(); renderLanguage();
         } catch (e) { msg.textContent = `Could not use that file: ${e.message}.`; }
     };
     const handle = file => {
@@ -1562,7 +1623,7 @@ ${talkSectionHTML()}
       <p class="note">Every word in the script, ranked by log-likelihood (G²). Character and place names often top the list. Look past them for words about emotion, relationships, bodies, violence or care.</p>
     </div>`;
 
-  pane.querySelector("#unload").addEventListener("click", () => { delete state.scripts[g.id]; renderScript(); renderDetail(); });
+  pane.querySelector("#unload").addEventListener("click", () => { delete state.scripts[g.id]; renderScript(); renderDetail(); renderLanguage(); });
   pane.querySelector("#copyStyle").addEventListener("click", () => copyText(toCSV([["character", "gender", ...STYLE_MARKERS.map(m => m[0] + " per 1000")], ...cRows.map(r => [r.label, r.gender, ...r.vals.map(v => v.toFixed(2))])]), "Speech style table"));
 
   const runFt = () => {
@@ -1702,6 +1763,7 @@ function buildRecord() {
     a.text.push(t.toLowerCase());
   });
   const pcols = C.pronounCols, qcols = C.questionCols;
+  const zh = imp.parsed.lines.filter(([, t]) => CJK.test(t)).length > imp.parsed.lines.length / 2;
   const chars = Object.entries(acc).filter(([, a]) => a.words).map(([n, a]) => {
     const text = a.text.join("\n");
     const kw = {};
@@ -1713,6 +1775,7 @@ function buildRecord() {
       s: [a.lines, a.words, a.sent, a.syl],
       pr: pcols.map(w => zhCount(a.kw, w)), qw: qcols.map(w => zhCount(a.kw, w)),
       st: STYLE_MARKERS.map(m => m[2](text)),
+      se: zh ? undefined : sentimentCounts(a.kw),
       kw: Object.fromEntries(top),
     };
   });
@@ -1721,7 +1784,7 @@ function buildRecord() {
   return finishRecord({
     id: "local:" + gid, title: m.title.trim(), series: m.series.trim() || m.title.trim(), year: +m.year || null,
     source: m.source.trim(), sourceType: m.sourceType, completeness: m.completeness, choices: "",
-    lang: imp.parsed.lines.filter(([, t]) => CJK.test(t)).length > imp.parsed.lines.length / 2 ? "zh" : undefined,
+    lang: zh ? "zh" : undefined,
     pcs: Object.entries(info).filter(([, i]) => i.pc).map(([n]) => n), groups: {}, chars,
     custom: { where: "local", gid, addedAt: Date.now(), notes: m.notes.trim(), importOpts: Object.assign({}, imp.opts, { format: imp.parsed.format === "json-table" ? "json" : imp.parsed.format === "table" ? "table" : imp.parsed.format }),
       speakerMap: map, totals: { lines: chars.reduce((s, c) => s + c.s[0], 0), words: chars.reduce((s, c) => s + c.s[1], 0) } },

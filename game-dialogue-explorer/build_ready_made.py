@@ -42,6 +42,22 @@ ZH_WORDS = {"i": ["我", "吾", "俺", "在下"], "you": ["你", "您", "汝"], 
 ZH_TOKENS = {}
 
 
+def load_lexicon():
+    """Positive, negative and emotion word sets from sentiment-lexicon.js (see build_lexicon.py)."""
+    with open(os.path.join(HERE, "sentiment-lexicon.js"), encoding="utf-8") as f:
+        raw = f.read()
+    d = json.loads(raw[raw.index("=") + 1:].rstrip().rstrip(";"))
+    return [set(d["pos"]), set(d["neg"])] + [set(ws) for ws in d["emo"]]
+
+
+SENT_SETS = load_lexicon()
+
+
+def sentiment_counts(kw):
+    """Words that are positive, negative, then each emotion, in the order of sentiment-lexicon.js."""
+    return [sum(n for w, n in kw.items() if w in s) for s in SENT_SETS]
+
+
 def norm(t):
     return t.lower().replace("’", "'").replace("‘", "'")
 
@@ -142,6 +158,8 @@ def build_record(game_id, meta, lines, tags, talk=True):
             "pr": [colcount(a["kw"], w) for w in PRONOUN_COLS],
             "qw": [colcount(a["kw"], w) for w in QUESTION_COLS],
             "st": [len(r.findall(text)) for r in STYLE_RES],
+            # English word lists, so Chinese scripts get no sentiment.
+            **({} if meta.get("lang") == "zh" else {"se": sentiment_counts(a["kw"])}),
             "kw": kw,
         })
     chars.sort(key=lambda c: -c["s"][1])
